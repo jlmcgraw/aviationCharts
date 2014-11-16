@@ -4,7 +4,9 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 sectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/sectionals/"
 clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/"
 
+# Get a quick listing of files without the extentions
 # #ls -1 | sed -e 's/\.tif//g'
 # 
 # #Get all of the charts
@@ -36,9 +38,12 @@ Honolulu_Inset Houston Jacksonville Juneau Kansas_City Ketchikan Klamath_Falls
 Kodiak Lake_Huron Las_Vegas Los_Angeles Mariana_Islands_Inset McGrath
 Memphis  Miami Montreal New_Orleans New_York Nome Omaha Phoenix Point_Barrow
 Salt_Lake_City Samoan_Islands_Inset San_Antonio San_Francisco Seattle Seward
-St_Louis Twin_Cities Washington Western_Aleutian_Islands_East 
+St_Louis Twin_Cities Washington  
 Western_Aleutian_Islands_West Whitehorse Wichita
 ) 
+
+#Removing this one for now since it crosses the dateline
+#Western_Aleutian_Islands_East
 
 #count of all items in chart array
 sectionalChartArrayLength=${#sectionalCharts[*]}
@@ -62,16 +67,23 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
     
+    #For now, just skip if this clipped raster already exists
+    if [ -f "$clippedRastersSectionalsDirectory/$clippedName.tif" ];
+      then continue;
+    fi
+    
     echo gdal_translate $sourceChartName
     
     gdal_translate \
 		   -of vrt \
                    -strict \
+                   -expand rgb \
                    "$sectionalsDirectory/$sourceChartName.tif" \
                    "$sectionalsDirectory/$expandedName.vrt"
 
 #	     -dstnodata 0 \
-	     
+# -co "COMPRESS=LZW
+
     echo gdalwarp $sourceChartName
     gdalwarp \
              -cutline "$clippingShapesDirectory/sectional-$sourceChartName.shp" \
@@ -80,14 +92,15 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
              -of GTiff \
              -cblend 15 \
              -multi \
-             -wm 1000 \
-             -co COMPRESS=DEFLATE \
+             -wo NUM_THREADS=ALL_CPUS  \
+             -overwrite \
+             -wm 1024 \
              -co TILED=YES \
+             -co COMPRESS=DEFLATE \
              -co PREDICTOR=1 \
              -co ZLEVEL=9 \
-             -overwrite \
              "$sectionalsDirectory/$expandedName.vrt" \
-             "$sectionalsDirectory/$clippedName.tif"
+             "$clippedRastersSectionalsDirectory/$clippedName.tif"
 
     echo gdaladdo $sourceChartName             
     gdaladdo \
@@ -95,7 +108,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
              --config INTERLEAVE_OVERVIEW PIXEL \
              --config COMPRESS_OVERVIEW JPEG \
              --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$sectionalsDirectory/$clippedName.tif" \
+             "$clippedRastersSectionalsDirectory/$clippedName.tif" \
              2 4 8 16         
              
     echo "----------------------------------------------------------"
