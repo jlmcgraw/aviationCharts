@@ -1,14 +1,14 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis projectname="" version="2.6.0-Brighton">
     <title></title>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="VFR">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="VFR">
             <customproperties/>
             <layer-tree-group expanded="1" checked="Qt::Unchecked" name="WAC">
                 <customproperties/>
             </layer-tree-group>
-            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="TAC">
+            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="TAC">
                 <customproperties/>
                 <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Clipped Rasters">
                     <customproperties/>
@@ -20,9 +20,9 @@
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Sectionals">
+            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Sectionals">
                 <customproperties/>
-                <layer-tree-group expanded="0" checked="Qt::Unchecked" name="clipping polygons">
+                <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="clipping polygons">
                     <customproperties/>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="sectional_Lake_Huron20141114080233023" name="sectional-Lake_Huron">
                         <customproperties/>
@@ -174,6 +174,9 @@
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="sectional_Cheyenne20141114083254229" name="sectional-Cheyenne">
                         <customproperties/>
                     </layer-tree-layer>
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="sectional_Charlotte20141114083351236" name="sectional-Charlotte">
+                        <customproperties/>
+                    </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="sectional_Cape_Lisburne20141114083448508" name="sectional-Cape_Lisburne">
                         <customproperties/>
                     </layer-tree-layer>
@@ -195,13 +198,10 @@
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="sectional_Albuquerque20141114135427037" name="sectional-Albuquerque">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="sectional_Charlotte20141114083351236" name="sectional-Charlotte">
-                        <customproperties/>
-                    </layer-tree-layer>
                 </layer-tree-group>
-                <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Source Rasters">
+                <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Source Rasters">
                     <customproperties/>
-                    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Done">
+                    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Done">
                         <customproperties/>
                         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Albuquerque20141113213337628" name="Albuquerque">
                             <customproperties/>
@@ -209,7 +209,7 @@
                         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Anchorage20141113213337760" name="Anchorage">
                             <customproperties/>
                         </layer-tree-layer>
-                        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Atlanta20141113213337785" name="Atlanta">
+                        <layer-tree-layer expanded="0" checked="Qt::Checked" id="Atlanta20141113213337785" name="Atlanta">
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Bethel20141113213337819" name="Bethel">
@@ -224,7 +224,7 @@
                         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Cape_Lisburne20141113213337870" name="Cape_Lisburne">
                             <customproperties/>
                         </layer-tree-layer>
-                        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Charlotte20141113213337886" name="Charlotte">
+                        <layer-tree-layer expanded="0" checked="Qt::Checked" id="Charlotte20141113213337886" name="Charlotte">
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Cheyenne20141113213337901" name="Cheyenne">
@@ -567,175 +567,142 @@
     </layer-tree-group>
     <relations/>
     <mapcanvas>
-        <units>degrees</units>
+        <units>meters</units>
         <extent>
-            <xmin>177.85607370372494529</xmin>
-            <ymin>50.13437353808719621</ymin>
-            <xmax>180.60845598962438885</xmax>
-            <ymax>52.47720133984480384</ymax>
+            <xmin>-9142943.09834558703005314</xmin>
+            <ymin>4013213.87750195106491446</ymin>
+            <xmax>-9018772.84491506032645702</xmax>
+            <ymax>4115313.68403215287253261</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                <srsid>3452</srsid>
-                <srid>4326</srid>
-                <authid>EPSG:4326</authid>
-                <description>WGS 84</description>
-                <projectionacronym>longlat</projectionacronym>
+                <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
+                <srsid>3857</srsid>
+                <srid>3857</srid>
+                <authid>EPSG:3857</authid>
+                <description>WGS 84 / Pseudo Mercator</description>
+                <projectionacronym>merc</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
-                <geographicflag>true</geographicflag>
+                <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Green_Bay20141114081904583"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100009" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Albuquerque20141115140503033"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100020" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso20141113213338045"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Wichita20141113213554319"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100006" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Brownsville20141115140503911"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100028" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Jacksonville20141116090236940"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100019" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dutch_Harbor20141116090236375"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100014" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cheyenne20141115140504358"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100009" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Albuquerque20141116090235953"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Billings20141114083827870"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100017" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Denver20141115174859277"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Los_Angeles20141114075539484"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Seattle20141113233534273"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100023" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Green_Bay20141116090236644"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100008" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dallas_Ft_Worth20141116090236294"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100009" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Albuquerque20141115174858715"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Albuquerque20141114135427037"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dutch_Harbor20141114082310449"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100032" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Klamath_Falls20141116090237298"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Klamath_Falls20141114080622122"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100057" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West20141113213338646"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Mariana_Islands_Inset20141114075423249"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100054" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_St_Louis20141116090239177"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cincinnati20141115140504586"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Jacksonville20141114081157613"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100010" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Anchorage20141115140503336"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Seward20141113233356747"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Charlotte20141114083351236"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Miami20141114074907972"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Detroit20141114082424286"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100010" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Anchorage20141116090236065"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_San_Francisco20141113233649970"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100037" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Mariana_Islands_Inset20141116090237675"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100010" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Anchorage20141115174858854"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100039" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Memphis20141116090237801"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cincinnati20141114083026190"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100013" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cape_Lisburne20141115174859015"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Charlotte20141115174859034"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100015" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cold_Bay20141116090236277"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100011" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Bethel20141115174858909"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Bethel20141114084004465"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100007" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Chicago20141116090236240"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100011" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Bethel20141115140503641"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100036" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Los_Angeles20141116090237605"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Hawaiian_Islands20141114081652688"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100033" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Kodiak20141116090237400"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_McGrath20141114075306149"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_New_York20141113234547453"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100034" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Lake_Huron20141116090237474"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Lake_Huron20141114080233023"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100030" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Kansas_City20141116090237134"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Charlotte20141116090236207"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100042" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_New_Orleans20141116090238056"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100045" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Omaha20141116090238272"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100018" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Detroit20141115174859376"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cincinnati20141115174859091"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_San_Antonio20141113233754496"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100017" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Denver20141116090236330"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Atlanta20141115140503492"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cincinnati20141116090236257"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100052" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Seattle20141116090238896"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Omaha20141113234349154"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Samoan_Islands_Inset20141113233854166"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100049" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Samoan_Islands_Inset20141116090238657"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100056" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East20141113213338630"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100046" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Phoenix20141116090238350"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Atlanta20141116090236107"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Western_Aleutian_Islands_East20141113214024753"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100013" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cape_Lisburne20141115140504022"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100040" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Miami20141116090237899"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Anchorage20141114084254746"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Brownsville20141114083705827"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dallas_Ft_Worth20141114082824206"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cape_Lisburne20141114083448508"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100041" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Montreal20141116090237979"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Memphis20141114075150606"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100048" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Salt_Lake_City20141116090238531"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100013" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cape_Lisburne20141116090236190"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100008" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dallas_Ft_Worth20141115140504780"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100007" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Chicago20141115174859071"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100014" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cheyenne20141116090236224"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Kodiak20141114080408303"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100006" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Brownsville20141115174858984"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100020" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_El_Paso20141116090236417"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100012" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Billings20141116090236158"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Point_Barrow20141113234149148"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Washington20141113214900258"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Fairbanks20141114082055892"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100018" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Detroit20141116090236346"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Ketchikan20141114080736739"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Honolulu_Inset20141114081536452"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Las_Vegas20141114080111437"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_New_Orleans20141113234700037"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Atlanta20141114084158894"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100043" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_New_York20141116090238118"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100002" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Washington20141116090239411"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100047" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Point_Barrow20141116090238433"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100021" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Fairbanks20141116090236494"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Kansas_City20141114080904388"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_El_Paso20141115174959600"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100006" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Brownsville20141116090236174"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cheyenne20141114083254229"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Juneau20141116090237041"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100035" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Las_Vegas20141116090237545"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100009" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque20141113213337628"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Charlotte20141115140504192"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_St_Louis20141113233230999"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100044" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Nome20141116090238193"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100053" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Seward20141116090238998"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Twin_Cities20141113230445135"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100024" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Halifax20141116090236713"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Juneau20141114081009380"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100050" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_San_Antonio20141116090238721"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Chicago20141114083202654"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Whitehorse20141113213700834"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Salt_Lake_City20141113234013589"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100055" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Twin_Cities20141116090239346"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dawson20141116090236313"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100007" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Chicago20141115140504463"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100012" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Billings20141115174858958"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100031" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Ketchikan20141116090237227"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100011" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Bethel20141116090236137"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100022" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Great_Falls20141116090236572"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100015" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cold_Bay20141115140504711"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_El_Paso20141114082156118"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100027" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Houston20141116090236874"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Houston20141114081432086"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100015" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cold_Bay20141115174859112"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Montreal20141114074739008"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100008" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dallas_Ft_Worth20141115174859132"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dawson20141115174859182"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100019" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dutch_Harbor20141115174859405"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100038" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_McGrath20141116090237725"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100026" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Honolulu_Inset20141116090236826"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100012" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Billings20141115140503764"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Western_Aleutian_Islands_West20141113213853520"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cold_Bay20141114082916871"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Great_Falls20141114081952126"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Halifax20141114081759509"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Albuquerque20141114084348746"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Nome20141113234448315"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100025" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Hawaiian_Islands20141116090236774"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Atlanta20141115174858878"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100051" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_San_Francisco20141116090238803"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="USER:100014" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cheyenne20141115174859053"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dawson20141114082718800"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Phoenix20141113234259001"/>
-            <layer_coordinate_transform destAuthId="EPSG:4326" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Denver20141114082524608"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Omaha20141113234349154"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_St_Louis20141113233230999"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100042" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_New_Orleans20141116090238056"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100008" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dallas_Ft_Worth20141116090236294"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Green_Bay20141114081904583"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Chicago20141114083202654"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Atlanta20141114084158894"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Kodiak20141114080408303"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Wichita20141113213554319"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cincinnati20141116090236257"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Fairbanks20141114082055892"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100035" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Las_Vegas20141116090237545"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100028" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Jacksonville20141116090236940"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100026" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Honolulu_Inset20141116090236826"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100055" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Twin_Cities20141116090239346"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100052" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Seattle20141116090238896"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Western_Aleutian_Islands_West20141113213853520"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cold_Bay20141114082916871"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Bethel20141114084004465"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100012" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Billings20141116090236158"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100045" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Omaha20141116090238272"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Klamath_Falls20141114080622122"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100038" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_McGrath20141116090237725"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100041" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Montreal20141116090237979"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100048" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Salt_Lake_City20141116090238531"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Whitehorse20141113213700834"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Billings20141114083827870"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Las_Vegas20141114080111437"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_San_Francisco20141113233649970"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100022" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Great_Falls20141116090236572"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Seward20141113233356747"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Hawaiian_Islands20141114081652688"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Mariana_Islands_Inset20141114075423249"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_San_Antonio20141113233754496"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dawson20141114082718800"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100054" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_St_Louis20141116090239177"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100033" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Kodiak20141116090237400"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Washington20141113214900258"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dutch_Harbor20141114082310449"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Twin_Cities20141113230445135"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Jacksonville20141114081157613"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Albuquerque20141114135427037"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Juneau20141114081009380"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Honolulu_Inset20141114081536452"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati20141113213337933"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100044" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Nome20141116090238193"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Lake_Huron20141114080233023"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte20141113213337886"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100047" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Point_Barrow20141116090238433"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Samoan_Islands_Inset20141113233854166"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100034" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Lake_Huron20141116090237474"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100032" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Klamath_Falls20141116090237298"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Phoenix20141113234259001"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Anchorage20141114084254746"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_New_York20141113234547453"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100046" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Phoenix20141116090238350"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100013" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cape_Lisburne20141116090236190"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Kansas_City20141114080904388"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Atlanta20141116090236107"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100020" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_El_Paso20141116090236417"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100014" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cheyenne20141116090236224"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Seattle20141113233534273"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100050" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_San_Antonio20141116090238721"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Los_Angeles20141114075539484"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100010" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Anchorage20141116090236065"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100043" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_New_York20141116090238118"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Houston20141114081432086"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cheyenne20141114083254229"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100030" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Kansas_City20141116090237134"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Salt_Lake_City20141113234013589"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100018" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Detroit20141116090236346"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Ketchikan20141114080736739"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta20141113213337785"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Denver20141114082524608"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_El_Paso20141115174959600"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Juneau20141116090237041"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Great_Falls20141114081952126"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100031" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Ketchikan20141116090237227"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100024" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Halifax20141116090236713"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100019" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dutch_Harbor20141116090236375"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Point_Barrow20141113234149148"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cape_Lisburne20141114083448508"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Charlotte20141114083351236"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100053" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Seward20141116090238998"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100036" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Los_Angeles20141116090237605"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100007" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Chicago20141116090236240"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100037" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Mariana_Islands_Inset20141116090237675"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100017" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Denver20141116090236330"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Halifax20141114081759509"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100023" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Green_Bay20141116090236644"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Western_Aleutian_Islands_East20141113214024753"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100006" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Brownsville20141116090236174"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Charlotte20141116090236207"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Dawson20141116090236313"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100027" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Houston20141116090236874"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100011" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Bethel20141116090236137"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Montreal20141114074739008"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100040" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Miami20141116090237899"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100002" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Washington20141116090239411"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Memphis20141114075150606"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100021" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Fairbanks20141116090236494"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_New_Orleans20141113234700037"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_McGrath20141114075306149"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Cincinnati20141114083026190"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100025" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Hawaiian_Islands20141116090236774"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100039" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Memphis20141116090237801"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Miami20141114074907972"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100015" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Cold_Bay20141116090236277"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100051" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_San_Francisco20141116090238803"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100049" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Samoan_Islands_Inset20141116090238657"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Detroit20141114082424286"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Brownsville20141114083705827"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100009" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_expanded_Albuquerque20141116090235953"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Nome20141113234448315"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="sectional_Dallas_Ft_Worth20141114082824206"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -918,9 +885,9 @@
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendgroup open="true" checked="Qt::Unchecked" name="VFR">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="VFR">
             <legendgroup open="true" checked="Qt::Unchecked" name="WAC"/>
-            <legendgroup open="false" checked="Qt::Unchecked" name="TAC">
+            <legendgroup open="true" checked="Qt::Unchecked" name="TAC">
                 <legendgroup open="true" checked="Qt::Unchecked" name="Clipped Rasters"/>
                 <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="TAC-BaltimoreWashington" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
@@ -933,8 +900,8 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Unchecked" name="Sectionals">
-                <legendgroup open="false" checked="Qt::Unchecked" name="clipping polygons">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Sectionals">
+                <legendgroup open="true" checked="Qt::PartiallyChecked" name="clipping polygons">
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="sectional-Lake_Huron" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="sectional_Lake_Huron20141114080233023" visible="0"/>
@@ -1185,6 +1152,11 @@
                             <legendlayerfile isInOverview="0" layerid="sectional_Cheyenne20141114083254229" visible="0"/>
                         </filegroup>
                     </legendlayer>
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="sectional-Charlotte" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="sectional_Charlotte20141114083351236" visible="1"/>
+                        </filegroup>
+                    </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="sectional-Cape_Lisburne" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="sectional_Cape_Lisburne20141114083448508" visible="0"/>
@@ -1220,14 +1192,9 @@
                             <legendlayerfile isInOverview="0" layerid="sectional_Albuquerque20141114135427037" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="sectional-Charlotte" showFeatureCount="0">
-                        <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="sectional_Charlotte20141114083351236" visible="0"/>
-                        </filegroup>
-                    </legendlayer>
                 </legendgroup>
-                <legendgroup open="true" checked="Qt::Unchecked" name="Source Rasters">
-                    <legendgroup open="true" checked="Qt::Unchecked" name="Done">
+                <legendgroup open="true" checked="Qt::PartiallyChecked" name="Source Rasters">
+                    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Done">
                         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Albuquerque" showFeatureCount="0">
                             <filegroup open="false" hidden="false">
                                 <legendlayerfile isInOverview="0" layerid="Albuquerque20141113213337628" visible="0"/>
@@ -1238,9 +1205,9 @@
                                 <legendlayerfile isInOverview="0" layerid="Anchorage20141113213337760" visible="0"/>
                             </filegroup>
                         </legendlayer>
-                        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Atlanta" showFeatureCount="0">
+                        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Atlanta" showFeatureCount="0">
                             <filegroup open="false" hidden="false">
-                                <legendlayerfile isInOverview="0" layerid="Atlanta20141113213337785" visible="0"/>
+                                <legendlayerfile isInOverview="0" layerid="Atlanta20141113213337785" visible="1"/>
                             </filegroup>
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Bethel" showFeatureCount="0">
@@ -1263,9 +1230,9 @@
                                 <legendlayerfile isInOverview="0" layerid="Cape_Lisburne20141113213337870" visible="0"/>
                             </filegroup>
                         </legendlayer>
-                        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Charlotte" showFeatureCount="0">
+                        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Charlotte" showFeatureCount="0">
                             <filegroup open="false" hidden="false">
-                                <legendlayerfile isInOverview="0" layerid="Charlotte20141113213337886" visible="0"/>
+                                <legendlayerfile isInOverview="0" layerid="Charlotte20141113213337886" visible="1"/>
                             </filegroup>
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Cheyenne" showFeatureCount="0">
@@ -2405,7 +2372,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Atlanta20141113213337785</id>
             <datasource>./test/aeronav.faa.gov/content/aeronav/sectional_files/Atlanta SEC 93.tif</datasource>
             <title></title>
@@ -2434,7 +2401,7 @@
                 <noDataList bandNo="1" useSrcNoData="0"/>
             </noData>
             <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" band="1" type="paletted">
+                <rasterrenderer opacity="0.498039" alphaBand="0" band="1" type="paletted">
                     <rasterTransparency/>
                     <colorPalette>
                         <paletteEntry value="0" color="#ffffff" label="0"/>
@@ -28149,8 +28116,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSContactPhone type="QString"></WMSContactPhone>
         <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+        <WMSContactPhone type="QString"></WMSContactPhone>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
@@ -28496,9 +28463,9 @@
             <filterByMap type="bool">false</filterByMap>
         </Legend>
         <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=longlat +datum=WGS84 +no_defs</ProjectCRSProj4String>
-            <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">3452</ProjectCRSID>
+            <ProjectCRSProj4String type="QString">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</ProjectCRSProj4String>
+            <ProjectCrs type="QString">EPSG:3857</ProjectCrs>
+            <ProjectCRSID type="int">3857</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <DefaultStyles>

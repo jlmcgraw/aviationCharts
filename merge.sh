@@ -72,7 +72,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
       then continue;
     fi
     
-    echo gdal_translate $sourceChartName
+    echo ---gdal_translate $sourceChartName
     
     gdal_translate \
 		   -of vrt \
@@ -84,8 +84,9 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
 
-    echo gdalwarp $sourceChartName
+    echo ---gdalwarp $sourceChartName
     gdalwarp \
+	     -t_srs EPSG:3857 \
              -cutline "$clippingShapesDirectory/sectional-$sourceChartName.shp" \
              -crop_to_cutline \
              -dstalpha \
@@ -102,7 +103,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
              "$sectionalsDirectory/$expandedName.vrt" \
              "$clippedRastersSectionalsDirectory/$clippedName.tif"
 
-    echo gdaladdo $sourceChartName             
+    echo ---gdaladdo $sourceChartName             
     gdaladdo \
              -ro \
              --config INTERLEAVE_OVERVIEW PIXEL \
