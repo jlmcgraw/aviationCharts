@@ -3,18 +3,19 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 sectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/sectionals/"
+
 clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
 clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/"
 
 # Get a quick listing of files without the extentions
 # #ls -1 | sed -e 's/\.tif//g'
 # 
-# #Get all of the charts
+# #Get all of the latest charts
 #  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/
 #  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/
 # 
 # #Unzip all of the sectional charts
-# unzip -u "*.zip" "*.tif"
+# unzip -u -j "*.zip" "*.tif"
 # 
 # #Link latest revision of chart as a base name
 # shopt -s nullglob
@@ -22,6 +23,7 @@ clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/cli
 # do
 # 	#Replace spaces in name with _
 # 	newName=($(printf $f | sed 's/\s/_/g'))
+
 # 	#Strip off the series number
 # 	newName=($(printf $newName | sed 's/_SEC_[0-9][0-9]//ig'))
 # 
@@ -85,8 +87,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
 # -co "COMPRESS=LZW
 
     echo ---gdalwarp $sourceChartName
-    gdalwarp \
-	     -t_srs EPSG:3857 \
+    gdalwarp \     
              -cutline "$clippingShapesDirectory/sectional-$sourceChartName.shp" \
              -crop_to_cutline \
              -dstalpha \
