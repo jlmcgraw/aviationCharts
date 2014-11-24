@@ -96,19 +96,24 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     if [ -f "$clippedRastersTacDirectory/$clippedName.tif" ];
       then continue;
     fi
-    
-    echo ---gdal_translate $sourceChartName
-    
-    gdal_translate \
-		   -of vrt \
-                   -strict \
-                   -expand rgb \
-                   "$tacDirectory/$sourceChartName.tif" \
-                   "$tacDirectory/$expandedName.vrt"
 
+    #Test if we need to expand the original file
+    if [ ! -f "$tacDirectory/$expandedName.vrt" ];
+      then
+	echo ---gdal_translate $sourceChartName
+	
+	gdal_translate \
+		      -of vrt \
+		      -strict \
+		      -expand rgb \
+		      "$tacDirectory/$sourceChartName.tif" \
+		      "$tacDirectory/$expandedName.vrt"
+      fi
+      
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
 
+    #Warp the original file, clipping it to it's clipping shape
     echo ---gdalwarp $sourceChartName
     gdalwarp \
              -cutline "$clippingShapesDirectory/tac-$sourceChartName.shp" \
@@ -126,7 +131,8 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -co ZLEVEL=9 \
              "$tacDirectory/$expandedName.vrt" \
              "$clippedRastersTacDirectory/$clippedName.tif"
-
+    
+    #Create external overviews to make display faster in QGIS
     echo ---gdaladdo $sourceChartName             
     gdaladdo \
              -ro \
