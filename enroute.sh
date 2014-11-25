@@ -2,7 +2,7 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-tacDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/IFR/"
+expandedFilesDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/IFR/"
 clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
 clippedRastersTacDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/IFR/"
 
@@ -29,14 +29,19 @@ clippedRastersTacDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRas
 # # 	newName=($(printf $newName | sed 's/_[0-9][0-9]//ig'))
 # 
 # 	#If names are sorted properly, this will link latest version
-# 	echo "Linking $f -> $tacDirectory$newName"
-# 	ln -s -f -r "$f" $tacDirectory$newName
+# 	echo "Linking $f -> $expandedFilesDirectory$newName"
+# 	ln -s -f -r "$f" $expandedFilesDirectory$newName
 # done
 
 #These span the dateline
 # ENR_AKH01
 # ENR_AKH02
-
+# ENR_P01
+# ENR_AKL02W
+# ENR_AKL03
+# ENR_AKL04
+# ENR_H01
+# porc
 tacCharts=(
 ENR_A01_ATL
 ENR_A01_DCA
@@ -58,13 +63,9 @@ ENR_AKL01
 ENR_AKL01_VR
 ENR_AKL02C
 ENR_AKL02E
-ENR_AKL02W
 ENR_AKL03_FAI
 ENR_AKL03_OME
-ENR_AKL03
 ENR_AKL04_ANC
-ENR_AKL04
-ENR_H01
 ENR_H02
 ENR_H03
 ENR_H04
@@ -114,16 +115,10 @@ ENR_L34
 ENR_L35
 ENR_L36
 ENR_P01_GUA
-ENR_P01
 ENR_P02
 narc
-porc
 watrs
-) 
-# tacCharts=(
-
-
-# ) 
+)
 
 #count of all items in chart array
 tacChartArrayLength=${#tacCharts[*]}
@@ -134,7 +129,7 @@ let points=1
 #divided by size of each entry gives number of charts
 let numberOfTacCharts=$tacChartArrayLength/$points;
 
-echo Found $numberOfTacCharts TAC charts
+echo Found $numberOfTacCharts Enroute charts
 
 #Loop through all of the charts in our array and process them
 for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
@@ -153,25 +148,31 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     fi
 
     #Test if we need to expand the original file
-    if [ ! -f "$tacDirectory/$expandedName.vrt" ];
+    if [ ! -f "$expandedFilesDirectory/$expandedName.vrt" ];
       then
 	echo ---gdal_translate $sourceChartName
 	
 	gdal_translate \
 		      -of vrt \
 		      -strict \
-		      "$tacDirectory/$sourceChartName.tif" \
-		      "$tacDirectory/$expandedName.vrt"
+		      "$expandedFilesDirectory/$sourceChartName.tif" \
+		      "$expandedFilesDirectory/$expandedName.vrt"
     fi
       
+    if [ ! -f "$clippingShapesDirectory/ifr-$sourceChartName.shp" ];
+      then
+	echo ---No clipping shape found: "$clippingShapesDirectory/ifr-$sourceChartName.shp"
+    fi
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
 
     #Warp the original file, clipping it to it's clipping shape
-#                  -s_srs EPSG:4326 \
+#              -s_srs EPSG:4326 \
 #              -t_srs EPSG:3857 \
     echo ---gdalwarp $sourceChartName
     gdalwarp \
+             -cutline "$clippingShapesDirectory/ifr-$sourceChartName.shp" \
+             -crop_to_cutline \
              -dstalpha \
              -of GTiff \
              -cblend 15 \
@@ -179,11 +180,12 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -wo NUM_THREADS=ALL_CPUS  \
              -overwrite \
              -wm 1024 \
+             --config GDAL_CACHEMAX 256 \
              -co TILED=YES \
              -co COMPRESS=DEFLATE \
              -co PREDICTOR=1 \
              -co ZLEVEL=9 \
-             "$tacDirectory/$expandedName.vrt" \
+             "$expandedFilesDirectory/$expandedName.vrt" \
              "$clippedRastersTacDirectory/$clippedName.tif"
     
     #Create external overviews to make display faster in QGIS
