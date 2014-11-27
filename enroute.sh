@@ -156,7 +156,16 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 		      -of vrt \
 		      -strict \
 		      "$expandedFilesDirectory/$sourceChartName.tif" \
-		      "$expandedFilesDirectory/$expandedName.vrt"
+		      "$expandedFilesDirectory/$expandedName.tif"
+	#Create external overviews to make display faster in QGIS
+        echo ---gdaladdo $sourceChartName             
+        gdaladdo \
+             -ro \
+             --config INTERLEAVE_OVERVIEW PIXEL \
+             --config COMPRESS_OVERVIEW JPEG \
+             --config BIGTIFF_OVERVIEW IF_NEEDED \
+             "$expandedFilesDirectory/$expandedName.tif" \
+             2 4 8 16  	      
     fi
       
     if [ ! -f "$clippingShapesDirectory/ifr-$sourceChartName.shp" ];
@@ -169,24 +178,40 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     #Warp the original file, clipping it to it's clipping shape
 #              -s_srs EPSG:4326 \
 #              -t_srs EPSG:3857 \
-    echo ---gdalwarp $sourceChartName
-    gdalwarp \
-             -cutline "$clippingShapesDirectory/ifr-$sourceChartName.shp" \
-             -crop_to_cutline \
-             -dstalpha \
-             -of GTiff \
-             -cblend 15 \
-             -multi \
-             -wo NUM_THREADS=ALL_CPUS  \
-             -overwrite \
-             -wm 1024 \
-             --config GDAL_CACHEMAX 256 \
-             -co TILED=YES \
-             -co COMPRESS=DEFLATE \
-             -co PREDICTOR=1 \
-             -co ZLEVEL=9 \
-             "$expandedFilesDirectory/$expandedName.vrt" \
-             "$clippedRastersTacDirectory/$clippedName.tif"
+#   -cblend 15 \
+
+    #Test if we need to clip the expanded file
+    if [ ! -f  "$clippedRastersTacDirectory/$clippedName.tif" ];
+      then
+      
+      echo ---gdalwarp $sourceChartName
+      gdalwarp \
+	      -cutline "$clippingShapesDirectory/ifr-$sourceChartName.shp" \
+	      -crop_to_cutline \
+	      -dstalpha \
+	      -of GTiff \
+	      -multi \
+	      -wo NUM_THREADS=ALL_CPUS  \
+	      -overwrite \
+	      -wm 1024 \
+	      --config GDAL_CACHEMAX 256 \
+	      -co TILED=YES \
+	      -co COMPRESS=DEFLATE \
+	      -co PREDICTOR=1 \
+	      -co ZLEVEL=9 \
+	      "$expandedFilesDirectory/$expandedName.vrt" \
+	      "$clippedRastersTacDirectory/$clippedName.tif"
+      
+      #Create external overviews to make display faster in QGIS
+      echo ---gdaladdo $sourceChartName             
+      gdaladdo \
+	      -ro \
+	      --config INTERLEAVE_OVERVIEW PIXEL \
+	      --config COMPRESS_OVERVIEW JPEG \
+	      --config BIGTIFF_OVERVIEW IF_NEEDED \
+		"$clippedRastersTacDirectory/$clippedName.tif" \
+	      2 4 8 16           
+    fi
     
     #Create external overviews to make display faster in QGIS
     echo ---gdaladdo $sourceChartName             
