@@ -3,20 +3,20 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #Where the original .tif files are from aeronav
-originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/tac_files/"
+originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/wac_files/"
 
 #Where the polygons for clipping are stored
 clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
 
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
-linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/TAC/"
+linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/wac/"
 
 #Where expanded rasters are stored (step 2)
-expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/tac/"
+expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/wac/"
 
 #Where clipped rasters are stored (step 3)
-clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/tac/"
+clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/wac/"
 
 
 #Freshen the local files first
@@ -44,59 +44,46 @@ do
 	newName=($(printf $f | sed 's/\s/_/g'))
 
 	#Strip off the series number
-	newName=($(printf $newName | sed 's/_[0-9][0-9]//ig'))
+	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
 
 	#If names are sorted properly, this will link latest version
 	echo "Linking $f -> $linkedRastersDirectory/$newName"
 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
 done
 
-
-
-tacCharts=(
-Anchorage_TAC
-Atlanta_TAC
-Baltimore-Washington_TAC
-Boston_TAC
-Charlotte_TAC
-Chicago_TAC
-Cincinnati_TAC
-Cleveland_TAC
-Colorado_Springs_TAC
-Dallas-Ft_Worth_TAC
-Denver_TAC
-Detroit_TAC
-Fairbanks_TAC
-Houston_TAC
-Kansas_City_TAC
-Las_Vegas_TAC
-Los_Angeles_TAC
-Memphis_TAC
-Miami_TAC
-Minneapolis-St_Paul_TAC
-New_Orleans_TAC
-New_York_TAC
-Orlando_TAC
-Philadelphia_TAC
-Phoenix_TAC
-Pittsburgh_TAC
-Puerto_Rico-VI_TAC
-Salt_Lake_City_TAC
-San_Diego_TAC
-San_Francisco_TAC
-Seattle_TAC
-St_Louis_TAC
-Tampa_TAC
+Charts=(
+CC-8_WAC
+CC-9_WAC
+CD-10_WAC
+CD-11_WAC
+CD-12_WAC
+CE-12_WAC
+CE-13_WAC
+CE-15_WAC
+CF-16_WAC
+CF-17_WAC
+CF-18_WAC
+CF-19_WAC
+CG-18_WAC
+CG-19_WAC
+CG-20_WAC
+CG-21_WAC
+CH-22_WAC
+CH-23_WAC
+CH-24_WAC
+CH-25_WAC
+CJ-26_WAC
+CJ-27_WAC
 ) 
 
 #count of all items in chart array
-tacChartArrayLength=${#tacCharts[*]}
+ChartArrayLength=${#Charts[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfTacCharts=$tacChartArrayLength/$points;
+let numberOfTacCharts=$ChartArrayLength/$points;
 
 echo Found $numberOfTacCharts TAC charts
 
@@ -105,7 +92,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
   do
     #  if [-e $chartName*-warped.vrt ]
     #Pull the info for this chart from array
-    sourceChartName=${tacCharts[i*$points+0]}
+    sourceChartName=${Charts[i*$points+0]}
 
     #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
@@ -127,14 +114,19 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi
-      
+    
+    if [ ! -f "$clippingShapesDirectory/wac-$sourceChartName.shp" ];
+      then
+	echo ---No clipping shape found: "$clippingShapesDirectory/wac-$sourceChartName.shp"
+	exit
+    fi  
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
 
     #Warp the original file, clipping it to it's clipping shape
     echo --- Clip --- gdalwarp $sourceChartName
     gdalwarp \
-             -cutline "$clippingShapesDirectory/tac-$sourceChartName.shp" \
+             -cutline "$clippingShapesDirectory/wac-$sourceChartName.shp" \
              -crop_to_cutline \
              -dstalpha \
              -of GTiff \

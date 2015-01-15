@@ -3,7 +3,7 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #Where the original .tif files are from aeronav
-originalSectionalsDirectory="/media/sf_F_DRIVE/aeronav.faa.gov/content/aeronav/sectional_files/"
+originalSectionalsDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/sectional_files/"
 
 #Where we'll expand them to
 sectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/sectionals/"
@@ -14,22 +14,23 @@ clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShape
 #Where to store the clipped rasters
 clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/"
 
-# Get a quick listing of files without the extentions
-# #ls -1 | sed -e 's/\.tif//g'
-# 
-# #Get all of the latest charts
-#  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/
-#  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/
-# 
-# #Unzip all of the sectional charts
-# unzip -u -j "*.zip" "*.tif"
-# 
-cd $originalSectionalsDirectory
 
-# rm $sectionalsDirectory/*.tif
+cd $originalSectionalsDirectory
+#Unzip all of the sectional charts
+unzip -u -j "*.zip" "*.tif"
+
+#Remove current links if any exist
+#FILTER will be empty if no .tifs
+FILTER=$(find $sectionalsDirectory/ -type f \( -name "*.tif" \) )
+
+if [ -z ${FILTER} ]; then
+    echo "Deleting existing TIFFs"
+    rm $sectionalsDirectory/*.tif
+fi
+
 
 #Link latest revision of chart as a base name
-shopt -s nullglob
+shopt -s nullglob	
 for f in *.tif
 do
 	#Replace spaces in name with _
@@ -83,21 +84,22 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
     clippedName=clipped-$expandedName
       
     #Test if we need to expand the original file
-    if [  -f "$sectionalsDirectory/$expandedName.tif" ];
+    if [  ! -f "$sectionalsDirectory/$expandedName.tif" ];
       then
-      echo ---gdal_translate $sourceChartName
+       echo ---gdal_translate $sourceChartName
     
-#        gdal_translate \
-# 		   -of GTiff \
-#                    -strict \
-#                    -expand rgb \
-#                    -co TILED=YES \
-#                    -co COMPRESS=DEFLATE \
-#                    -co PREDICTOR=1 \
-#                    -co ZLEVEL=9 \
-#                    "$sectionalsDirectory/$sourceChartName.tif" \
-#                    "$sectionalsDirectory/$expandedName.tif"
-#       echo ---gdaladdo $sourceChartName   
+       gdal_translate \
+		   -of GTiff \
+                   -strict \
+                   -expand rgb \
+                   -co TILED=YES \
+                   -co COMPRESS=DEFLATE \
+                   -co PREDICTOR=1 \
+                   -co ZLEVEL=9 \
+                   "$sectionalsDirectory/$sourceChartName.tif" \
+                   "$sectionalsDirectory/$expandedName.tif"
+    
+      echo ---gdaladdo $sourceChartName   
       
       #Create external overviews to make display faster in QGIS
       gdaladdo \

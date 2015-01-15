@@ -2,21 +2,31 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
+#Where the original .tif files are from aeronav
+originalSourceDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/enroute/01-08-2015/"
+
+#Where we'll expand them to
 expandedFilesDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/IFR/"
+
+#Where the polygons for clipping are stored
 clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+
+#Where to store clipped rasters
 clippedRastersTacDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/IFR/"
 
+
+
+
+#Where to store the clipped rasters
 #~/Documents/myPrograms/mergedCharts/test/aeronav.faa.gov/content/aeronav/tac_files
 
-# Get a quick listing of files without the extentions
-# #ls -1 | sed -e 's/\.tif//g'
-# 
-# #Get all of the latest charts
-#  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr/
-#  wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr/
-# 
-# #Unzip all of the sectional charts
-# unzip -u -j "*.zip" "*.tif"
+cd $originalSourceDirectory
+#Ignore unzipping errors
+set +e
+#Unzip all of the sectional charts
+unzip -u -j "*.zip" "*.tif"
+#Restore quit on error
+set -e
 # 
 # # #Link latest revision of chart as a base name
 # shopt -s nullglob
@@ -137,7 +147,11 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     #  if [-e $chartName*-warped.vrt ]
     #Pull the info for this chart from array
     sourceChartName=${tacCharts[i*$points+0]}
-
+    
+#     #The archive names are lower case, while the .TIFs within are uppercase
+#     sourceZipName=$(echo $sourceChartName | tr '[:upper:]' '[:lower:]')
+    
+    
     #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
@@ -148,17 +162,17 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     fi
 
     #Test if we need to expand the original file
-    if [ ! -f "$expandedFilesDirectory/$expandedName.vrt" ];
+    if [ ! -f "$expandedFilesDirectory/$expandedName.tif" ];
       then
-	echo ---gdal_translate $sourceChartName
+	echo --- Expand --- gdal_translate $sourceChartName
 	
 	gdal_translate \
-		      -of vrt \
+		      -of GTiff \
 		      -strict \
-		      "$expandedFilesDirectory/$sourceChartName.tif" \
+		      "/$originalSourceDirectory/$sourceChartName.tif" \
 		      "$expandedFilesDirectory/$expandedName.tif"
 	#Create external overviews to make display faster in QGIS
-        echo ---gdaladdo $sourceChartName             
+        echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
         gdaladdo \
              -ro \
              --config INTERLEAVE_OVERVIEW PIXEL \
@@ -171,20 +185,21 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     if [ ! -f "$clippingShapesDirectory/ifr-$sourceChartName.shp" ];
       then
 	echo ---No clipping shape found: "$clippingShapesDirectory/ifr-$sourceChartName.shp"
+	exit
     fi
-#	     -dstnodata 0 \
-# -co "COMPRESS=LZW
+    #	     -dstnodata 0 \
+    # -co "COMPRESS=LZW
 
-    #Warp the original file, clipping it to it's clipping shape
-#              -s_srs EPSG:4326 \
-#              -t_srs EPSG:3857 \
-#   -cblend 15 \
+	#Warp the original file, clipping it to it's clipping shape
+    #              -s_srs EPSG:4326 \
+    #              -t_srs EPSG:3857 \
+    #   	   -cblend 15 \
 
     #Test if we need to clip the expanded file
     if [ ! -f  "$clippedRastersTacDirectory/$clippedName.tif" ];
       then
       
-      echo ---gdalwarp $sourceChartName
+      echo --- Clip expanded file --- gdalwarp $sourceChartName
       gdalwarp \
 	      -cutline "$clippingShapesDirectory/ifr-$sourceChartName.shp" \
 	      -crop_to_cutline \
@@ -199,11 +214,11 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	      -co COMPRESS=DEFLATE \
 	      -co PREDICTOR=1 \
 	      -co ZLEVEL=9 \
-	      "$expandedFilesDirectory/$expandedName.vrt" \
+	      "$expandedFilesDirectory/$expandedName.tif" \
 	      "$clippedRastersTacDirectory/$clippedName.tif"
       
       #Create external overviews to make display faster in QGIS
-      echo ---gdaladdo $sourceChartName             
+      echo --- Overviews for clipped file --- gdaladdo $sourceChartName             
       gdaladdo \
 	      -ro \
 	      --config INTERLEAVE_OVERVIEW PIXEL \
@@ -213,15 +228,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	      2 4 8 16           
     fi
     
-    #Create external overviews to make display faster in QGIS
-    echo ---gdaladdo $sourceChartName             
-    gdaladdo \
-             -ro \
-             --config INTERLEAVE_OVERVIEW PIXEL \
-             --config COMPRESS_OVERVIEW JPEG \
-             --config BIGTIFF_OVERVIEW IF_NEEDED \
-              "$clippedRastersTacDirectory/$clippedName.tif" \
-             2 4 8 16         
+    
              
     echo "----------------------------------------------------------"
-    done
+  done
