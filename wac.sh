@@ -18,6 +18,26 @@ expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRast
 #Where clipped rasters are stored (step 3)
 clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/wac/"
 
+if [ ! -d $originalRastersDirectory ]; then
+    echo "$originalRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $linkedRastersDirectory ]; then
+    echo "$linkedRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $expandedRastersDirectory ]; then
+    echo "$expandedRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $clippedRastersDirectory ]; then
+    echo "$clippedRastersDirectory doesn't exist"
+    exit
+fi
+
 
 #Freshen the local files first
 
@@ -32,7 +52,7 @@ FILTER=$(find $linkedRastersDirectory/ -type f \( -name "*.tif" \) )
 
 if [ -z ${FILTER} ]; then
     echo "Deleting TIF links"
-    rm $linkedRastersDirectory/*.tif
+#     rm $linkedRastersDirectory/*.tif
 fi
 
 
@@ -52,28 +72,9 @@ do
 done
 
 Charts=(
-CC-8_WAC
-CC-9_WAC
-CD-10_WAC
-CD-11_WAC
-CD-12_WAC
-CE-12_WAC
-CE-13_WAC
-CE-15_WAC
-CF-16_WAC
-CF-17_WAC
-CF-18_WAC
-CF-19_WAC
-CG-18_WAC
-CG-19_WAC
-CG-20_WAC
-CG-21_WAC
-CH-22_WAC
-CH-23_WAC
-CH-24_WAC
-CH-25_WAC
-CJ-26_WAC
-CJ-27_WAC
+CC-8_WAC CC-9_WAC CD-10_WAC CD-11_WAC CD-12_WAC CE-12_WAC CE-13_WAC CE-15_WAC CF-16_WAC CF-17_WAC
+CF-18_WAC CF-19_WAC CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
+CJ-26_WAC CJ-27_WAC
 ) 
 
 #count of all items in chart array
@@ -110,7 +111,6 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	
 	gdal_translate \
 		      -strict \
-		      -expand rgb \
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi

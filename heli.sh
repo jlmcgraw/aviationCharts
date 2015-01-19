@@ -74,24 +74,9 @@ do
 done
 
 Charts=(
-Baltimore_HEL
-Boston_Downtown_HEL 
-Boston_HEL 
-Chicago_HEL f
-Chicago_O\'Hare_Inset_HEL 
-Dallas-Ft_Worth_HEL 
-Dallas-Love_Inset_HEL 
-Detroit_HEL
-Downtown_Manhattan_HEL 
-Eastern_Long_Island_HEL
-Houston_North_HEL
-Houston_South_HEL
-Los_Angeles_East_HEL
-Los_Angeles_West_HEL
-New_York_HEL
-U.S._Gulf_Coast_HEL
-Washington_HEL
-Washington_Inset_HEL
+Baltimore_HEL Boston_Downtown_HEL  Boston_HEL  Chicago_HEL f Chicago_O\'Hare_Inset_HEL  Dallas-Ft_Worth_HEL 
+Dallas-Love_Inset_HEL Detroit_HEL Downtown_Manhattan_HEL  Eastern_Long_Island_HEL Houston_North_HEL Houston_South_HEL
+Los_Angeles_East_HEL Los_Angeles_West_HEL New_York_HEL U.S._Gulf_Coast_HEL Washington_HEL Washington_Inset_HEL
 ) 
 
 #count of all items in chart array

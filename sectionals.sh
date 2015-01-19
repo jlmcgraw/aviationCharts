@@ -14,6 +14,26 @@ clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShape
 #Where to store the clipped rasters
 clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/"
 
+if [ ! -d $originalRastersDirectory ]; then
+    echo "$originalRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $linkedRastersDirectory ]; then
+    echo "$linkedRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $expandedRastersDirectory ]; then
+    echo "$expandedRastersDirectory doesn't exist"
+    exit
+fi
+
+if [ ! -d $clippedRastersDirectory ]; then
+    echo "$clippedRastersDirectory doesn't exist"
+    exit
+fi
+
 
 cd $originalSectionalsDirectory
 #Unzip all of the sectional charts
