@@ -1,42 +1,31 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
-# sourceRasters
-#   grand_canyon
-#   ifr
-#   sectional
-#   tac
-#   wac
-#   heli
-# expandedRasters
-#   grand_canyon
-#   ifr
-#   sectional
-#   tac
-#   wac
-#   heli
-# clippedRasters
-#   grand_canyon
-#   ifr
-#   sectional
-#   tac
-#   wac
-#   heli
-#Where the original .tif files are from aeronav
-originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/enroute/01-08-2015/"
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
+
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
+  exit 1
+fi
+
+chartType="enroute"
 
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
-linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/ifr/"
+linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
 
 #Where expanded rasters are stored (step 2)
-expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/ifr/"
-
-#Where the polygons for clipping are stored
-clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 
 #Where clipped rasters are stored (step 3)
-clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/ifr/"
+clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
+
+#Where the polygons for clipping are stored
+clippingShapesDirectory="$destinationRoot/clippingShapes/"
+
+
 
 
 if [ ! -d $originalRastersDirectory ]; then
@@ -96,14 +85,22 @@ set -e
 # ENR_H01
 # porc
 tacCharts=(
-ENR_A01_ATL ENR_A01_DCA ENR_A01_DET ENR_A01_JAX ENR_A01_MIA ENR_A01_MSP ENR_A01_STL
-ENR_A02_DEN ENR_A02_DFW ENR_A02_LAX ENR_A02_MKC ENR_A02_ORD ENR_A02_PHX ENR_A02_SFO ENR_AKH01_SEA
-ENR_AKL01_JNU ENR_AKL01 ENR_AKL01_VR ENR_AKL02C ENR_AKL02E ENR_AKL03_FAI ENR_AKL03_OME ENR_AKL04_ANC
-ENR_H02 ENR_H03 ENR_H04 ENR_H05 ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 ENR_H11 ENR_H12 ENR_L01
-ENR_L02 ENR_L03 ENR_L04 ENR_L05 ENR_L06N ENR_L06S ENR_L07 ENR_L08 ENR_L09 ENR_L10 ENR_L11 ENR_L12
-ENR_L13 ENR_L14 ENR_L15 ENR_L16 ENR_L17 ENR_L18 ENR_L19 ENR_L20 ENR_L21 ENR_L22 ENR_L23 ENR_L24
-ENR_L25 ENR_L26 ENR_L27 ENR_L28 ENR_L29 ENR_L30 ENR_L31 ENR_L32 ENR_L33 ENR_L34 ENR_L35 ENR_L36
-ENR_P01_GUA ENR_P02 narc watrs
+ENR_A01_ATL ENR_A01_DCA ENR_A01_DET ENR_A01_JAX ENR_A01_MIA ENR_A01_MSP 
+ENR_A01_STL ENR_A02_DEN ENR_A02_DFW ENR_A02_LAX ENR_A02_MKC ENR_A02_ORD 
+ENR_A02_PHX ENR_A02_SFO 
+ENR_AKH01_SEA 
+ENR_AKL01_JNU ENR_AKL01 ENR_AKL01_VR ENR_AKL02C ENR_AKL02E 
+ENR_AKL03_FAI ENR_AKL03_OME ENR_AKL04_ANC
+ENR_H02 ENR_H03 ENR_H04 ENR_H05 ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 
+ENR_H11 ENR_H12 
+ENR_L01 ENR_L02 ENR_L03 ENR_L04 ENR_L05 ENR_L06N ENR_L06S ENR_L07 
+ENR_L08 ENR_L09 ENR_L10 ENR_L11 ENR_L12 ENR_L13 ENR_L14 ENR_L15 ENR_L16 
+ENR_L17 ENR_L18 ENR_L19 ENR_L20 ENR_L21 ENR_L22 ENR_L23 ENR_L24 ENR_L25 
+ENR_L26 ENR_L27 ENR_L28 ENR_L29 ENR_L30 ENR_L31 ENR_L32 ENR_L33 ENR_L34 
+ENR_L35 ENR_L36
+ENR_P01_GUA ENR_P02 
+narc 
+watrs
 )
 
 #count of all items in chart array
@@ -132,10 +129,10 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
     
-    #For now, just skip if this clipped raster already exists
-    if [ -f "$clippedRastersDirectory/$clippedName.tif" ];
-      then continue;
-    fi
+#     #For now, just skip if this clipped raster already exists
+#     if [ -f "$clippedRastersDirectory/$clippedName.tif" ];
+#       then continue;
+#     fi
 
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
@@ -145,8 +142,11 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	gdal_translate \
 		      -of GTiff \
 		      -strict \
+		      -co TILED=YES \
+                      -co COMPRESS=LZW \
 		      "/$originalRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
+		      
 	#Create external overviews to make display faster in QGIS
         echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
         gdaladdo \
@@ -187,9 +187,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	      -wm 1024 \
 	      --config GDAL_CACHEMAX 256 \
 	      -co TILED=YES \
-	      -co COMPRESS=DEFLATE \
-	      -co PREDICTOR=1 \
-	      -co ZLEVEL=9 \
+              -co COMPRESS=LZW \
 	      "$expandedFilesDirectory/$expandedName.tif" \
 	      "$clippedRastersDirectory/$clippedName.tif"
       
@@ -206,5 +204,5 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     
     
              
-    echo "----------------------------------------------------------"
+    echo "--------------------------------------------------------------------------------------------------------------------"
   done

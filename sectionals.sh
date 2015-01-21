@@ -2,17 +2,32 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-#Where the original .tif files are from aeronav
-originalSectionalsDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/sectional_files/"
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
 
-#Where we'll expand them to
-sectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/sectionals/"
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
+  exit 1
+fi
+
+chartType="sectional"
+
+#For files that have a version in their name, this is where the links to the lastest version
+#will be stored (step 1)
+linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
+
+#Where expanded rasters are stored (step 2)
+expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
+
+#Where clipped rasters are stored (step 3)
+clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 
 #Where the polygons for clipping are stored
-clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+clippingShapesDirectory="$destinationRoot/clippingShapes/"
 
-#Where to store the clipped rasters
-clippedRastersSectionalsDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/"
+
+
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
@@ -35,17 +50,17 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 
-cd $originalSectionalsDirectory
+cd $originalRastersDirectory
 #Unzip all of the sectional charts
 unzip -u -j "*.zip" "*.tif"
 
 #Remove current links if any exist
 #FILTER will be empty if no .tifs
-FILTER=$(find $sectionalsDirectory/ -type f \( -name "*.tif" \) )
+FILTER=$(find $linkedRastersDirectory -type f \( -name "*.tif" \) )
 
 if [ -z ${FILTER} ]; then
     echo "Deleting existing TIFFs"
-    rm $sectionalsDirectory/*.tif
+#     rm $linkedRastersDirectory/*.tif
 fi
 
 
@@ -60,8 +75,8 @@ do
 	newName=($(printf $newName | sed 's/_SEC_[0-9][0-9]//ig'))
 
 	#If names are sorted properly, this will link latest version
-	echo "Linking $f -> $sectionalsDirectory$newName"
-	ln -s -f -r "$f" $sectionalsDirectory$newName
+	echo "Linking $f -> $linkedRastersDirectory$newName"
+	ln -s -f -r "$f" $linkedRastersDirectory$newName
 done
 
 sectionalCharts=(
@@ -76,7 +91,7 @@ St_Louis Twin_Cities Washington
 Western_Aleutian_Islands_West Whitehorse Wichita
 ) 
 
-cd $originalSectionalsDirectory
+cd $linkedRastersDirectory
 
 #Removing this one for now since it crosses the dateline
 #Western_Aleutian_Islands_East
@@ -104,7 +119,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
     clippedName=clipped-$expandedName
       
     #Test if we need to expand the original file
-    if [  ! -f "$sectionalsDirectory/$expandedName.tif" ];
+    if [  ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
        echo ---gdal_translate $sourceChartName
     
@@ -113,11 +128,9 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
                    -strict \
                    -expand rgb \
                    -co TILED=YES \
-                   -co COMPRESS=DEFLATE \
-                   -co PREDICTOR=1 \
-                   -co ZLEVEL=9 \
-                   "$sectionalsDirectory/$sourceChartName.tif" \
-                   "$sectionalsDirectory/$expandedName.tif"
+                   -co COMPRESS=LZW \
+                   "$linkedRastersDirectory/$sourceChartName.tif" \
+                   "$expandedRastersDirectory/$expandedName.tif"
     
       echo ---gdaladdo $sourceChartName   
       
@@ -127,14 +140,14 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
 	      --config INTERLEAVE_OVERVIEW PIXEL \
 	      --config COMPRESS_OVERVIEW JPEG \
 	      --config BIGTIFF_OVERVIEW IF_NEEDED \
-	      "$sectionalsDirectory/$expandedName.tif" \
+	      "$expandedRastersDirectory/$expandedName.tif" \
 	      2 4 8 16  		    
     fi
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
 
     #Skip if the clipped file already exists
-    if [ ! -f "$clippedRastersSectionalsDirectory/$clippedName.tif" ];
+    if [ ! -f "$clippedRastersDirectory/$clippedName.tif" ];
       then
       
       echo ---gdalwarp $sourceChartName
@@ -149,11 +162,9 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
 	      -overwrite \
 	      -wm 1024 \
 	      -co TILED=YES \
-	      -co COMPRESS=DEFLATE \
-	      -co PREDICTOR=1 \
-	      -co ZLEVEL=9 \
-	      "$sectionalsDirectory/$expandedName.tif" \
-	      "$clippedRastersSectionalsDirectory/$clippedName.tif"
+              -co COMPRESS=LZW \
+	      "$expandedRastersDirectory/$expandedName.tif" \
+	      "$clippedRastersDirectory/$clippedName.tif"
 
       #Create external overviews to make display faster in QGIS
       echo ---gdaladdo $sourceChartName             
@@ -162,7 +173,7 @@ for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
 	      --config INTERLEAVE_OVERVIEW PIXEL \
 	      --config COMPRESS_OVERVIEW JPEG \
 	      --config BIGTIFF_OVERVIEW IF_NEEDED \
-	      "$clippedRastersSectionalsDirectory/$clippedName.tif" \
+	      "$clippedRastersDirectory/$clippedName.tif" \
 	      2 4 8 16         
              
     fi

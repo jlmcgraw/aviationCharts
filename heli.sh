@@ -2,21 +2,32 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-#Where the original .tif files are from aeronav
-originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/heli_files/"
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
 
-#Where the polygons for clipping are stored
-clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
+  exit 1
+fi
+
+chartType="heli"
 
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
-linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/heli/"
+linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
 
 #Where expanded rasters are stored (step 2)
-expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/heli/"
+expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 
 #Where clipped rasters are stored (step 3)
-clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/heli/"
+clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
+
+#Where the polygons for clipping are stored
+clippingShapesDirectory="$destinationRoot/clippingShapes/"
+
+
+
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
@@ -74,9 +85,12 @@ do
 done
 
 Charts=(
-Baltimore_HEL Boston_Downtown_HEL  Boston_HEL  Chicago_HEL f Chicago_O\'Hare_Inset_HEL  Dallas-Ft_Worth_HEL 
-Dallas-Love_Inset_HEL Detroit_HEL Downtown_Manhattan_HEL  Eastern_Long_Island_HEL Houston_North_HEL Houston_South_HEL
-Los_Angeles_East_HEL Los_Angeles_West_HEL New_York_HEL U.S._Gulf_Coast_HEL Washington_HEL Washington_Inset_HEL
+Baltimore_HEL Boston_Downtown_HEL  Boston_HEL  Chicago_HEL 
+Chicago_O\'Hare_Inset_HEL  Dallas-Ft_Worth_HEL 
+Dallas-Love_Inset_HEL Detroit_HEL Downtown_Manhattan_HEL  
+Eastern_Long_Island_HEL Houston_North_HEL Houston_South_HEL
+Los_Angeles_East_HEL Los_Angeles_West_HEL New_York_HEL U.S._Gulf_Coast_HEL 
+Washington_HEL Washington_Inset_HEL
 ) 
 
 #count of all items in chart array
@@ -114,6 +128,8 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	gdal_translate \
 		      -strict \
 		      -expand rgb \
+		      -co TILED=YES \
+                      -co COMPRESS=LZW \
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi
@@ -139,9 +155,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -overwrite \
              -wm 1024 \
              -co TILED=YES \
-             -co COMPRESS=DEFLATE \
-             -co PREDICTOR=1 \
-             -co ZLEVEL=9 \
+             -co COMPRESS=LZW \
              "$expandedRastersDirectory/$expandedName.tif" \
              "$clippedRastersDirectory/$clippedName.tif"
     

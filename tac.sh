@@ -2,21 +2,32 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-#Where the original .tif files are from aeronav
-originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/tac_files/"
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
 
-#Where the polygons for clipping are stored
-clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
+  exit 1
+fi
+
+chartType="tac"
 
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
-linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/TAC/"
+linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
 
 #Where expanded rasters are stored (step 2)
-expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/tac/"
+expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 
 #Where clipped rasters are stored (step 3)
-clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/tac/"
+clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
+
+#Where the polygons for clipping are stored
+clippingShapesDirectory="$destinationRoot/clippingShapes/"
+
+
+
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
@@ -52,7 +63,7 @@ FILTER=$(find $linkedRastersDirectory/ -type f \( -name "*.tif" \) )
 
 if [ -z ${FILTER} ]; then
     echo "Deleting TIF links"
-    rm $linkedRastersDirectory/*.tif
+#     rm $linkedRastersDirectory/*.tif
 fi
 
 
@@ -74,11 +85,12 @@ done
 
 
 tacCharts=(
-Anchorage_TAC Atlanta_TAC Baltimore-Washington_TAC Boston_TAC Charlotte_TAC Chicago_TAC Cincinnati_TAC
-Cleveland_TAC Colorado_Springs_TAC Dallas-Ft_Worth_TAC Denver_TAC Detroit_TAC Fairbanks_TAC
-Houston_TAC Kansas_City_TAC Las_Vegas_TAC Los_Angeles_TAC Memphis_TAC Miami_TAC Minneapolis-St_Paul_TAC
-New_Orleans_TAC New_York_TAC Orlando_TAC Philadelphia_TAC Phoenix_TAC Pittsburgh_TAC Puerto_Rico-VI_TACSalt_Lake_City_TAC
-San_Diego_TAC San_Francisco_TAC Seattle_TAC St_Louis_TAC Tampa_TAC
+Anchorage_TAC Atlanta_TAC Baltimore-Washington_TAC Boston_TAC Charlotte_TAC 
+Chicago_TAC Cincinnati_TAC Cleveland_TAC Colorado_Springs_TAC Dallas-Ft_Worth_TAC 
+Denver_TAC Detroit_TAC Fairbanks_TAC Houston_TAC Kansas_City_TAC Las_Vegas_TAC 
+Los_Angeles_TAC Memphis_TAC Miami_TAC Minneapolis-St_Paul_TAC New_Orleans_TAC 
+New_York_TAC Orlando_TAC Philadelphia_TAC Phoenix_TAC Pittsburgh_TAC Puerto_Rico-VI_TAC 
+Salt_Lake_City_TAC San_Diego_TAC San_Francisco_TAC Seattle_TAC St_Louis_TAC Tampa_TAC
 ) 
 
 #count of all items in chart array
@@ -116,6 +128,8 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	gdal_translate \
 		      -strict \
 		      -expand rgb \
+		      -co TILED=YES \
+                      -co COMPRESS=LZW \
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi
@@ -136,9 +150,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -overwrite \
              -wm 1024 \
              -co TILED=YES \
-             -co COMPRESS=DEFLATE \
-             -co PREDICTOR=1 \
-             -co ZLEVEL=9 \
+             -co COMPRESS=LZW \
              "$expandedRastersDirectory/$expandedName.tif" \
              "$clippedRastersDirectory/$clippedName.tif"
     

@@ -2,21 +2,30 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-#Where the original .tif files are from aeronav
-originalRastersDirectory="/media/sf_Apricorn/charts/aeronav.faa.gov/content/aeronav/wac_files/"
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
 
-#Where the polygons for clipping are stored
-clippingShapesDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippingShapes/"
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
+  exit 1
+fi
 
+chartType="wac"
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
-linkedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/sourceRasters/wac/"
+linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
 
 #Where expanded rasters are stored (step 2)
-expandedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/expandedRasters/wac/"
+expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 
 #Where clipped rasters are stored (step 3)
-clippedRastersDirectory="${HOME}/Documents/myPrograms/mergedCharts/clippedRasters/wac/"
+clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
+
+#Where the polygons for clipping are stored
+clippingShapesDirectory="$destinationRoot/clippingShapes/"
+
+
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
@@ -70,10 +79,19 @@ do
 	echo "Linking $f -> $linkedRastersDirectory/$newName"
 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
 done
+crossDateline=(
+CC-8_WAC
+CD-10_WAC 
+CE-12_WAC
+)
 
 Charts=(
-CC-8_WAC CC-9_WAC CD-10_WAC CD-11_WAC CD-12_WAC CE-12_WAC CE-13_WAC CE-15_WAC CF-16_WAC CF-17_WAC
-CF-18_WAC CF-19_WAC CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
+CC-9_WAC  
+CD-11_WAC CD-12_WAC  
+CE-13_WAC CE-15_WAC 
+CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC 
+CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC 
+CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
 CJ-26_WAC CJ-27_WAC
 ) 
 
@@ -108,9 +126,14 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
 	echo --- Expand --- gdal_translate $sourceChartName
-	
+# 	          -co COMPRESS=DEFLATE \
+#                       -co PREDICTOR=2 \
+#                       -co ZLEVEL=9 \
 	gdal_translate \
 		      -strict \
+		      -expand rgb \
+                      -co TILED=YES \
+                      -co COMPRESS=LZW \
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi
@@ -121,8 +144,11 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	exit
     fi  
 #	     -dstnodata 0 \
-# -co "COMPRESS=LZW
-
+# -co "COMPRESS=LZW (fastest)
+# -co "COMPRESS=DEFLATE (slow)
+# -co "COMPRESS=LZMA (very slow)
+#              -co PREDICTOR=2 \
+#              -co ZLEVEL=9 \
     #Warp the original file, clipping it to it's clipping shape
     echo --- Clip --- gdalwarp $sourceChartName
     gdalwarp \
@@ -136,9 +162,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -overwrite \
              -wm 1024 \
              -co TILED=YES \
-             -co COMPRESS=DEFLATE \
-             -co PREDICTOR=1 \
-             -co ZLEVEL=9 \
+             -co COMPRESS=LZW \
              "$expandedRastersDirectory/$expandedName.tif" \
              "$clippedRastersDirectory/$clippedName.tif"
     
@@ -152,5 +176,5 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              "$clippedRastersDirectory/$clippedName.tif" \
              2 4 8 16         
              
-    echo "----------------------------------------------------------"
+    echo "--------------------------------------------------------------------------------------------- -----------------------"
     done
