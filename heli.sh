@@ -59,13 +59,13 @@ unzip -u -j "*.zip" "*.tif"
 
 #Remove current links if any exist
 #FILTER will be empty if no .tifs
-FILTER=$(find $linkedRastersDirectory/ -type f \( -name "*.tif" \) )
+FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
 
 
-
-if [ -z ${FILTER} ]; then
+if [[ ! -z ${FILTER} ]]; then
     echo "Deleting TIF links"
-    rm $linkedRastersDirectory/*.tif
+#     echo $FILTER
+    rm $FILTER
 fi
 
 
@@ -84,7 +84,7 @@ do
 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
 done
 
-Charts=(
+chartArray=(
 Baltimore_HEL Boston_Downtown_HEL  Boston_HEL  Chicago_HEL 
 Chicago_O\'Hare_Inset_HEL  Dallas-Ft_Worth_HEL 
 Dallas-Love_Inset_HEL Detroit_HEL Downtown_Manhattan_HEL  
@@ -94,22 +94,22 @@ Washington_HEL Washington_Inset_HEL
 ) 
 
 #count of all items in chart array
-ChartArrayLength=${#Charts[*]}
+chartArrayLength=${#chartArray[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfTacCharts=$ChartArrayLength/$points;
+let numberOfCharts=$chartArrayLength/$points;
 
-echo Found $numberOfTacCharts TAC charts
+echo Found $numberOfCharts $chartType charts
 
 #Loop through all of the charts in our array and process them
-for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
+for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
     #  if [-e $chartName*-warped.vrt ]
     #Pull the info for this chart from array
-    sourceChartName=${Charts[i*$points+0]}
+    sourceChartName=${chartArray[i*$points+0]}
 
     #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
@@ -156,6 +156,8 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
              -wm 1024 \
              -co TILED=YES \
              -co COMPRESS=LZW \
+             -t_srs EPSG:3857 \
+             -r bilinear \
              "$expandedRastersDirectory/$expandedName.tif" \
              "$clippedRastersDirectory/$clippedName.tif"
     

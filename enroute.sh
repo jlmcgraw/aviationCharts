@@ -48,10 +48,6 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit
 fi
 
-
-#Where to store the clipped rasters
-#~/Documents/myPrograms/mergedCharts/test/aeronav.faa.gov/content/aeronav/tac_files
-
 cd $originalRastersDirectory
 #Ignore unzipping errors
 set +e
@@ -60,22 +56,9 @@ unzip -u -j "*.zip" "*.tif"
 #Restore quit on error
 set -e
 # 
-# # #Link latest revision of chart as a base name
-# shopt -s nullglob
-# for f in *.tif
-# do
-# 	#Replace spaces in name with _
-# 	newName=($(printf $f | sed 's/\s/_/g'))
-# 
-# # 	#Strip off the series number
-# # 	newName=($(printf $newName | sed 's/_[0-9][0-9]//ig'))
-# 
-# 	#If names are sorted properly, this will link latest version
-# 	echo "Linking $f -> $expandedFilesDirectory$newName"
-# 	ln -s -f -r "$f" $expandedFilesDirectory$newName
-# done
 
-#These span the dateline
+
+#These span the anti-meridian
 # ENR_AKH01
 # ENR_AKH02
 # ENR_P01
@@ -84,7 +67,8 @@ set -e
 # ENR_AKL04
 # ENR_H01
 # porc
-tacCharts=(
+
+chartArray=(
 ENR_A01_ATL ENR_A01_DCA ENR_A01_DET ENR_A01_JAX ENR_A01_MIA ENR_A01_MSP 
 ENR_A01_STL ENR_A02_DEN ENR_A02_DFW ENR_A02_LAX ENR_A02_MKC ENR_A02_ORD 
 ENR_A02_PHX ENR_A02_SFO 
@@ -104,22 +88,22 @@ watrs
 )
 
 #count of all items in chart array
-tacChartArrayLength=${#tacCharts[*]}
+chartArrayLength=${#chartArray[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfTacCharts=$tacChartArrayLength/$points;
+let numberOfCharts=$chartArrayLength/$points;
 
-echo Found $numberOfTacCharts Enroute charts
+echo Found $numberOfCharts $chartType charts
 
 #Loop through all of the charts in our array and process them
-for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
+for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
-    #  if [-e $chartName*-warped.vrt ]
+   
     #Pull the info for this chart from array
-    sourceChartName=${tacCharts[i*$points+0]}
+    sourceChartName=${chartArray[i*$points+0]}
     
 #     #The archive names are lower case, while the .TIFs within are uppercase
 #     sourceZipName=$(echo $sourceChartName | tr '[:upper:]' '[:lower:]')
@@ -161,7 +145,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     if [ ! -f "$clippingShapesDirectory/ifr-$sourceChartName.shp" ];
       then
 	echo ---No clipping shape found: "$clippingShapesDirectory/ifr-$sourceChartName.shp"
-	exit
+	exit 1
     fi
     #	     -dstnodata 0 \
     # -co "COMPRESS=LZW
@@ -172,7 +156,7 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
     #   	   -cblend 15 \
 
     #Test if we need to clip the expanded file
-    if [ ! -f  "$clippedRastersTacDirectory/$clippedName.tif" ];
+    if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
       then
       
       echo --- Clip expanded file --- gdalwarp $sourceChartName
@@ -188,7 +172,9 @@ for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
 	      --config GDAL_CACHEMAX 256 \
 	      -co TILED=YES \
               -co COMPRESS=LZW \
-	      "$expandedFilesDirectory/$expandedName.tif" \
+              -t_srs EPSG:3857 \
+              -r bilinear \
+	      "$expandedRastersDirectory/$expandedName.tif" \
 	      "$clippedRastersDirectory/$clippedName.tif"
       
       #Create external overviews to make display faster in QGIS

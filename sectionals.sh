@@ -56,11 +56,13 @@ unzip -u -j "*.zip" "*.tif"
 
 #Remove current links if any exist
 #FILTER will be empty if no .tifs
-FILTER=$(find $linkedRastersDirectory -type f \( -name "*.tif" \) )
+FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
 
-if [ -z ${FILTER} ]; then
-    echo "Deleting existing TIFFs"
-#     rm $linkedRastersDirectory/*.tif
+
+if [[ ! -z ${FILTER} ]]; then
+    echo "Deleting TIF links"
+#     echo $FILTER
+    rm $FILTER
 fi
 
 
@@ -79,7 +81,7 @@ do
 	ln -s -f -r "$f" $linkedRastersDirectory$newName
 done
 
-sectionalCharts=(
+chartArray=(
 Albuquerque Anchorage Atlanta Bethel Billings Brownsville Cape_Lisburne Charlotte
 Cheyenne Chicago Cincinnati Cold_Bay Dallas-Ft_Worth Dawson Denver Detroit
 Dutch_Harbor El_Paso Fairbanks Great_Falls Green_Bay Halifax Hawaiian_Islands 
@@ -93,28 +95,27 @@ Western_Aleutian_Islands_West Whitehorse Wichita
 
 cd $linkedRastersDirectory
 
-#Removing this one for now since it crosses the dateline
+#These span the anti-meridian
 #Western_Aleutian_Islands_East
 
 #count of all items in chart array
-sectionalChartArrayLength=${#sectionalCharts[*]}
+chartArrayLength=${#chartArray[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfSectionalCharts=$sectionalChartArrayLength/$points;
+let numberOfCharts=$chartArrayLength/$points;
 
-echo Found $numberOfSectionalCharts sectional charts
+echo Found $numberOfCharts $chartType charts
 
 #Loop through all of the charts in our array and process them
-for (( i=0; i<=$(( $numberOfSectionalCharts-1 )); i++ ))
+for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
-    #  if [-e $chartName*-warped.vrt ]
+   
     #Pull the info for this chart from array
-    sourceChartName=${sectionalCharts[i*$points+0]}
+    sourceChartName=${chartArray[i*$points+0]}
 
-    #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
       

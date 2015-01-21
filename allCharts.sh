@@ -1,6 +1,11 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+#TODO
+# BUG in cleaning out .tif files
+# Generic variable names in subscripts
+# Warp to EPSG 3857
+# Anywhere we exit, exit with error code
 
 #Root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"
@@ -18,11 +23,17 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 
-#Update local charts
-# ./freshenLocalCharts.sh $chartsRoot
-# ./sectionals.sh $originalSectionalDirectory $destinationRoot
+#Update local chart copies
+./freshenLocalCharts.sh $chartsRoot
+
+# Expand charts to RGB bands as necessary and clip to polygons
+./sectionals.sh $originalSectionalDirectory $destinationRoot
 ./tac.sh $originalTacDirectory $destinationRoot
-# ./wac.sh $originalWacDirectory $destinationRoot
-# ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
-# ./enroute.sh $originalEnrouteDirectory $destinationRoot
-# ./heli.sh $originalHeliDirectory $destinationRoot
+./wac.sh $originalWacDirectory $destinationRoot
+./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
+./enroute.sh $originalEnrouteDirectory $destinationRoot
+./heli.sh $originalHeliDirectory $destinationRoot
+
+# Convert to tiles
+
+# Convert to mbtiles

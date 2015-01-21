@@ -59,13 +59,14 @@ unzip -u -j "*.zip" "*.tif"
 
 #Remove current links if any exist
 #FILTER will be empty if no .tifs
-FILTER=$(find $linkedRastersDirectory/ -type f \( -name "*.tif" \) )
+FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
 
-if [ -z ${FILTER} ]; then
+
+if [[ ! -z ${FILTER} ]]; then
     echo "Deleting TIF links"
-#     rm $linkedRastersDirectory/*.tif
+#     echo $FILTER
+    rm $FILTER
 fi
-
 
 #Link latest revision of chart as a base name
 shopt -s nullglob	
@@ -84,7 +85,7 @@ done
 
 
 
-tacCharts=(
+chartArray=(
 Anchorage_TAC Atlanta_TAC Baltimore-Washington_TAC Boston_TAC Charlotte_TAC 
 Chicago_TAC Cincinnati_TAC Cleveland_TAC Colorado_Springs_TAC Dallas-Ft_Worth_TAC 
 Denver_TAC Detroit_TAC Fairbanks_TAC Houston_TAC Kansas_City_TAC Las_Vegas_TAC 
@@ -94,22 +95,22 @@ Salt_Lake_City_TAC San_Diego_TAC San_Francisco_TAC Seattle_TAC St_Louis_TAC Tamp
 ) 
 
 #count of all items in chart array
-tacChartArrayLength=${#tacCharts[*]}
+chartArrayLength=${#chartArray[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfTacCharts=$tacChartArrayLength/$points;
+let numberOfCharts=$chartArrayLength/$points;
 
-echo Found $numberOfTacCharts TAC charts
+echo Found $numberOfCharts $chartType charts
 
 #Loop through all of the charts in our array and process them
-for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
+for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
-    #  if [-e $chartName*-warped.vrt ]
+   
     #Pull the info for this chart from array
-    sourceChartName=${tacCharts[i*$points+0]}
+    sourceChartName=${chartArray[i*$points+0]}
 
     #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName

@@ -57,13 +57,14 @@ unzip -u -j "*.zip" "*.tif"
 
 #Remove current links if any exist
 #FILTER will be empty if no .tifs
-FILTER=$(find $linkedRastersDirectory/ -type f \( -name "*.tif" \) )
+FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
 
-if [ -z ${FILTER} ]; then
+
+if [[ ! -z ${FILTER} ]]; then
     echo "Deleting TIF links"
-#     rm $linkedRastersDirectory/*.tif
+#     echo $FILTER
+    rm $FILTER
 fi
-
 
 #Link latest revision of chart as a base name
 shopt -s nullglob	
@@ -79,13 +80,14 @@ do
 	echo "Linking $f -> $linkedRastersDirectory/$newName"
 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
 done
-crossDateline=(
+#These span the anti-meridian
+crossAntiMeridian=(
 CC-8_WAC
 CD-10_WAC 
 CE-12_WAC
 )
 
-Charts=(
+chartArray=(
 CC-9_WAC  
 CD-11_WAC CD-12_WAC  
 CE-13_WAC CE-15_WAC 
@@ -96,22 +98,22 @@ CJ-26_WAC CJ-27_WAC
 ) 
 
 #count of all items in chart array
-ChartArrayLength=${#Charts[*]}
+chartArrayLength=${#chartArray[*]}
 
 #data points for each entry
 let points=1
 
 #divided by size of each entry gives number of charts
-let numberOfTacCharts=$ChartArrayLength/$points;
+let numberOfCharts=$chartArrayLength/$points;
 
-echo Found $numberOfTacCharts TAC charts
+echo Found $numberOfCharts $chartType charts
 
 #Loop through all of the charts in our array and process them
-for (( i=0; i<=$(( $numberOfTacCharts-1 )); i++ ))
+for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
-    #  if [-e $chartName*-warped.vrt ]
+   
     #Pull the info for this chart from array
-    sourceChartName=${Charts[i*$points+0]}
+    sourceChartName=${chartArray[i*$points+0]}
 
     #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
