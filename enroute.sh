@@ -46,44 +46,6 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit
 fi
 
-# cd $originalRastersDirectory
-# #Ignore unzipping errors
-# set +e
-# #Unzip all of the sectional charts
-# unzip -u -j "*.zip" "*.tif"
-# #Restore quit on error
-# set -e
-# 
-
-# #Remove current links if any exist
-# #FILTER will be empty if no .tifs
-# FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
-# 
-# 
-# if [[ ! -z ${FILTER} ]]; then
-#     echo "Deleting TIF links"
-# #     echo $FILTER
-#     rm $FILTER
-# fi
-# 
-# 
-# #Link latest revision of chart as a base name
-# shopt -s nullglob	
-# for f in *.tif
-# do
-# 	#Replace spaces in name with _
-# 	newName=($(printf $f | sed 's/\s/_/g'))
-# 
-# 	#Strip off the series number
-# 	newName=($(printf $newName | sed 's/_SEC_[0-9][0-9]//ig'))
-# 
-# 	#If names are sorted properly, this will link latest version
-# 	echo "Linking $f -> $linkedRastersDirectory$newName"
-# 	ln -s -f  -r "$f" $linkedRastersDirectory$newName
-# 	#Give the link the same date as the source raster
-# 	touch -h -r "$f" $linkedRastersDirectory$newName
-# done
-
 #These span the anti-meridian
 # ENR_AKH01
 # ENR_AKH02
@@ -133,83 +95,16 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
-    
-#     #For now, just skip if this clipped raster already exists
-#     if [ -f "$clippedRastersDirectory/$clippedName.tif" ];
-#       then continue;
-#     fi
 
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
-	echo --- Expand --- gdal_translate $sourceChartName
-	
-	gdal_translate \
-		      -of GTiff \
-		      -strict \
-		      -co TILED=YES \
-                      -co COMPRESS=LZW \
-		      "$linkedRastersDirectory/$sourceChartName.tif" \
-		      "$expandedRastersDirectory/$expandedName.tif"
-		      
-	#Create external overviews to make display faster in QGIS
-        echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
-        gdaladdo \
-             -ro \
-             --config INTERLEAVE_OVERVIEW PIXEL \
-             --config COMPRESS_OVERVIEW JPEG \
-             --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$expandedRastersDirectory/$expandedName.tif" \
-             2 4 8 16  	      
+	echo ./translateNoExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
       
-    if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
-      then
-	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
-	exit 1
-    fi
-    #	     -dstnodata 0 \
-    # -co "COMPRESS=LZW
-
-	#Warp the original file, clipping it to it's clipping shape
-    #              -s_srs EPSG:4326 \
-    #              -t_srs EPSG:3857 \
-    #   	   -cblend 15 \
-
     #Test if we need to clip the expanded file
     if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
-      then
-      
-      echo --- Clip expanded file --- gdalwarp $sourceChartName
-      gdalwarp \
-	      -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
-	      -crop_to_cutline \
-	      -dstalpha \
-	      -of GTiff \
-	      -multi \
-	      -wo NUM_THREADS=ALL_CPUS  \
-	      -overwrite \
-	      -wm 1024 \
-	      --config GDAL_CACHEMAX 256 \
-	      -co TILED=YES \
-              -co COMPRESS=LZW \
-              -t_srs EPSG:3857 \
-              -r bilinear \
-	      "$expandedRastersDirectory/$expandedName.tif" \
-	      "$clippedRastersDirectory/$clippedName.tif"
-      
-      #Create external overviews to make display faster in QGIS
-      echo --- Overviews for clipped file --- gdaladdo $sourceChartName             
-      gdaladdo \
-	      -ro \
-	      --config INTERLEAVE_OVERVIEW PIXEL \
-	      --config COMPRESS_OVERVIEW JPEG \
-	      --config BIGTIFF_OVERVIEW IF_NEEDED \
-		"$clippedRastersDirectory/$clippedName.tif" \
-	      2 4 8 16           
-    fi
-    
-    
-             
-    echo "--------------------------------------------------------------------------------------------------------------------"
+      then      
+        echo ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+    fi    
   done

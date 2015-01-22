@@ -26,12 +26,20 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 #Update local chart copies
 # ./freshenLocalCharts.sh $chartsRoot
 
+#Update our local links to those (possibly new) original files
+# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+
 # Expand charts to RGB bands as necessary and clip to polygons
 # ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
 # ./tac.sh         $originalTacDirectory         $destinationRoot
 # ./wac.sh         $originalWacDirectory         $destinationRoot
 # ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
-# ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
+./enroute.sh     $originalEnrouteDirectory     $destinationRoot
 # ./heli.sh        $originalHeliDirectory        $destinationRoot
 
 # Convert to tiles

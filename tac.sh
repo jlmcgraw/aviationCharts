@@ -111,64 +111,18 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
    
     #Pull the info for this chart from array
     sourceChartName=${chartArray[i*$points+0]}
-
-    #sourceChartName=ENR_A01_DCA
+    
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
-    
-    #For now, just skip if this clipped raster already exists
-    if [ -f "$clippedRastersDirectory/$clippedName.tif" ];
-      then continue;
-    fi
 
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
-	echo --- Expand --- gdal_translate $sourceChartName
-	
-	gdal_translate \
-		      -strict \
-		      -expand rgb \
-		      -co TILED=YES \
-                      -co COMPRESS=LZW \
-		      "$linkedRastersDirectory/$sourceChartName.tif" \
-		      "$expandedRastersDirectory/$expandedName.tif"
-      fi
-      
-#	     -dstnodata 0 \
-# -co "COMPRESS=LZW
-  if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
-      then
-	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
-	exit 1
+	./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
-    
-    #Warp the original file, clipping it to it's clipping shape
-    echo --- Clip --- gdalwarp $sourceChartName
-    gdalwarp \
-             -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
-             -crop_to_cutline \
-             -dstalpha \
-             -of GTiff \
-             -cblend 15 \
-             -multi \
-             -wo NUM_THREADS=ALL_CPUS  \
-             -overwrite \
-             -wm 1024 \
-             -co TILED=YES \
-             -co COMPRESS=LZW \
-             "$expandedRastersDirectory/$expandedName.tif" \
-             "$clippedRastersDirectory/$clippedName.tif"
-    
-    #Create external overviews to make display faster in QGIS
-    echo --- Add overviews --- gdaladdo $sourceChartName             
-    gdaladdo \
-             -ro \
-             --config INTERLEAVE_OVERVIEW PIXEL \
-             --config COMPRESS_OVERVIEW JPEG \
-             --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$clippedRastersDirectory/$clippedName.tif" \
-             2 4 8 16         
-             
-    echo "----------------------------------------------------------"
-    done
+      
+        #Test if we need to clip the expanded file
+    if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
+      then      
+      ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+  done

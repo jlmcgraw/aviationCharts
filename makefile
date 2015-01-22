@@ -39,7 +39,7 @@ $(CLIPPED): $(CLIPPEDDIR)/clipped-expanded-%.tif: $(SHAPEDIR)/%.shp $(EXPANDEDDI
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
 # 	touch $@
-	echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot)
+	@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
 	@echo ----------------------------------------------------------------------------------------
 	
 $(EXPANDED):  $(EXPANDEDDIR)/expanded-%.tif: $(LINKDIR)/%.tif
@@ -47,7 +47,8 @@ $(EXPANDED):  $(EXPANDEDDIR)/expanded-%.tif: $(LINKDIR)/%.tif
 	@echo Build EXPAND: $@
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $<
-	touch $@
+	#BUG TODO Enroute charts don't have to be expanded
+	@echo ./translateExpand.sh
 
 $(SHAPES):  $(SHAPEDIR)/%.shp: $(LINKDIR)/%.tif
 	@echo Build SHAPE: $@
@@ -62,10 +63,10 @@ $(LINKS):
 # 	@touch $@
 	
 FRESHEN:
-	echo ./freshenLocalCharts.sh $(chartsRoot)
+	@echo ./freshenLocalCharts.sh $(chartsRoot)
 
 LINKS:
-# 	./updateLinks.sh $(originalEnrouteDirectory) $(destinationRoot) $(CHARTTYPE)
+	@echo ./updateLinks.sh $(originalEnrouteDirectory) $(destinationRoot) $(CHARTTYPE)
 # .PHONY: $(SHAPES) $(LINKS)
 
 # $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(EXPANDEDDIR)/%.tif
