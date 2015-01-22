@@ -2,10 +2,10 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #TODO
-# BUG in cleaning out .tif files
-# Generic variable names in subscripts
 # Warp to EPSG 3857
 # Anywhere we exit, exit with error code
+# Handle charts that cross anti-meridian
+# Make use of "make" to only process new charts
 
 #Root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"
@@ -36,4 +36,9 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 # Convert to tiles
 
+
+# Optimize the resulting .PNGs
+# find . -name "*.png" -exec pngquant --ext=.png --force {} \;
+
 # Convert to mbtiles
+~/Documents/github/mbutil/mb-util --scheme=tms ./Albuquerque ./Albe2.mbtiles

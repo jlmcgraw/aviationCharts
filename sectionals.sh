@@ -79,6 +79,8 @@ do
 	#If names are sorted properly, this will link latest version
 	echo "Linking $f -> $linkedRastersDirectory$newName"
 	ln -s -f -r "$f" $linkedRastersDirectory$newName
+	#Give the link the same date as the source raster
+	touch -r "$f" $linkedRastersDirectory$newName
 done
 
 chartArray=(
