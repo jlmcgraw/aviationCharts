@@ -11,12 +11,17 @@ if [ "$#" -ne 1 ] ; then
   exit 1
 fi
 
+if [ ! -d $AERONAV_ROOT_DIR ]; then
+    echo "$AERONAV_ROOT_DIR doesn't exist"
+    exit 1
+fi
+
 cd $AERONAV_ROOT_DIR
 
 #Get all of the latest charts
 set +e
-wget -nv -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
+wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
 echo ######################################
-wget -nv -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
+wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e
 

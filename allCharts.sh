@@ -24,15 +24,15 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 
 #Update local chart copies
-./freshenLocalCharts.sh $chartsRoot
+# ./freshenLocalCharts.sh $chartsRoot
 
 # Expand charts to RGB bands as necessary and clip to polygons
-./sectionals.sh $originalSectionalDirectory $destinationRoot
-./tac.sh $originalTacDirectory $destinationRoot
-./wac.sh $originalWacDirectory $destinationRoot
-./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
-./enroute.sh $originalEnrouteDirectory $destinationRoot
-./heli.sh $originalHeliDirectory $destinationRoot
+# ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
+# ./tac.sh         $originalTacDirectory         $destinationRoot
+# ./wac.sh         $originalWacDirectory         $destinationRoot
+# ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
+# ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
+# ./heli.sh        $originalHeliDirectory        $destinationRoot
 
 # Convert to tiles
 
@@ -41,4 +41,4 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 # find . -name "*.png" -exec pngquant --ext=.png --force {} \;
 
 # Convert to mbtiles
-~/Documents/github/mbutil/mb-util --scheme=tms ./Albuquerque ./Albe2.mbtiles
+# ~/Documents/github/mbutil/mb-util --scheme=tms ./Albuquerque ./Albe2.mbtiles

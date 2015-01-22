@@ -50,39 +50,39 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 
-#Freshen the local files first
-
-#Now unzip everything
-cd $originalRastersDirectory
-#Unzip all of the sectional charts
-unzip -u -j "*.zip" "*.tif"
-
-#Remove current links if any exist
-#FILTER will be empty if no .tifs
-FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
-
-
-if [[ ! -z ${FILTER} ]]; then
-    echo "Deleting TIF links"
-#     echo $FILTER
-    rm $FILTER
-fi
-
-
-#Link latest revision of chart as a base name
-shopt -s nullglob	
-for f in *.tif
-do
-	#Replace spaces in name with _
-	newName=($(printf $f | sed 's/\s/_/g'))
-
-	#Strip off the series number
-	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
-
-	#If names are sorted properly, this will link latest version
-	echo "Linking $f -> $linkedRastersDirectory/$newName"
-	ln -s -f -r "$f" $linkedRastersDirectory/$newName
-done
+# #Freshen the local files first
+# 
+# #Now unzip everything
+# cd $originalRastersDirectory
+# #Unzip all of the sectional charts
+# unzip -u -j "*.zip" "*.tif"
+# 
+# #Remove current links if any exist
+# #FILTER will be empty if no .tifs
+# FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
+# 
+# 
+# if [[ ! -z ${FILTER} ]]; then
+#     echo "Deleting TIF links"
+# #     echo $FILTER
+#     rm $FILTER
+# fi
+# 
+# 
+# #Link latest revision of chart as a base name
+# shopt -s nullglob	
+# for f in *.tif
+# do
+# 	#Replace spaces in name with _
+# 	newName=($(printf $f | sed 's/\s/_/g'))
+# 
+# 	#Strip off the series number
+# 	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
+# 
+# 	#If names are sorted properly, this will link latest version
+# 	echo "Linking $f -> $linkedRastersDirectory/$newName"
+# 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
+# done
 
 chartArray=(
 Baltimore_HEL Boston_Downtown_HEL  Boston_HEL  Chicago_HEL 

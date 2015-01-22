@@ -26,8 +26,6 @@ clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 
-
-
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
     exit
@@ -48,15 +46,43 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit
 fi
 
-cd $originalRastersDirectory
-#Ignore unzipping errors
-set +e
-#Unzip all of the sectional charts
-unzip -u -j "*.zip" "*.tif"
-#Restore quit on error
-set -e
+# cd $originalRastersDirectory
+# #Ignore unzipping errors
+# set +e
+# #Unzip all of the sectional charts
+# unzip -u -j "*.zip" "*.tif"
+# #Restore quit on error
+# set -e
 # 
 
+# #Remove current links if any exist
+# #FILTER will be empty if no .tifs
+# FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
+# 
+# 
+# if [[ ! -z ${FILTER} ]]; then
+#     echo "Deleting TIF links"
+# #     echo $FILTER
+#     rm $FILTER
+# fi
+# 
+# 
+# #Link latest revision of chart as a base name
+# shopt -s nullglob	
+# for f in *.tif
+# do
+# 	#Replace spaces in name with _
+# 	newName=($(printf $f | sed 's/\s/_/g'))
+# 
+# 	#Strip off the series number
+# 	newName=($(printf $newName | sed 's/_SEC_[0-9][0-9]//ig'))
+# 
+# 	#If names are sorted properly, this will link latest version
+# 	echo "Linking $f -> $linkedRastersDirectory$newName"
+# 	ln -s -f  -r "$f" $linkedRastersDirectory$newName
+# 	#Give the link the same date as the source raster
+# 	touch -h -r "$f" $linkedRastersDirectory$newName
+# done
 
 #These span the anti-meridian
 # ENR_AKH01
@@ -85,7 +111,7 @@ ENR_L35 ENR_L36
 ENR_P01_GUA ENR_P02 
 narc 
 watrs
-)
+) 
 
 #count of all items in chart array
 chartArrayLength=${#chartArray[*]}
@@ -105,11 +131,6 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Pull the info for this chart from array
     sourceChartName=${chartArray[i*$points+0]}
     
-#     #The archive names are lower case, while the .TIFs within are uppercase
-#     sourceZipName=$(echo $sourceChartName | tr '[:upper:]' '[:lower:]')
-    
-    
-    #sourceChartName=ENR_A01_DCA
     expandedName=expanded-$sourceChartName
     clippedName=clipped-$expandedName
     
@@ -128,7 +149,7 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
 		      -strict \
 		      -co TILED=YES \
                       -co COMPRESS=LZW \
-		      "/$originalRastersDirectory/$sourceChartName.tif" \
+		      "$linkedRastersDirectory/$sourceChartName.tif" \
 		      "$expandedRastersDirectory/$expandedName.tif"
 		      
 	#Create external overviews to make display faster in QGIS
