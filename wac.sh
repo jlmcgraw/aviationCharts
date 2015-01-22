@@ -12,6 +12,7 @@ if [ "$#" -ne 2 ] ; then
 fi
 
 chartType="wac"
+
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
 linkedRastersDirectory="$destinationRoot/sourceRasters/$chartType/"
@@ -23,7 +24,7 @@ expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 
 #Where the polygons for clipping are stored
-clippingShapesDirectory="$destinationRoot/clippingShapes/"
+clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 
 
@@ -140,11 +141,11 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
 		      "$expandedRastersDirectory/$expandedName.tif"
       fi
     
-    if [ ! -f "$clippingShapesDirectory/wac-$sourceChartName.shp" ];
+  if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
       then
-	echo ---No clipping shape found: "$clippingShapesDirectory/wac-$sourceChartName.shp"
-	exit
-    fi  
+	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
+	exit 1
+    fi
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW (fastest)
 # -co "COMPRESS=DEFLATE (slow)
@@ -154,7 +155,7 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Warp the original file, clipping it to it's clipping shape
     echo --- Clip --- gdalwarp $sourceChartName
     gdalwarp \
-             -cutline "$clippingShapesDirectory/wac-$sourceChartName.shp" \
+             -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
              -crop_to_cutline \
              -dstalpha \
              -of GTiff \

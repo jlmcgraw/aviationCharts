@@ -24,7 +24,7 @@ expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 
 #Where the polygons for clipping are stored
-clippingShapesDirectory="$destinationRoot/clippingShapes/"
+clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 
 
@@ -148,14 +148,19 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     fi
 #	     -dstnodata 0 \
 # -co "COMPRESS=LZW
-
+  if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
+      then
+	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
+	exit 1
+    fi
+    
     #Skip if the clipped file already exists
     if [ ! -f "$clippedRastersDirectory/$clippedName.tif" ];
       then
       
       echo ---gdalwarp $sourceChartName
       gdalwarp \
-	      -cutline "$clippingShapesDirectory/sectional-$sourceChartName.shp" \
+	      -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
 	      -crop_to_cutline \
 	      -dstalpha \
 	      -of GTiff \

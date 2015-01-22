@@ -23,7 +23,7 @@ expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 
 #Where the polygons for clipping are stored
-clippingShapesDirectory="$destinationRoot/clippingShapes/"
+clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 
 
@@ -142,9 +142,9 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
              2 4 8 16  	      
     fi
       
-    if [ ! -f "$clippingShapesDirectory/ifr-$sourceChartName.shp" ];
+    if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
       then
-	echo ---No clipping shape found: "$clippingShapesDirectory/ifr-$sourceChartName.shp"
+	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
 	exit 1
     fi
     #	     -dstnodata 0 \
@@ -161,7 +161,7 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
       
       echo --- Clip expanded file --- gdalwarp $sourceChartName
       gdalwarp \
-	      -cutline "$clippingShapesDirectory/ifr-$sourceChartName.shp" \
+	      -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
 	      -crop_to_cutline \
 	      -dstalpha \
 	      -of GTiff \
