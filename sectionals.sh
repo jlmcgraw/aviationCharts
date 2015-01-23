@@ -90,13 +90,13 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
-	echo ./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+	./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
       
         #Test if we need to clip the expanded file
     if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
       then      
-        echo ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+        ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
     
     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName

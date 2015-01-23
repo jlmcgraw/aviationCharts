@@ -26,29 +26,22 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 
 #Update local chart copies
-# ./freshenLocalCharts.sh $chartsRoot
+./freshenLocalCharts.sh $chartsRoot
 
 #Update our local links to those (possibly new) original files
-# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
-# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
-# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
-# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
-# Expand charts to RGB bands as necessary and clip to polygons
+# Expand charts to RGB bands as necessary
+# clip to polygons
+# Convert to a .mbtile
 ./heli.sh        $originalHeliDirectory        $destinationRoot
 ./tac.sh         $originalTacDirectory         $destinationRoot
 ./wac.sh         $originalWacDirectory         $destinationRoot
 ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
 ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
-
-
-# Convert to tiles
-
-# Optimize the resulting .PNGs
-# find . -name "*.png" -exec pngquant --ext=.png --force {} \;
-
-# Convert to mbtiles
-# ~/Documents/github/mbutil/mb-util --scheme=tms ./Albuquerque ./Albe2.mbtiles

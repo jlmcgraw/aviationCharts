@@ -30,22 +30,22 @@ clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $linkedRastersDirectory ]; then
     echo "$linkedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $expandedRastersDirectory ]; then
     echo "$expandedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 
@@ -81,7 +81,7 @@ do
 	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
 
 	#If names are sorted properly, this will link latest version
-	
+	#BUG TODO make the preference of latest revision explicit
 # 	echo "Linking $f -> $linkedRastersDirectory/$newName"
 	ln -s -f -r "$f" $linkedRastersDirectory/$newName
 	touch -h -r "$f" $linkedRastersDirectory$newName

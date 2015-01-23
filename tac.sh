@@ -31,22 +31,22 @@ clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $linkedRastersDirectory ]; then
     echo "$linkedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $expandedRastersDirectory ]; then
     echo "$expandedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 
