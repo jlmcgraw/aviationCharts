@@ -1,11 +1,17 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+
 #TODO
-# Warp to EPSG 3857
-# Anywhere we exit, exit with error code
+# Warp to EPSG:3857
+# Anywhere we exit, exit with an error code
 # Handle charts that cross anti-meridian
 # Make use of "make" to only process new charts
+# Optimize the mbtile creation process
+#	Parallel tiling (distribute amongst local cores, remote machines)
+#	Lanczos for resampling
+#	Optimizing size of individual tiles via pngcrush, pngquant, optipng etc
+#	Linking of redundant tiles
 
 #Root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"
@@ -25,10 +31,11 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 
-#Update local chart copies
+#Update local chart copies from Aeronav source
 ./freshenLocalCharts.sh $chartsRoot
 
 #Update our local links to those (possibly new) original files
+#This handles charts that have revisions in the filename
 ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
 ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
 ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
