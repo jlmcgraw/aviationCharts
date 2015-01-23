@@ -7,10 +7,10 @@ EXPANDEDDIR =./expandedRasters/$(CHARTTYPE)
 CLIPPEDDIR =./clippedRasters/$(CHARTTYPE)
 MBTILESDIR =./mbtiles/$(CHARTTYPE)
 
-#Root of downloaded chart info
+#Root directory of where the aeronav charts are mirrored to
 chartsRoot=/media/sf_Shared_Folder/charts/
 
-#Where the original .tif files are from aeronav
+#Where the original .tif files of various types are from aeronav
 originalHeliDirectory="$(chartsRoot)/aeronav.faa.gov/content/aeronav/heli_files/"
 originalTacDirectory="$(chartsRoot)/aeronav.faa.gov/content/aeronav/tac_files/"
 originalWacDirectory="$(chartsRoot)/aeronav.faa.gov/content/aeronav/wac_files/"

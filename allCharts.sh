@@ -17,6 +17,8 @@ originalTacDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/tac_files/"
 originalWacDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/wac_files/"
 originalSectionalDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/sectional_files/"
 originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_canyon_files/"
+
+#BUG TODO This will need to be updated for every cycle
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 
 #Root of directories where our processed images etc will be saved
@@ -32,18 +34,18 @@ destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 # ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
 # ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
 # ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
 # Expand charts to RGB bands as necessary and clip to polygons
-# ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
-# ./tac.sh         $originalTacDirectory         $destinationRoot
-# ./wac.sh         $originalWacDirectory         $destinationRoot
-# ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
+./heli.sh        $originalHeliDirectory        $destinationRoot
+./tac.sh         $originalTacDirectory         $destinationRoot
+./wac.sh         $originalWacDirectory         $destinationRoot
+./sectionals.sh  $originalSectionalDirectory   $destinationRoot
+./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
-# ./heli.sh        $originalHeliDirectory        $destinationRoot
+
 
 # Convert to tiles
-
 
 # Optimize the resulting .PNGs
 # find . -name "*.png" -exec pngquant --ext=.png --force {} \;

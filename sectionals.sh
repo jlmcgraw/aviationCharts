@@ -49,6 +49,9 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit 1
 fi
 
+#These span the anti-meridian
+crossAntiMeridian=(Western_Aleutian_Islands_East)
+
 chartArray=(
 Albuquerque Anchorage Atlanta Bethel Billings Brownsville Cape_Lisburne Charlotte
 Cheyenne Chicago Cincinnati Cold_Bay Dallas-Ft_Worth Dawson Denver Detroit
@@ -61,10 +64,7 @@ St_Louis Twin_Cities Washington
 Western_Aleutian_Islands_West Whitehorse Wichita
 ) 
 
-# cd $linkedRastersDirectory
 
-#These span the anti-meridian
-#Western_Aleutian_Islands_East
 
 #count of all items in chart array
 chartArrayLength=${#chartArray[*]}
@@ -90,11 +90,14 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
       then
-	./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+	echo ./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
       
         #Test if we need to clip the expanded file
     if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
       then      
-      ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+        echo ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+    fi
+    
+    ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
   done
