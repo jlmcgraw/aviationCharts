@@ -31,24 +31,24 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 
-#Update local chart copies from Aeronav source
-./freshenLocalCharts.sh $chartsRoot
-
-#Update our local links to those (possibly new) original files
-#This handles charts that have revisions in the filename
-./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
-./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
-./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
-./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+# #Update local chart copies from Aeronav source
+# ./freshenLocalCharts.sh $chartsRoot
+# 
+# #Update our local links to those (possibly new) original files
+# #This handles charts that have revisions in the filename
+# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
 # Expand charts to RGB bands as necessary
 # clip to polygons
 # Convert to a .mbtile
-./heli.sh        $originalHeliDirectory        $destinationRoot
-./tac.sh         $originalTacDirectory         $destinationRoot
-./wac.sh         $originalWacDirectory         $destinationRoot
+# ./heli.sh        $originalHeliDirectory        $destinationRoot
+# ./tac.sh         $originalTacDirectory         $destinationRoot
+# ./wac.sh         $originalWacDirectory         $destinationRoot
 ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
 ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./enroute.sh     $originalEnrouteDirectory     $destinationRoot

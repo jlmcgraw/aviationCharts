@@ -7,9 +7,10 @@ originalRastersDirectory="$1"
 destinationRoot="$2"
 chartType="$3"
 sourceChartName="$4"
+zoomRange="$5"
 
-if [ "$#" -ne 4 ] ; then
-  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType sourceChartName" >&2
+if [ "$#" -ne 5 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType sourceChartName zoomRange" >&2
   exit 1
 fi
 
@@ -68,7 +69,9 @@ clippedName=clipped-$expandedName
 #BUG TODO Some charts need to go to deeper layers than others
 
 #Create tiles from the clipped raster
-~/Documents/github/gdal2mbtiles/gdal2mbtiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+# python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+# python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
 
 #Optimize those tiles
 # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;

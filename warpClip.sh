@@ -63,6 +63,7 @@ fi
              -dstalpha \
              -of GTiff \
              -cblend 15 \
+             -t_srs EPSG:3857 \
              -multi \
              -wo NUM_THREADS=ALL_CPUS  \
              -overwrite \

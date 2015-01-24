@@ -12,6 +12,7 @@ if [ "$#" -ne 2 ] ; then
 fi
 
 chartType="tac"
+zoomRange="0-12"
 
 #For files that have a version in their name, this is where the links to the lastest version
 #will be stored (step 1)
@@ -95,5 +96,5 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
         ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
     
-    ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+    ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
   done
