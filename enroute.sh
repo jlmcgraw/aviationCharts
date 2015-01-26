@@ -26,6 +26,8 @@ clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 #Where the polygons for clipping are stored
 clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
+#Where the mbtiles are stored
+mbtilesDirectory="$destinationRoot/mbtiles/$chartType/"
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
@@ -52,7 +54,6 @@ crossAntiMeridian=(
 ENR_AKH01 ENR_AKH02
 ENR_P01
 ENR_AKL02W ENR_AKL03 ENR_AKL04
-ENR_H01
 porc
 )
 
@@ -63,7 +64,7 @@ ENR_A02_PHX ENR_A02_SFO
 ENR_AKH01_SEA 
 ENR_AKL01_JNU ENR_AKL01 ENR_AKL01_VR ENR_AKL02C ENR_AKL02E 
 ENR_AKL03_FAI ENR_AKL03_OME ENR_AKL04_ANC
-ENR_H02 ENR_H03 ENR_H04 ENR_H05 ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 
+ENR_H01 ENR_H02 ENR_H03 ENR_H04 ENR_H05 ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 
 ENR_H11 ENR_H12 
 ENR_L01 ENR_L02 ENR_L03 ENR_L04 ENR_L05 ENR_L06N ENR_L06S ENR_L07 
 ENR_L08 ENR_L09 ENR_L10 ENR_L11 ENR_L12 ENR_L13 ENR_L14 ENR_L15 ENR_L16 
@@ -93,20 +94,24 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Pull the info for this chart from array
     sourceChartName=${chartArray[i*$points+0]}
     
-    expandedName=expanded-$sourceChartName
-    clippedName=clipped-$expandedName
+#     expandedName=expanded-$sourceChartName
+#     clippedName=clipped-$expandedName
 
     #Test if we need to expand the original file
-    if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
+    if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
       then
 	./translateNoExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
       
     #Test if we need to clip the expanded file
-    if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
+    if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
       then      
         ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi 
     
+    if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];
+      then      
     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
+    fi
+    
   done

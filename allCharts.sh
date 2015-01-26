@@ -4,6 +4,33 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #TODO
 # Warp to EPSG:3857
+#
+# translate then warp, or warp then translate?
+# 	Warp to vrt
+# 	Expand with predictor 2
+# 	  84.48MB
+# 
+# 	Warp to vrt
+# 	Expand with predictor 2
+# 	  real	15m43.391s
+# 	  user	14m58.413s
+# 	  sys	0m37.242s
+# 
+# 	warp to tiff
+# 	expand with predictor 2
+# 	real	16m25.018s
+# 	user	15m22.508s
+# 	sys	0m44.782s
+# 
+# 	translate
+# 	expand
+# 	      real	0m41.761s
+# 	      user	0m34.678s
+# 	      sys	0m4.506s
+# 	      real	2m34.359s
+# 	      user	1m37.086s
+# 	      sys	0m45.631s
+#
 # Anywhere we exit, exit with an error code
 # Handle charts that cross anti-meridian
 # Make use of "make" to only process new charts
@@ -12,6 +39,9 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #	Lanczos for resampling
 #	Optimizing size of individual tiles via pngcrush, pngquant, optipng etc
 #	Linking of redundant tiles
+# TAC max zoom 12
+# SEC max zoom 11
+# WAC max zoom 10
 
 #Root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"

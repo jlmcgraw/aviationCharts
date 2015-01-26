@@ -46,8 +46,8 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
  
-    expandedName=expanded-$sourceChartName
-    clippedName=clipped-$expandedName
+#     expandedName=expanded-$sourceChartName
+#     clippedName=clipped-$expandedName
   
 	echo --- Expand --- gdal_translate $sourceChartName
 	
@@ -57,7 +57,7 @@ fi
 		      -co TILED=YES \
                       -co COMPRESS=LZW \
 		      "$linkedRastersDirectory/$sourceChartName.tif" \
-		      "$expandedRastersDirectory/$expandedName.tif"
+		      "$expandedRastersDirectory/$sourceChartName.tif"
 		      
       	#Create external overviews to make display faster in QGIS
         echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
@@ -66,5 +66,5 @@ fi
              --config INTERLEAVE_OVERVIEW PIXEL \
              --config COMPRESS_OVERVIEW JPEG \
              --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$expandedRastersDirectory/$expandedName.tif" \
-             2 4 8 16  	 
+             "$expandedRastersDirectory/$sourceChartName.tif" \
+             2 4 8 16 32

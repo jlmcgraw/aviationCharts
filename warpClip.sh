@@ -44,10 +44,10 @@ if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
     exit 1
 fi
-
- 
-    expandedName=expanded-$sourceChartName
-    clippedName=clipped-$expandedName
+# 
+#  
+#     expandedName=expanded-$sourceChartName
+#     clippedName=clipped-$expandedName
   
     if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
       then
@@ -69,9 +69,9 @@ fi
              -overwrite \
              -wm 1024 \
              -co TILED=YES \
-             -co COMPRESS=LZW \
-             "$expandedRastersDirectory/$expandedName.tif" \
-             "$clippedRastersDirectory/$clippedName.tif"
+             -r lanczos \
+             "$expandedRastersDirectory/$sourceChartName.tif" \
+             "$clippedRastersDirectory/$sourceChartName.tif"
     
     #Create external overviews to make display faster in QGIS
     echo --- Add overviews --- gdaladdo $sourceChartName             
@@ -80,5 +80,5 @@ fi
              --config INTERLEAVE_OVERVIEW PIXEL \
              --config COMPRESS_OVERVIEW JPEG \
              --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$clippedRastersDirectory/$clippedName.tif" \
-             2 4 8 16
+             "$clippedRastersDirectory/$sourceChartName.tif" \
+             2 4 8 16 32

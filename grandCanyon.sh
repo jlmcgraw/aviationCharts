@@ -27,7 +27,8 @@ clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 #Where the polygons for clipping are stored
 clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
-
+#Where the mbtiles are stored
+mbtilesDirectory="$destinationRoot/mbtiles/$chartType/"
 
 
 if [ ! -d $originalRastersDirectory ]; then
@@ -73,20 +74,21 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     #Pull the info for this chart from array
     sourceChartName=${chartArray[i*$points+0]}
     
-    expandedName=expanded-$sourceChartName
-    clippedName=clipped-$expandedName
-
     #Test if we need to expand the original file
-    if [ ! -f "$expandedRastersDirectory/$expandedName.tif" ];
+    if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
       then
 	./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
       
         #Test if we need to clip the expanded file
-    if [ ! -f  "$clippedRastersDirectory/$clippedName.tif" ];
+    if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
       then      
         ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     fi
     
+    if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];
+      then      
     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
+    fi
+    
   done

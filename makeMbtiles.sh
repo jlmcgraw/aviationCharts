@@ -62,8 +62,8 @@ if [ ! -d $mbtilesDirectory ]; then
     exit 1
 fi
 
-expandedName=expanded-$sourceChartName
-clippedName=clipped-$expandedName
+# expandedName=expanded-$sourceChartName
+# clippedName=clipped-$expandedName
 
 #BUG TODO Handle when these directories already exist
 #BUG TODO Some charts need to go to deeper layers than others
@@ -71,14 +71,15 @@ clippedName=clipped-$expandedName
 #Create tiles from the clipped raster
 # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
 # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
-~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
 
 #Optimize those tiles
 # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
 #Get the number of online CPUs
 cpus=$(getconf _NPROCESSORS_ONLN)
-echo "Using $cpus CPUS"
+echo "Optimize PNGs, using $cpus CPUS"
 find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant --ext=.png --force
+
 #Package them into an .mbtiles file
 ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
 #Set the date of this new mbtiles to the date of the chart used to create it
