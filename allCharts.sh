@@ -13,7 +13,7 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #	Optimizing size of individual tiles via pngcrush, pngquant, optipng etc
 #	Linking of redundant tiles
 # TAC max zoom 12
-# SEC max zoom 11
+# SEC max zoom 11 (actually these vary)
 # WAC max zoom 10
 
 #Root of downloaded chart info
