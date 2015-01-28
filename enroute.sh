@@ -52,8 +52,8 @@ fi
 #These span the anti-meridian
 crossAntiMeridian=(
 ENR_AKH01 ENR_AKH02
-ENR_P01
 ENR_AKL02W ENR_AKL03 ENR_AKL04
+ENR_P01
 porc
 )
 
@@ -96,14 +96,16 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     
 #     expandedName=expanded-$sourceChartName
 #     clippedName=clipped-$expandedName
+    
+   
 
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
       then
 	./translateNoExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
-    fi
-      
-    #Test if we need to clip the expanded file
+    fi  
+
+     #Test if we need to clip the expanded file
     if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
       then      
         ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName

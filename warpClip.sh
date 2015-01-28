@@ -44,11 +44,8 @@ if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
     exit 1
 fi
-# 
-#  
-#     expandedName=expanded-$sourceChartName
-#     clippedName=clipped-$expandedName
   
+    #Make sure our clipping shape exists for this chart
     if [ ! -f "$clippingShapesDirectory/$sourceChartName.shp" ];
       then
 	echo ---No clipping shape found: "$clippingShapesDirectory/$sourceChartName.shp"
@@ -61,17 +58,31 @@ fi
              -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
              -crop_to_cutline \
              -dstalpha \
-             -of GTiff \
-             -cblend 15 \
+             -cblend 10 \
              -t_srs EPSG:3857 \
              -multi \
              -wo NUM_THREADS=ALL_CPUS  \
              -overwrite \
-             -wm 1024 \
+             -wm 512 \
+             --config GDAL_CACHEMAX 256 \
              -co TILED=YES \
              -r lanczos \
              "$expandedRastersDirectory/$sourceChartName.tif" \
-             "$clippedRastersDirectory/$sourceChartName.tif"
+             "$clippedRastersDirectory/$sourceChartName-temp.tif"
+    
+    #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
+    #If you want to make the files smaller, at the expense of CPU, you can enable these options
+    #      -co COMPRESS=DEFLATE \
+    #      -co PREDICTOR=1 \
+    #      -co ZLEVEL=9 \
+    gdal_translate \
+		      -strict \
+		      -co TILED=YES \
+                      -co COMPRESS=LZW \
+		      "$clippedRastersDirectory/$sourceChartName-temp.tif" \
+		      "$clippedRastersDirectory/$sourceChartName.tif"
+	
+    rm "$clippedRastersDirectory/$sourceChartName-temp.tif"
     
     #Create external overviews to make display faster in QGIS
     echo --- Add overviews --- gdaladdo $sourceChartName             
