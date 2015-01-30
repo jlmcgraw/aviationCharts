@@ -4,6 +4,8 @@ applications.
 
 It has only been tested under Ubuntu 14.10
 
+![Sectionals](https://raw.github.com/jlmcgraw/aviationCharts/master/sectional.png)
+
 # TODO
     - Handle charts which cross the anti-meridian
     - Pull out insets and georeference them as necessary
