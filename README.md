@@ -18,35 +18,35 @@ It has only been tested under Ubuntu 14.10
 # Getting Started
     - Edit allCharts.sh and update variables and create the corresponding directories as needed
 	
-	```
+```
 	#Full path to root of downloaded chart info
 	chartsRoot="/media/sf_Shared_Folder/charts/"
-        ```
+```
         
     - Update this information as appropriate for dirname of current enroute chart cycle
 	
-	```
+```
 	#This will need to be updated for every cycle
 	originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
-	```
+```
       
     - Edit makeMbtiles.sh to update the location of these commands on your system
 	
-	```
+```
 	~/Documents/github/gdal2mbtiles/gdal2mbtiles.py 
 	~/Documents/github/mbutil/mb-util
-	```
+```
 	
     - Create the directory tree
 	
-	```
+```
 	./createTree.sh
-	```
+```
 	
     - Execute allCharts.sh
 	
-	```
-	./allCharts.sh
-	```
+```
+./allCharts.sh
+```
       
     - Wait a very long time (assuming all went correctly)
