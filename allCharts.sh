@@ -19,8 +19,11 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #Full path to root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"
 
-#Full path to toot of directories where our processed images etc will be saved
-destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
+#Full path to where our script is, the root of directories where our processed images etc will be saved
+pushd `dirname $0` > /dev/null
+destinationRoot=`pwd`
+popd > /dev/null
+# destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 #BUG TODO This will need to be updated for every cycle
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"

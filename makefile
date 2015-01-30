@@ -1,4 +1,4 @@
-CHARTTYPE = sectional
+CHARTTYPE = enroute
 
 ORIGINALDIR =./original
 LINKDIR =./sourceRasters/$(CHARTTYPE)
@@ -28,12 +28,22 @@ SHAPES   = $(patsubst $(LINKDIR)/%.tif,$(SHAPEDIR)/%.shp,$(LINKS))
 EXPANDED = $(patsubst $(LINKDIR)/%.tif,$(EXPANDEDDIR)/%.tif,$(LINKS))
 WARPED   = $(patsubst $(LINKDIR)/%.tif,$(WARPEDDIR)/%.tif,$(LINKS)) 
 CLIPPED  = $(patsubst $(LINKDIR)/%.tif,$(CLIPPEDDIR)/%.tif,$(LINKS)) 
+MBTILE   = $(patsubst $(LINKDIR)/%.tif,$(MBTILESDIR)/%.tif,$(LINKS)) 
 
-all: FRESHEN LINKS $(CLIPPED) ALLCHARTS
+all: FRESHEN LINKS $(MBTILE) ALLCHARTS
 # 	@echo $(LINKS)
 # 	@echo $(SHAPES)
 # 	@echo $(EXPANDED)
 # 	@echo $(CLIPPED)
+	
+$(MBTILE): $(MBTILESDIR)/%.tif: $(CLIPPEDDIR)/%.tif
+	@echo Build MBTILE: $@
+	@echo Changed Dendencies: $?
+	@echo Current Dependency: $< 
+# 	touch $@
+	@echo rm $@ 
+#@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
+	@echo ----------------------------------------------------------------------------------------
 	
 $(CLIPPED): $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(WARPEDDIR)/%.tif
 # $(CLIPPED): $(SHAPES) $(EXPANDED)
