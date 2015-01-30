@@ -2,7 +2,7 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
-baseDirs=(sourceRasters expandedRasters clippingShapes clippedRasters tiles mbtiles)
+baseDirs=(sourceRasters expandedRasters clippingShapes warpedRasters clippedRasters tiles mbtiles)
 chartTypes=(enroute grand_canyon heli sectional tac wac)
 
 #Create the tree of output directories  

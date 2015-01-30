@@ -98,7 +98,7 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
 #     clippedName=clipped-$expandedName
     
    
-
+echo --------------------------------$sourceChartName----------------------------------------------------
     #Test if we need to expand the original file
     if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
       then

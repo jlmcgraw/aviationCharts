@@ -27,22 +27,22 @@ clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 if [ ! -d $originalRastersDirectory ]; then
     echo "$originalRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $linkedRastersDirectory ]; then
     echo "$linkedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $expandedRastersDirectory ]; then
     echo "$expandedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
 if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
-    exit
+    exit 1
 fi
 
  
@@ -68,4 +68,4 @@ fi
              --config COMPRESS_OVERVIEW JPEG \
              --config BIGTIFF_OVERVIEW IF_NEEDED \
              "$expandedRastersDirectory/$sourceChartName.tif" \
-             2 4 8 16 32
+             2 4 8 16 32 64
