@@ -2,6 +2,9 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
+#First create a version of this chart warped to EPSG:3857
+#Then clip that warped version
+
 #Get command line parameters
 originalRastersDirectory="$1"
 destinationRoot="$2"
@@ -51,88 +54,94 @@ if [ ! -d $clippedRastersDirectory ]; then
     echo "$clippedRastersDirectory doesn't exist"
     exit 1
 fi
-  
- 
-    
-    #Warp the expanded file
-    echo --- Warp --- gdalwarp $sourceChartName
-    gdalwarp \
-             -dstalpha \
-             -t_srs EPSG:3857 \
-             -multi \
-             -wo NUM_THREADS=ALL_CPUS  \
-             -overwrite \
-             -wm 512 \
-             --config GDAL_CACHEMAX 256 \
-             -co TILED=YES \
-             -r lanczos \
-             "$expandedRastersDirectory/$sourceChartName.tif" \
-             "$warpedRastersDirectory/$sourceChartName-temp.tif"
-    
-    #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-    #If you want to make the files smaller, at the expense of CPU, you can enable these options
-    #      -co COMPRESS=DEFLATE \
-    #      -co PREDICTOR=1 \
-    #      -co ZLEVEL=9 \
-    gdal_translate \
-	      -strict \
-	      -co TILED=YES \
-	      -co COMPRESS=LZW \
-	      "$warpedRastersDirectory/$sourceChartName-temp.tif" \
-	      "$warpedRastersDirectory/$sourceChartName.tif"
-	      
-    #Remove the original poorly compressed file
-    rm "$warpedRastersDirectory/$sourceChartName-temp.tif"
-    
-    #Create external overviews to make display faster in QGIS
-#     echo --- Add overviews --- gdaladdo $sourceChartName             
-    gdaladdo \
-             -ro \
-             -r average \
-             --config INTERLEAVE_OVERVIEW PIXEL \
-             --config COMPRESS_OVERVIEW JPEG \
-             --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$warpedRastersDirectory/$sourceChartName.tif" \
-             2 4 8 16 32 64
-             
+
+#Does our warped file already exist?
+if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
+  then
+  #Warp the expanded file
+  echo --- Warp --- gdalwarp $sourceChartName
+  nice -10 gdalwarp \
+	    -dstalpha \
+	    -t_srs EPSG:3857 \
+	    -multi \
+	    -wo NUM_THREADS=ALL_CPUS  \
+	    -overwrite \
+	    -wm 512 \
+	    --config GDAL_CACHEMAX 256 \
+	    -co TILED=YES \
+	    -r lanczos \
+	    "$expandedRastersDirectory/$sourceChartName.tif" \
+	    "$warpedRastersDirectory/$sourceChartName-temp.tif"
+
+  #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
+  #If you want to make the files smaller, at the expense of CPU, you can enable these options
+  #      -co COMPRESS=DEFLATE \
+  #      -co PREDICTOR=1 \
+  #      -co ZLEVEL=9 \
+  nice -10 gdal_translate \
+    -strict \
+    -co TILED=YES \
+    -co COMPRESS=LZW \
+    "$warpedRastersDirectory/$sourceChartName-temp.tif" \
+    "$warpedRastersDirectory/$sourceChartName.tif"
+
+  #Remove the original poorly compressed file
+  rm "$warpedRastersDirectory/$sourceChartName-temp.tif"
+
+  #Create external overviews to make display faster in QGIS
+  #     echo --- Add overviews --- gdaladdo $sourceChartName             
+  gdaladdo \
+    -ro \
+    -r average \
+    --config INTERLEAVE_OVERVIEW PIXEL \
+    --config COMPRESS_OVERVIEW JPEG \
+    --config BIGTIFF_OVERVIEW IF_NEEDED \
+    "$warpedRastersDirectory/$sourceChartName.tif" \
+    2 4 8 16 32 64
+fi
+
 #----------------------------------------------
-    #Clip the warped file it to it's clipping shape
-    echo --- Clip --- gdalwarp $sourceChartName
-    gdalwarp \
-             -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
-             -crop_to_cutline \
-             -cblend 10 \
-             -multi \
-             -wo NUM_THREADS=ALL_CPUS  \
-             -overwrite \
-             -wm 512 \
-             --config GDAL_CACHEMAX 256 \
-             -co TILED=YES \
-             -r lanczos \
-             "$warpedRastersDirectory/$sourceChartName.tif" \
-             "$clippedRastersDirectory/$sourceChartName-temp.tif"
-    
-    #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-    #If you want to make the files smaller, at the expense of CPU, you can enable these options
-    #      -co COMPRESS=DEFLATE \
-    #      -co PREDICTOR=1 \
-    #      -co ZLEVEL=9 \
-    gdal_translate \
-	      -strict \
-	      -co TILED=YES \
-	      -co COMPRESS=LZW \
-	      "$clippedRastersDirectory/$sourceChartName-temp.tif" \
-	      "$clippedRastersDirectory/$sourceChartName.tif"
-	
-    rm "$clippedRastersDirectory/$sourceChartName-temp.tif"
-    
-    #Create external overviews to make display faster in QGIS
-#     echo --- Add overviews --- gdaladdo $sourceChartName             
-    gdaladdo \
-             -ro \
-             -r average \
-             --config INTERLEAVE_OVERVIEW PIXEL \
-             --config COMPRESS_OVERVIEW JPEG \
-             --config BIGTIFF_OVERVIEW IF_NEEDED \
-             "$clippedRastersDirectory/$sourceChartName.tif" \
-             2 4 8 16 32 64
+#Does our clipped file already exist?
+if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
+  then
+#Clip the warped file it to it's clipping shape
+  echo --- Clip --- gdalwarp $sourceChartName
+  nice -10 gdalwarp \
+	    -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
+	    -crop_to_cutline \
+	    -cblend 10 \
+	    -multi \
+	    -wo NUM_THREADS=ALL_CPUS  \
+	    -overwrite \
+	    -wm 512 \
+	    --config GDAL_CACHEMAX 256 \
+	    -co TILED=YES \
+	    -r lanczos \
+	    "$warpedRastersDirectory/$sourceChartName.tif" \
+	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
+
+  #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
+  #If you want to make the files smaller, at the expense of CPU, you can enable these options
+  #      -co COMPRESS=DEFLATE \
+  #      -co PREDICTOR=1 \
+  #      -co ZLEVEL=9 \
+  nice -10 gdal_translate \
+	    -strict \
+	    -co TILED=YES \
+	    -co COMPRESS=LZW \
+	    "$clippedRastersDirectory/$sourceChartName-temp.tif" \
+	    "$clippedRastersDirectory/$sourceChartName.tif"
+      
+  rm "$clippedRastersDirectory/$sourceChartName-temp.tif"
+
+  #Create external overviews to make display faster in QGIS
+  #     echo --- Add overviews --- gdaladdo $sourceChartName             
+  gdaladdo \
+	    -ro \
+	    -r average \
+	    --config INTERLEAVE_OVERVIEW PIXEL \
+	    --config COMPRESS_OVERVIEW JPEG \
+	    --config BIGTIFF_OVERVIEW IF_NEEDED \
+	    "$clippedRastersDirectory/$sourceChartName.tif" \
+	    2 4 8 16 32 64
+fi             

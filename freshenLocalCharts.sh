@@ -2,6 +2,7 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
+#Download latest charts from faa/aeronav
 
 #Get command line parameters
 AERONAV_ROOT_DIR="$1"

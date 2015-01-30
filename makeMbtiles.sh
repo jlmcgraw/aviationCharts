@@ -62,8 +62,9 @@ if [ ! -d $mbtilesDirectory ]; then
     exit 1
 fi
 
-# # expandedName=expanded-$sourceChartName
-# # clippedName=clipped-$expandedName
+if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
+expandedName=expanded-$sourceChartName
+clippedName=clipped-$expandedName
 # 
 # #BUG TODO Handle when these directories already exist
 # #BUG TODO Some charts need to go to deeper layers than others
@@ -84,3 +85,4 @@ fi
 # ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
 # #Set the date of this new mbtiles to the date of the chart used to create it
 # touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
+fi

@@ -2,6 +2,8 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
+#Create all the directories we need
+
 baseDirs=(sourceRasters expandedRasters clippingShapes warpedRasters clippedRasters tiles mbtiles)
 chartTypes=(enroute grand_canyon heli sectional tac wac)
 

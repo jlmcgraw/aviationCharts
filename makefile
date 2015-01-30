@@ -1,9 +1,10 @@
-CHARTTYPE = enroute
+CHARTTYPE = sectional
 
 ORIGINALDIR =./original
 LINKDIR =./sourceRasters/$(CHARTTYPE)
 SHAPEDIR =./clippingShapes/$(CHARTTYPE)
 EXPANDEDDIR =./expandedRasters/$(CHARTTYPE)
+WARPEDDIR =./warpedRasters/$(CHARTTYPE)
 CLIPPEDDIR =./clippedRasters/$(CHARTTYPE)
 MBTILESDIR =./mbtiles/$(CHARTTYPE)
 
@@ -24,37 +25,49 @@ destinationRoot=/home/jlmcgraw/Documents/myPrograms/mergedCharts
 
 LINKS    = $(wildcard $(LINKDIR)/*.tif)
 SHAPES   = $(patsubst $(LINKDIR)/%.tif,$(SHAPEDIR)/%.shp,$(LINKS)) 
-EXPANDED = $(patsubst $(LINKDIR)/%.tif,$(EXPANDEDDIR)/expanded-%.tif,$(LINKS)) 
-CLIPPED  = $(patsubst $(LINKDIR)/%.tif,$(CLIPPEDDIR)/clipped-expanded-%.tif,$(LINKS)) 
+EXPANDED = $(patsubst $(LINKDIR)/%.tif,$(EXPANDEDDIR)/%.tif,$(LINKS))
+WARPED   = $(patsubst $(LINKDIR)/%.tif,$(WARPEDDIR)/%.tif,$(LINKS)) 
+CLIPPED  = $(patsubst $(LINKDIR)/%.tif,$(CLIPPEDDIR)/%.tif,$(LINKS)) 
 
-all: FRESHEN LINKS $(CLIPPED)
+all: FRESHEN LINKS $(CLIPPED) ALLCHARTS
 # 	@echo $(LINKS)
 # 	@echo $(SHAPES)
 # 	@echo $(EXPANDED)
 # 	@echo $(CLIPPED)
 	
-$(CLIPPED): $(CLIPPEDDIR)/clipped-expanded-%.tif: $(SHAPEDIR)/%.shp $(EXPANDEDDIR)/expanded-%.tif
+$(CLIPPED): $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(WARPEDDIR)/%.tif
 # $(CLIPPED): $(SHAPES) $(EXPANDED)
 	@echo Build CLIPPED: $@
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
 # 	touch $@
-	@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
+	@echo rm $@ 
+#@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
 	@echo ----------------------------------------------------------------------------------------
+
+$(WARPED):  $(WARPEDDIR)/%.tif: $(LINKDIR)/%.tif
+# $(EXPANDED):  $(LINKDIR)/%.tif
+	@echo Build WARP: $@
+	@echo Changed Dendencies: $?
+	@echo Current Dependency: $<
+#BUG TODO Enroute charts don't have to be expanded
+	@echo rm $@
+	@echo ./warpClip.sh
 	
-$(EXPANDED):  $(EXPANDEDDIR)/expanded-%.tif: $(LINKDIR)/%.tif
+$(EXPANDED):  $(EXPANDEDDIR)/%.tif: $(LINKDIR)/%.tif
 # $(EXPANDED):  $(LINKDIR)/%.tif
 	@echo Build EXPAND: $@
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $<
-	#BUG TODO Enroute charts don't have to be expanded
+#BUG TODO Enroute charts don't have to be expanded
 	@echo ./translateExpand.sh
+	@echo rm $@
 
 $(SHAPES):  $(SHAPEDIR)/%.shp: $(LINKDIR)/%.tif
 	@echo Build SHAPE: $@
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
-	touch $@
+# 	touch $@
 
 $(LINKS):  
 	@echo Build LINK: $@
@@ -67,6 +80,9 @@ FRESHEN:
 
 LINKS:
 	@echo ./updateLinks.sh $(originalEnrouteDirectory) $(destinationRoot) $(CHARTTYPE)
+	
+ALLCHARTS:
+	@echo ./allcharts.sh
 # .PHONY: $(SHAPES) $(LINKS)
 
 # $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(EXPANDEDDIR)/%.tif

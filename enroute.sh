@@ -92,28 +92,13 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
   do
    
     #Pull the info for this chart from array
-    sourceChartName=${chartArray[i*$points+0]}
-    
-#     expandedName=expanded-$sourceChartName
-#     clippedName=clipped-$expandedName
-    
+    sourceChartName=${chartArray[i*$points+0]}    
    
-echo --------------------------------$sourceChartName----------------------------------------------------
-    #Test if we need to expand the original file
-    if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
-      then
-	./translateNoExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
-    fi  
+    echo --------------------------------$sourceChartName----------------------------------------------------
 
-     #Test if we need to clip the expanded file
-    if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
-      then      
-        ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
-    fi 
-    
-    if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];
-      then      
+    ./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+    ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
-    fi
+
     
   done
