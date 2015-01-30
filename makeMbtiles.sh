@@ -63,26 +63,25 @@ if [ ! -d $mbtilesDirectory ]; then
 fi
 
 if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
-expandedName=expanded-$sourceChartName
-clippedName=clipped-$expandedName
-# 
-# #BUG TODO Handle when these directories already exist
-# #BUG TODO Some charts need to go to deeper layers than others
-# 
-# #Create tiles from the clipped raster
-# # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
-# # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
-# ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
-# 
-# #Optimize those tiles
-# # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
-# #Get the number of online CPUs
-# cpus=$(getconf _NPROCESSORS_ONLN)
-# echo "Optimize PNGs, using $cpus CPUS"
-# find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant --ext=.png --force
-# 
-# #Package them into an .mbtiles file
-# ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
-# #Set the date of this new mbtiles to the date of the chart used to create it
-# touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
+  #BUG TODO Handle when these directories already exist
+  #BUG TODO Some charts need to go to deeper layers than others
+
+  #Create tiles from the clipped raster (various ways)
+  #The multithreaded version does not currently auto-determine tiling levels
+  # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+  # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+  ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
+
+  #Optimize each of those tiles using all CPUs
+  # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
+  #Get the number of online CPUs
+  cpus=$(getconf _NPROCESSORS_ONLN)
+  echo "Optimize PNGs, using $cpus CPUS"
+  find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant --ext=.png --force
+
+  #Package them into an .mbtiles file
+  ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
+
+  #Set the date of this new mbtiles to the date of the chart used to create it
+  touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
 fi
