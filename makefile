@@ -41,7 +41,7 @@ $(MBTILES): $(MBTILESDIR)/%.mbtiles: $(CLIPPEDDIR)/%.tif
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
 # 	touch $@
-	@echo rm $@ 
+# 	rm $@ 
 #@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
 	@echo ----------------------------------------------------------------------------------------
 	
@@ -51,7 +51,7 @@ $(CLIPPED): $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(WARPEDDIR)/%.tif
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
 # 	touch $@
-	@echo rm $@ 
+# 	rm $@ 
 #@echo ./enroute.sh     $(originalEnrouteDirectory)     $(destinationRoot) $@
 	@echo ----------------------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ $(WARPED):  $(WARPEDDIR)/%.tif: $(LINKDIR)/%.tif
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $<
 #BUG TODO Enroute charts don't have to be expanded
-	@echo rm $@
+# 	rm $@
 	@echo ./warpClip.sh
 	
 $(EXPANDED):  $(EXPANDEDDIR)/%.tif: $(LINKDIR)/%.tif
@@ -86,13 +86,13 @@ $(LINKS):
 # 	@touch $@
 	
 FRESHEN:
-	@echo ./freshenLocalCharts.sh $(chartsRoot)
+# 	./freshenLocalCharts.sh $(chartsRoot)
 
 LINKS:
-	@echo ./updateLinks.sh $(originalEnrouteDirectory) $(destinationRoot) $(CHARTTYPE)
+# 	./updateLinks.sh $(originalEnrouteDirectory) $(destinationRoot) $(CHARTTYPE)
 	
 ALLCHARTS:
-	@echo ./allcharts.sh
+# 	./allcharts.sh
 # .PHONY: $(SHAPES) $(LINKS)
 
 # $(CLIPPEDDIR)/%.tif: $(SHAPEDIR)/%.shp $(EXPANDEDDIR)/%.tif

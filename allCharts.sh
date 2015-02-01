@@ -36,17 +36,17 @@ originalSectionalDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/sectiona
 originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_canyon_files/"
 
 
-# # #Update local chart copies from Aeronav source
-# ./freshenLocalCharts.sh $chartsRoot
-# 
-# #Update our local links to those (possibly new) original files
-# #This handles charts that have revisions in the filename
-# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
-# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
-# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
-# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+# #Update local chart copies from Aeronav source
+./freshenLocalCharts.sh $chartsRoot
+
+#Update our local links to those (possibly new) original files
+#This handles charts that have revisions in the filename
+./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
 # Expand charts to RGB bands as necessary
 # clip to polygons

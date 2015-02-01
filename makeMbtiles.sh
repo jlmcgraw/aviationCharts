@@ -70,7 +70,7 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   #The multithreaded version does not currently auto-determine tiling levels
   # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
   # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
-  ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
+  ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
 
   #Optimize each of those tiles using all CPUs
   # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
@@ -90,6 +90,6 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   #Package them into an .mbtiles file
   ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
 
-  #Set the date of this new mbtiles to the date of the chart used to create it
-  touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
+#   #Set the date of this new mbtiles to the date of the chart used to create it
+#   touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
 fi
