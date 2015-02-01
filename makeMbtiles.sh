@@ -76,8 +76,16 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
   #Get the number of online CPUs
   cpus=$(getconf _NPROCESSORS_ONLN)
+
+  echo "Sharpen PNGs, using $cpus CPUS"
+#   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -unsharp 2x1.5+1.7+0
+  find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -sharpen 0x.5
+  
   echo "Optimize PNGs, using $cpus CPUS"
-  find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant --ext=.png --force
+  find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant -s2 -q 100 --ext=.png --force
+
+  
+  
 
   #Package them into an .mbtiles file
   ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles

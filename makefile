@@ -28,15 +28,15 @@ SHAPES   = $(patsubst $(LINKDIR)/%.tif,$(SHAPEDIR)/%.shp,$(LINKS))
 EXPANDED = $(patsubst $(LINKDIR)/%.tif,$(EXPANDEDDIR)/%.tif,$(LINKS))
 WARPED   = $(patsubst $(LINKDIR)/%.tif,$(WARPEDDIR)/%.tif,$(LINKS)) 
 CLIPPED  = $(patsubst $(LINKDIR)/%.tif,$(CLIPPEDDIR)/%.tif,$(LINKS)) 
-MBTILE   = $(patsubst $(LINKDIR)/%.tif,$(MBTILESDIR)/%.tif,$(LINKS)) 
+MBTILES   = $(patsubst $(LINKDIR)/%.tif,$(MBTILESDIR)/%.mbtiles,$(LINKS)) 
 
-all: FRESHEN LINKS $(MBTILE) ALLCHARTS
+all: FRESHEN LINKS $(MBTILES) ALLCHARTS
 # 	@echo $(LINKS)
 # 	@echo $(SHAPES)
 # 	@echo $(EXPANDED)
 # 	@echo $(CLIPPED)
 	
-$(MBTILE): $(MBTILESDIR)/%.tif: $(CLIPPEDDIR)/%.tif
+$(MBTILES): $(MBTILESDIR)/%.mbtiles: $(CLIPPEDDIR)/%.tif
 	@echo Build MBTILE: $@
 	@echo Changed Dendencies: $?
 	@echo Current Dependency: $< 
