@@ -68,7 +68,7 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r cubic --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
-    python ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py -r lanczos --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
+    python ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py -r lanczos --resume $warpRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
   
   #Optimize each of tile for sharpness and then size using all CPUs
   
