@@ -9,6 +9,11 @@ destinationRoot="$2"
 chartType="$3"
 sourceChartName="$4"
 
+outputFormat="VRT"
+outputExtension="vrt"
+# outputFormat="GTiff"
+# outputExtension="tif"
+
 if [ "$#" -ne 4 ] ; then
   echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType sourceChartName" >&2
   exit 1
@@ -55,19 +60,21 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
 	echo "Enroute chart"
     	gdal_translate \
 	    -strict \
+	    -of $outputFormat \
 	    -co TILED=YES \
 	    -co COMPRESS=LZW \
 	    "$linkedRastersDirectory/$sourceChartName.tif" \
-	    "$expandedRastersDirectory/$sourceChartName.tif"
+	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
       else
 	echo "Not an enroute chart"
 	gdal_translate \
 	    -strict \
+	    -of $outputFormat \
 	    -expand rgb \
 	    -co TILED=YES \
 	    -co COMPRESS=LZW \
 	    "$linkedRastersDirectory/$sourceChartName.tif" \
-	    "$expandedRastersDirectory/$sourceChartName.tif"
+	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
     fi
     #Create external overviews to make display faster in QGIS
     echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
@@ -77,6 +84,6 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
 	  --config INTERLEAVE_OVERVIEW PIXEL \
 	  --config COMPRESS_OVERVIEW JPEG \
 	  --config BIGTIFF_OVERVIEW IF_NEEDED \
-	  "$expandedRastersDirectory/$sourceChartName.tif" \
+	  "$expandedRastersDirectory/$sourceChartName.$outputExtension" \
 	  2 4 8 16 32 64
 fi

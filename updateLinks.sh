@@ -62,7 +62,6 @@ set -e
 #FILTER will be empty if no .tifs
 FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
 
-
 if [[ ! -z ${FILTER} ]]; then
     echo "Deleting $chartType  links"
 #     echo $FILTER

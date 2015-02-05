@@ -3,7 +3,6 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #TODO
-# Warp to EPSG:3857#
 # Anywhere we exit, exit with an error code
 # Handle charts that cross anti-meridian
 # Make use of "make" to only process new charts
@@ -12,9 +11,7 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #	Lanczos for resampling
 #	Optimizing size of individual tiles via pngcrush, pngquant, optipng etc
 #	Linking of redundant tiles
-# TAC max zoom 12
-# SEC max zoom 11 (actually these vary)
-# WAC max zoom 10
+# Automatically clean out old charts, currently they'll just accumulate
 
 #Full path to root of downloaded chart info
 chartsRoot="/media/sf_Shared_Folder/charts/"
@@ -36,24 +33,24 @@ originalSectionalDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/sectiona
 originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_canyon_files/"
 
 
-# # #Update local chart copies from Aeronav source
-./freshenLocalCharts.sh $chartsRoot
-
-# #Update our local links to those (possibly new) original files
-# #This handles charts that have revisions in the filename
-./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
-./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
-./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
-./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+# # # #Update local chart copies from Aeronav source
+# ./freshenLocalCharts.sh $chartsRoot
+# 
+# # #Update our local links to those (possibly new) original files
+# # #This handles charts that have revisions in the filename
+# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
 # Expand charts to RGB bands as necessary
 # clip to polygons
 # Convert to a .mbtile
 ./heli.sh        $originalHeliDirectory        $destinationRoot
 ./tac.sh         $originalTacDirectory         $destinationRoot
-./wac.sh         $originalWacDirectory         $destinationRoot
 ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
 ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
+./wac.sh         $originalWacDirectory         $destinationRoot

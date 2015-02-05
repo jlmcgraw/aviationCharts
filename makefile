@@ -1,4 +1,5 @@
-CHARTTYPE = enroute
+#sectional, enroute, tac, wac, heli, grand_canyon
+CHARTTYPE = tac
 
 ORIGINALDIR =./original
 LINKDIR =./sourceRasters/$(CHARTTYPE)
