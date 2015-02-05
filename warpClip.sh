@@ -106,9 +106,12 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   then
 #Clip the warped file it to it's clipping shape
   echo --- Clip --- gdalwarp $sourceChartName
+  #BUG TODO crop_to_cutline results in a resampled image with non-square pixels
+  #How to best handle this?
+  #Do I need -dstalpha here?
   nice -10 gdalwarp \
+	    -t_srs EPSG:3857 \
 	    -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
-	    -crop_to_cutline \
 	    -cblend 10 \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \

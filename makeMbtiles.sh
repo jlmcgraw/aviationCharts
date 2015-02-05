@@ -70,17 +70,17 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   #The multithreaded version does not currently auto-determine tiling levels
   # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
   # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
-  ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r lanczos --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
-
+#   ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r cubic --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
+  python ~/Documents/myPrograms/parallelGdal2TilesFromOsGeo/gdal2tiles.py -r lanczos --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
   #Optimize each of those tiles using all CPUs
   # find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -execdir pngquant --ext=.png --force {} \;
   #Get the number of online CPUs
   cpus=$(getconf _NPROCESSORS_ONLN)
 
-  echo "Sharpen PNGs, using $cpus CPUS"
-#   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -unsharp 2x1.5+1.7+0
-  find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -sharpen 0x.5
-  
+#   echo "Sharpen PNGs, using $cpus CPUS"
+# #   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -unsharp 2x1.5+1.7+0
+#   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -sharpen 0x.5
+#   
   echo "Optimize PNGs, using $cpus CPUS"
   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant -s2 -q 100 --ext=.png --force
 

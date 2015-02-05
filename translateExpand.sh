@@ -50,8 +50,8 @@ fi
 if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
   then
     echo --- Expand --- gdal_translate $sourceChartName
-    
-    if [ $chartType -eq "enroute" ];  then
+
+    if [ $chartType == "enroute" ];  then
 	echo "Enroute chart"
     	gdal_translate \
 	    -strict \
