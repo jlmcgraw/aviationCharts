@@ -52,7 +52,7 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 #Test if we need to expand the original file
-if [ ! -f "$expandedRastersDirectory/$sourceChartName.tif" ];
+if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
   then
     echo --- Expand --- gdal_translate $sourceChartName
 
