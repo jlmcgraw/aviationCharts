@@ -66,7 +66,7 @@ outputExtension="vrt"
 #Does our clipped file already exist?
 if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   then
-#Clip the warped file it to it's clipping shape
+#Clip the file it to it's clipping shape
   echo --- Clip --- gdalwarp $sourceChartName
   #BUG TODO crop_to_cutline results in a resampled image with non-square pixels
   #How to best handle this?  One fix is an additional warp to EPSG:3857
@@ -75,6 +75,7 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
 	    -t_srs EPSG:3857 \
 	    -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
 	    -crop_to_cutline \
+	    -dstalpha \
 	    -cblend 10 \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
@@ -123,7 +124,6 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   #Warp the expanded file
   echo --- Warp --- gdalwarp $sourceChartName
   nice -10 gdalwarp \
-	    -dstalpha \
 	    -t_srs EPSG:3857 \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
