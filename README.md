@@ -19,9 +19,7 @@ It has only been tested under Ubuntu 14.10
     - pngquant (sudo apt-get install pngquant)
     - graphicsmagick (sudo apt-get install graphicsmagick)
     - mbutil (git clone https://github.com/mapbox/mbutil.git)
-    - gdal2mbtiles (git clone https://github.com/mj10777/gdal2mbtiles.git)
-	Perhaps not totally necessary, I've been using this instead of the stock
-	gdal2tiles
+    - gdal2tiles multithreaded version (git clone https://github.com/jlmcgraw/parallelGdal2tiles.git)
 
 # Getting Started
 ##### Edit allCharts.sh and update variables and create the corresponding directories as needed
@@ -36,7 +34,7 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 ```
 ##### Edit makeMbtiles.sh to update the location of these commands on your system
 ```
-~/Documents/github/gdal2mbtiles/gdal2mbtiles.py 
+~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py
 ~/Documents/github/mbutil/mb-util
 ```
 ##### Create the directory tree	
