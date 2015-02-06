@@ -13,31 +13,34 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #	Linking of redundant tiles
 # Automatically clean out old charts, currently they'll just accumulate
 
-#Full path to root of downloaded chart info
+#Full path to root of where aeronav site will be mirrored to via wget
 chartsRoot="/media/sf_Shared_Folder/charts/"
 
-#Full path to where our script is, the root of directories where our processed images etc will be saved
+#Determine the full path to where this script is
+#Use this as the root of directories where our processed images etc will be saved
 pushd `dirname $0` > /dev/null
 destinationRoot=`pwd`
 popd > /dev/null
 # destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
-#BUG TODO This will need to be updated for every cycle
+#BUG TODO This will need to be updated for every enroute charting cycle
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 
-#Where the original .tif files are from aeronav
+#Where the original .zip files are from aeronav (subject to them changing their layout)
 originalHeliDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/heli_files/"
 originalTacDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/tac_files/"
 originalWacDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/wac_files/"
 originalSectionalDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/sectional_files/"
 originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_canyon_files/"
 
+#If some of these steps are commented out it's because I don't always want to wait for them to run
+#so uncomment them as necessary
 
-# # # #Update local chart copies from Aeronav source
+# # # #Update local chart copies from Aeronav website
 # ./freshenLocalCharts.sh $chartsRoot
 # 
 # # #Update our local links to those (possibly new) original files
-# # #This handles charts that have revisions in the filename
+# # #This handles charts that have revisions in the filename (sectional, tac etc)
 # ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
 # ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
 # ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
@@ -45,9 +48,11 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
 # ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
-# Expand charts to RGB bands as necessary
-# clip to polygons
-# Convert to a .mbtile
+# General Process:
+# Expand charts to RGB bands as necessary (currently not needed for enroute)
+# Clip to their associated polygon and reproject to EPSG:3857
+# Convert clipped and warped image to TMS layout folders of tiles
+# Package those tiles into a .mbtile
 ./heli.sh        $originalHeliDirectory        $destinationRoot
 ./tac.sh         $originalTacDirectory         $destinationRoot
 ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
