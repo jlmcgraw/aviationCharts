@@ -3,6 +3,8 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #TODO
+# Move towards using VRTs once clipping polygons are established
+# Look at other alternatives for clipping (pixel/line extents)
 # Anywhere we exit, exit with an error code
 # Handle charts that cross anti-meridian
 # Make use of "make" to only process new charts

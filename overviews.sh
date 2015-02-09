@@ -24,14 +24,16 @@ do
     $chart-overview.vrt \
     $chart-translate.tif \
 
-  #-te -120 37 -77 38 \
-  gdalwarp \
-    --debug on \
-    -r lanczos \
-    -ts 1024 768 \
-    -co TWF=YES \
-    $chart-overview.vrt \
-    ./$chart-warp.tif \
+#   #-te -120 37 -77 38 \
+#   gdalwarp \
+#     --debug on \
+#     -r lanczos \
+#     -ts 1024 768 \
+#     -co TWF=YES \
+#     -wm 512 \
+#     --config GDAL_CACHEMAX 256 \
+#     $chart-overview.vrt \
+#     ./$chart-warp.tif \
 
 done
 
@@ -45,24 +47,28 @@ do
     -srcnodata b4 \
     -hidenodata \
     -overwrite \
-    ./clippedRasters/$chart/ENR_L*.tif
+    ./clippedRasters/$chart/ENR_L*.tif \
+    ./clippedRasters/$chart/ENR_AKL*.tif
 
   gdal_translate \
     -strict \
     -co TILED=YES \
     -co COMPRESS=LZW \
+    --config GDAL_CACHEMAX 256 \
     -outsize 1024 768 \
     $chart-low-overview.vrt \
     $chart-low-translate.tif \
 
-  #-te -120 37 -77 38 \
-  gdalwarp \
-    --debug on \
-    -r lanczos \
-    -ts 1024 768 \
-    -co TWF=YES \
-    $chart-low-overview.vrt \
-    ./$chart-low-warp.tif \
+#   #-te -120 37 -77 38 \
+#   gdalwarp \
+#     --debug on \
+#     -r lanczos \
+#     -ts 1024 768 \
+#     -co TWF=YES \
+#     -wm 512 \
+#     --config GDAL_CACHEMAX 256 \
+#     $chart-low-overview.vrt \
+#     ./$chart-low-warp.tif \
 
 done
 
@@ -76,24 +82,28 @@ do
     -srcnodata b4 \
     -hidenodata \
     -overwrite \
-    ./clippedRasters/$chart/ENR_H*.tif
+    ./clippedRasters/$chart/ENR_H*.tif \
+    ./clippedRasters/$chart/ENR_AKH*.tif
 
   gdal_translate \
     -strict \
     -co TILED=YES \
     -co COMPRESS=LZW \
     -outsize 1024 768 \
+	    --config GDAL_CACHEMAX 256 \
     $chart-high-overview.vrt \
     $chart-high-translate.tif \
 
-  #-te -120 37 -77 38 \
-  gdalwarp \
-    --debug on \
-    -r lanczos \
-    -ts 1024 768 \
-    -co TWF=YES \
-    $chart-high-overview.vrt \
-    $chart-high-warp.tif \
+#   #-te -120 37 -77 38 \
+#   gdalwarp \
+#     --debug on \
+#     -r lanczos \
+#     -ts 1024 768 \
+#     -co TWF=YES \
+#         -wm 512 \
+# 	    --config GDAL_CACHEMAX 256 \
+#     $chart-high-overview.vrt \
+#     $chart-high-warp.tif \
 
 done
 # #-----------------------------------------------
