@@ -878,10 +878,19 @@
                     <customproperties/>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="IFR Low">
+            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Low">
                 <customproperties/>
-                <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipping Polygons">
+                <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Clipping Polygons">
                     <customproperties/>
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKL0420150210203042140" name="ENR_AKL04">
+                        <customproperties/>
+                    </layer-tree-layer>
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKL0320150210202240575" name="ENR_AKL03">
+                        <customproperties/>
+                    </layer-tree-layer>
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKL02W20150210201306486" name="ENR_AKL02W">
+                        <customproperties/>
+                    </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L0120150126185800643" name="ENR_L01">
                         <customproperties/>
                     </layer-tree-layer>
@@ -1003,7 +1012,7 @@
                         <customproperties/>
                     </layer-tree-group>
                 </layer-tree-group>
-                <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Source Rasters">
+                <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Source Rasters">
                     <customproperties/>
                     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Originals">
                         <customproperties/>
@@ -1011,7 +1020,7 @@
                     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Done">
                         <customproperties/>
                     </layer-tree-group>
-                    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Recompressed originals">
+                    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Recompressed originals">
                         <customproperties/>
                         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Area">
                             <customproperties/>
@@ -1022,14 +1031,23 @@
                         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="High">
                             <customproperties/>
                         </layer-tree-group>
-                        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Crosses Date Line">
+                        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Crosses Date Line">
                             <customproperties/>
+                            <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKL0420150210202618544" name="ENR_AKL04">
+                                <customproperties/>
+                            </layer-tree-layer>
+                            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL0320150210201722140" name="ENR_AKL03">
+                                <customproperties/>
+                            </layer-tree-layer>
+                            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL02W20150210201157094" name="ENR_AKL02W">
+                                <customproperties/>
+                            </layer-tree-layer>
                         </layer-tree-group>
                     </layer-tree-group>
                 </layer-tree-group>
-                <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Clipped Rasters">
+                <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipped Rasters">
                     <customproperties/>
-                    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="sub-group1">
+                    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="sub-group1">
                         <customproperties/>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL04_ANC20150210162326172" name="ENR_AKL04_ANC">
                             <customproperties/>
@@ -1169,7 +1187,7 @@
                     </layer-tree-group>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="IFR High">
+            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="High">
                 <customproperties/>
                 <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Clipping Polygons">
                     <customproperties/>
@@ -1228,51 +1246,51 @@
                 <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Source Rasters">
                     <customproperties/>
                 </layer-tree-group>
-                <layer-tree-group expanded="1" checked="Qt::Checked" name="Clipped Rasters">
+                <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Clipped Rasters">
                     <customproperties/>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKH0120150210200129488" name="ENR_AKH01">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKH0120150210200129488" name="ENR_AKH01">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKH0220150210195632972" name="ENR_AKH02">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKH01_SEA20150210162325967" name="ENR_AKH01_SEA">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_AKH01_SEA20150210162325967" name="ENR_AKH01_SEA">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKH0220150210195632972" name="ENR_AKH02">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H1220150210162326484" name="ENR_H12">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H1220150210162326484" name="ENR_H12">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H1120150210162326456" name="ENR_H11">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H1120150210162326456" name="ENR_H11">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H1020150210162326434" name="ENR_H10">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H1020150210162326434" name="ENR_H10">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0920150210162326412" name="ENR_H09">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0920150210162326412" name="ENR_H09">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0820150210162326388" name="ENR_H08">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0820150210162326388" name="ENR_H08">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0720150210162326367" name="ENR_H07">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0720150210162326367" name="ENR_H07">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0620150210162326329" name="ENR_H06">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0620150210162326329" name="ENR_H06">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0520150210162326301" name="ENR_H05">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0520150210162326301" name="ENR_H05">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0420150210162326277" name="ENR_H04">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0420150210162326277" name="ENR_H04">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0320150210162326249" name="ENR_H03">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0320150210162326249" name="ENR_H03">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0220150210162326223" name="ENR_H02">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0220150210162326223" name="ENR_H02">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="ENR_H0120150210162326200" name="ENR_H01">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_H0120150210162326200" name="ENR_H01">
                         <customproperties/>
                     </layer-tree-layer>
                 </layer-tree-group>
@@ -1316,46 +1334,32 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-22783844.34653759747743607</xmin>
-            <ymin>287168.51280505489557981</ymin>
-            <xmax>-1744829.65426481515169144</xmax>
-            <ymax>15791974.90861151739954948</ymax>
+            <xmin>-1528138.66452645184472203</xmin>
+            <ymin>2094148.63670793827623129</ymin>
+            <xmax>-602035.71632125333417207</xmax>
+            <ymax>2776644.80511362804099917</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
-                <srsid>3857</srsid>
-                <srid>3857</srid>
-                <authid>EPSG:3857</authid>
-                <description>WGS 84 / Pseudo Mercator</description>
-                <projectionacronym>merc</projectionacronym>
-                <ellipsoidacronym>WGS84</ellipsoidacronym>
+                <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                <srsid>100029</srsid>
+                <srid>0</srid>
+                <authid>USER:100029</authid>
+                <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                <projectionacronym>lcc</projectionacronym>
+                <ellipsoidacronym></ellipsoidacronym>
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0220150210162326223"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH0120150210164423485"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH0220150210195552174"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0720150210162326367"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H1020150210162326434"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH0120150210200129488"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH0220150210195632972"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0120150210162326200"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H1220150210162326484"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH01_SEA20150210162325967"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH0120150210163423992"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0620150210162326329"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH02_Antimeridian_East20150210195552273"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKH02_Antimeridian20150210195552244"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H1120150210162326456"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0920150210162326412"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0320150210162326249"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20141125064659874"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0520150210162326301"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0820150210162326388"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_H0420150210162326277"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20141125064659874"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL0420150210203042140"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL02W20150210201157094"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL02W20150210201306486"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL0320150210201722140"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100029" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL0420150210202618544"/>
+            <layer_coordinate_transform destAuthId="USER:100029" srcAuthId="USER:100133" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_AKL0320150210202240575"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -1749,6 +1753,12 @@
             <item>ENR_AKH02_Antimeridian_East20150210195552273</item>
             <item>ENR_AKH0220150210195632972</item>
             <item>ENR_AKH0120150210200129488</item>
+            <item>ENR_AKL02W20150210201157094</item>
+            <item>ENR_AKL02W20150210201306486</item>
+            <item>ENR_AKL0320150210201722140</item>
+            <item>ENR_AKL0320150210202240575</item>
+            <item>ENR_AKL0420150210202618544</item>
+            <item>ENR_AKL0420150210203042140</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -3137,8 +3147,23 @@
                 </legendgroup>
                 <legendgroup open="true" checked="Qt::Unchecked" name="Clipping Polygons"/>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Unchecked" name="IFR Low">
-                <legendgroup open="false" checked="Qt::Unchecked" name="Clipping Polygons">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Low">
+                <legendgroup open="false" checked="Qt::PartiallyChecked" name="Clipping Polygons">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKL04" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKL0420150210203042140" visible="1"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKL03" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKL0320150210202240575" visible="1"/>
+                        </filegroup>
+                    </legendlayer>
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKL02W" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKL02W20150210201306486" visible="1"/>
+                        </filegroup>
+                    </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L01" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="ENR_L0120150126185800643" visible="0"/>
@@ -3328,18 +3353,34 @@
                     <legendgroup open="false" checked="Qt::Unchecked" name="Medium"/>
                     <legendgroup open="false" checked="Qt::Unchecked" name="Big"/>
                 </legendgroup>
-                <legendgroup open="false" checked="Qt::Unchecked" name="Source Rasters">
+                <legendgroup open="true" checked="Qt::PartiallyChecked" name="Source Rasters">
                     <legendgroup open="true" checked="Qt::Unchecked" name="Originals"/>
                     <legendgroup open="true" checked="Qt::Unchecked" name="Done"/>
-                    <legendgroup open="true" checked="Qt::Unchecked" name="Recompressed originals">
+                    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Recompressed originals">
                         <legendgroup open="true" checked="Qt::Unchecked" name="Area"/>
                         <legendgroup open="true" checked="Qt::Unchecked" name="Low"/>
                         <legendgroup open="true" checked="Qt::Unchecked" name="High"/>
-                        <legendgroup open="true" checked="Qt::Unchecked" name="Crosses Date Line"/>
+                        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Crosses Date Line">
+                            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKL04" showFeatureCount="0">
+                                <filegroup open="true" hidden="false">
+                                    <legendlayerfile isInOverview="0" layerid="ENR_AKL0420150210202618544" visible="1"/>
+                                </filegroup>
+                            </legendlayer>
+                            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL03" showFeatureCount="0">
+                                <filegroup open="true" hidden="false">
+                                    <legendlayerfile isInOverview="0" layerid="ENR_AKL0320150210201722140" visible="0"/>
+                                </filegroup>
+                            </legendlayer>
+                            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL02W" showFeatureCount="0">
+                                <filegroup open="true" hidden="false">
+                                    <legendlayerfile isInOverview="0" layerid="ENR_AKL02W20150210201157094" visible="0"/>
+                                </filegroup>
+                            </legendlayer>
+                        </legendgroup>
                     </legendgroup>
                 </legendgroup>
-                <legendgroup open="true" checked="Qt::Unchecked" name="Clipped Rasters">
-                    <legendgroup open="false" checked="Qt::Unchecked" name="sub-group1">
+                <legendgroup open="false" checked="Qt::Unchecked" name="Clipped Rasters">
+                    <legendgroup open="true" checked="Qt::Unchecked" name="sub-group1">
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL04_ANC" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
                                 <legendlayerfile isInOverview="0" layerid="ENR_AKL04_ANC20150210162326172" visible="0"/>
@@ -3568,7 +3609,7 @@
                     </legendgroup>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="IFR High">
+            <legendgroup open="true" checked="Qt::Unchecked" name="High">
                 <legendgroup open="true" checked="Qt::Unchecked" name="Clipping Polygons">
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKH02" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
@@ -3657,80 +3698,80 @@
                     </legendlayer>
                 </legendgroup>
                 <legendgroup open="true" checked="Qt::Unchecked" name="Source Rasters"/>
-                <legendgroup open="true" checked="Qt::Checked" name="Clipped Rasters">
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKH01" showFeatureCount="0">
+                <legendgroup open="true" checked="Qt::Unchecked" name="Clipped Rasters">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKH01" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_AKH0120150210200129488" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKH0120150210200129488" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKH02" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKH01_SEA" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_AKH0220150210195632972" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKH01_SEA20150210162325967" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_AKH01_SEA" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKH02" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_AKH01_SEA20150210162325967" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_AKH0220150210195632972" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H12" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H12" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H1220150210162326484" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H1220150210162326484" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H11" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H11" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H1120150210162326456" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H1120150210162326456" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H10" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H10" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H1020150210162326434" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H1020150210162326434" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H09" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H09" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0920150210162326412" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0920150210162326412" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H08" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H08" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0820150210162326388" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0820150210162326388" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H07" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H07" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0720150210162326367" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0720150210162326367" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H06" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H06" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0620150210162326329" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0620150210162326329" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H05" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H05" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0520150210162326301" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0520150210162326301" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H04" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H04" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0420150210162326277" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0420150210162326277" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H03" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H03" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0320150210162326249" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0320150210162326249" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H02" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H02" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0220150210162326223" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0220150210162326223" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ENR_H01" showFeatureCount="0">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_H01" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_H0120150210162326200" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_H0120150210162326200" visible="0"/>
                         </filegroup>
                     </legendlayer>
                 </legendgroup>
@@ -3771,7 +3812,7 @@
             </legendlayer>
         </legendgroup>
     </legend>
-    <projectlayers layercount="388">
+    <projectlayers layercount="394">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>Albuquerque_SEC20150129001111373</id>
             <datasource>./clippingShapes/sectional/Albuquerque_SEC.shp</datasource>
@@ -21458,6 +21499,552 @@
             <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_AKL02W20150210201157094</id>
+            <datasource>/home/jlmcgraw/Documents/myPrograms/mergedCharts/sourceRasters/enroute/ENR_AKL02W.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL02W</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100029</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100029</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>ENR_AKL02W20150210201306486</id>
+            <datasource>./clippingShapes/enroute/ENR_AKL02W.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL02W</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100133</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100133</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym>GRS80</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="0.494118" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
+                            <prop k="color" v="0,0,255,255"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.26"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value="id"/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Sans Serif"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="9"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Normal"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="1"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_AKL0320150210201722140</id>
+            <datasource>/home/jlmcgraw/Documents/myPrograms/mergedCharts/sourceRasters/enroute/ENR_AKL03.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL03</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100029</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100029</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>ENR_AKL0320150210202240575</id>
+            <datasource>./clippingShapes/enroute/ENR_AKL03.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL03</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100133</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100133</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym>GRS80</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="0.494118" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
+                            <prop k="color" v="0,0,255,255"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.26"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value="id"/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Sans Serif"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="9"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Normal"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="1"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>ENR_AKL03_FAI20150210162326124</id>
             <datasource>./warpedRasters/enroute/ENR_AKL03_FAI.tif</datasource>
             <title></title>
@@ -21538,6 +22125,279 @@
                 <rasterresampler maxOversampling="2"/>
             </pipe>
             <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_AKL0420150210202618544</id>
+            <datasource>/home/jlmcgraw/Documents/myPrograms/mergedCharts/sourceRasters/enroute/ENR_AKL04.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL04</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100029</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100029</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>ENR_AKL0420150210203042140</id>
+            <datasource>./clippingShapes/enroute/ENR_AKL04.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL04</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100133</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100133</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym>GRS80</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="0.494118" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
+                            <prop k="color" v="0,0,255,255"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.26"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value="id"/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Sans Serif"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="9"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Normal"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="1"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>ENR_AKL04_ANC20150210162326172</id>
@@ -55429,8 +56289,14 @@
                 <value>ENR_AKH0220150210195552174</value>
                 <value>ENR_AKH02_Antimeridian20150210195552244</value>
                 <value>ENR_AKH02_Antimeridian_East20150210195552273</value>
+                <value>ENR_AKL02W20150210201306486</value>
+                <value>ENR_AKL0320150210202240575</value>
+                <value>ENR_AKL0420150210203042140</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -55800,6 +56666,9 @@
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
@@ -55985,8 +56854,14 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
+                <value>0.000000</value>
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
