@@ -3,7 +3,7 @@
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="WAC">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="WAC">
             <customproperties/>
             <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipping Polygons">
                 <customproperties/>
@@ -71,68 +71,77 @@
                     <customproperties/>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipped Rasters">
+            <layer-tree-group expanded="1" checked="Qt::Checked" name="Clipped Rasters">
                 <customproperties/>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CJ_27_WAC20150210162047583" name="CJ-27_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_12_WAC20150211152728386" name="CE-12_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CJ_26_WAC20150210162047560" name="CJ-26_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_10_WAC20150211152728201" name="CD-10_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_25_WAC20150210162047511" name="CH-25_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CC_8_WAC20150211152727964" name="CC-8_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_24_WAC20150210162047475" name="CH-24_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CJ_27_WAC20150210162047583" name="CJ-27_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_23_WAC20150210162047453" name="CH-23_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CJ_26_WAC20150210162047560" name="CJ-26_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_22_WAC20150210162047430" name="CH-22_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_25_WAC20150210162047511" name="CH-25_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_21_WAC20150210162047410" name="CG-21_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_24_WAC20150210162047475" name="CH-24_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_20_WAC20150210162047384" name="CG-20_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_23_WAC20150210162047453" name="CH-23_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_19_WAC20150210162047345" name="CG-19_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_22_WAC20150210162047430" name="CH-22_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_18_WAC20150210162047324" name="CG-18_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_21_WAC20150210162047410" name="CG-21_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_19_WAC20150210162047288" name="CF-19_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_20_WAC20150210162047384" name="CG-20_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_18_WAC20150210162047257" name="CF-18_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_19_WAC20150210162047345" name="CG-19_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_17_WAC20150210162047231" name="CF-17_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_18_WAC20150210162047324" name="CG-18_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_16_WAC20150210162047206" name="CF-16_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_19_WAC20150210162047288" name="CF-19_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CE_15_WAC20150210162047180" name="CE-15_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_18_WAC20150210162047257" name="CF-18_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CE_13_WAC20150210162047155" name="CE-13_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_17_WAC20150210162047231" name="CF-17_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CD_12_WAC20150210162047129" name="CD-12_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_16_WAC20150210162047206" name="CF-16_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CD_11_WAC20150210162047063" name="CD-11_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_15_WAC20150210162047180" name="CE-15_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CC_9_WAC20150210162046968" name="CC-9_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_13_WAC20150210162047155" name="CE-13_WAC">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_12_WAC20150210162047129" name="CD-12_WAC">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_11_WAC20150210162047063" name="CD-11_WAC">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CC_9_WAC20150210162046968" name="CC-9_WAC">
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Sectionals">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Sectionals">
             <customproperties/>
             <layer-tree-group expanded="0" checked="Qt::Unchecked" name="clipping polygons">
                 <customproperties/>
@@ -320,180 +329,180 @@
                     <customproperties/>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="0" checked="Qt::Checked" name="Clipped Rasters">
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipped Rasters">
                 <customproperties/>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Wichita_SEC20150210162117477" name="Wichita_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Wichita_SEC20150210162117477" name="Wichita_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Whitehorse_SEC20150210162117431" name="Whitehorse_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Whitehorse_SEC20150210162117431" name="Whitehorse_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Western_Aleutian_Islands_West_SEC20150210162117403" name="Western_Aleutian_Islands_West_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Western_Aleutian_Islands_West_SEC20150210162117403" name="Western_Aleutian_Islands_West_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Western_Aleutian_Islands_East_SEC20150211091259426" name="Western_Aleutian_Islands_East_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Western_Aleutian_Islands_East_SEC20150211091259426" name="Western_Aleutian_Islands_East_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Washington_SEC20150210162117380" name="Washington_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Washington_SEC20150210162117380" name="Washington_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Twin_Cities_SEC20150210162117353" name="Twin_Cities_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Twin_Cities_SEC20150210162117353" name="Twin_Cities_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="St_Louis_SEC20150210162117329" name="St_Louis_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="St_Louis_SEC20150210162117329" name="St_Louis_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Seward_SEC20150210162117308" name="Seward_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Seward_SEC20150210162117308" name="Seward_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Seattle_SEC20150210162117283" name="Seattle_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Seattle_SEC20150210162117283" name="Seattle_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="San_Francisco_SEC20150210162117258" name="San_Francisco_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="San_Francisco_SEC20150210162117258" name="San_Francisco_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="San_Antonio_SEC20150210162117228" name="San_Antonio_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="San_Antonio_SEC20150210162117228" name="San_Antonio_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Samoan_Islands_Inset_SEC20150210162117197" name="Samoan_Islands_Inset_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Samoan_Islands_Inset_SEC20150210162117197" name="Samoan_Islands_Inset_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Salt_Lake_City_SEC20150210162117176" name="Salt_Lake_City_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Salt_Lake_City_SEC20150210162117176" name="Salt_Lake_City_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Point_Barrow_SEC20150210162117155" name="Point_Barrow_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Point_Barrow_SEC20150210162117155" name="Point_Barrow_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Phoenix_SEC20150210162117134" name="Phoenix_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Phoenix_SEC20150210162117134" name="Phoenix_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Omaha_SEC20150210162117111" name="Omaha_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Omaha_SEC20150210162117111" name="Omaha_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Nome_SEC20150210162117088" name="Nome_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Nome_SEC20150210162117088" name="Nome_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="New_York_SEC20150210162117066" name="New_York_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="New_York_SEC20150210162117066" name="New_York_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="New_Orleans_SEC20150210162117042" name="New_Orleans_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="New_Orleans_SEC20150210162117042" name="New_Orleans_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Montreal_SEC20150210162117019" name="Montreal_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Montreal_SEC20150210162117019" name="Montreal_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Miami_SEC20150210162116996" name="Miami_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Miami_SEC20150210162116996" name="Miami_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Memphis_SEC20150210162116952" name="Memphis_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Memphis_SEC20150210162116952" name="Memphis_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="McGrath_SEC20150210162116928" name="McGrath_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="McGrath_SEC20150210162116928" name="McGrath_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Mariana_Islands_Inset_SEC20150210162116902" name="Mariana_Islands_Inset_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Mariana_Islands_Inset_SEC20150210162116902" name="Mariana_Islands_Inset_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Los_Angeles_SEC20150210162116879" name="Los_Angeles_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Los_Angeles_SEC20150210162116879" name="Los_Angeles_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Las_Vegas_SEC20150210162116855" name="Las_Vegas_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Las_Vegas_SEC20150210162116855" name="Las_Vegas_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Lake_Huron_SEC20150210162116824" name="Lake_Huron_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Lake_Huron_SEC20150210162116824" name="Lake_Huron_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Kodiak_SEC20150210162116804" name="Kodiak_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Kodiak_SEC20150210162116804" name="Kodiak_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Klamath_Falls_SEC20150210162116783" name="Klamath_Falls_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Klamath_Falls_SEC20150210162116783" name="Klamath_Falls_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Ketchikan_SEC20150210162116755" name="Ketchikan_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Ketchikan_SEC20150210162116755" name="Ketchikan_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Kansas_City_SEC20150210162116731" name="Kansas_City_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Kansas_City_SEC20150210162116731" name="Kansas_City_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Juneau_SEC20150210162116707" name="Juneau_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Juneau_SEC20150210162116707" name="Juneau_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Jacksonville_SEC20150210162116683" name="Jacksonville_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Jacksonville_SEC20150210162116683" name="Jacksonville_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Houston_SEC20150210162116663" name="Houston_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Houston_SEC20150210162116663" name="Houston_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Honolulu_Inset_SEC20150210162116631" name="Honolulu_Inset_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Honolulu_Inset_SEC20150210162116631" name="Honolulu_Inset_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Hawaiian_Islands_SEC20150210162116607" name="Hawaiian_Islands_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Hawaiian_Islands_SEC20150210162116607" name="Hawaiian_Islands_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Halifax_SEC20150210162116583" name="Halifax_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Halifax_SEC20150210162116583" name="Halifax_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Green_Bay_SEC20150210162116559" name="Green_Bay_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Green_Bay_SEC20150210162116559" name="Green_Bay_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Great_Falls_SEC20150210162116535" name="Great_Falls_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Great_Falls_SEC20150210162116535" name="Great_Falls_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Fairbanks_SEC20150210162116515" name="Fairbanks_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Fairbanks_SEC20150210162116515" name="Fairbanks_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="El_Paso_SEC20150210162116479" name="El_Paso_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="El_Paso_SEC20150210162116479" name="El_Paso_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Dutch_Harbor_SEC20150210162116451" name="Dutch_Harbor_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Dutch_Harbor_SEC20150210162116451" name="Dutch_Harbor_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Detroit_SEC20150210162116425" name="Detroit_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Detroit_SEC20150210162116425" name="Detroit_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Denver_SEC20150210162116401" name="Denver_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Denver_SEC20150210162116401" name="Denver_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Dawson_SEC20150210162116373" name="Dawson_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Dawson_SEC20150210162116373" name="Dawson_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Dallas_Ft_Worth_SEC20150210162116342" name="Dallas-Ft_Worth_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Dallas_Ft_Worth_SEC20150210162116342" name="Dallas-Ft_Worth_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Cold_Bay_SEC20150210162116317" name="Cold_Bay_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Cold_Bay_SEC20150210162116317" name="Cold_Bay_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Cincinnati_SEC20150210162116288" name="Cincinnati_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Cincinnati_SEC20150210162116288" name="Cincinnati_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Chicago_SEC20150210162116260" name="Chicago_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Chicago_SEC20150210162116260" name="Chicago_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Cheyenne_SEC20150210162116226" name="Cheyenne_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Cheyenne_SEC20150210162116226" name="Cheyenne_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Charlotte_SEC20150210162116199" name="Charlotte_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Charlotte_SEC20150210162116199" name="Charlotte_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Cape_Lisburne_SEC20150210162116173" name="Cape_Lisburne_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Cape_Lisburne_SEC20150210162116173" name="Cape_Lisburne_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Brownsville_SEC20150210162116139" name="Brownsville_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Brownsville_SEC20150210162116139" name="Brownsville_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Billings_SEC20150210162116118" name="Billings_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Billings_SEC20150210162116118" name="Billings_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Bethel_SEC20150210162116097" name="Bethel_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Bethel_SEC20150210162116097" name="Bethel_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Atlanta_SEC20150210162116074" name="Atlanta_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Atlanta_SEC20150210162116074" name="Atlanta_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Anchorage_SEC20150210162116041" name="Anchorage_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Anchorage_SEC20150210162116041" name="Anchorage_SEC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="Albuquerque_SEC20150210162115951" name="Albuquerque_SEC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Albuquerque_SEC20150210162115951" name="Albuquerque_SEC">
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
@@ -1160,9 +1169,6 @@
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL01_JNU20150210162325991" name="ENR_AKL01_JNU">
                             <customproperties/>
                         </layer-tree-layer>
-                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL0420150211024926768" name="ENR_AKL04">
-                            <customproperties/>
-                        </layer-tree-layer>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL0320150211024926708" name="ENR_AKL03">
                             <customproperties/>
                         </layer-tree-layer>
@@ -1394,10 +1400,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-21265842.97919312492012978</xmin>
-            <ymin>-7791838.28413405455648899</ymin>
-            <xmax>20767188.31368057057261467</xmax>
-            <ymax>15394922.15618311055004597</ymax>
+            <xmin>-25639211.41983675956726074</xmin>
+            <ymin>-292945.48235476855188608</ymin>
+            <xmax>-709996.65981520712375641</xmax>
+            <ymax>13458804.33978660218417645</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -1413,124 +1419,146 @@
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150129001111828"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150129001111814"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150210162117111"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150129001112113"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150129001111741"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150210162117431"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150210162117176"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150129001112017"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100138" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211084839076"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150129001112284"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_23_WAC20150210162047453"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150129001111640"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150210162117380"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Twin_Cities_SEC20150129001112399"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150129001112411"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150129001111943"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150129001112246"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150210162117228"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150210162116425"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150129001111800"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150129001111856"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150129001111771"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150129001112372"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_21_WAC20150210162047410"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150129001111576"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150210162117111"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150210162116683"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150210162116451"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150129001112237"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150210162116097"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150210162117134"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100092" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211081104792"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_16_WAC20150210162047206"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150129001111520"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150129001112343"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_19_WAC20150210162047288"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Las_Vegas_SEC20150129001112070"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_12_WAC20150210162047129"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150210162116731"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150210162116342"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150129001111995"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150129001112176"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150210162117176"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150210162117197"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150210162116559"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150210162116928"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150210162116288"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20141125064659874"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150129001111714"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Montreal_SEC20150210162117019"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cape_Lisburne_SEC20150210162116173"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150129001112089"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150210162116260"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150210162117042"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150210162116535"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dawson_SEC20150210162116373"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150129001112146"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150210162116631"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150129001111800"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150129001112298"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150210162116996"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_17_WAC20150210162047231"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150129001111885"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150129001112328"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_25_WAC20150210162047511"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150129001112209"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_19_WAC20150210162047345"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CJ_27_WAC20150210162047583"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150210162116755"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100096" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_10_WAC20150211152728201"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150129001112450"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150129001111741"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150129001112437"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150129001112017"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150210162116783"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150210162117155"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_24_WAC20150210162047475"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150210162116074"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211091259426"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150210162116902"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150210162116317"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150210162116952"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_18_WAC20150210162047257"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150129001112125"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150210162116226"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150210162116879"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150210162117258"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150129001112411"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150129001112113"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150129001111866"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150129001111620"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150129001111943"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150129001112385"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100093" srcDatumTransform="-1" destDatumTransform="-1" layerid="CC_8_WAC20150211152727964"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150210162117066"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CC_9_WAC20150210162046968"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150210162116118"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_20_WAC20150210162047384"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150210162116804"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150129001111728"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150129001111828"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150129001111971"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150129001111590"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150129001111814"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150129001112313"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150129001111601"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150210162117283"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150210162116583"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150129001111663"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150210162116425"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150129001112246"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150129001111499"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_22_WAC20150210162047430"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150210162117228"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150129001112268"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150210162117308"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150210162116824"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150210162117329"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150210162117403"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150129001111843"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150210162116707"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CJ_26_WAC20150210162047560"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150210162116607"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_18_WAC20150210162047324"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150210162117088"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_15_WAC20150210162047180"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150129001111786"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cape_Lisburne_SEC20150129001111561"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Brownsville_SEC20150210162116139"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wichita_SEC20150129001112463"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150210162117134"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150210162116928"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150210162116097"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150129001111601"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150210162116451"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150129001111499"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100138" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211084839076"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150210162117308"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150210162116479"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150210162116288"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150210162116342"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150129001112125"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150129001111520"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Brownsville_SEC20150129001111539"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Montreal_SEC20150210162117019"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150210162116583"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Las_Vegas_SEC20150129001112070"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150129001112043"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150210162116559"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150210162116226"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150129001112176"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150210162116607"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150210162117329"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150210162116515"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150129001111512"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150129001112313"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150129001111728"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150129001112343"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Las_Vegas_SEC20150210162116855"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cape_Lisburne_SEC20150210162116173"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150129001111971"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150210162116755"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150210162116118"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150210162116041"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wichita_SEC20150210162117477"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150210162117155"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150129001111640"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150129001112328"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100092" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211081104792"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150210162116996"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150210162116317"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150129001111771"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150210162117403"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211091259426"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150210162116260"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150129001111467"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150210162116952"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150210162116707"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150129001111756"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150129001112372"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150210162116631"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20141125064659874"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150210162116804"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150129001111843"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150210162116879"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150129001111786"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150210162116199"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150129001111663"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque_SEC20150129001111373"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150129001111885"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150210162116824"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150129001111576"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150210162116731"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Montreal_SEC20150129001112196"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150210162116783"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150129001112437"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150129001112284"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150210162116074"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150129001112043"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wichita_SEC20150210162117477"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_13_WAC20150210162047155"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150129001111512"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dawson_SEC20150129001111689"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150129001112268"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150210162116902"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150129001112089"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150210162116663"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150129001111714"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150210162117197"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150210162117042"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150210162117088"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150210162116683"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150129001111590"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150129001112237"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150210162116401"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150210162117380"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150129001112353"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150129001112209"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150129001112224"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150129001112450"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150129001111995"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150210162117066"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150210162117258"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150210162117283"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150129001111866"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150129001111620"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150210162116535"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150129001112385"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Twin_Cities_SEC20150210162117353"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque_SEC20150210162115951"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150129001112298"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100101" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_12_WAC20150211152728386"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Brownsville_SEC20150129001111539"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150129001111856"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150129001112146"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150129001112224"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_11_WAC20150210162047063"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150210162116479"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150210162116041"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150129001111467"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150210162116199"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150210162117431"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150210162116663"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150129001111756"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque_SEC20150129001111373"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150210162116401"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150129001112353"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Twin_Cities_SEC20150210162117353"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150210162116515"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -1555,6 +1583,25 @@
             <item>CH_25_WAC20150128093215198</item>
             <item>CJ_26_WAC20150128093215225</item>
             <item>CJ_27_WAC20150128093215281</item>
+            <item>CJ_27_WAC20150210162047583</item>
+            <item>CJ_26_WAC20150210162047560</item>
+            <item>CH_25_WAC20150210162047511</item>
+            <item>CH_24_WAC20150210162047475</item>
+            <item>CH_23_WAC20150210162047453</item>
+            <item>CH_22_WAC20150210162047430</item>
+            <item>CG_21_WAC20150210162047410</item>
+            <item>CG_20_WAC20150210162047384</item>
+            <item>CG_19_WAC20150210162047345</item>
+            <item>CG_18_WAC20150210162047324</item>
+            <item>CF_19_WAC20150210162047288</item>
+            <item>CF_18_WAC20150210162047257</item>
+            <item>CF_17_WAC20150210162047231</item>
+            <item>CF_16_WAC20150210162047206</item>
+            <item>CE_15_WAC20150210162047180</item>
+            <item>CE_13_WAC20150210162047155</item>
+            <item>CD_12_WAC20150210162047129</item>
+            <item>CD_11_WAC20150210162047063</item>
+            <item>CC_9_WAC20150210162046968</item>
             <item>Albuquerque_SEC20150129001111373</item>
             <item>Anchorage_SEC20150129001111467</item>
             <item>Atlanta_SEC20150129001111499</item>
@@ -1609,9 +1656,69 @@
             <item>St_Louis_SEC20150129001112385</item>
             <item>Twin_Cities_SEC20150129001112399</item>
             <item>Washington_SEC20150129001112411</item>
+            <item>Western_Aleutian_Islands_East_SEC20150211084839076</item>
             <item>Western_Aleutian_Islands_West_SEC20150129001112437</item>
             <item>Whitehorse_SEC20150129001112450</item>
             <item>Wichita_SEC20150129001112463</item>
+            <item>Western_Aleutian_Islands_East_SEC20150211081104792</item>
+            <item>Wichita_SEC20150210162117477</item>
+            <item>Whitehorse_SEC20150210162117431</item>
+            <item>Western_Aleutian_Islands_West_SEC20150210162117403</item>
+            <item>Western_Aleutian_Islands_East_SEC20150211091259426</item>
+            <item>Washington_SEC20150210162117380</item>
+            <item>Twin_Cities_SEC20150210162117353</item>
+            <item>St_Louis_SEC20150210162117329</item>
+            <item>Seward_SEC20150210162117308</item>
+            <item>Seattle_SEC20150210162117283</item>
+            <item>San_Francisco_SEC20150210162117258</item>
+            <item>San_Antonio_SEC20150210162117228</item>
+            <item>Samoan_Islands_Inset_SEC20150210162117197</item>
+            <item>Salt_Lake_City_SEC20150210162117176</item>
+            <item>Point_Barrow_SEC20150210162117155</item>
+            <item>Phoenix_SEC20150210162117134</item>
+            <item>Omaha_SEC20150210162117111</item>
+            <item>Nome_SEC20150210162117088</item>
+            <item>New_York_SEC20150210162117066</item>
+            <item>New_Orleans_SEC20150210162117042</item>
+            <item>Montreal_SEC20150210162117019</item>
+            <item>Miami_SEC20150210162116996</item>
+            <item>Memphis_SEC20150210162116952</item>
+            <item>McGrath_SEC20150210162116928</item>
+            <item>Mariana_Islands_Inset_SEC20150210162116902</item>
+            <item>Los_Angeles_SEC20150210162116879</item>
+            <item>Las_Vegas_SEC20150210162116855</item>
+            <item>Lake_Huron_SEC20150210162116824</item>
+            <item>Kodiak_SEC20150210162116804</item>
+            <item>Klamath_Falls_SEC20150210162116783</item>
+            <item>Ketchikan_SEC20150210162116755</item>
+            <item>Kansas_City_SEC20150210162116731</item>
+            <item>Juneau_SEC20150210162116707</item>
+            <item>Jacksonville_SEC20150210162116683</item>
+            <item>Houston_SEC20150210162116663</item>
+            <item>Honolulu_Inset_SEC20150210162116631</item>
+            <item>Hawaiian_Islands_SEC20150210162116607</item>
+            <item>Halifax_SEC20150210162116583</item>
+            <item>Green_Bay_SEC20150210162116559</item>
+            <item>Great_Falls_SEC20150210162116535</item>
+            <item>Fairbanks_SEC20150210162116515</item>
+            <item>El_Paso_SEC20150210162116479</item>
+            <item>Dutch_Harbor_SEC20150210162116451</item>
+            <item>Detroit_SEC20150210162116425</item>
+            <item>Denver_SEC20150210162116401</item>
+            <item>Dawson_SEC20150210162116373</item>
+            <item>Dallas_Ft_Worth_SEC20150210162116342</item>
+            <item>Cold_Bay_SEC20150210162116317</item>
+            <item>Cincinnati_SEC20150210162116288</item>
+            <item>Chicago_SEC20150210162116260</item>
+            <item>Cheyenne_SEC20150210162116226</item>
+            <item>Charlotte_SEC20150210162116199</item>
+            <item>Cape_Lisburne_SEC20150210162116173</item>
+            <item>Brownsville_SEC20150210162116139</item>
+            <item>Billings_SEC20150210162116118</item>
+            <item>Bethel_SEC20150210162116097</item>
+            <item>Atlanta_SEC20150210162116074</item>
+            <item>Anchorage_SEC20150210162116041</item>
+            <item>Albuquerque_SEC20150210162115951</item>
             <item>Baltimore_HEL20150128100341968</item>
             <item>Boston_Downtown_HEL20150128100342585</item>
             <item>Boston_HEL20150128100342610</item>
@@ -1630,6 +1737,24 @@
             <item>U_S__Gulf_Coast_HEL20150128100343254</item>
             <item>Washington_HEL20150128100343298</item>
             <item>Washington_Inset_HEL20150128100343375</item>
+            <item>Washington_Inset_HEL20150210162206413</item>
+            <item>Washington_HEL20150210162206382</item>
+            <item>U_S__Gulf_Coast_HEL20150210162206350</item>
+            <item>New_York_HEL20150210162206305</item>
+            <item>Los_Angeles_West_HEL20150210162206245</item>
+            <item>Los_Angeles_East_HEL20150210162206215</item>
+            <item>Houston_South_HEL20150210162206173</item>
+            <item>Houston_North_HEL20150210162206131</item>
+            <item>Eastern_Long_Island_HEL20150210162206100</item>
+            <item>Downtown_Manhattan_HEL20150210162206064</item>
+            <item>Detroit_HEL20150210162206020</item>
+            <item>Dallas_Love_Inset_HEL20150210162205989</item>
+            <item>Dallas_Ft_Worth_HEL20150210162205957</item>
+            <item>Chicago_O_Hare_Inset_HEL20150210162205926</item>
+            <item>Chicago_HEL20150210162205894</item>
+            <item>Boston_HEL20150210162205859</item>
+            <item>Boston_Downtown_HEL20150210162205794</item>
+            <item>Baltimore_HEL20150210162205674</item>
             <item>Anchorage_TAC20150128092855588</item>
             <item>Atlanta_TAC20150128092856187</item>
             <item>Baltimore_Washington_TAC20150128092856248</item>
@@ -1663,6 +1788,44 @@
             <item>Seattle_TAC20150128092856877</item>
             <item>St_Louis_TAC20150128092856899</item>
             <item>Tampa_TAC20150128092856924</item>
+            <item>Tampa_TAC20150210162230399</item>
+            <item>St_Louis_TAC20150210162230364</item>
+            <item>Seattle_TAC20150210162230333</item>
+            <item>San_Francisco_TAC20150210162230300</item>
+            <item>San_Diego_TAC20150210162230252</item>
+            <item>Salt_Lake_City_TAC20150210162230212</item>
+            <item>Puerto_Rico_VI_TAC20150210162230176</item>
+            <item>Pittsburgh_TAC20150210162230135</item>
+            <item>Phoenix_TAC20150210162230105</item>
+            <item>Philadelphia_TAC20150210162230076</item>
+            <item>Orlando_TAC20150210162230043</item>
+            <item>New_York_TAC20150210162230012</item>
+            <item>New_Orleans_TAC20150210162229965</item>
+            <item>Minneapolis_St_Paul_TAC20150210162229927</item>
+            <item>Miami_TAC20150210162229896</item>
+            <item>Memphis_TAC20150210162229867</item>
+            <item>Los_Angeles_TAC20150210162229837</item>
+            <item>Las_Vegas_TAC20150210162229804</item>
+            <item>Kansas_City_TAC20150210162229775</item>
+            <item>Houston_TAC20150210162229739</item>
+            <item>Fairbanks_TAC20150210162229699</item>
+            <item>Detroit_TAC20150210162229656</item>
+            <item>Denver_TAC20150210162229625</item>
+            <item>Dallas_Ft_Worth_TAC20150210162229593</item>
+            <item>Colorado_Springs_TAC20150210162229558</item>
+            <item>Cleveland_TAC20150210162229523</item>
+            <item>Cincinnati_TAC20150210162229459</item>
+            <item>Chicago_TAC20150210162229410</item>
+            <item>Charlotte_TAC20150210162229377</item>
+            <item>Boston_TAC20150210162229335</item>
+            <item>Baltimore_Washington_TAC20150210162229293</item>
+            <item>Atlanta_TAC20150210162229222</item>
+            <item>Anchorage_TAC20150210162229115</item>
+            <item>ENR_P0120150210205034511</item>
+            <item>ENR_AKH0220150210195552174</item>
+            <item>ENR_AKH02_Antimeridian20150210195552244</item>
+            <item>ENR_AKH02_Antimeridian_East20150210195552273</item>
+            <item>ENR_AKH0120150210164423485</item>
             <item>ENR_H1220150126170554304</item>
             <item>ENR_AKH01_SEA20150126170554319</item>
             <item>ENR_H0120150126171650680</item>
@@ -1676,236 +1839,6 @@
             <item>ENR_H0920150126170554263</item>
             <item>ENR_H1020150126170554278</item>
             <item>ENR_H1120150126170554291</item>
-            <item>ne_10m_admin_0_countries20141125064659874</item>
-            <item>CC_9_WAC20150210162046968</item>
-            <item>CD_11_WAC20150210162047063</item>
-            <item>CD_12_WAC20150210162047129</item>
-            <item>CE_13_WAC20150210162047155</item>
-            <item>CE_15_WAC20150210162047180</item>
-            <item>CF_16_WAC20150210162047206</item>
-            <item>CF_17_WAC20150210162047231</item>
-            <item>CF_18_WAC20150210162047257</item>
-            <item>CF_19_WAC20150210162047288</item>
-            <item>CG_18_WAC20150210162047324</item>
-            <item>CG_19_WAC20150210162047345</item>
-            <item>CG_20_WAC20150210162047384</item>
-            <item>CG_21_WAC20150210162047410</item>
-            <item>CH_22_WAC20150210162047430</item>
-            <item>CH_23_WAC20150210162047453</item>
-            <item>CH_24_WAC20150210162047475</item>
-            <item>CH_25_WAC20150210162047511</item>
-            <item>CJ_26_WAC20150210162047560</item>
-            <item>CJ_27_WAC20150210162047583</item>
-            <item>Albuquerque_SEC20150210162115951</item>
-            <item>Anchorage_SEC20150210162116041</item>
-            <item>Atlanta_SEC20150210162116074</item>
-            <item>Bethel_SEC20150210162116097</item>
-            <item>Billings_SEC20150210162116118</item>
-            <item>Brownsville_SEC20150210162116139</item>
-            <item>Cape_Lisburne_SEC20150210162116173</item>
-            <item>Charlotte_SEC20150210162116199</item>
-            <item>Cheyenne_SEC20150210162116226</item>
-            <item>Chicago_SEC20150210162116260</item>
-            <item>Cincinnati_SEC20150210162116288</item>
-            <item>Cold_Bay_SEC20150210162116317</item>
-            <item>Dallas_Ft_Worth_SEC20150210162116342</item>
-            <item>Dawson_SEC20150210162116373</item>
-            <item>Denver_SEC20150210162116401</item>
-            <item>Detroit_SEC20150210162116425</item>
-            <item>Dutch_Harbor_SEC20150210162116451</item>
-            <item>El_Paso_SEC20150210162116479</item>
-            <item>Fairbanks_SEC20150210162116515</item>
-            <item>Great_Falls_SEC20150210162116535</item>
-            <item>Green_Bay_SEC20150210162116559</item>
-            <item>Halifax_SEC20150210162116583</item>
-            <item>Hawaiian_Islands_SEC20150210162116607</item>
-            <item>Honolulu_Inset_SEC20150210162116631</item>
-            <item>Houston_SEC20150210162116663</item>
-            <item>Jacksonville_SEC20150210162116683</item>
-            <item>Juneau_SEC20150210162116707</item>
-            <item>Kansas_City_SEC20150210162116731</item>
-            <item>Ketchikan_SEC20150210162116755</item>
-            <item>Klamath_Falls_SEC20150210162116783</item>
-            <item>Kodiak_SEC20150210162116804</item>
-            <item>Lake_Huron_SEC20150210162116824</item>
-            <item>Las_Vegas_SEC20150210162116855</item>
-            <item>Los_Angeles_SEC20150210162116879</item>
-            <item>Mariana_Islands_Inset_SEC20150210162116902</item>
-            <item>McGrath_SEC20150210162116928</item>
-            <item>Memphis_SEC20150210162116952</item>
-            <item>Miami_SEC20150210162116996</item>
-            <item>Montreal_SEC20150210162117019</item>
-            <item>New_Orleans_SEC20150210162117042</item>
-            <item>New_York_SEC20150210162117066</item>
-            <item>Nome_SEC20150210162117088</item>
-            <item>Omaha_SEC20150210162117111</item>
-            <item>Phoenix_SEC20150210162117134</item>
-            <item>Point_Barrow_SEC20150210162117155</item>
-            <item>Salt_Lake_City_SEC20150210162117176</item>
-            <item>Samoan_Islands_Inset_SEC20150210162117197</item>
-            <item>San_Antonio_SEC20150210162117228</item>
-            <item>San_Francisco_SEC20150210162117258</item>
-            <item>Seattle_SEC20150210162117283</item>
-            <item>Seward_SEC20150210162117308</item>
-            <item>St_Louis_SEC20150210162117329</item>
-            <item>Twin_Cities_SEC20150210162117353</item>
-            <item>Washington_SEC20150210162117380</item>
-            <item>Western_Aleutian_Islands_West_SEC20150210162117403</item>
-            <item>Whitehorse_SEC20150210162117431</item>
-            <item>Wichita_SEC20150210162117477</item>
-            <item>Baltimore_HEL20150210162205674</item>
-            <item>Boston_Downtown_HEL20150210162205794</item>
-            <item>Boston_HEL20150210162205859</item>
-            <item>Chicago_HEL20150210162205894</item>
-            <item>Chicago_O_Hare_Inset_HEL20150210162205926</item>
-            <item>Dallas_Ft_Worth_HEL20150210162205957</item>
-            <item>Dallas_Love_Inset_HEL20150210162205989</item>
-            <item>Detroit_HEL20150210162206020</item>
-            <item>Downtown_Manhattan_HEL20150210162206064</item>
-            <item>Eastern_Long_Island_HEL20150210162206100</item>
-            <item>Houston_North_HEL20150210162206131</item>
-            <item>Houston_South_HEL20150210162206173</item>
-            <item>Los_Angeles_East_HEL20150210162206215</item>
-            <item>Los_Angeles_West_HEL20150210162206245</item>
-            <item>New_York_HEL20150210162206305</item>
-            <item>U_S__Gulf_Coast_HEL20150210162206350</item>
-            <item>Washington_HEL20150210162206382</item>
-            <item>Washington_Inset_HEL20150210162206413</item>
-            <item>Anchorage_TAC20150210162229115</item>
-            <item>Atlanta_TAC20150210162229222</item>
-            <item>Baltimore_Washington_TAC20150210162229293</item>
-            <item>Boston_TAC20150210162229335</item>
-            <item>Charlotte_TAC20150210162229377</item>
-            <item>Chicago_TAC20150210162229410</item>
-            <item>Cincinnati_TAC20150210162229459</item>
-            <item>Cleveland_TAC20150210162229523</item>
-            <item>Colorado_Springs_TAC20150210162229558</item>
-            <item>Dallas_Ft_Worth_TAC20150210162229593</item>
-            <item>Denver_TAC20150210162229625</item>
-            <item>Detroit_TAC20150210162229656</item>
-            <item>Fairbanks_TAC20150210162229699</item>
-            <item>Houston_TAC20150210162229739</item>
-            <item>Kansas_City_TAC20150210162229775</item>
-            <item>Las_Vegas_TAC20150210162229804</item>
-            <item>Los_Angeles_TAC20150210162229837</item>
-            <item>Memphis_TAC20150210162229867</item>
-            <item>Miami_TAC20150210162229896</item>
-            <item>Minneapolis_St_Paul_TAC20150210162229927</item>
-            <item>New_Orleans_TAC20150210162229965</item>
-            <item>New_York_TAC20150210162230012</item>
-            <item>Orlando_TAC20150210162230043</item>
-            <item>Philadelphia_TAC20150210162230076</item>
-            <item>Phoenix_TAC20150210162230105</item>
-            <item>Pittsburgh_TAC20150210162230135</item>
-            <item>Puerto_Rico_VI_TAC20150210162230176</item>
-            <item>Salt_Lake_City_TAC20150210162230212</item>
-            <item>San_Diego_TAC20150210162230252</item>
-            <item>San_Francisco_TAC20150210162230300</item>
-            <item>Seattle_TAC20150210162230333</item>
-            <item>St_Louis_TAC20150210162230364</item>
-            <item>Tampa_TAC20150210162230399</item>
-            <item>ENR_A01_ATL20150210162325554</item>
-            <item>ENR_A01_DCA20150210162325607</item>
-            <item>ENR_A01_DET20150210162325645</item>
-            <item>ENR_A01_JAX20150210162325696</item>
-            <item>ENR_A01_MIA20150210162325724</item>
-            <item>ENR_A01_MSP20150210162325747</item>
-            <item>ENR_A01_STL20150210162325769</item>
-            <item>ENR_A02_DEN20150210162325790</item>
-            <item>ENR_A02_DFW20150210162325813</item>
-            <item>ENR_A02_LAX20150210162325839</item>
-            <item>ENR_A02_MKC20150210162325866</item>
-            <item>ENR_A02_ORD20150210162325891</item>
-            <item>ENR_A02_PHX20150210162325916</item>
-            <item>ENR_A02_SFO20150210162325944</item>
-            <item>ENR_AKH01_SEA20150210162325967</item>
-            <item>ENR_AKL01_JNU20150210162325991</item>
-            <item>ENR_AKL01_VR20150210162326015</item>
-            <item>ENR_AKL0120150210162326038</item>
-            <item>ENR_AKL02C20150210162326060</item>
-            <item>ENR_AKL02E20150210162326088</item>
-            <item>ENR_AKL03_FAI20150210162326124</item>
-            <item>ENR_AKL03_OME20150210162326148</item>
-            <item>ENR_AKL04_ANC20150210162326172</item>
-            <item>ENR_H0120150210162326200</item>
-            <item>ENR_H0220150210162326223</item>
-            <item>ENR_H0320150210162326249</item>
-            <item>ENR_H0420150210162326277</item>
-            <item>ENR_H0520150210162326301</item>
-            <item>ENR_H0620150210162326329</item>
-            <item>ENR_H0720150210162326367</item>
-            <item>ENR_H0820150210162326388</item>
-            <item>ENR_H0920150210162326412</item>
-            <item>ENR_H1020150210162326434</item>
-            <item>ENR_H1120150210162326456</item>
-            <item>ENR_H1220150210162326484</item>
-            <item>ENR_L0120150210162326508</item>
-            <item>ENR_L0220150210162326531</item>
-            <item>ENR_L0320150210162326552</item>
-            <item>ENR_L0420150210162326581</item>
-            <item>ENR_L0520150210162326613</item>
-            <item>ENR_L06N20150210162326636</item>
-            <item>ENR_L06S20150210162326659</item>
-            <item>ENR_L0720150210162326683</item>
-            <item>ENR_L0820150210162326707</item>
-            <item>ENR_L0920150210162326730</item>
-            <item>ENR_L1020150210162326753</item>
-            <item>ENR_L1120150210162326783</item>
-            <item>ENR_L1220150210162326806</item>
-            <item>ENR_L1320150210162326832</item>
-            <item>ENR_L1420150210162326868</item>
-            <item>ENR_L1520150210162326892</item>
-            <item>ENR_L1620150210162326917</item>
-            <item>ENR_L1720150210162326940</item>
-            <item>ENR_L1820150210162326970</item>
-            <item>ENR_L1920150210162326996</item>
-            <item>ENR_L2020150210162327020</item>
-            <item>ENR_L2120150210162327045</item>
-            <item>ENR_L2220150210162327072</item>
-            <item>ENR_L2320150210162327105</item>
-            <item>ENR_L2420150210162327141</item>
-            <item>ENR_L2520150210162327165</item>
-            <item>ENR_L2620150210162327189</item>
-            <item>ENR_L2720150210162327219</item>
-            <item>ENR_L2820150210162327245</item>
-            <item>ENR_L2920150210162327276</item>
-            <item>ENR_L3020150210162327309</item>
-            <item>ENR_L3120150210162327345</item>
-            <item>ENR_L3220150210162327385</item>
-            <item>ENR_L3320150210162327411</item>
-            <item>ENR_L3420150210162327437</item>
-            <item>ENR_L3520150210162327461</item>
-            <item>ENR_L3620150210162327484</item>
-            <item>ENR_P01_GUA20150210162327509</item>
-            <item>ENR_P0220150210162327544</item>
-            <item>narc20150210162327590</item>
-            <item>watrs20150210162327629</item>
-            <item>ENR_AKH0120150210164423485</item>
-            <item>ENR_AKH0220150210195552174</item>
-            <item>ENR_AKH02_Antimeridian20150210195552244</item>
-            <item>ENR_AKH02_Antimeridian_East20150210195552273</item>
-            <item>ENR_AKH0220150210195632972</item>
-            <item>ENR_AKH0120150210200129488</item>
-            <item>ENR_AKL02W20150210201157094</item>
-            <item>ENR_AKL0320150210201722140</item>
-            <item>ENR_AKL0420150210202618544</item>
-            <item>ENR_P0120150210204352788</item>
-            <item>ENR_P0120150210205034511</item>
-            <item>ENR_AKL02W20150211024926384</item>
-            <item>ENR_AKL0320150211024926708</item>
-            <item>ENR_AKL0420150211024926768</item>
-            <item>ENR_P0120150211025511692</item>
-            <item>ENR_AKL01_JNU20150211032953466</item>
-            <item>ENR_AKL01_VR20150211032953569</item>
-            <item>ENR_AKL0120150211032953610</item>
-            <item>ENR_AKL02C20150211032953632</item>
-            <item>ENR_AKL02E20150211032953646</item>
-            <item>ENR_AKL02W20150211032953670</item>
-            <item>ENR_AKL03_FAI20150211032953682</item>
-            <item>ENR_AKL03_OME20150211032953702</item>
-            <item>ENR_AKL0320150211032953732</item>
-            <item>ENR_AKL04_ANC20150211032953746</item>
-            <item>ENR_AKL0420150211032953770</item>
             <item>ENR_L0120150211033107334</item>
             <item>ENR_L0220150211033107386</item>
             <item>ENR_L0320150211033107398</item>
@@ -1943,15 +1876,112 @@
             <item>ENR_L3420150211033107910</item>
             <item>ENR_L3520150211033107918</item>
             <item>ENR_L3620150211033107929</item>
+            <item>ENR_AKL01_JNU20150211032953466</item>
+            <item>ENR_AKL01_VR20150211032953569</item>
+            <item>ENR_AKL03_FAI20150211032953682</item>
+            <item>ENR_AKL03_OME20150211032953702</item>
+            <item>ENR_AKL04_ANC20150211032953746</item>
+            <item>ENR_AKL0120150211032953610</item>
+            <item>ENR_AKL02C20150211032953632</item>
+            <item>ENR_AKL02E20150211032953646</item>
+            <item>ENR_AKL02W20150211032953670</item>
+            <item>ENR_AKL0320150211032953732</item>
+            <item>ENR_AKL0420150211032953770</item>
+            <item>ENR_A02_SFO20150210162325944</item>
+            <item>ENR_A02_PHX20150210162325916</item>
+            <item>ENR_A02_ORD20150210162325891</item>
+            <item>ENR_A02_MKC20150210162325866</item>
+            <item>ENR_A02_LAX20150210162325839</item>
+            <item>ENR_A02_DFW20150210162325813</item>
+            <item>ENR_A02_DEN20150210162325790</item>
+            <item>ENR_A01_STL20150210162325769</item>
+            <item>ENR_A01_MSP20150210162325747</item>
+            <item>ENR_A01_MIA20150210162325724</item>
+            <item>ENR_A01_JAX20150210162325696</item>
+            <item>ENR_A01_DET20150210162325645</item>
+            <item>ENR_A01_DCA20150210162325607</item>
+            <item>ENR_A01_ATL20150210162325554</item>
+            <item>ENR_P0120150210204352788</item>
             <item>porc20150211033306014</item>
+            <item>ENR_AKL0420150210202618544</item>
+            <item>ENR_AKL0320150210201722140</item>
+            <item>ENR_AKL02W20150210201157094</item>
+            <item>ENR_AKL04_ANC20150210162326172</item>
+            <item>ENR_AKL03_OME20150210162326148</item>
+            <item>ENR_AKL03_FAI20150210162326124</item>
+            <item>ENR_AKL01_VR20150210162326015</item>
+            <item>ENR_AKL01_JNU20150210162325991</item>
+            <item>ENR_AKL0320150211024926708</item>
+            <item>ENR_AKL02W20150211024926384</item>
+            <item>ENR_AKL02E20150210162326088</item>
+            <item>ENR_AKL02C20150210162326060</item>
+            <item>ENR_AKL0120150210162326038</item>
+            <item>ENR_L3620150210162327484</item>
+            <item>ENR_L3520150210162327461</item>
+            <item>ENR_L3420150210162327437</item>
+            <item>ENR_L3320150210162327411</item>
+            <item>ENR_L3220150210162327385</item>
+            <item>ENR_L3120150210162327345</item>
+            <item>ENR_L3020150210162327309</item>
+            <item>ENR_L2920150210162327276</item>
+            <item>ENR_L2820150210162327245</item>
+            <item>ENR_L2720150210162327219</item>
+            <item>ENR_L2620150210162327189</item>
+            <item>ENR_L2520150210162327165</item>
+            <item>ENR_L2420150210162327141</item>
+            <item>ENR_L2320150210162327105</item>
+            <item>ENR_L2220150210162327072</item>
+            <item>ENR_L2120150210162327045</item>
+            <item>ENR_L2020150210162327020</item>
+            <item>ENR_L1920150210162326996</item>
+            <item>ENR_L1820150210162326970</item>
+            <item>ENR_L1720150210162326940</item>
+            <item>ENR_L1620150210162326917</item>
+            <item>ENR_L1520150210162326892</item>
+            <item>ENR_L1420150210162326868</item>
+            <item>ENR_L1320150210162326832</item>
+            <item>ENR_L1220150210162326806</item>
+            <item>ENR_L1120150210162326783</item>
+            <item>ENR_L1020150210162326753</item>
+            <item>ENR_L0920150210162326730</item>
+            <item>ENR_L0820150210162326707</item>
+            <item>ENR_L0720150210162326683</item>
+            <item>ENR_L06S20150210162326659</item>
+            <item>ENR_L06N20150210162326636</item>
+            <item>ENR_L0520150210162326613</item>
+            <item>ENR_L0420150210162326581</item>
+            <item>ENR_L0320150210162326552</item>
+            <item>ENR_L0220150210162326531</item>
+            <item>ENR_L0120150210162326508</item>
+            <item>ENR_AKH0120150210200129488</item>
+            <item>ENR_AKH01_SEA20150210162325967</item>
+            <item>ENR_AKH0220150210195632972</item>
+            <item>ENR_H1220150210162326484</item>
+            <item>ENR_H1120150210162326456</item>
+            <item>ENR_H1020150210162326434</item>
+            <item>ENR_H0920150210162326412</item>
+            <item>ENR_H0820150210162326388</item>
+            <item>ENR_H0720150210162326367</item>
+            <item>ENR_H0620150210162326329</item>
+            <item>ENR_H0520150210162326301</item>
+            <item>ENR_H0420150210162326277</item>
+            <item>ENR_H0320150210162326249</item>
+            <item>ENR_H0220150210162326223</item>
+            <item>ENR_H0120150210162326200</item>
+            <item>ENR_P0220150210162327544</item>
+            <item>ENR_P01_GUA20150210162327509</item>
+            <item>ENR_P0120150211025511692</item>
+            <item>watrs20150210162327629</item>
+            <item>narc20150210162327590</item>
             <item>porc20150211075807461</item>
-            <item>Western_Aleutian_Islands_East_SEC20150211081104792</item>
-            <item>Western_Aleutian_Islands_East_SEC20150211084839076</item>
-            <item>Western_Aleutian_Islands_East_SEC20150211091259426</item>
+            <item>ne_10m_admin_0_countries20141125064659874</item>
+            <item>CC_8_WAC20150211152727964</item>
+            <item>CD_10_WAC20150211152728201</item>
+            <item>CE_12_WAC20150211152728386</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendgroup open="true" checked="Qt::Unchecked" name="WAC">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="WAC">
             <legendgroup open="false" checked="Qt::Unchecked" name="Clipping Polygons">
                 <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CC-9_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
@@ -2052,105 +2082,120 @@
             <legendgroup open="false" checked="Qt::Unchecked" name="Source Rasters">
                 <legendgroup open="true" checked="Qt::Unchecked" name="Done"/>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Clipped Rasters">
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CJ-27_WAC" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Checked" name="Clipped Rasters">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-12_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CJ_27_WAC20150210162047583" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_12_WAC20150211152728386" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CJ-26_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-10_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CJ_26_WAC20150210162047560" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CD_10_WAC20150211152728201" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-25_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CC-8_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_25_WAC20150210162047511" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CC_8_WAC20150211152727964" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-24_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CJ-27_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_24_WAC20150210162047475" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CJ_27_WAC20150210162047583" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-23_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CJ-26_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_23_WAC20150210162047453" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CJ_26_WAC20150210162047560" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-22_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-25_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_22_WAC20150210162047430" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_25_WAC20150210162047511" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-21_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-24_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_21_WAC20150210162047410" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_24_WAC20150210162047475" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-20_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-23_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_20_WAC20150210162047384" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_23_WAC20150210162047453" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-19_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-22_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_19_WAC20150210162047345" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_22_WAC20150210162047430" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-18_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-21_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_18_WAC20150210162047324" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_21_WAC20150210162047410" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-19_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-20_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_19_WAC20150210162047288" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_20_WAC20150210162047384" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-18_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-19_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_18_WAC20150210162047257" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_19_WAC20150210162047345" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-17_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-18_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_17_WAC20150210162047231" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_18_WAC20150210162047324" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-16_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-19_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_16_WAC20150210162047206" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_19_WAC20150210162047288" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CE-15_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-18_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CE_15_WAC20150210162047180" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_18_WAC20150210162047257" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CE-13_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-17_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CE_13_WAC20150210162047155" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_17_WAC20150210162047231" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CD-12_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-16_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CD_12_WAC20150210162047129" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_16_WAC20150210162047206" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CD-11_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-15_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CD_11_WAC20150210162047063" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_15_WAC20150210162047180" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CC-9_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-13_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CC_9_WAC20150210162046968" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_13_WAC20150210162047155" visible="1"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-12_WAC" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="CD_12_WAC20150210162047129" visible="1"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-11_WAC" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="CD_11_WAC20150210162047063" visible="1"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CC-9_WAC" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="CC_9_WAC20150210162046968" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Sectionals">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Sectionals">
             <legendgroup open="false" checked="Qt::Unchecked" name="clipping polygons">
                 <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Albuquerque_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
@@ -2451,295 +2496,295 @@
                 </legendlayer>
                 <legendgroup open="true" checked="Qt::Unchecked" name="Done"/>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Checked" name="Clipped Rasters">
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Wichita_SEC" showFeatureCount="0">
+            <legendgroup open="false" checked="Qt::Unchecked" name="Clipped Rasters">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Wichita_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Wichita_SEC20150210162117477" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Wichita_SEC20150210162117477" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Whitehorse_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Whitehorse_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Whitehorse_SEC20150210162117431" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Whitehorse_SEC20150210162117431" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Western_Aleutian_Islands_West_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Western_Aleutian_Islands_West_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Western_Aleutian_Islands_West_SEC20150210162117403" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Western_Aleutian_Islands_West_SEC20150210162117403" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Western_Aleutian_Islands_East_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Western_Aleutian_Islands_East_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Western_Aleutian_Islands_East_SEC20150211091259426" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Western_Aleutian_Islands_East_SEC20150211091259426" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Washington_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Washington_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Washington_SEC20150210162117380" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Washington_SEC20150210162117380" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Twin_Cities_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Twin_Cities_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Twin_Cities_SEC20150210162117353" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Twin_Cities_SEC20150210162117353" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="St_Louis_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="St_Louis_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="St_Louis_SEC20150210162117329" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="St_Louis_SEC20150210162117329" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Seward_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Seward_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Seward_SEC20150210162117308" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Seward_SEC20150210162117308" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Seattle_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Seattle_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Seattle_SEC20150210162117283" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Seattle_SEC20150210162117283" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="San_Francisco_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="San_Francisco_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="San_Francisco_SEC20150210162117258" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="San_Francisco_SEC20150210162117258" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="San_Antonio_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="San_Antonio_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="San_Antonio_SEC20150210162117228" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="San_Antonio_SEC20150210162117228" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Samoan_Islands_Inset_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Samoan_Islands_Inset_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Samoan_Islands_Inset_SEC20150210162117197" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Samoan_Islands_Inset_SEC20150210162117197" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Salt_Lake_City_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Salt_Lake_City_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Salt_Lake_City_SEC20150210162117176" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Salt_Lake_City_SEC20150210162117176" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Point_Barrow_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Point_Barrow_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Point_Barrow_SEC20150210162117155" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Point_Barrow_SEC20150210162117155" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Phoenix_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Phoenix_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Phoenix_SEC20150210162117134" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Phoenix_SEC20150210162117134" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Omaha_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Omaha_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Omaha_SEC20150210162117111" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Omaha_SEC20150210162117111" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Nome_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Nome_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Nome_SEC20150210162117088" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Nome_SEC20150210162117088" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="New_York_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="New_York_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="New_York_SEC20150210162117066" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="New_York_SEC20150210162117066" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="New_Orleans_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="New_Orleans_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="New_Orleans_SEC20150210162117042" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="New_Orleans_SEC20150210162117042" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Montreal_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Montreal_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Montreal_SEC20150210162117019" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Montreal_SEC20150210162117019" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Miami_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Miami_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Miami_SEC20150210162116996" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Miami_SEC20150210162116996" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Memphis_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Memphis_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Memphis_SEC20150210162116952" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Memphis_SEC20150210162116952" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="McGrath_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="McGrath_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="McGrath_SEC20150210162116928" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="McGrath_SEC20150210162116928" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Mariana_Islands_Inset_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Mariana_Islands_Inset_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Mariana_Islands_Inset_SEC20150210162116902" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Mariana_Islands_Inset_SEC20150210162116902" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Los_Angeles_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Los_Angeles_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Los_Angeles_SEC20150210162116879" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Los_Angeles_SEC20150210162116879" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Las_Vegas_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Las_Vegas_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Las_Vegas_SEC20150210162116855" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Las_Vegas_SEC20150210162116855" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Lake_Huron_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Lake_Huron_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Lake_Huron_SEC20150210162116824" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Lake_Huron_SEC20150210162116824" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kodiak_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Kodiak_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Kodiak_SEC20150210162116804" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Kodiak_SEC20150210162116804" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Klamath_Falls_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Klamath_Falls_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Klamath_Falls_SEC20150210162116783" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Klamath_Falls_SEC20150210162116783" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Ketchikan_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Ketchikan_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Ketchikan_SEC20150210162116755" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Ketchikan_SEC20150210162116755" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kansas_City_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Kansas_City_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Kansas_City_SEC20150210162116731" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Kansas_City_SEC20150210162116731" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Juneau_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Juneau_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Juneau_SEC20150210162116707" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Juneau_SEC20150210162116707" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Jacksonville_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Jacksonville_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Jacksonville_SEC20150210162116683" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Jacksonville_SEC20150210162116683" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Houston_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Houston_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Houston_SEC20150210162116663" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Houston_SEC20150210162116663" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Honolulu_Inset_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Honolulu_Inset_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Honolulu_Inset_SEC20150210162116631" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Honolulu_Inset_SEC20150210162116631" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Hawaiian_Islands_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Hawaiian_Islands_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Hawaiian_Islands_SEC20150210162116607" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Hawaiian_Islands_SEC20150210162116607" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Halifax_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Halifax_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Halifax_SEC20150210162116583" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Halifax_SEC20150210162116583" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Green_Bay_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Green_Bay_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Green_Bay_SEC20150210162116559" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Green_Bay_SEC20150210162116559" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Great_Falls_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Great_Falls_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Great_Falls_SEC20150210162116535" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Great_Falls_SEC20150210162116535" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Fairbanks_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Fairbanks_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Fairbanks_SEC20150210162116515" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Fairbanks_SEC20150210162116515" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="El_Paso_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="El_Paso_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="El_Paso_SEC20150210162116479" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="El_Paso_SEC20150210162116479" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Dutch_Harbor_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Dutch_Harbor_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Dutch_Harbor_SEC20150210162116451" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Dutch_Harbor_SEC20150210162116451" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Detroit_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Detroit_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Detroit_SEC20150210162116425" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Detroit_SEC20150210162116425" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Denver_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Denver_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Denver_SEC20150210162116401" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Denver_SEC20150210162116401" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Dawson_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Dawson_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Dawson_SEC20150210162116373" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Dawson_SEC20150210162116373" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Dallas-Ft_Worth_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Dallas-Ft_Worth_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Dallas_Ft_Worth_SEC20150210162116342" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Dallas_Ft_Worth_SEC20150210162116342" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Cold_Bay_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Cold_Bay_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Cold_Bay_SEC20150210162116317" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Cold_Bay_SEC20150210162116317" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Cincinnati_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Cincinnati_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Cincinnati_SEC20150210162116288" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Cincinnati_SEC20150210162116288" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Chicago_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Chicago_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Chicago_SEC20150210162116260" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Chicago_SEC20150210162116260" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Cheyenne_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Cheyenne_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Cheyenne_SEC20150210162116226" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Cheyenne_SEC20150210162116226" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Charlotte_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Charlotte_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Charlotte_SEC20150210162116199" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Charlotte_SEC20150210162116199" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Cape_Lisburne_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Cape_Lisburne_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Cape_Lisburne_SEC20150210162116173" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Cape_Lisburne_SEC20150210162116173" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Brownsville_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Brownsville_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Brownsville_SEC20150210162116139" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Brownsville_SEC20150210162116139" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Billings_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Billings_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Billings_SEC20150210162116118" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Billings_SEC20150210162116118" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Bethel_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Bethel_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Bethel_SEC20150210162116097" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Bethel_SEC20150210162116097" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Atlanta_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Atlanta_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Atlanta_SEC20150210162116074" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Atlanta_SEC20150210162116074" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Anchorage_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Anchorage_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Anchorage_SEC20150210162116041" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Anchorage_SEC20150210162116041" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Albuquerque_SEC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Albuquerque_SEC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Albuquerque_SEC20150210162115951" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Albuquerque_SEC20150210162115951" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -3749,11 +3794,6 @@
                                 <legendlayerfile isInOverview="0" layerid="ENR_AKL01_JNU20150210162325991" visible="0"/>
                             </filegroup>
                         </legendlayer>
-                        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL04" showFeatureCount="0">
-                            <filegroup open="true" hidden="false">
-                                <legendlayerfile isInOverview="0" layerid="ENR_AKL0420150211024926768" visible="0"/>
-                            </filegroup>
-                        </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL03" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
                                 <legendlayerfile isInOverview="0" layerid="ENR_AKL0320150211024926708" visible="0"/>
@@ -4094,7 +4134,7 @@
             </legendlayer>
         </legendgroup>
     </legend>
-    <projectlayers layercount="412">
+    <projectlayers layercount="414">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>Albuquerque_SEC20150129001111373</id>
             <datasource>./clippingShapes/sectional/Albuquerque_SEC.shp</datasource>
@@ -7657,6 +7697,47 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>CC_8_WAC20150211152727964</id>
+            <datasource>./clippedRasters/wac/CC-8_WAC.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>CC-8_WAC</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=70.66666666666667 +lat_2=65.33333333333333 +lat_0=68.66666666666667 +lon_0=-171.5833333333333 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100093</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100093</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=70.66666666666667 +lat_2=65.33333333333333 +lat_0=68.66666666666667 +lon_0=-171.5833333333333 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>CC_9_WAC20150128093209683</id>
             <datasource>./clippingShapes/wac/CC-9_WAC.shp</datasource>
@@ -7908,6 +7989,47 @@
                     <description>WGS 84 / Pseudo Mercator</description>
                     <projectionacronym>merc</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>CD_10_WAC20150211152728201</id>
+            <datasource>./clippedRasters/wac/CD-10_WAC.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>CD-10_WAC</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=62.66666666666666 +lat_2=57.33333333333334 +lat_0=60.5 +lon_0=-173 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100096</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100096</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=62.66666666666666 +lat_2=57.33333333333334 +lat_0=60.5 +lon_0=-173 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -8456,6 +8578,47 @@
                     <description>WGS 84 / Pseudo Mercator</description>
                     <projectionacronym>merc</projectionacronym>
                     <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>CE_12_WAC20150211152728386</id>
+            <datasource>./clippedRasters/wac/CE-12_WAC.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>CE-12_WAC</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=54.66666666666666 +lat_2=49.33333333333334 +lat_0=52.08333333333334 +lon_0=179.9666666666667 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100101</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100101</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=54.66666666666666 +lat_2=49.33333333333334 +lat_0=52.08333333333334 +lon_0=179.9666666666667 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -22880,47 +23043,6 @@
                 <brightnesscontrast brightness="0" contrast="0"/>
                 <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
                 <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>ENR_AKL0420150211024926768</id>
-            <datasource>./warpedRasters/enroute/ENR_AKL04.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>ENR_AKL04</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
-                    <srsid>3857</srsid>
-                    <srid>3857</srid>
-                    <authid>EPSG:3857</authid>
-                    <description>WGS 84 / Pseudo Mercator</description>
-                    <projectionacronym>merc</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-                <noDataList bandNo="2" useSrcNoData="0"/>
-                <noDataList bandNo="3" useSrcNoData="0"/>
-                <noDataList bandNo="4" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
-                    <rasterTransparency/>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
@@ -52301,8 +52423,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
