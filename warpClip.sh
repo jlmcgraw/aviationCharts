@@ -72,18 +72,16 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   #How to best handle this?  One fix is an additional warp to EPSG:3857
   #Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
   nice -10 gdalwarp \
-	    -t_srs EPSG:3857 \
 	    -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
 	    -crop_to_cutline \
-	    -dstalpha \
 	    -cblend 10 \
+	    -r lanczos \
+	    -dstalpha \
+	    -co ALPHA=YES \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
-	    -overwrite \
-	    -wm 512 \
+	    -wm 768 \
 	    --config GDAL_CACHEMAX 256 \
-	    -co TILED=YES \
-	    -r lanczos \
 	    "$expandedRastersDirectory/$sourceChartName.vrt" \
 	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
 
@@ -97,8 +95,8 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   echo --- Compress --- gdal_translate $sourceChartName
   nice -10 gdal_translate \
 	    -strict \
-	    -co TILED=YES \
 	    -co COMPRESS=LZW \
+	    --config GDAL_CACHEMAX 256 \
 	    "$clippedRastersDirectory/$sourceChartName-temp.tif" \
 	    "$clippedRastersDirectory/$sourceChartName.tif"
   #Remove the huge temp file
@@ -125,13 +123,11 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   echo --- Warp --- gdalwarp $sourceChartName
   nice -10 gdalwarp \
 	    -t_srs EPSG:3857 \
+	    -r lanczos \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
-	    -overwrite \
-	    -wm 512 \
+	    -wm 768 \
 	    --config GDAL_CACHEMAX 256 \
-	    -co TILED=YES \
-	    -r lanczos \
 	    "$clippedRastersDirectory/$sourceChartName.tif" \
 	    "$warpedRastersDirectory/$sourceChartName-temp.tif"
 # 
@@ -145,8 +141,8 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   echo --- Compress --- gdal_translate $sourceChartName
   nice -10 gdal_translate \
     -strict \
-    -co TILED=YES \
     -co COMPRESS=LZW \
+    --config GDAL_CACHEMAX 256 \
     "$warpedRastersDirectory/$sourceChartName-temp.tif" \
     "$warpedRastersDirectory/$sourceChartName.tif"
 

@@ -12,9 +12,8 @@ do
     -resolution highest \
     $chart-overview.vrt \
     -srcnodata b4 \
-    -hidenodata \
     -overwrite \
-    ./clippedRasters/$chart/*.tif
+    ./warpedRasters/$chart/*.tif
 
   gdal_translate \
     -strict \
@@ -24,14 +23,18 @@ do
     $chart-overview.vrt \
     $chart-translate.tif \
 
-#   #-te -120 37 -77 38 \
+# #   #-te -120 37 -77 38 \
 #   gdalwarp \
 #     --debug on \
-#     -r lanczos \
+#     -r bilinear \
 #     -ts 1024 768 \
 #     -co TWF=YES \
 #     -wm 512 \
 #     --config GDAL_CACHEMAX 256 \
+#     -co SKIP_NOSOURCE=YES \
+#     -multi \
+#     -wo NUM_THREADS=ALL_CPUS  \
+#     -overwrite \
 #     $chart-overview.vrt \
 #     ./$chart-warp.tif \
 
@@ -45,10 +48,9 @@ do
     -resolution highest \
     $chart-low-overview.vrt \
     -srcnodata b4 \
-    -hidenodata \
     -overwrite \
-    ./clippedRasters/$chart/ENR_L*.tif \
-    ./clippedRasters/$chart/ENR_AKL*.tif
+    ./warpedRasters/$chart/ENR_L*.tif \
+    ./warpedRasters/$chart/ENR_AKL*.tif
 
   gdal_translate \
     -strict \
@@ -80,17 +82,16 @@ do
     -resolution highest \
     $chart-high-overview.vrt \
     -srcnodata b4 \
-    -hidenodata \
     -overwrite \
-    ./clippedRasters/$chart/ENR_H*.tif \
-    ./clippedRasters/$chart/ENR_AKH*.tif
+    ./warpedRasters/$chart/ENR_H*.tif \
+    ./warpedRasters/$chart/ENR_AKH*.tif
 
   gdal_translate \
     -strict \
     -co TILED=YES \
     -co COMPRESS=LZW \
     -outsize 1024 768 \
-	    --config GDAL_CACHEMAX 256 \
+    --config GDAL_CACHEMAX 256 \
     $chart-high-overview.vrt \
     $chart-high-translate.tif \
 

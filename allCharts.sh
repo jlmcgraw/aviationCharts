@@ -50,14 +50,14 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
 # ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
 
-# General Process:
-# Expand charts to RGB bands as necessary (currently not needed for enroute)
-# Clip to their associated polygon and reproject to EPSG:3857
-# Convert clipped and warped image to TMS layout folders of tiles
-# Package those tiles into a .mbtile
-./heli.sh        $originalHeliDirectory        $destinationRoot
-./tac.sh         $originalTacDirectory         $destinationRoot
-./sectionals.sh  $originalSectionalDirectory   $destinationRoot
-./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
+# # General Process:
+# # Expand charts to RGB bands as necessary (currently not needed for enroute)
+# # Clip to their associated polygon and reproject to EPSG:3857
+# # Convert clipped and warped image to TMS layout folders of tiles
+# # Package those tiles into a .mbtile
+# ./heli.sh        $originalHeliDirectory        $destinationRoot
+# ./tac.sh         $originalTacDirectory         $destinationRoot
+# ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
+# ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
-./wac.sh         $originalWacDirectory         $destinationRoot
+# ./wac.sh         $originalWacDirectory         $destinationRoot

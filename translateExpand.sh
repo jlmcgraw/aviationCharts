@@ -80,7 +80,7 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
     echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
     gdaladdo \
 	  -ro \
-	  -r average \
+	  -r gauss \
 	  --config INTERLEAVE_OVERVIEW PIXEL \
 	  --config COMPRESS_OVERVIEW JPEG \
 	  --config BIGTIFF_OVERVIEW IF_NEEDED \
