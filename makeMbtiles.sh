@@ -66,7 +66,7 @@ if [ ! -d $mbtilesDirectory ]; then
 fi
 
 if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
-  #Create tiles from the clipped raster (try various ways)
+  #Create tiles from the clipped raster (trying various utilities)
   
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
@@ -78,6 +78,7 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
     #Get the number of online CPUs
     cpus=$(getconf _NPROCESSORS_ONLN)
 
+    # I've commented this out for now.  Ideally, it'd be unnecessary.  For now it just saves time
     #   echo "Sharpen PNGs, using $cpus CPUS"
     #   Determine best method (sharpen vs. unsharp) and parameters
     # #   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -unsharp 2x1.5+1.7+0

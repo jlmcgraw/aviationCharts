@@ -80,7 +80,7 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
 	    -co ALPHA=YES \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
-	    -wm 768 \
+	    -wm 1024 \
 	    --config GDAL_CACHEMAX 256 \
 	    "$expandedRastersDirectory/$sourceChartName.vrt" \
 	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
@@ -126,7 +126,7 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
 	    -r lanczos \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
-	    -wm 768 \
+	    -wm 1024 \
 	    --config GDAL_CACHEMAX 256 \
 	    "$clippedRastersDirectory/$sourceChartName.tif" \
 	    "$warpedRastersDirectory/$sourceChartName-temp.tif"

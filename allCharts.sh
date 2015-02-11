@@ -57,7 +57,7 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # # Package those tiles into a .mbtile
 # ./heli.sh        $originalHeliDirectory        $destinationRoot
 # ./tac.sh         $originalTacDirectory         $destinationRoot
-# ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
+./sectionals.sh  $originalSectionalDirectory   $destinationRoot
 # ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
-./enroute.sh     $originalEnrouteDirectory     $destinationRoot
+# ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
 # ./wac.sh         $originalWacDirectory         $destinationRoot

@@ -58,7 +58,7 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 #These span the anti-meridian
-crossAntiMeridian=(Western_Aleutian_Islands_East_SEC)
+crossAntiMeridian=()
 
 chartArray=(
 Albuquerque_SEC Anchorage_SEC Atlanta_SEC 
@@ -80,7 +80,7 @@ Phoenix_SEC Point_Barrow_SEC
 Salt_Lake_City_SEC Samoan_Islands_Inset_SEC San_Antonio_SEC San_Francisco_SEC 
 Seattle_SEC Seward_SEC St_Louis_SEC 
 Twin_Cities_SEC 
-Washington_SEC Western_Aleutian_Islands_West_SEC Whitehorse_SEC Wichita_SEC
+Washington_SEC Western_Aleutian_Islands_East_SEC Western_Aleutian_Islands_West_SEC Whitehorse_SEC Wichita_SEC
 ) 
 
 
