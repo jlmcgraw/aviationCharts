@@ -38,26 +38,26 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 #If some of these steps are commented out it's because I don't always want to wait for them to run
 #so uncomment them as necessary
 
-# # # #Update local chart copies from Aeronav website
-# ./freshenLocalCharts.sh $chartsRoot
-# 
-# # #Update our local links to those (possibly new) original files
-# # #This handles charts that have revisions in the filename (sectional, tac etc)
-# ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
-# ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
-# ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
-# ./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
-# ./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+# # #Update local chart copies from Aeronav website
+./freshenLocalCharts.sh $chartsRoot
 
-# # General Process:
-# # Expand charts to RGB bands as necessary (currently not needed for enroute)
-# # Clip to their associated polygon and reproject to EPSG:3857
-# # Convert clipped and warped image to TMS layout folders of tiles
-# # Package those tiles into a .mbtile
-# ./heli.sh        $originalHeliDirectory        $destinationRoot
-# ./tac.sh         $originalTacDirectory         $destinationRoot
+# #Update our local links to those (possibly new) original files
+# #This handles charts that have revisions in the filename (sectional, tac etc)
+./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
+./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
+./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
+./updateLinks.sh  $originalGrandCanyonDirectory $destinationRoot grand_canyon
+./updateLinks.sh  $originalEnrouteDirectory     $destinationRoot enroute
+
+# General Process:
+# Expand charts to RGB bands as necessary (currently not needed for enroute)
+# Clip to their associated polygon and reproject to EPSG:3857
+# Convert clipped and warped image to TMS layout folders of tiles
+# Package those tiles into a .mbtile
+./heli.sh        $originalHeliDirectory        $destinationRoot
+./tac.sh         $originalTacDirectory         $destinationRoot
 ./sectionals.sh  $originalSectionalDirectory   $destinationRoot
-# ./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
-# ./enroute.sh     $originalEnrouteDirectory     $destinationRoot
-# ./wac.sh         $originalWacDirectory         $destinationRoot
+./grandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
+./enroute.sh     $originalEnrouteDirectory     $destinationRoot
+./wac.sh         $originalWacDirectory         $destinationRoot

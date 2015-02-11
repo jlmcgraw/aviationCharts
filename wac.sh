@@ -51,16 +51,14 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 #These span the anti-meridian
-crossAntiMeridian=(
-CC-8_WAC
-CD-10_WAC 
-CE-12_WAC
-)
+crossAntiMeridian=()
 
 chartArray=(
-CC-9_WAC  
+CC-8_WAC
+CC-9_WAC
+CD-10_WAC
 CD-11_WAC CD-12_WAC  
-CE-13_WAC CE-15_WAC 
+CE-12_WAC CE-13_WAC CE-15_WAC 
 CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC 
 CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC 
 CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
