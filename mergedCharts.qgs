@@ -3,7 +3,7 @@
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="WAC">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="WAC">
             <customproperties/>
             <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipping Polygons">
                 <customproperties/>
@@ -71,72 +71,72 @@
                     <customproperties/>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::Checked" name="Clipped Rasters">
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipped Rasters">
                 <customproperties/>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_12_WAC20150211152728386" name="CE-12_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CE_12_WAC20150211152728386" name="CE-12_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_10_WAC20150211152728201" name="CD-10_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CD_10_WAC20150211152728201" name="CD-10_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CC_8_WAC20150211152727964" name="CC-8_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CC_8_WAC20150211152727964" name="CC-8_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CJ_27_WAC20150210162047583" name="CJ-27_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CJ_27_WAC20150210162047583" name="CJ-27_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CJ_26_WAC20150210162047560" name="CJ-26_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CJ_26_WAC20150210162047560" name="CJ-26_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_25_WAC20150210162047511" name="CH-25_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_25_WAC20150210162047511" name="CH-25_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_24_WAC20150210162047475" name="CH-24_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_24_WAC20150210162047475" name="CH-24_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_23_WAC20150210162047453" name="CH-23_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_23_WAC20150210162047453" name="CH-23_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CH_22_WAC20150210162047430" name="CH-22_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CH_22_WAC20150210162047430" name="CH-22_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_21_WAC20150210162047410" name="CG-21_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_21_WAC20150210162047410" name="CG-21_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_20_WAC20150210162047384" name="CG-20_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_20_WAC20150210162047384" name="CG-20_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_19_WAC20150210162047345" name="CG-19_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_19_WAC20150210162047345" name="CG-19_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CG_18_WAC20150210162047324" name="CG-18_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CG_18_WAC20150210162047324" name="CG-18_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_19_WAC20150210162047288" name="CF-19_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_19_WAC20150210162047288" name="CF-19_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_18_WAC20150210162047257" name="CF-18_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_18_WAC20150210162047257" name="CF-18_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_17_WAC20150210162047231" name="CF-17_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_17_WAC20150210162047231" name="CF-17_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CF_16_WAC20150210162047206" name="CF-16_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CF_16_WAC20150210162047206" name="CF-16_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_15_WAC20150210162047180" name="CE-15_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CE_15_WAC20150210162047180" name="CE-15_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CE_13_WAC20150210162047155" name="CE-13_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CE_13_WAC20150210162047155" name="CE-13_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_12_WAC20150210162047129" name="CD-12_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CD_12_WAC20150210162047129" name="CD-12_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CD_11_WAC20150210162047063" name="CD-11_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CD_11_WAC20150210162047063" name="CD-11_WAC">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="CC_9_WAC20150210162046968" name="CC-9_WAC">
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="CC_9_WAC20150210162046968" name="CC-9_WAC">
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
@@ -840,9 +840,9 @@
                 </layer-tree-layer>
             </layer-tree-group>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Enroute">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Enroute">
             <customproperties/>
-            <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Clipping Polygons">
+            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Clipping Polygons">
                 <customproperties/>
                 <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_P0120150210205034511" name="ENR_P01">
                     <customproperties/>
@@ -912,6 +912,9 @@
                 </layer-tree-group>
                 <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Low">
                     <customproperties/>
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2720150211163853706" name="ENR_L27">
+                        <customproperties/>
+                    </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L0120150211033107334" name="ENR_L01">
                         <customproperties/>
                     </layer-tree-layer>
@@ -960,7 +963,7 @@
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1520150211033107593" name="ENR_L15">
                         <customproperties/>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1620150211033107604" name="ENR_L16">
+                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1620150211155859662" name="ENR_L16">
                         <customproperties/>
                     </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1720150211033107608" name="ENR_L17">
@@ -991,9 +994,6 @@
                         <customproperties/>
                     </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2620150211033107748" name="ENR_L26">
-                        <customproperties/>
-                    </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2720150211033107772" name="ENR_L27">
                         <customproperties/>
                     </layer-tree-layer>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2820150211033107794" name="ENR_L28">
@@ -1150,7 +1150,7 @@
                         </layer-tree-group>
                     </layer-tree-group>
                 </layer-tree-group>
-                <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Clipped Rasters">
+                <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Clipped Rasters">
                     <customproperties/>
                     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="sub-group1">
                         <customproperties/>
@@ -1167,6 +1167,9 @@
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL01_JNU20150210162325991" name="ENR_AKL01_JNU">
+                            <customproperties/>
+                        </layer-tree-layer>
+                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL0420150211154639214" name="ENR_AKL04">
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_AKL0320150211024926708" name="ENR_AKL03">
@@ -1211,7 +1214,7 @@
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2820150210162327245" name="ENR_L28">
                             <customproperties/>
                         </layer-tree-layer>
-                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2720150210162327219" name="ENR_L27">
+                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2720150211171756260" name="ENR_L27">
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L2620150210162327189" name="ENR_L26">
@@ -1244,7 +1247,7 @@
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1720150210162326940" name="ENR_L17">
                             <customproperties/>
                         </layer-tree-layer>
-                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1620150210162326917" name="ENR_L16">
+                        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1620150211163525189" name="ENR_L16">
                             <customproperties/>
                         </layer-tree-layer>
                         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="ENR_L1520150210162326892" name="ENR_L15">
@@ -1400,10 +1403,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-25639211.41983675956726074</xmin>
-            <ymin>-292945.48235476855188608</ymin>
-            <xmax>-709996.65981520712375641</xmax>
-            <ymax>13458804.33978660218417645</ymax>
+            <xmin>-10747097.22552171722054482</xmin>
+            <ymin>3763828.57391611393541098</ymin>
+            <xmax>-8039802.48828769102692604</xmax>
+            <ymax>5758982.87991202529519796</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -1419,146 +1422,12 @@
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100138" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211084839076"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150129001112284"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_23_WAC20150210162047453"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150129001111640"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150210162117380"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Twin_Cities_SEC20150129001112399"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150129001111771"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150129001112372"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_21_WAC20150210162047410"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150129001111576"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150210162117111"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150210162116683"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150210162116451"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150129001112237"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150210162116097"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150210162117134"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100092" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211081104792"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_16_WAC20150210162047206"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150129001111520"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150129001112343"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_19_WAC20150210162047288"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Las_Vegas_SEC20150129001112070"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_12_WAC20150210162047129"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150210162116731"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150210162116342"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150129001111995"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150129001112176"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150210162117176"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150210162117197"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150210162116559"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150210162116928"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150210162116288"/>
             <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20141125064659874"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150129001111714"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Montreal_SEC20150210162117019"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cape_Lisburne_SEC20150210162116173"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150129001112089"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150210162116260"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150210162117042"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150210162116535"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dawson_SEC20150210162116373"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150210162116631"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Green_Bay_SEC20150129001111800"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Salt_Lake_City_SEC20150129001112298"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Miami_SEC20150210162116996"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_17_WAC20150210162047231"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150129001111885"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150129001112328"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_25_WAC20150210162047511"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_Orleans_SEC20150129001112209"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_19_WAC20150210162047345"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CJ_27_WAC20150210162047583"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150210162116755"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100096" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_10_WAC20150211152728201"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150129001112450"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dutch_Harbor_SEC20150129001111741"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150129001112437"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150129001112017"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Klamath_Falls_SEC20150210162116783"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Point_Barrow_SEC20150210162117155"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_24_WAC20150210162047475"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150210162116074"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_East_SEC20150211091259426"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150210162116902"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cold_Bay_SEC20150210162116317"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150210162116952"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CF_18_WAC20150210162047257"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="McGrath_SEC20150129001112125"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150210162116226"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Los_Angeles_SEC20150210162116879"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Francisco_SEC20150210162117258"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Washington_SEC20150129001112411"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Mariana_Islands_Inset_SEC20150129001112113"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jacksonville_SEC20150129001111866"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cincinnati_SEC20150129001111620"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kansas_City_SEC20150129001111943"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150129001112385"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100093" srcDatumTransform="-1" destDatumTransform="-1" layerid="CC_8_WAC20150211152727964"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150210162117066"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CC_9_WAC20150210162046968"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Billings_SEC20150210162116118"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_20_WAC20150210162047384"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kodiak_SEC20150210162116804"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150129001111728"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150129001111828"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ketchikan_SEC20150129001111971"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cheyenne_SEC20150129001111590"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150129001111814"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Samoan_Islands_Inset_SEC20150129001112313"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Chicago_SEC20150129001111601"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150210162117283"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Halifax_SEC20150210162116583"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dallas_Ft_Worth_SEC20150129001111663"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Detroit_SEC20150210162116425"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Omaha_SEC20150129001112246"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Atlanta_SEC20150129001111499"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CH_22_WAC20150210162047430"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="San_Antonio_SEC20150210162117228"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Phoenix_SEC20150129001112268"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seward_SEC20150210162117308"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150210162116824"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="St_Louis_SEC20150210162117329"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Western_Aleutian_Islands_West_SEC20150210162117403"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Honolulu_Inset_SEC20150129001111843"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Juneau_SEC20150210162116707"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CJ_26_WAC20150210162047560"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Hawaiian_Islands_SEC20150210162116607"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CG_18_WAC20150210162047324"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Nome_SEC20150210162117088"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_15_WAC20150210162047180"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Great_Falls_SEC20150129001111786"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Cape_Lisburne_SEC20150129001111561"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Brownsville_SEC20150210162116139"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wichita_SEC20150129001112463"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Las_Vegas_SEC20150210162116855"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Montreal_SEC20150129001112196"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Lake_Huron_SEC20150129001112043"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Wichita_SEC20150210162117477"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_13_WAC20150210162047155"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Bethel_SEC20150129001111512"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Dawson_SEC20150129001111689"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque_SEC20150210162115951"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100101" srcDatumTransform="-1" destDatumTransform="-1" layerid="CE_12_WAC20150211152728386"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Brownsville_SEC20150129001111539"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150129001111856"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memphis_SEC20150129001112146"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="New_York_SEC20150129001112224"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="CD_11_WAC20150210162047063"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150210162116479"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150210162116041"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Anchorage_SEC20150129001111467"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Charlotte_SEC20150210162116199"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Whitehorse_SEC20150210162117431"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Houston_SEC20150210162116663"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="El_Paso_SEC20150129001111756"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Albuquerque_SEC20150129001111373"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Denver_SEC20150210162116401"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Seattle_SEC20150129001112353"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Twin_Cities_SEC20150210162117353"/>
-            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Fairbanks_SEC20150210162116515"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_L2720150211171756260"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100142" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_L2720150211163853706"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_L2520150210162327165"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_L1620150211163525189"/>
+            <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="ENR_L2620150210162327189"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -1855,7 +1724,6 @@
             <item>ENR_L1320150211033107571</item>
             <item>ENR_L1420150211033107582</item>
             <item>ENR_L1520150211033107593</item>
-            <item>ENR_L1620150211033107604</item>
             <item>ENR_L1720150211033107608</item>
             <item>ENR_L1820150211033107638</item>
             <item>ENR_L1920150211033107654</item>
@@ -1866,7 +1734,6 @@
             <item>ENR_L2420150211033107721</item>
             <item>ENR_L2520150211033107735</item>
             <item>ENR_L2620150211033107748</item>
-            <item>ENR_L2720150211033107772</item>
             <item>ENR_L2820150211033107794</item>
             <item>ENR_L2920150211033107805</item>
             <item>ENR_L3020150211033107837</item>
@@ -1925,7 +1792,6 @@
             <item>ENR_L3020150210162327309</item>
             <item>ENR_L2920150210162327276</item>
             <item>ENR_L2820150210162327245</item>
-            <item>ENR_L2720150210162327219</item>
             <item>ENR_L2620150210162327189</item>
             <item>ENR_L2520150210162327165</item>
             <item>ENR_L2420150210162327141</item>
@@ -1936,7 +1802,6 @@
             <item>ENR_L1920150210162326996</item>
             <item>ENR_L1820150210162326970</item>
             <item>ENR_L1720150210162326940</item>
-            <item>ENR_L1620150210162326917</item>
             <item>ENR_L1520150210162326892</item>
             <item>ENR_L1420150210162326868</item>
             <item>ENR_L1320150210162326832</item>
@@ -1978,10 +1843,15 @@
             <item>CC_8_WAC20150211152727964</item>
             <item>CD_10_WAC20150211152728201</item>
             <item>CE_12_WAC20150211152728386</item>
+            <item>ENR_AKL0420150211154639214</item>
+            <item>ENR_L1620150211155859662</item>
+            <item>ENR_L1620150211163525189</item>
+            <item>ENR_L2720150211163853706</item>
+            <item>ENR_L2720150211171756260</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="WAC">
+        <legendgroup open="true" checked="Qt::Unchecked" name="WAC">
             <legendgroup open="false" checked="Qt::Unchecked" name="Clipping Polygons">
                 <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CC-9_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
@@ -2082,115 +1952,115 @@
             <legendgroup open="false" checked="Qt::Unchecked" name="Source Rasters">
                 <legendgroup open="true" checked="Qt::Unchecked" name="Done"/>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Checked" name="Clipped Rasters">
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-12_WAC" showFeatureCount="0">
+            <legendgroup open="false" checked="Qt::Unchecked" name="Clipped Rasters">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CE-12_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CE_12_WAC20150211152728386" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_12_WAC20150211152728386" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-10_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CD-10_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CD_10_WAC20150211152728201" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CD_10_WAC20150211152728201" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CC-8_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CC-8_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CC_8_WAC20150211152727964" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CC_8_WAC20150211152727964" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CJ-27_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CJ-27_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CJ_27_WAC20150210162047583" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CJ_27_WAC20150210162047583" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CJ-26_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CJ-26_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CJ_26_WAC20150210162047560" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CJ_26_WAC20150210162047560" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-25_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-25_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_25_WAC20150210162047511" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_25_WAC20150210162047511" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-24_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-24_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_24_WAC20150210162047475" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_24_WAC20150210162047475" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-23_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-23_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_23_WAC20150210162047453" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_23_WAC20150210162047453" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CH-22_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CH-22_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CH_22_WAC20150210162047430" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CH_22_WAC20150210162047430" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-21_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-21_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_21_WAC20150210162047410" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_21_WAC20150210162047410" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-20_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-20_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_20_WAC20150210162047384" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_20_WAC20150210162047384" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-19_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-19_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_19_WAC20150210162047345" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_19_WAC20150210162047345" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CG-18_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CG-18_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CG_18_WAC20150210162047324" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CG_18_WAC20150210162047324" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-19_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-19_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_19_WAC20150210162047288" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_19_WAC20150210162047288" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-18_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-18_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_18_WAC20150210162047257" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_18_WAC20150210162047257" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-17_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-17_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_17_WAC20150210162047231" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_17_WAC20150210162047231" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CF-16_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CF-16_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CF_16_WAC20150210162047206" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CF_16_WAC20150210162047206" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-15_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CE-15_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CE_15_WAC20150210162047180" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_15_WAC20150210162047180" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CE-13_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CE-13_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CE_13_WAC20150210162047155" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CE_13_WAC20150210162047155" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-12_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CD-12_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CD_12_WAC20150210162047129" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CD_12_WAC20150210162047129" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CD-11_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CD-11_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CD_11_WAC20150210162047063" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CD_11_WAC20150210162047063" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="CC-9_WAC" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CC-9_WAC" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="CC_9_WAC20150210162046968" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="CC_9_WAC20150210162046968" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -3315,8 +3185,8 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Enroute">
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Clipping Polygons">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Enroute">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Clipping Polygons">
                 <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_P01" showFeatureCount="0">
                     <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="ENR_P0120150210205034511" visible="0"/>
@@ -3413,6 +3283,11 @@
                     </legendlayer>
                 </legendgroup>
                 <legendgroup open="false" checked="Qt::Unchecked" name="Low">
+                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L27" showFeatureCount="0">
+                        <filegroup open="true" hidden="false">
+                            <legendlayerfile isInOverview="0" layerid="ENR_L2720150211163853706" visible="0"/>
+                        </filegroup>
+                    </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L01" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="ENR_L0120150211033107334" visible="0"/>
@@ -3495,7 +3370,7 @@
                     </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L16" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_L1620150211033107604" visible="0"/>
+                            <legendlayerfile isInOverview="0" layerid="ENR_L1620150211155859662" visible="0"/>
                         </filegroup>
                     </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L17" showFeatureCount="0">
@@ -3546,11 +3421,6 @@
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L26" showFeatureCount="0">
                         <filegroup open="true" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="ENR_L2620150211033107748" visible="0"/>
-                        </filegroup>
-                    </legendlayer>
-                    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L27" showFeatureCount="0">
-                        <filegroup open="true" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="ENR_L2720150211033107772" visible="0"/>
                         </filegroup>
                     </legendlayer>
                     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L28" showFeatureCount="0">
@@ -3767,7 +3637,7 @@
                         </legendgroup>
                     </legendgroup>
                 </legendgroup>
-                <legendgroup open="false" checked="Qt::Unchecked" name="Clipped Rasters">
+                <legendgroup open="true" checked="Qt::Unchecked" name="Clipped Rasters">
                     <legendgroup open="true" checked="Qt::Unchecked" name="sub-group1">
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL04_ANC" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
@@ -3792,6 +3662,11 @@
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL01_JNU" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
                                 <legendlayerfile isInOverview="0" layerid="ENR_AKL01_JNU20150210162325991" visible="0"/>
+                            </filegroup>
+                        </legendlayer>
+                        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL04" showFeatureCount="0">
+                            <filegroup open="true" hidden="false">
+                                <legendlayerfile isInOverview="0" layerid="ENR_AKL0420150211154639214" visible="0"/>
                             </filegroup>
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_AKL03" showFeatureCount="0">
@@ -3866,7 +3741,7 @@
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L27" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
-                                <legendlayerfile isInOverview="0" layerid="ENR_L2720150210162327219" visible="0"/>
+                                <legendlayerfile isInOverview="0" layerid="ENR_L2720150211171756260" visible="0"/>
                             </filegroup>
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L26" showFeatureCount="0">
@@ -3921,7 +3796,7 @@
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L16" showFeatureCount="0">
                             <filegroup open="true" hidden="false">
-                                <legendlayerfile isInOverview="0" layerid="ENR_L1620150210162326917" visible="0"/>
+                                <legendlayerfile isInOverview="0" layerid="ENR_L1620150211163525189" visible="0"/>
                             </filegroup>
                         </legendlayer>
                         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="ENR_L15" showFeatureCount="0">
@@ -4134,7 +4009,7 @@
             </legendlayer>
         </legendgroup>
     </legend>
-    <projectlayers layercount="414">
+    <projectlayers layercount="415">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>Albuquerque_SEC20150129001111373</id>
             <datasource>./clippingShapes/sectional/Albuquerque_SEC.shp</datasource>
@@ -23137,6 +23012,47 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_AKL0420150211154639214</id>
+            <datasource>./clippedRasters/enroute/ENR_AKL04.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_AKL04</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs</proj4>
+                    <srsid>100029</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100029</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=65 +lat_2=37 +lat_0=51 +lon_0=-154 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>ENR_AKL04_ANC20150210162326172</id>
             <datasource>./warpedRasters/enroute/ENR_AKL04_ANC.tif</datasource>
@@ -28669,49 +28585,8 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>ENR_L1620150210162326917</id>
-            <datasource>./warpedRasters/enroute/ENR_L16.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>ENR_L16</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
-                    <srsid>3857</srsid>
-                    <srid>3857</srid>
-                    <authid>EPSG:3857</authid>
-                    <description>WGS 84 / Pseudo Mercator</description>
-                    <projectionacronym>merc</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-                <noDataList bandNo="2" useSrcNoData="0"/>
-                <noDataList bandNo="3" useSrcNoData="0"/>
-                <noDataList bandNo="4" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
-                    <rasterTransparency/>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>ENR_L1620150211033107604</id>
+            <id>ENR_L1620150211155859662</id>
             <datasource>./clippingShapes/enroute/ENR_L16.shp</datasource>
             <title></title>
             <abstract></abstract>
@@ -28721,14 +28596,14 @@
             <layername>ENR_L16</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <authid>EPSG:4326</authid>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
+                    <proj4>+proj=lcc +lat_1=45 +lat_2=33 +lat_0=39 +lon_0=-95 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100142</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100142</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=45 +lat_2=33 +lat_0=39 +lon_0=-95 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym>GRS80</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
             <provider encoding="System">ogr</provider>
@@ -28745,7 +28620,7 @@
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_map_unit_scale" v="0,0"/>
-                            <prop k="color" v="230,245,169,255"/>
+                            <prop k="color" v="174,2,7,255"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
@@ -28800,6 +28675,47 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_L1620150211163525189</id>
+            <datasource>./warpedRasters/enroute/ENR_L16.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_L16</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
+                    <srsid>3857</srsid>
+                    <srid>3857</srid>
+                    <authid>EPSG:3857</authid>
+                    <description>WGS 84 / Pseudo Mercator</description>
+                    <projectionacronym>merc</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>ENR_L1720150210162326940</id>
@@ -30121,49 +30037,8 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>ENR_L2720150210162327219</id>
-            <datasource>./warpedRasters/enroute/ENR_L27.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>ENR_L27</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
-                    <srsid>3857</srsid>
-                    <srid>3857</srid>
-                    <authid>EPSG:3857</authid>
-                    <description>WGS 84 / Pseudo Mercator</description>
-                    <projectionacronym>merc</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-                <noDataList bandNo="2" useSrcNoData="0"/>
-                <noDataList bandNo="3" useSrcNoData="0"/>
-                <noDataList bandNo="4" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
-                    <rasterTransparency/>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>ENR_L2720150211033107772</id>
+            <id>ENR_L2720150211163853706</id>
             <datasource>./clippingShapes/enroute/ENR_L27.shp</datasource>
             <title></title>
             <abstract></abstract>
@@ -30173,14 +30048,14 @@
             <layername>ENR_L27</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <authid>EPSG:4326</authid>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
+                    <proj4>+proj=lcc +lat_1=45 +lat_2=33 +lat_0=39 +lon_0=-95 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100142</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100142</authid>
+                    <description> * Generated CRS (+proj=lcc +lat_1=45 +lat_2=33 +lat_0=39 +lon_0=-95 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>lcc</projectionacronym>
+                    <ellipsoidacronym>GRS80</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
             <provider encoding="System">ogr</provider>
@@ -30197,7 +30072,7 @@
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_map_unit_scale" v="0,0"/>
-                            <prop k="color" v="182,202,90,255"/>
+                            <prop k="color" v="189,227,75,255"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
@@ -30252,6 +30127,47 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>ENR_L2720150211171756260</id>
+            <datasource>./warpedRasters/enroute/ENR_L27.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>ENR_L27</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs</proj4>
+                    <srsid>3857</srsid>
+                    <srid>3857</srid>
+                    <authid>EPSG:3857</authid>
+                    <description>WGS 84 / Pseudo Mercator</description>
+                    <projectionacronym>merc</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="0"/>
+                <noDataList bandNo="2" useSrcNoData="0"/>
+                <noDataList bandNo="3" useSrcNoData="0"/>
+                <noDataList bandNo="4" useSrcNoData="0"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+                    <rasterTransparency/>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>ENR_L2820150210162327245</id>
@@ -52423,8 +52339,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSContactPhone type="QString"></WMSContactPhone>
         <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+        <WMSContactPhone type="QString"></WMSContactPhone>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
@@ -52548,7 +52464,7 @@
                 <value>ENR_L1320150211033107571</value>
                 <value>ENR_L1420150211033107582</value>
                 <value>ENR_L1520150211033107593</value>
-                <value>ENR_L1620150211033107604</value>
+                <value>ENR_L1620150211155859662</value>
                 <value>ENR_L1720150211033107608</value>
                 <value>ENR_L1820150211033107638</value>
                 <value>ENR_L1920150211033107654</value>
@@ -52559,7 +52475,7 @@
                 <value>ENR_L2420150211033107721</value>
                 <value>ENR_L2520150211033107735</value>
                 <value>ENR_L2620150211033107748</value>
-                <value>ENR_L2720150211033107772</value>
+                <value>ENR_L2720150211163853706</value>
                 <value>ENR_L2820150211033107794</value>
                 <value>ENR_L2920150211033107805</value>
                 <value>ENR_L3020150211033107837</value>
