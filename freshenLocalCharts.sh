@@ -21,8 +21,8 @@ cd $AERONAV_ROOT_DIR
 
 #Get all of the latest charts
 set +e
-wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
+wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
 echo ######################################
-wget -r -l1 -H -N -np -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
+wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e
 
