@@ -67,7 +67,7 @@ outputExtension="vrt"
 if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   then
 #Clip the file it to it's clipping shape
-  echo --- Clip --- gdalwarp $sourceChartName
+  echo "*** Clip --- gdalwarp $sourceChartName"
   #BUG TODO crop_to_cutline results in a resampled image with non-square pixels
   #How to best handle this?  One fix is an additional warp to EPSG:3857
   #Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
@@ -78,10 +78,11 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
 	    -r lanczos \
 	    -dstalpha \
 	    -co ALPHA=YES \
+	    -co TILED=YES \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
 	    -wm 1024 \
-	    --config GDAL_CACHEMAX 256 \
+	    --config GDAL_CACHEMAX 1024 \
 	    "$expandedRastersDirectory/$sourceChartName.vrt" \
 	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
 
@@ -96,7 +97,8 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   nice -10 gdal_translate \
 	    -strict \
 	    -co COMPRESS=LZW \
-	    --config GDAL_CACHEMAX 256 \
+	    -co TILED=YES \
+	    --config GDAL_CACHEMAX 1024 \
 	    "$clippedRastersDirectory/$sourceChartName-temp.tif" \
 	    "$clippedRastersDirectory/$sourceChartName.tif"
   #Remove the huge temp file
@@ -105,7 +107,7 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
   #Create external overviews to make display faster in QGIS
   #     echo --- Add overviews --- gdaladdo $sourceChartName             
   echo --- Overviews --- gdaladdo $sourceChartName
-  gdaladdo \
+  nice -10 gdaladdo \
 	    -ro \
 	    -r average \
 	    --config INTERLEAVE_OVERVIEW PIXEL \
@@ -113,6 +115,9 @@ if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
 	    --config BIGTIFF_OVERVIEW IF_NEEDED \
 	    "$clippedRastersDirectory/$sourceChartName.tif" \
 	    2 4 8 16 32 64
+  
+  #Take a breather to write out data
+#   sleep 1m
 fi 
 
 
@@ -120,14 +125,15 @@ fi
 if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   then
   #Warp the expanded file
-  echo --- Warp --- gdalwarp $sourceChartName
+  echo "*** Warp --- gdalwarp $sourceChartName"
   nice -10 gdalwarp \
 	    -t_srs EPSG:3857 \
 	    -r lanczos \
 	    -multi \
 	    -wo NUM_THREADS=ALL_CPUS  \
 	    -wm 1024 \
-	    --config GDAL_CACHEMAX 256 \
+	    --config GDAL_CACHEMAX 1024 \
+	    -co TILED=YES \
 	    "$clippedRastersDirectory/$sourceChartName.tif" \
 	    "$warpedRastersDirectory/$sourceChartName-temp.tif"
 # 
@@ -142,7 +148,8 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   nice -10 gdal_translate \
     -strict \
     -co COMPRESS=LZW \
-    --config GDAL_CACHEMAX 256 \
+    -co TILED=YES \
+    --config GDAL_CACHEMAX 1024 \
     "$warpedRastersDirectory/$sourceChartName-temp.tif" \
     "$warpedRastersDirectory/$sourceChartName.tif"
 
@@ -152,7 +159,7 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
   #Create external overviews to make display faster in QGIS
   #     echo --- Add overviews --- gdaladdo $sourceChartName             
   echo --- Overviews --- gdaladdo $sourceChartName
-  gdaladdo \
+  nice -10 gdaladdo \
     -ro \
     -r average \
     --config INTERLEAVE_OVERVIEW PIXEL \
@@ -160,6 +167,10 @@ if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
     --config BIGTIFF_OVERVIEW IF_NEEDED \
     "$warpedRastersDirectory/$sourceChartName.tif" \
     2 4 8 16 32 64
+    
+  #Take a breather to write out data
+#   sleep 1m  
 fi
+
 
             
