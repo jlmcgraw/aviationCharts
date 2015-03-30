@@ -3,7 +3,7 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #Comment this out to actually make the mbtiles
-#exit
+exit
 
 #Get command line parameters
 originalRastersDirectory="$1"
