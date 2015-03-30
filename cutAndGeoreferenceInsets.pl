@@ -146,7 +146,7 @@ sub main {
         my $lrY          = $HashOfInsets{$key}[4];
         my $gcpArrayRef  = $HashOfInsets{$key}[5];
 
-        my $tempRaster  = $key . "_Inset_temp.tif";
+        my $tempRaster  = $key . "_Inset_temp.vrt";
         my $finalRaster = $key . "_Inset.tif";
         say $key;
         #create the string of ground control points
@@ -202,8 +202,8 @@ sub coordinateToDecimal {
 
     }
 
-    say "Coordinate: $coordinate to $signeddegrees"        if $main::debug;
-    say "Deg: $deg, Min:$min, Sec:$sec, Decl:$declination" if $main::debug;
+    
+    say "Deg: $deg, Min:$min, Sec:$sec, Decl:$declination -> $signeddegrees" if $main::debug;
     return ($signeddegrees);
 }
 
@@ -230,6 +230,7 @@ sub cutOutInsetFromSourceRaster {
     #Assemble the command
     my $gdal_translateCommand = "gdal_translate \\
       -strict \\
+      -of VRT \\
       -srcwin $srcWin \\
       -a_srs WGS84 \\
       $gcpString \\\
