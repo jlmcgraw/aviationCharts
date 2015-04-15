@@ -63,6 +63,7 @@ outputExtension="vrt"
 #memoize is a neat way of only re-running when input data has changed
 #see https://github.com/kgaughan/memoize.py
 #we're using -t to compare just via modification times since these files are large
+#and also so we can truncate the temporary, uncompressed files and still not rebuild
 
 
 #1) Clip the source file first then 2) warp to EPSG:3857 so that final output pixels are square
@@ -111,6 +112,8 @@ gdal_translate \
 	  "$clippedRastersDirectory/$sourceChartName.tif"
 #Remove the huge temp file
 #   rm "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
+touch -r "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
+mv touchtemp.txt "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Create external overviews to make display faster in QGIS      
 echo "*** Overviews --- gdaladdo $sourceChartName"
@@ -162,6 +165,8 @@ gdal_translate \
 
 #Remove the original poorly compressed file
 #   rm "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
+touch -r "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
+mv touchtemp.txt "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Create external overviews to make display faster in QGIS
 echo "*** Overviews --- gdaladdo $sourceChartName"

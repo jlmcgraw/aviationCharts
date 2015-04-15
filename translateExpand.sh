@@ -58,7 +58,7 @@ fi
 #Test if we need to expand the original file
 # if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
 #   then
-    echo --- Expand --- gdal_translate $sourceChartName
+    echo "*** Expand --- gdal_translate $sourceChartName"
 
     if [ $chartType == "enroute" ];  then
 	echo "Enroute chart, don't expand to RGB"
@@ -83,7 +83,7 @@ fi
 	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
     fi
     #Create external overviews to make display faster in QGIS
-    echo "--- Overviews for Expanded File --- gdaladdo $sourceChartName"
+    echo "*** Overviews for Expanded File --- gdaladdo $sourceChartName"
     ./memoize.py \
     gdaladdo \
 	  -ro \
