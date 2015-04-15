@@ -73,15 +73,27 @@ echo Linking $chartType files
 shopt -s nullglob	
 for f in *.tif
 do
-	#Replace spaces in name with _
-	newName=($(printf $f | sed 's/\s/_/g'))
+	#Santize $f into $newName
+	
+	newName=$f
+	# 	#Replace non-word in name with _
+	# 	newName=($(printf $newName | sed --regexp-extended 's/\W+/_/g'))
+	# 	
+	# 	#Fix the extension munged by above
+	# 	newName=($(printf $newName | sed --regexp-extended 's/_tif/\.tif/ig'))
+	
+ 	#Replace spaces in name with _
+	newName=($(printf $newName | sed --regexp-extended 's/\s+/_/g'))
 
 	#Strip off the series number
 	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
 
-	#If names are sorted properly, this will link latest version
-	#BUG TODO make the preference of latest revision explicit
-# 	echo "Linking $f -> $linkedRastersDirectory/$newName"
-	ln -s -f -r "$f" $linkedRastersDirectory/$newName
-	touch -h -r "$f" $linkedRastersDirectory$newName
+	#Link $newName to $f only if $f is newer
+	if [ "$f" -nt "$linkedRastersDirectory/$newName" ]; then
+	   echo "$f is newer than $linkedRastersDirectory/$newName"
+	   ln -s -f -r "$f" $linkedRastersDirectory/$newName
+	   touch -h -r "$f" $linkedRastersDirectory$newName
+	fi
+	
 done
+

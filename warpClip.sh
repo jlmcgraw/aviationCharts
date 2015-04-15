@@ -60,117 +60,118 @@ outputExtension="vrt"
 # outputFormat="GTiff"
 # outputExtension="tif"
 
+#memoize is a neat way of only re-running when input data has changed
+#see https://github.com/kgaughan/memoize.py
+#we're using -t to compare just via modification times since these files are large
+
+
 #1) Clip the source file first then 2) warp to EPSG:3857 so that final output pixels are square
 #----------------------------------------------
 
-#Does our clipped file already exist?
-if [ ! -f  "$clippedRastersDirectory/$sourceChartName.tif" ];
-  then
 #Clip the file it to it's clipping shape
-  echo "*** Clip --- gdalwarp $sourceChartName"
-  #BUG TODO crop_to_cutline results in a resampled image with non-square pixels
-  #How to best handle this?  One fix is an additional warp to EPSG:3857
-  #Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
-  nice -10 gdalwarp \
-	    -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
-	    -crop_to_cutline \
-	    -cblend 10 \
-	    -r lanczos \
-	    -dstalpha \
-	    -co ALPHA=YES \
-	    -co TILED=YES \
-	    -multi \
-	    -wo NUM_THREADS=ALL_CPUS  \
-	    -wm 1024 \
-	    --config GDAL_CACHEMAX 1024 \
-	    "$expandedRastersDirectory/$sourceChartName.vrt" \
-	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
+echo "*** Clip --- gdalwarp $sourceChartName"
+#BUG TODO crop_to_cutline results in a resampled image with non-square pixels
+#How to best handle this?  One fix is an additional warp to EPSG:3857
+#Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
+nice -10 \
+./memoize.py -t \
+gdalwarp \
+	  -overwrite \
+	  -cutline "$clippingShapesDirectory/$sourceChartName.shp" \
+	  -crop_to_cutline \
+	  -cblend 10 \
+	  -r lanczos \
+	  -dstalpha \
+	  -co ALPHA=YES \
+	  -co TILED=YES \
+	  -multi \
+	  -wo NUM_THREADS=ALL_CPUS  \
+	  -wm 1024 \
+	  --config GDAL_CACHEMAX 1024 \
+	  "$expandedRastersDirectory/$sourceChartName.vrt" \
+	  "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 # 	    "$warpedRastersDirectory/$sourceChartName.tif" \
-# 	    "$clippedRastersDirectory/$sourceChartName-temp.tif"
-  #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-  #If you want to make the files smaller, at the expense of CPU, you can enable these options
-  #      -co COMPRESS=DEFLATE \
-  #      -co PREDICTOR=1 \
-  #      -co ZLEVEL=9 \
-  echo --- Compress --- gdal_translate $sourceChartName
-  nice -10 gdal_translate \
-	    -strict \
-	    -co COMPRESS=LZW \
-	    -co TILED=YES \
-	    --config GDAL_CACHEMAX 1024 \
-	    "$clippedRastersDirectory/$sourceChartName-temp.tif" \
-	    "$clippedRastersDirectory/$sourceChartName.tif"
-  #Remove the huge temp file
-  rm "$clippedRastersDirectory/$sourceChartName-temp.tif"
+# 	    "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
-  #Create external overviews to make display faster in QGIS
-  #     echo --- Add overviews --- gdaladdo $sourceChartName             
-  echo --- Overviews --- gdaladdo $sourceChartName
-  nice -10 gdaladdo \
-	    -ro \
-	    -r average \
-	    --config INTERLEAVE_OVERVIEW PIXEL \
-	    --config COMPRESS_OVERVIEW JPEG \
-	    --config BIGTIFF_OVERVIEW IF_NEEDED \
-	    "$clippedRastersDirectory/$sourceChartName.tif" \
-	    2 4 8 16 32 64
-  
-  #Take a breather to write out data
-#   sleep 1m
-fi 
+#Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
+echo "*** Compress --- gdal_translate $sourceChartName"
+#If you want to make the files smaller, at the expense of CPU, you can enable these options
+#      -co COMPRESS=DEFLATE \
+#      -co PREDICTOR=1 \
+#      -co ZLEVEL=9 \
+nice -10 \
+./memoize.py -t \
+gdal_translate \
+	  -strict \
+	  -co COMPRESS=LZW \
+	  -co TILED=YES \
+	  --config GDAL_CACHEMAX 1024 \
+	  "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" \
+	  "$clippedRastersDirectory/$sourceChartName.tif"
+#Remove the huge temp file
+#   rm "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
+#Create external overviews to make display faster in QGIS      
+echo "*** Overviews --- gdaladdo $sourceChartName"
+nice -10 \
+./memoize.py -t \
+gdaladdo \
+	  -ro \
+	  -r average \
+	  --config INTERLEAVE_OVERVIEW PIXEL \
+	  --config COMPRESS_OVERVIEW JPEG \
+	  --config BIGTIFF_OVERVIEW IF_NEEDED \
+	  "$clippedRastersDirectory/$sourceChartName.tif" \
+	  2 4 8 16 32 64
 
-#Does our warped file already exist?
-if [ ! -f  "$warpedRastersDirectory/$sourceChartName.tif" ];
-  then
-  #Warp the expanded file
-  echo "*** Warp --- gdalwarp $sourceChartName"
-  nice -10 gdalwarp \
-	    -t_srs EPSG:3857 \
-	    -r lanczos \
-	    -multi \
-	    -wo NUM_THREADS=ALL_CPUS  \
-	    -wm 1024 \
-	    --config GDAL_CACHEMAX 1024 \
-	    -co TILED=YES \
-	    "$clippedRastersDirectory/$sourceChartName.tif" \
-	    "$warpedRastersDirectory/$sourceChartName-temp.tif"
+#Warp the expanded file
+echo "*** Warp --- gdalwarp $sourceChartName"
+nice -10 \
+./memoize.py -t \
+gdalwarp \
+	  -t_srs EPSG:3857 \
+	  -r lanczos \
+	  -overwrite \
+	  -multi \
+	  -wo NUM_THREADS=ALL_CPUS  \
+	  -wm 1024 \
+	  --config GDAL_CACHEMAX 1024 \
+	  -co TILED=YES \
+	  "$clippedRastersDirectory/$sourceChartName.tif" \
+	  "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 # 
 # 	    "$expandedRastersDirectory/$sourceChartName.tif" \
-# 	    "$warpedRastersDirectory/$sourceChartName-temp.tif"
-  #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-  #If you want to make the files smaller, at the expense of CPU, you can enable these options
-  #      -co COMPRESS=DEFLATE \
-  #      -co PREDICTOR=1 \
-  #      -co ZLEVEL=9 \
-  echo --- Compress --- gdal_translate $sourceChartName
-  nice -10 gdal_translate \
-    -strict \
-    -co COMPRESS=LZW \
-    -co TILED=YES \
-    --config GDAL_CACHEMAX 1024 \
-    "$warpedRastersDirectory/$sourceChartName-temp.tif" \
-    "$warpedRastersDirectory/$sourceChartName.tif"
+# 	    "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
-  #Remove the original poorly compressed file
-  rm "$warpedRastersDirectory/$sourceChartName-temp.tif"
+#Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
+echo "*** Compress --- gdal_translate $sourceChartName"
+#If you want to make the files smaller, at the expense of CPU, you can enable these options
+#      -co COMPRESS=DEFLATE \
+#      -co PREDICTOR=1 \
+#      -co ZLEVEL=9 \
+nice -10 \
+./memoize.py -t \
+gdal_translate \
+  -strict \
+  -co COMPRESS=LZW \
+  -co TILED=YES \
+  --config GDAL_CACHEMAX 1024 \
+  "$warpedRastersDirectory/$sourceChartName-uncompressed.tif" \
+  "$warpedRastersDirectory/$sourceChartName.tif"
 
-  #Create external overviews to make display faster in QGIS
-  #     echo --- Add overviews --- gdaladdo $sourceChartName             
-  echo --- Overviews --- gdaladdo $sourceChartName
-  nice -10 gdaladdo \
-    -ro \
-    -r average \
-    --config INTERLEAVE_OVERVIEW PIXEL \
-    --config COMPRESS_OVERVIEW JPEG \
-    --config BIGTIFF_OVERVIEW IF_NEEDED \
-    "$warpedRastersDirectory/$sourceChartName.tif" \
-    2 4 8 16 32 64
-    
-  #Take a breather to write out data
-#   sleep 1m  
-fi
+#Remove the original poorly compressed file
+#   rm "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
-
-            
+#Create external overviews to make display faster in QGIS
+echo "*** Overviews --- gdaladdo $sourceChartName"
+nice -10 \
+./memoize.py -t \
+gdaladdo \
+  -ro \
+  -r average \
+  --config INTERLEAVE_OVERVIEW PIXEL \
+  --config COMPRESS_OVERVIEW JPEG \
+  --config BIGTIFF_OVERVIEW IF_NEEDED \
+  "$warpedRastersDirectory/$sourceChartName.tif" \
+  2 4 8 16 32 64

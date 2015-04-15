@@ -51,13 +51,18 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit 1
 fi
 
+#memoize is a neat way of only re-running when input data has changed
+#see https://github.com/kgaughan/memoize.py
+#add the -t parameter to compare just using time if the default MD5 is too slow
+
 #Test if we need to expand the original file
-if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
-  then
+# if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
+#   then
     echo --- Expand --- gdal_translate $sourceChartName
 
     if [ $chartType == "enroute" ];  then
-	echo "Enroute chart"
+	echo "Enroute chart, don't expand to RGB"
+	./memoize.py \
     	gdal_translate \
 	    -strict \
 	    -of $outputFormat \
@@ -66,7 +71,8 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
 	    "$linkedRastersDirectory/$sourceChartName.tif" \
 	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
       else
-	echo "Not an enroute chart"
+	echo "Not an enroute chart, no need to expand"
+	./memoize.py \
 	gdal_translate \
 	    -strict \
 	    -of $outputFormat \
@@ -77,7 +83,8 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
 	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
     fi
     #Create external overviews to make display faster in QGIS
-    echo --- Overviews for Expanded File --- gdaladdo $sourceChartName             
+    echo "--- Overviews for Expanded File --- gdaladdo $sourceChartName"
+    ./memoize.py \
     gdaladdo \
 	  -ro \
 	  -r gauss \
@@ -86,4 +93,4 @@ if [ ! -f "$expandedRastersDirectory/$sourceChartName.$outputExtension" ];
 	  --config BIGTIFF_OVERVIEW IF_NEEDED \
 	  "$expandedRastersDirectory/$sourceChartName.$outputExtension" \
 	  2 4 8 16 32 64
-fi
+# fi
