@@ -165,8 +165,8 @@ gdal_translate \
 
 #Remove the original poorly compressed file
 #   rm "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
-touch -r "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
-mv touchtemp.txt "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
+touch -r "$warpedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
+mv touchtemp.txt "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Create external overviews to make display faster in QGIS
 echo "*** Overviews --- gdaladdo $sourceChartName"

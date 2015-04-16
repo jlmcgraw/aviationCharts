@@ -2,15 +2,17 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
+if [ "$#" -ne 3 ] ; then
+  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType" >&2
+  exit 1
+fi
+
 #Get command line parameters
 originalRastersDirectory="$1"
 destinationRoot="$2"
 chartType="$3"
 
-if [ "$#" -ne 3 ] ; then
-  echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType" >&2
-  exit 1
-fi
+
 
 
 #For files that have a version in their name, this is where the links to the lastest version
