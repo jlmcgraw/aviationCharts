@@ -46,7 +46,7 @@ def is_relevant(fname):
     return False
 
 def generate_deps(cmd):
-    print 'Memoize running: ', cmd
+    #print 'Memoize running: ', cmd
 
     outfile = tempfile.mktemp()
     
@@ -112,7 +112,7 @@ def memoize_with_deps(depsname, deps, cmd):
         write_deps(depsname, deps)
         return status
     else:
-        print 'up to date:', cmd
+        #print 'up to date:', cmd
         return 0
 
 default_depsname = '.deps'

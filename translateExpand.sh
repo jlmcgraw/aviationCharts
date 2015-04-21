@@ -61,8 +61,8 @@ fi
     echo "*** Expand --- gdal_translate $sourceChartName"
 
     if [ $chartType == "enroute" ];  then
-	echo "Enroute chart, don't expand to RGB"
-	./memoize.py \
+	echo "***  Enroute chart, don't expand to RGB"
+	./memoize.py -t \
     	gdal_translate \
 	    -strict \
 	    -of $outputFormat \
@@ -71,8 +71,8 @@ fi
 	    "$linkedRastersDirectory/$sourceChartName.tif" \
 	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
       else
-	echo "Not an enroute chart, no need to expand"
-	./memoize.py \
+	echo "***  Not an enroute chart, need to expand to RGB"
+	./memoize.py -t \
 	gdal_translate \
 	    -strict \
 	    -of $outputFormat \
@@ -83,8 +83,8 @@ fi
 	    "$expandedRastersDirectory/$sourceChartName.$outputExtension"
     fi
     #Create external overviews to make display faster in QGIS
-    echo "*** Overviews for Expanded File --- gdaladdo $sourceChartName"
-    ./memoize.py \
+    echo "***  Overviews for Expanded File --- gdaladdo $sourceChartName"
+    ./memoize.py -t \
     gdaladdo \
 	  -ro \
 	  -r gauss \

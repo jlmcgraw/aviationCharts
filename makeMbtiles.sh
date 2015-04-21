@@ -68,15 +68,18 @@ if [ ! -d $mbtilesDirectory ]; then
     exit 1
 fi
 
-if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
-  #Create tiles from the clipped raster (trying various utilities)
+#Create the mbtiles file if it doesn't exist or is older than it's source image
+if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ] || [ "$warpedRastersDirectory/$sourceChartName.tif" -nt "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
+  #Create tiles from the clipped raster 
   
+    # (trying various utilities)
+    #
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r cubic --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
     python ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py -r lanczos --resume $warpedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
   
-  #Optimize each of tile for sharpness and then size using all CPUs
+  #Optimize each tile for sharpness and then size using all CPUs
   
     #Get the number of online CPUs
     cpus=$(getconf _NPROCESSORS_ONLN)
@@ -93,6 +96,6 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   #Package them into an .mbtiles file
     ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
 
-  #Set the date of this new mbtiles to the date of the chart used to create it
-    #touch -r "$linkedRastersDirectory/$sourceChartName.tif" $mbtilesDirectory/$sourceChartName.mbtiles
+  #Set the date of this new mbtiles to the date of the image used to create it
+    touch -r "$warpedRastersDirectory/$sourceChartName.tif" "$mbtilesDirectory/$sourceChartName.mbtiles"
 fi

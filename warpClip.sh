@@ -96,7 +96,7 @@ gdalwarp \
 # 	    "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-echo "*** Compress --- gdal_translate $sourceChartName"
+echo "***  Compress --- gdal_translate $sourceChartName"
 #If you want to make the files smaller, at the expense of CPU, you can enable these options
 #      -co COMPRESS=DEFLATE \
 #      -co PREDICTOR=1 \
@@ -116,7 +116,7 @@ touch -r "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.
 mv touchtemp.txt "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Create external overviews to make display faster in QGIS      
-echo "*** Overviews --- gdaladdo $sourceChartName"
+echo "***  Overviews --- gdaladdo $sourceChartName"
 nice -10 \
 ./memoize.py -t \
 gdaladdo \
@@ -148,7 +148,7 @@ gdalwarp \
 # 	    "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Do this gdal_translate again to compress the output file.  Apparently gdalwarp doesn't really do it properly
-echo "*** Compress --- gdal_translate $sourceChartName"
+echo "***  Compress --- gdal_translate $sourceChartName"
 #If you want to make the files smaller, at the expense of CPU, you can enable these options
 #      -co COMPRESS=DEFLATE \
 #      -co PREDICTOR=1 \
@@ -169,7 +169,7 @@ touch -r "$warpedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.t
 mv touchtemp.txt "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
 #Create external overviews to make display faster in QGIS
-echo "*** Overviews --- gdaladdo $sourceChartName"
+echo "***  Overviews --- gdaladdo $sourceChartName"
 nice -10 \
 ./memoize.py -t \
 gdaladdo \

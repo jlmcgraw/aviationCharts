@@ -17,6 +17,15 @@ if [ ! -d $AERONAV_ROOT_DIR ]; then
     exit 1
 fi
 
+#Exit if we ran this command within the last 24 hours (adjust as you see fit)
+if [ -e ./lastChartRefresh ] && [ $(date +%s -r ./lastChartRefresh) -gt $(date +%s --date="24 hours ago") ]; then
+ echo "Charts updated within last 24 hours, exiting"
+ exit
+fi 
+
+#Update the time of this file so we can check when we ran this last
+touch ./lastChartRefresh
+
 cd $AERONAV_ROOT_DIR
 
 #Get all of the latest charts
@@ -25,4 +34,5 @@ wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timest
 echo ######################################
 wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e
+
 
