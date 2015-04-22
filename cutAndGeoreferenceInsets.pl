@@ -27,9 +27,8 @@ exit main(@ARGV);
 sub main {
     our $debug = 0;
 
-    #The insets
-    #Their source raster, upper left X, upper left Y, lower right X, lower right Y
-    #pixel coordinates of the inset
+    #The inset's name
+    #Their source raster, upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
     #The Ground Control Points for each inset relative to clipped file: Pixel X, Pixel Y, Longitude, Latitude
     my %HashOfInsets = (
         "Dutch_Harbor" => [
@@ -139,6 +138,8 @@ sub main {
     );
 
     foreach my $key ( keys %HashOfInsets ) {
+	#$key is the inset's name
+        #Pull out the relevant data for each inset
         my $sourceRaster = $HashOfInsets{$key}[0];
         my $ulX          = $HashOfInsets{$key}[1];
         my $ulY          = $HashOfInsets{$key}[2];
@@ -149,10 +150,11 @@ sub main {
         my $tempRaster  = $key . "_Inset_temp.vrt";
         my $finalRaster = $key . "_Inset.tif";
         say $key;
+        
         #create the string of ground control points
         my $gcpString = createGcpString($gcpArrayRef);
 
-        #cut out inset and add GCPs
+        #cut out the inset from source raster and add GCPs
         cutOutInsetFromSourceRaster( $sourceRaster, $ulX, $ulY, $lrX, $lrY,
             $gcpString, $tempRaster );
 
