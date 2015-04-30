@@ -28,7 +28,7 @@ popd > /dev/null
 # destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 #BUG TODO This will need to be updated for every new enroute charting cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/03-05-2015/"
+originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/04-30-2015/"
 
 #Where the original .zip files are from aeronav (subject to them changing their layout)
 originalHeliDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/heli_files/"
