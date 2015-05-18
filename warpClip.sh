@@ -110,12 +110,15 @@ gdal_translate \
 	  --config GDAL_CACHEMAX 1024 \
 	  "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" \
 	  "$clippedRastersDirectory/$sourceChartName.tif"
-#Remove the huge temp file
-#   rm "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
+
+#Remove the original poorly compressed file
+#First, create a 0 byte file with the same timestamp as the temp file
+#Then use that file to overwrite the temp file for the purposes of convincing memoize
+#that nothing needs to be re-done
 touch -r "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
 mv touchtemp.txt "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
-#Create external overviews to make display faster in QGIS      
+#Create external overviews to make display faster in QGIS
 echo "***  Overviews --- gdaladdo $sourceChartName"
 nice -10 \
 ./memoize.py -t \
@@ -164,7 +167,9 @@ gdal_translate \
   "$warpedRastersDirectory/$sourceChartName.tif"
 
 #Remove the original poorly compressed file
-#   rm "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
+#First, create a 0 byte file with the same timestamp as the temp file
+#Then use that file to overwrite the temp file for the purposes of convincing memoize
+#that nothing needs to be re-done
 touch -r "$warpedRastersDirectory/$sourceChartName-uncompressed.tif" touchtemp.txt
 mv touchtemp.txt "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
 
