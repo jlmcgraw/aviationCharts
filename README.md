@@ -9,21 +9,28 @@ It has only been tested under Ubuntu 14.10
 ![Enroute Low with oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/enroute-low with oceanic.png)
 ![WAC](https://raw.github.com/jlmcgraw/aviationCharts/master/wac.png)
 
-# TODO
-    - Handle charts which cross the anti-meridian
+# TODO    
+
+
+# DONE
+    - Handle charts which cross the anti-meridian (tilers_tools handles this)
     - Pull out insets and georeference them as necessary
     - Pursue a multithreaded gdal2tiles that can auto determine zoom levels
-    - Use make to update only as necessary 
-
+    - Use make to update only as necessary  (done via memoize.py)
+        
 # Requirements
-    - gdal (sudo apt-get install gdal-bin)
+    - gdal 
     - wget
-    - pngquant (sudo apt-get install pngquant)
-    - graphicsmagick (sudo apt-get install graphicsmagick)
-    - mbutil (git clone https://github.com/mapbox/mbutil.git)
-    - gdal2tiles multithreaded version (git clone https://github.com/jlmcgraw/parallelGdal2tiles.git)
+    - pngquant 
+    - graphicsmagick 
+    - mbutil 
+    - gdal2tiles multithreaded version 
 
 # Getting Started
+##### Install utilities and create directories
+```
+./setup.sh
+```
 ##### Edit allCharts.sh and update variables and create the corresponding directories as needed
 ```
 #Full path to root of downloaded chart info
@@ -34,17 +41,13 @@ chartsRoot="/media/sf_Shared_Folder/charts/"
 #This will need to be updated for every cycle
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 ```
-##### Edit makeMbtiles.sh to update the location of these commands on your system
+##### Edit makeMbtiles.sh as necessary to update the location of these commands on your system
 ```
 ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py
 ~/Documents/github/mbutil/mb-util
 ~/Documents/github/tilers_tools/
 ```
-##### Create the directory tree	
-```
-./createTree.sh
-```
-##### Execute allCharts.sh	
+##### Execute allCharts.sh
 ```
 ./allCharts.sh
 ```

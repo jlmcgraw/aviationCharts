@@ -3,7 +3,7 @@ set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 
 #Comment this out to actually make the mbtiles
-exit
+# exit
 
 #Get command line parameters
 originalRastersDirectory="$1"
@@ -69,17 +69,27 @@ if [ ! -d $mbtilesDirectory ]; then
 fi
 
 #Create the mbtiles file if it doesn't exist or is older than it's source image
-if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ] || [ "$warpedRastersDirectory/$sourceChartName.tif" -nt "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
+# if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ] || [ "$warpedRastersDirectory/$sourceChartName.tif" -nt "$mbtilesDirectory/$sourceChartName.mbtiles" ];  then
   #Create tiles from the clipped raster 
   
     # (trying various utilities)
     #
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
+    #
+    # or
+    #
     # python ~/Documents/github/parallel-gdal2tiles/gdal2tiles/gdal2tiles.py $clippedRastersDirectory/$clippedName.tif $tilesDirectory/$sourceChartName
     # ~/Documents/github/gdal2mbtiles/gdal2mbtiles.py -r cubic --resume $clippedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
-    python ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py -r lanczos --resume $warpedRastersDirectory/$sourceChartName.tif $tilesDirectory/$sourceChartName
+    #
+    # or
+    #
+    ./memoize.py \
+        ./parallelGdal2Tiles/gdal2tiles.py \
+            -r lanczos \
+            $warpedRastersDirectory/$sourceChartName.tif \
+            $tilesDirectory/$sourceChartName
   
-  #Optimize each tile for sharpness and then size using all CPUs
+    #Optimize each tile for sharpness and then size using all CPUs
   
     #Get the number of online CPUs
     cpus=$(getconf _NPROCESSORS_ONLN)
@@ -89,13 +99,17 @@ if [ ! -f  "$mbtilesDirectory/$sourceChartName.mbtiles" ] || [ "$warpedRastersDi
     #   Determine best method (sharpen vs. unsharp) and parameters
     # #   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -unsharp 2x1.5+1.7+0
     #   find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus gm mogrify -sharpen 0x.5
-    #   
-    echo "Optimize PNGs, using $cpus CPUS"
+    #
+    echo "Optimize PNGs with pngquant, using $cpus CPUS"
     find $tilesDirectory/$sourceChartName/ -type f -name "*.png" -print0 | xargs --null --max-args=1 --max-procs=$cpus pngquant -s2 -q 100 --ext=.png --force
 
-  #Package them into an .mbtiles file
-    ~/Documents/github/mbutil/mb-util --scheme=tms $tilesDirectory/$sourceChartName/ $mbtilesDirectory/$sourceChartName.mbtiles
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        ./mbutil/mb-util \
+            --scheme=tms \
+            $tilesDirectory/$sourceChartName/ \
+            $mbtilesDirectory/$sourceChartName.mbtiles
 
-  #Set the date of this new mbtiles to the date of the image used to create it
-    touch -r "$warpedRastersDirectory/$sourceChartName.tif" "$mbtilesDirectory/$sourceChartName.mbtiles"
-fi
+    #Set the date of this new mbtiles to the date of the image used to create it
+    #touch -r "$warpedRastersDirectory/$sourceChartName.tif" "$mbtilesDirectory/$sourceChartName.mbtiles"
+# fi
