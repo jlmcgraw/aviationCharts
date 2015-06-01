@@ -38,6 +38,7 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
 ```
 ~/Documents/myPrograms/parallelGdal2Tiles/gdal2tiles.py
 ~/Documents/github/mbutil/mb-util
+~/Documents/github/tilers_tools/
 ```
 ##### Create the directory tree	
 ```
