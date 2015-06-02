@@ -87,8 +87,8 @@ gdalwarp \
 	  -co TILED=YES \
 	  -multi \
 	  -wo NUM_THREADS=ALL_CPUS  \
-	  -wm 1024 \
-	  --config GDAL_CACHEMAX 1024 \
+	  -wm 512 \
+	  --config GDAL_CACHEMAX 512 \
 	  "$expandedRastersDirectory/$sourceChartName.vrt" \
 	  "$clippedRastersDirectory/$sourceChartName-uncompressed.tif"
 
@@ -107,7 +107,7 @@ gdal_translate \
 	  -strict \
 	  -co COMPRESS=LZW \
 	  -co TILED=YES \
-	  --config GDAL_CACHEMAX 1024 \
+	  --config GDAL_CACHEMAX 512 \
 	  "$clippedRastersDirectory/$sourceChartName-uncompressed.tif" \
 	  "$clippedRastersDirectory/$sourceChartName.tif"
 
@@ -141,8 +141,8 @@ gdalwarp \
 	  -overwrite \
 	  -multi \
 	  -wo NUM_THREADS=ALL_CPUS  \
-	  -wm 1024 \
-	  --config GDAL_CACHEMAX 1024 \
+	  -wm 512 \
+	  --config GDAL_CACHEMAX 512 \
 	  -co TILED=YES \
 	  "$clippedRastersDirectory/$sourceChartName.tif" \
 	  "$warpedRastersDirectory/$sourceChartName-uncompressed.tif"
@@ -162,7 +162,7 @@ gdal_translate \
   -strict \
   -co COMPRESS=LZW \
   -co TILED=YES \
-  --config GDAL_CACHEMAX 1024 \
+  --config GDAL_CACHEMAX 512 \
   "$warpedRastersDirectory/$sourceChartName-uncompressed.tif" \
   "$warpedRastersDirectory/$sourceChartName.tif"
 
