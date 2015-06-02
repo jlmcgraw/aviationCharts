@@ -84,7 +84,7 @@ fi
     # or
     #
     ./memoize.py \
-        ./parallelGdal2Tiles/gdal2tiles.py \
+        python ./parallelGdal2Tiles/gdal2tiles.py \
             -r lanczos \
             $warpedRastersDirectory/$sourceChartName.tif \
             $tilesDirectory/$sourceChartName
@@ -105,7 +105,7 @@ fi
 
     #Package them into an .mbtiles file
     ./memoize.py \
-        ./mbutil/mb-util \
+        python ./mbutil/mb-util \
             --scheme=tms \
             $tilesDirectory/$sourceChartName/ \
             $mbtilesDirectory/$sourceChartName.mbtiles

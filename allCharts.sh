@@ -1,3 +1,4 @@
+
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
 IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
@@ -64,3 +65,6 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processGrandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./processEnroute.sh     $originalEnrouteDirectory     $destinationRoot
 ./processWac.sh         $originalWacDirectory         $destinationRoot
+
+#Create tiles with tiler_tools
+./tileAll.sh
