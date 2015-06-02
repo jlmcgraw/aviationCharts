@@ -84,7 +84,7 @@ fi
     # or
     #
     ./memoize.py \
-        python ./parallelGdal2Tiles/gdal2tiles.py \
+        python ./parallelGdal2tiles/gdal2tiles.py \
             -r lanczos \
             $warpedRastersDirectory/$sourceChartName.tif \
             $tilesDirectory/$sourceChartName
