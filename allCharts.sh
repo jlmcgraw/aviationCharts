@@ -1,7 +1,7 @@
 
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 #TODO
 # Move towards using VRTs once clipping polygons are established
@@ -23,8 +23,8 @@ chartsRoot="/media/sf_Shared_Folder/charts/"
 
 #Determine the full path to where this script is
 #Use this as the root of directories where our processed images etc will be saved
-pushd `dirname $0` > /dev/null
-destinationRoot=`pwd`
+pushd $(dirname "$0") > /dev/null
+destinationRoot=$(pwd)
 popd > /dev/null
 # destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 

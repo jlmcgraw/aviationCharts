@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 #Expand this chart (if necessary, enroute charts don't currently need) to RGB bands
 #Get command line parameters
@@ -31,22 +31,22 @@ clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 #Where the polygons for clipping are stored
 clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
-if [ ! -d $originalRastersDirectory ]; then
+if [ ! -d "$originalRastersDirectory" ]; then
     echo "$originalRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $linkedRastersDirectory ]; then
+if [ ! -d "$linkedRastersDirectory" ]; then
     echo "$linkedRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $expandedRastersDirectory ]; then
+if [ ! -d "$expandedRastersDirectory" ]; then
     echo "$expandedRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $clippedRastersDirectory ]; then
+if [ ! -d "$clippedRastersDirectory" ]; then
     echo "$clippedRastersDirectory doesn't exist"
     exit 1
 fi

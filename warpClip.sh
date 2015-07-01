@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 #First create a version of this chart warped to EPSG:3857
 #Then clip that warped version
@@ -55,8 +55,8 @@ if [ ! -d $clippedRastersDirectory ]; then
     exit 1
 fi
 
-outputFormat="VRT"
-outputExtension="vrt"
+# outputFormat="VRT"
+# outputExtension="vrt"
 # outputFormat="GTiff"
 # outputExtension="tif"
 

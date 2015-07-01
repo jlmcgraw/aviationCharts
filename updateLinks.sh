@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 if [ "$#" -ne 3 ] ; then
   echo "Usage: $0 SOURCE_DIRECTORY destinationRoot chartType" >&2
@@ -25,33 +25,33 @@ expandedRastersDirectory="$destinationRoot/expandedRasters/$chartType/"
 #Where clipped rasters are stored (step 3)
 clippedRastersDirectory="$destinationRoot/clippedRasters/$chartType/"
 
-#Where the polygons for clipping are stored
-clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
+# #Where the polygons for clipping are stored
+# clippingShapesDirectory="$destinationRoot/clippingShapes/$chartType/"
 
 
 
-if [ ! -d $originalRastersDirectory ]; then
+if [ ! -d "$originalRastersDirectory" ]; then
     echo "$originalRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $linkedRastersDirectory ]; then
+if [ ! -d "$linkedRastersDirectory" ]; then
     echo "$linkedRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $expandedRastersDirectory ]; then
+if [ ! -d "$expandedRastersDirectory" ]; then
     echo "$expandedRastersDirectory doesn't exist"
     exit 1
 fi
 
-if [ ! -d $clippedRastersDirectory ]; then
+if [ ! -d "$clippedRastersDirectory" ]; then
     echo "$clippedRastersDirectory doesn't exist"
     exit 1
 fi
 
 
-cd $originalRastersDirectory
+cd "$originalRastersDirectory"
 #Ignore unzipping errors
 set +e
 #Unzip all of the charts
@@ -93,8 +93,8 @@ do
 	#Link $newName to $f only if $f is newer
 	if [ "$f" -nt "$linkedRastersDirectory/$newName" ]; then
 	   echo "$f is newer than $linkedRastersDirectory/$newName"
-	   ln -s -f -r "$f" $linkedRastersDirectory/$newName
-	   touch -h -r "$f" $linkedRastersDirectory$newName
+	   ln -s -f -r "$f" "$linkedRastersDirectory/$newName"
+	   touch -h -r "$f" "$linkedRastersDirectory$newName"
 	fi
 	
 done
