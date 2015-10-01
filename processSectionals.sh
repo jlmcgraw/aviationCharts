@@ -109,8 +109,8 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
 
     ./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
 
-    ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
-
-    ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
+#     ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+  ./warpClipViaVrt.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+#     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
 
   done

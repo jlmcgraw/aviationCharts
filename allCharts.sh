@@ -19,7 +19,12 @@ IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 # Make use of "make" to only process new charts (done via memoize)
 
 #Full path to root of where aeronav site will be mirrored to via wget
-chartsRoot="/media/sf_Shared_Folder/charts/"
+chartsRoot="/media/sf_Shared_Folder/charts"
+
+if [ ! -d "$chartsRoot" ]; then
+    echo "chart root folder $chartsRoot doesn't exist"
+    exit 1
+fi
 
 #Determine the full path to where this script is
 #Use this as the root of directories where our processed images etc will be saved
@@ -29,7 +34,7 @@ popd > /dev/null
 # destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 #BUG TODO This will need to be updated for every new enroute charting cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/04-30-2015/"
+originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/08-20-2015/"
 
 #Where the original .zip files are from aeronav (subject to them changing their layout)
 originalHeliDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/heli_files/"
@@ -41,7 +46,7 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 #If some of these steps are commented out it's because I don't always want to wait for them to run
 #so uncomment them as necessary
 
-#Update local chart copies from Aeronav website
+# #Update local chart copies from Aeronav website
 ./freshenLocalCharts.sh $chartsRoot
 
 #Update our local links to those (possibly new) original files
@@ -65,6 +70,6 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processGrandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./processEnroute.sh     $originalEnrouteDirectory     $destinationRoot
 ./processWac.sh         $originalWacDirectory         $destinationRoot
-
-#Create tiles and merged charts with tiler_tools
-./tileAll.sh
+# 
+# #Create tiles and merged charts with tiler_tools
+# ./tileAll.sh

@@ -84,9 +84,10 @@ for (( i=0; i<=$(( $numberOfCharts-1 )); i++ ))
     ./translateExpand.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
 
     #Warp and clip
-    ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+#     ./warpClip.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
+    ./warpClipViaVrt.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName
 
     #Make the tiles and mbtiles
-    ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
+#     ./makeMbtiles.sh $originalRastersDirectory $destinationRoot $chartType $sourceChartName $zoomRange
 
   done
