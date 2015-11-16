@@ -34,7 +34,7 @@ popd > /dev/null
 # destinationRoot="${HOME}/Documents/myPrograms/mergedCharts"
 
 #BUG TODO This will need to be updated for every new enroute charting cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/08-20-2015/"
+originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/10-15-2015/"
 
 #Where the original .zip files are from aeronav (subject to them changing their layout)
 originalHeliDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/heli_files/"
@@ -46,8 +46,14 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 #If some of these steps are commented out it's because I don't always want to wait for them to run
 #so uncomment them as necessary
 
-# #Update local chart copies from Aeronav website
+#Update local chart copies from Aeronav website
 ./freshenLocalCharts.sh $chartsRoot
+
+#Extract Caribbean PDFs and convert to TIFF
+./rasterize_Caribbean_charts.sh $originalEnrouteDirectory $destinationRoot enroute
+
+#Clip and georeference the Caribbean enroute charts and their insets
+./cut_and_georeference_Caribbean.pl $destinationRoot 
 
 #Update our local links to those (possibly new) original files
 #This handles charts that have revisions in the filename (sectional, tac etc)
@@ -64,6 +70,7 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 #	Reproject to EPSG:3857
 # 	Convert clipped and warped image to TMS layout folders of tiles
 # 	Package those tiles into a .mbtile
+
 ./processHeli.sh        $originalHeliDirectory        $destinationRoot
 ./processTac.sh         $originalTacDirectory         $destinationRoot
 ./processSectionals.sh  $originalSectionalDirectory   $destinationRoot
