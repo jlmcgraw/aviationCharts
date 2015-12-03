@@ -52,12 +52,16 @@ if [ ! -d "$clippedRastersDirectory" ]; then
     exit 1
 fi
 
+#Get our initial directory as it is where memoize.py is located
+pushd $(dirname "$0") > /dev/null
+installedDirectory=$(pwd)
+popd > /dev/null
 
 cd "$originalRastersDirectory"
 #Ignore unzipping errors
 set +e
 #Unzip the Caribbean PDFs
-echo Unzipping $chartType files
+echo "Unzipping $chartType files for Caribbean"
 unzip -qq -u -j "delcb*.zip" "*.pdf"
 #Restore quit on error
 set -e
@@ -71,8 +75,9 @@ do
 		continue  
 	fi
 	
-    echo "Convert $f"
-    ./memoize.py -t \
+    echo "Converting $f to raster"
+    #Needs to point to where memoize is
+    $installedDirectory/memoize.py -t \
     gs \
         -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
         -sDEVICE=tiff24nc                               \
@@ -95,7 +100,8 @@ do
 # #         "$f"
 #     
     echo "Tile $f"
-    ./memoize.py -t \
+    #Needs to point to where memoize is
+    $installedDirectory/memoize.py -t \
     gdal_translate \
                 -strict \
                 -co TILED=YES \
@@ -104,7 +110,8 @@ do
                 "$f.tif"
 
     echo "Overviews $f"
-    ./memoize.py -t \
+    #Needs to point to where memoize is
+    $installedDirectory/memoize.py -t \
     gdaladdo \
             -ro \
             -r gauss \

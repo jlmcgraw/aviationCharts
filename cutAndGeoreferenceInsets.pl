@@ -17,8 +17,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see [http://www.gnu.org/licenses/].
 
-use Modern::Perl '2015';
+#Standard modules
+use strict;
+use warnings;
+use autodie;
 use Carp;
+
+#Using this so users don't need to globally install modules
+#allows using "carton install" instead
+use FindBin '$Bin';
+use lib "$FindBin::Bin/local/lib/perl5";
+
+#Non-Standard modules that should be installed locally
+use Modern::Perl '2014';
 use Params::Validate qw(:all);
 
 #Call the main routine and exit with its return code
