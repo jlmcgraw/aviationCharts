@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 #The base type of chart we're processing in this script
 chartType=grand_canyon
@@ -30,21 +30,32 @@ for chart in "${chart_list[@]}"
   do
   echo $chart
   
-  ./memoize.py \
+  ./memoize.py -i $destDir \
     ./tilers_tools/gdal_tiler.py \
         --release \
         --paletted \
         --dest-dir="$destDir" \
-        --noclobber \
         ~/Documents/myPrograms/mergedCharts/warpedRasters/$chartType/$chart.tif
   done
+
 
 #Create a list of directories of this script's type
 directories=$(find "$destDir" -type d \( -name "*Grand_Canyon*" -o -name "*_VFR_Wall_Planning_Chart*" \) | sort)
 
 echo $directories
 
-./memoize.py \
-    ./tilers_tools/tiles_merge.py \
-        $directories \
-        ./$chartType
+#Optimize the tiled png files
+for directory in $directories
+do
+    ./pngquant_all_files_in_directory.sh $directory
+done
+
+
+
+# ./memoize.py -i $destDir \
+#     ./tilers_tools/tiles_merge.py \
+#         $directories \
+#         ./merged_tiles/$chartType
+        
+        
+

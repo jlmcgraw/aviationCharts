@@ -40,12 +40,11 @@ for chart in "${chart_list[@]}"
   do
   echo $chart
   
-  ./memoize.py \
+  ./memoize.py -i $destDir \
     ./tilers_tools/gdal_tiler.py \
         --release \
         --paletted \
         --dest-dir="$destDir" \
-        --noclobber \
         --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12 \
         ~/Documents/myPrograms/mergedCharts/warpedRasters/$chartType/$chart.tif
   done
@@ -55,7 +54,14 @@ directories=$(find "$destDir" -type d \( -name "ENR_L*" -o -name "ENR_AKL*" \)| 
 
 echo $directories
 
-./memoize.py \
-    ./tilers_tools/tiles_merge.py \
-        $directories \
-        "./$chartType-low"
+#Optimize the tiled png files
+for directory in $directories
+do
+    ./pngquant_all_files_in_directory.sh $directory
+done
+
+# 
+# ./memoize.py -i $destDir \
+#     ./tilers_tools/tiles_merge.py \
+#         $directories \
+#         "./merged_tiles/$chartType-low"

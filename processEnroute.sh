@@ -1,14 +1,17 @@
 #!/bin/bash
-set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
-#Get command line parameters
-originalRastersDirectory="$1"
-destinationRoot="$2"
+set -eu               # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
+
 
 if [ "$#" -ne 2 ] ; then
   echo "Usage: $0 SOURCE_DIRECTORY destinationRoot" >&2
   exit 1
 fi
+
+#Get command line parameters
+originalRastersDirectory="$1"
+destinationRoot="$2"
+
 
 chartType="enroute"
 zoomRange="0-11"
@@ -50,8 +53,7 @@ if [ ! -d $clippedRastersDirectory ]; then
 fi
 
 #These span the anti-meridian
-crossAntiMeridian=(
-)
+crossAntiMeridian=()
 
 chartArray=(
 ENR_A01_ATL ENR_A01_DCA ENR_A01_DET ENR_A01_JAX ENR_A01_MIA ENR_A01_MSP 

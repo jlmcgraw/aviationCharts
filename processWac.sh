@@ -52,19 +52,27 @@ fi
 
 #These span the anti-meridian
 crossAntiMeridian=()
-
+#Some charts have now been discontinued
 chartArray=(
-CC-8_WAC
-CC-9_WAC
-CD-10_WAC
-CD-11_WAC CD-12_WAC  
-CE-12_WAC CE-13_WAC CE-15_WAC 
+CC-8_WAC CC-9_WAC
+CD-10_WAC CD-11_WAC  CD-12_WAC  
+CE-13_WAC CE-15_WAC 
 CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC 
 CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC 
 CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
 CJ-26_WAC CJ-27_WAC
 ) 
-
+# chartArray=(
+# CC-8_WAC
+# CC-9_WAC
+# CD-10_WAC
+# CD-11_WAC CD-12_WAC  
+# CE-12_WAC CE-13_WAC CE-15_WAC 
+# CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC 
+# CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC 
+# CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
+# CJ-26_WAC CJ-27_WAC
+# ) 
 #count of all items in chart array
 chartArrayLength=${#chartArray[*]}
 
