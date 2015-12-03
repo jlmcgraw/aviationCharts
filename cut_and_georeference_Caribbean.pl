@@ -43,7 +43,8 @@ sub main {
 
     #I'm using locally compiled gdal
     #If your version is > 2 then set this to empty string ''
-    our $compiled_gdal_dir = '~/Documents/github/gdal/gdal/apps/';
+    our $compiled_gdal_dir = '';
+#     our $compiled_gdal_dir = '~/Documents/github/gdal/gdal/apps/';
 
     #Number of arguments supplied on command line
     my $num_args = $#ARGV + 1;

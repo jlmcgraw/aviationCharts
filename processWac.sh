@@ -61,7 +61,9 @@ CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC
 CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC 
 CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC
 CJ-26_WAC CJ-27_WAC
-) 
+)
+
+#This was the original complete list of charts
 # chartArray=(
 # CC-8_WAC
 # CC-9_WAC

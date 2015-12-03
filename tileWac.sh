@@ -1,18 +1,21 @@
 #!/bin/bash
-set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+set -eu                # Die on errors and unbound variables
+IFS=$(printf '\n\t')   # IFS is newline or tab
 
 #The base type of chart we're processing in this script
 chartType=wac
-
-#Get command line parameters
-destDir="$1"
 
 #Validate number of command line parameters
 if [ "$#" -ne 1 ] ; then
   echo "Usage: $0 DESTINATION_DIRECTORY" >&2
   exit 1
 fi
+
+#Get command line parameters
+destinationRoot="$1"
+
+#Where to put tiled charts (each in its own directory)
+destDir="$destinationRoot/individual_tiled_charts"
 
 #Check that the destination directory exists
 if [ ! -d $destDir ]; then
@@ -36,24 +39,34 @@ for chart in "${chart_list[@]}"
   
   ./memoize.py -i $destDir \
     ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
         --release \
         --paletted \
         --dest-dir="$destDir" \
-        --zoom=0,1,2,3,4,5,6,7,8,9,10 \
-        ~/Documents/myPrograms/mergedCharts/warpedRasters/$chartType/$chart.tif
-      
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
   done
 
-#Create a list of directories of this script's type
-directories=$(find "$destDir" -type d -name "*_WAC*" | sort)
-
-echo $directories
-
-#Optimize the tiled png files
-for directory in $directories
-do
-    ./pngquant_all_files_in_directory.sh $directory
-done
+# #Create a list of directories of this script's type
+# directories=$(find "$destDir" -type d -name "*_WAC*" | sort)
+# 
+# echo $directories
+# 
+# #Optimize the tiled png files
+# for directory in $directories
+# do
+#     ./pngquant_all_files_in_directory.sh $directory
+# done
 
 # ./memoize.py -i $destDir \
 #     ./tilers_tools/tiles_merge.py \
