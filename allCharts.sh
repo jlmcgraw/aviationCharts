@@ -26,8 +26,7 @@ chartsRoot="/media/sf_Shared_Folder/charts"
 #BUG TODO This will need to be updated for every new enroute charting cycle
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/10-15-2015/"
 
-#Where to put tiled charts (each in its own directory)
-destDir="./individual_tiled_charts"
+
 
 #-------------------------------------------------------------------------------
 #Shouldn't need to edit below here
@@ -87,10 +86,10 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processWac.sh         $originalWacDirectory         $destinationRoot
 
 #Create tiles and merged charts with tiler_tools
-# ./tileEnrouteHigh.sh $destDir
-# ./tileEnrouteLow.sh $destDir
-# ./tileGrandCanyon.sh $destDir
-# ./tileHeli.sh $destDir
-# ./tileSectional.sh $destDir
-# ./tileTac.sh $destDir
-# ./tileWac.sh $destDir
+./tileEnrouteHigh.sh $destDir
+./tileEnrouteLow.sh $destDir
+./tileGrandCanyon.sh $destDir
+./tileHeli.sh $destDir
+./tileSectional.sh $destDir
+./tileTac.sh $destinationRoot
+./tileWac.sh $destDir
