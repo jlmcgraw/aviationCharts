@@ -163,7 +163,7 @@ def memoize_with_deps(depsname, deps, cmd):
         write_deps(depsname, deps)
         return status
     else:
-        #print 'Up to date:', cmd
+        print 'MEMOIZE Up to date:', cmd
         return 0
 
 

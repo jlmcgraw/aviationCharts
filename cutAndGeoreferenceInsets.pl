@@ -283,7 +283,7 @@ sub warpRaster {
          -tps \\
          -dstalpha \\
          $sourceRaster \\
-         $destinationRaster";
+         ./warpedRasters/insets/$destinationRaster";
 
     if ($main::debug) {
         say $gdalWarpCommand;

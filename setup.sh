@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+IFS=$(`printf '\n\t')  # Always put this in Bourne shell scripts
 
 #Install various utilities
 sudo apt-get install gdal-bin libmodern-perl-perl pngquant graphicsmagick python-gdal unzip
@@ -13,3 +13,4 @@ git clone https://github.com/jlmcgraw/tilers_tools.git
 #Create directories
 ./createTree.sh
 mkdir individual_tiled_charts
+mkdir warpedRasters/insets

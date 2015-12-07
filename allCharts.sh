@@ -86,10 +86,10 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processWac.sh         $originalWacDirectory         $destinationRoot
 
 #Create tiles and merged charts with tiler_tools
-./tileEnrouteHigh.sh $destDir
-./tileEnrouteLow.sh $destDir
-./tileGrandCanyon.sh $destDir
-./tileHeli.sh $destDir
-./tileSectional.sh $destDir
+./tileEnrouteHigh.sh $destinationRoot
+./tileEnrouteLow.sh $destinationRoot
+./tileGrandCanyon.sh $destinationRoot
+./tileHeli.sh $destinationRoot
+./tileSectional.sh $destinationRoot
 ./tileTac.sh $destinationRoot
-./tileWac.sh $destDir
+./tileWac.sh $destinationRoot
