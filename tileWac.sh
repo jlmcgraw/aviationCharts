@@ -42,6 +42,7 @@ for chart in "${chart_list[@]}"
         --profile=tms \
         --release \
         --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9 \
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         

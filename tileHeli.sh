@@ -23,28 +23,44 @@ if [ ! -d $destDir ]; then
     exit 1
 fi
 
-chart_list=(
-Baltimore_HEL
-Boston_Downtown_HEL
-Boston_HEL
-Chicago_HEL
-Chicago_O\'Hare_Inset_HEL
-Dallas-Ft_Worth_HEL
-Dallas-Love_Inset_HEL
-Detroit_HEL
-Downtown_Manhattan_HEL
-Eastern_Long_Island_HEL
-Houston_North_HEL
-Houston_South_HEL
-Los_Angeles_East_HEL
-Los_Angeles_West_HEL
-New_York_HEL
-U.S._Gulf_Coast_HEL
-Washington_HEL
-Washington_Inset_HEL
-)
+#List of charts by their various scales
+chart_list_1000=(
+    U.S._Gulf_Coast_HEL
+    )
 
-for chart in "${chart_list[@]}"
+chart_list_250=(
+    Eastern_Long_Island_HEL
+    )
+        
+chart_list_125=(
+    Baltimore_HEL
+    Boston_HEL
+    Chicago_HEL
+    Dallas-Ft_Worth_HEL
+    Detroit_HEL
+    Houston_North_HEL
+    Houston_South_HEL
+    Los_Angeles_East_HEL
+    Los_Angeles_West_HEL
+    New_York_HEL
+    Washington_HEL
+    )
+
+chart_list_90=(
+    Chicago_O\'Hare_Inset_HEL
+    Dallas-Love_Inset_HEL    
+    )
+
+chart_list_62_5=(
+    Washington_Inset_HEL
+    )
+
+chart_list_50=(
+    Boston_Downtown_HEL
+    Downtown_Manhattan_HEL
+    )
+
+for chart in "${chart_list_1000[@]}"
   do
   echo $chart
   
@@ -53,6 +69,7 @@ for chart in "${chart_list[@]}"
         --profile=tms \
         --release \
         --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10 \
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
@@ -68,6 +85,131 @@ for chart in "${chart_list[@]}"
             
   done
 
+for chart in "${chart_list_250[@]}"
+  do
+  echo $chart
+  
+  ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
+  done
+
+for chart in "${chart_list_125[@]}"
+  do
+  echo $chart
+  
+  ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12,13 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
+  done
+
+  for chart in "${chart_list_90[@]}"
+  do
+  echo $chart
+  
+  ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12,13 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
+  done
+
+  for chart in "${chart_list_62_5[@]}"
+  do
+  echo $chart
+  
+  ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
+  done
+  
+for chart in "${chart_list_50[@]}"
+  do
+  echo $chart
+  
+  ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    
+    #Package them into an .mbtiles file
+    ./memoize.py \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
+            
+  done
+  
 # #Create a list of directories of this script's type
 # directories=$(find "$destDir" -type d -name "*_HEL*" | sort)
 # 

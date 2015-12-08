@@ -24,9 +24,7 @@ IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 chartsRoot="/media/sf_Shared_Folder/charts"
 
 #BUG TODO This will need to be updated for every new enroute charting cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/10-15-2015/"
-
-
+originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/12-10-2015/"
 
 #-------------------------------------------------------------------------------
 #Shouldn't need to edit below here
@@ -40,8 +38,6 @@ fi
 pushd $(dirname "$0") > /dev/null
 destinationRoot=$(pwd)
 popd > /dev/null
-
-
 
 #Where the original .zip files are from aeronav (subject to them changing their layout)
 originalHeliDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/heli_files/"
@@ -85,11 +81,11 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processTac.sh         $originalTacDirectory         $destinationRoot
 ./processWac.sh         $originalWacDirectory         $destinationRoot
 
-#Create tiles and merged charts with tiler_tools
-./tileEnrouteHigh.sh $destinationRoot
-./tileEnrouteLow.sh $destinationRoot
-./tileGrandCanyon.sh $destinationRoot
-./tileHeli.sh $destinationRoot
-./tileSectional.sh $destinationRoot
-./tileTac.sh $destinationRoot
-./tileWac.sh $destinationRoot
+#Create tiles, mbtiles and merged charts
+./tileEnrouteHigh.sh    $destinationRoot
+./tileEnrouteLow.sh     $destinationRoot
+./tileGrandCanyon.sh    $destinationRoot
+./tileHeli.sh           $destinationRoot
+./tileSectional.sh      $destinationRoot
+./tileTac.sh            $destinationRoot
+./tileWac.sh $          $destinationRoot

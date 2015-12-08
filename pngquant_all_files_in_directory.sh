@@ -2,14 +2,14 @@
 set -eu                # Always put this in Bourne shell scripts
 IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
-#Get command line parameters
-destDir="$1"
-
 #Validate number of command line parameters
 if [ "$#" -ne 1 ] ; then
   echo "Usage: $0 DESTINATION_DIRECTORY" >&2
   exit 1
 fi
+
+#Get command line parameters
+destDir="$1"
 
 #Get the number of online CPUs
 cpus=$(getconf _NPROCESSORS_ONLN)
@@ -22,4 +22,5 @@ find $destDir -type f -iname "*.png" -print0 | xargs --null --max-args=1 --max-p
 
 sizeAfterOptimization=$(du -s -h $destDir)
 
-echo "$destDir: Size before: $sizeBeforeOptimization, size after: $sizeAfterOptimization"
+echo "$destDir: Size before: $sizeBeforeOptimization"
+echo "$destDir: Size  after: $sizeAfterOptimization"
