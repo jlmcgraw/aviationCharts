@@ -42,6 +42,7 @@ for chart in "${chart_list[@]}"
         --profile=tms \
         --release \
         --paletted \
+        --zoom=7,8,9,10,11,12 \
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
@@ -49,7 +50,7 @@ for chart in "${chart_list[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \

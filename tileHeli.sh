@@ -102,7 +102,7 @@ for chart in "${chart_list_250[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \
@@ -127,7 +127,7 @@ for chart in "${chart_list_125[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \
@@ -152,7 +152,7 @@ for chart in "${chart_list_125[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \
@@ -177,7 +177,7 @@ for chart in "${chart_list_125[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \
@@ -202,7 +202,7 @@ for chart in "${chart_list_50[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \

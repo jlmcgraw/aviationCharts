@@ -56,14 +56,14 @@ for chart in "${chart_list[@]}"
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
     #Optimize the tiled png files
-#     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
-#     #Package them into an .mbtiles file
-#     ./memoize.py \
-#         python ./mbutil/mb-util \
-#             --scheme=tms \
-#             $destDir/$chart.tms \
-#             $destinationRoot/mbtiles/$chart.mbtiles
+    #Package them into an .mbtiles file
+    ./memoize.py -i $destDir \
+        python ./mbutil/mb-util \
+            --scheme=tms \
+            $destDir/$chart.tms \
+            $destinationRoot/mbtiles/$chart.mbtiles
             
   done
 
@@ -91,7 +91,7 @@ for chart in "${chart_list[@]}"
     ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
     
     #Package them into an .mbtiles file
-    ./memoize.py \
+    ./memoize.py -i $destDir \
         python ./mbutil/mb-util \
             --scheme=tms \
             $destDir/$chart.tms \

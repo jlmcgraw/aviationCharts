@@ -8,7 +8,7 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 AERONAV_ROOT_DIR="$1"
 
 if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 AERONAV_ROOT_DIR" >&2
+  echo "Usage: $0 <where_to_save_charts>" >&2
   exit 1
 fi
 
