@@ -91,10 +91,10 @@ do
 	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
 
 	#Link $newName to $f only if $f is newer
-	if [ "$f" -nt "$linkedRastersDirectory/$newName" ]; then
-	   echo "$f is newer than $linkedRastersDirectory/$newName"
-	   ln -s -f -r "$f" "$linkedRastersDirectory/$newName"
-	   touch -h -r "$f" "$linkedRastersDirectory$newName"
+	if [ "$originalRastersDirectory/$f" -nt "$linkedRastersDirectory/$newName" ]; then
+	   echo "$originalRastersDirectory/$f is newer than $linkedRastersDirectory/$newName"
+	   ln -s -f "$originalRastersDirectory/$f" "$linkedRastersDirectory/$newName"
+	   touch -h -r "$originalRastersDirectory/$f" "$linkedRastersDirectory/$newName"
 	fi
 	
 done

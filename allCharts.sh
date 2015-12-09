@@ -18,13 +18,23 @@ IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 # Handle charts that cross anti-meridian
 # Make use of "make" to only process new charts (done via memoize)
 
-#-------------------------------------------------------------------------------
-#Things you may need to edit
-#Full path to root of where aeronav site will be mirrored to via wget
-chartsRoot="/media/sf_Shared_Folder/charts"
+# #-------------------------------------------------------------------------------
+# #Things you may need to edit
+# #Full path to root of where aeronav site will be mirrored to via wget
+# chartsRoot="/media/sf_Shared_Folder/charts"
+# 
+# #BUG TODO This will need to be updated for every new enroute charting cycle
+# originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/12-10-2015/"
 
-#BUG TODO This will need to be updated for every new enroute charting cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/12-10-2015/"
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 <charts_root_directory> <latest_enroute_cycle_data_date>" >&2
+  echo "eg $0 ~/Downloads/charts 12-10-2015"
+  exit 1
+fi
+
+#Get command line parameters
+chartsRoot="$1"
+originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/$2"
 
 #-------------------------------------------------------------------------------
 #Shouldn't need to edit below here
