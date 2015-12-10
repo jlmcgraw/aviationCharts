@@ -27,18 +27,18 @@ fi
 alaska_chart_list=()
 
 chart_list=(
-ENR_AKH01_SEA ENR_AKH01 ENR_AKH02 
-ENR_H01 ENR_H02 ENR_H03 ENR_H04 ENR_H05 
-ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 ENR_H11 ENR_H12 
-)
+    ENR_AKH01_SEA ENR_AKH01 ENR_AKH02 
+    ENR_H01 ENR_H02 ENR_H03 ENR_H04 ENR_H05 
+    ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 ENR_H11 ENR_H12 
+    )
 
 
 
 for chart in "${chart_list[@]}"
-  do
-  echo $chart
-  
-  ./memoize.py -i $destDir \
+    do
+    echo $chart
+
+    ./memoize.py -i $destDir \
     ./tilers_tools/gdal_tiler.py \
         --profile=tms \
         --release \
@@ -46,17 +46,29 @@ for chart in "${chart_list[@]}"
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
-    
-    #Package them into an .mbtiles file
-    ./memoize.py -i $destDir \
-        python ./mbutil/mb-util \
-            --scheme=tms \
-            $destDir/$chart.tms \
-            $destinationRoot/mbtiles/$chart.mbtiles
+    if [ -n "$optimize_tiles_flag" ]
+        then
+            echo "Optimizing tiles for $chart"
+            #Optimize the tiled png files
+            ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+        fi
+
+    if [ -n "$create_mbtiles_flag" ]
+        then
+        echo "Creating mbtiles for $chart"
+        #Delete any existing mbtiles file
+        rm -f $destinationRoot/mbtiles/$chart.mbtiles
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                $destDir/$chart.tms \
+                $destinationRoot/mbtiles/$chart.mbtiles
+        fi
             
-  done
+            
+    done
 
 # #Create a list of directories of this script's type
 # directories=$(find "$destDir" -type d \( -name "ENR_H*" -o -name "ENR_AKH*" \) | sort)

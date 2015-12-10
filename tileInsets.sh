@@ -7,9 +7,26 @@ chartType=insets
 
 #Validate number of command line parameters
 if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 DESTINATION_DIRECTORY" >&2
+  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+  echo "    -o  Optimize tiles"
+  echo "    -m  Create mbtiles file"
   exit 1
 fi
+
+verbose='false'
+optimize_tiles_flag=''
+create_mbtiles_flag=''
+list=''
+
+while getopts 'oml:v' flag; do
+  case "${flag}" in
+    o) optimize_tiles_flag='true' ;;
+    m) create_mbtiles_flag='true' ;;
+    l) list="${OPTARG}" ;;
+    v) verbose='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
 
 #Get command line parameters
 destinationRoot="$1"
@@ -25,22 +42,20 @@ fi
 
 
 chart_list=(
-Dutch_Harbor_Inset
-Jacksonville_Inset
-Juneau_Inset
-Ketchikan_Inset
-Kodiak_Inset
-Norfolk_Inset
-Pribilof_Islands_Inset
-)
-#       --cut \
-#       --cutline=/home/jlmcgraw/Documents/myPrograms/mergedCharts/clippingShapes/$chartType/$chart.shp \
-      
+    Dutch_Harbor_Inset
+    Jacksonville_Inset
+    Juneau_Inset
+    Ketchikan_Inset
+    Kodiak_Inset
+    Norfolk_Inset
+    Pribilof_Islands_Inset
+    )
+
 for chart in "${chart_list[@]}"
-  do
-  echo $chart
-  
-  ./memoize.py -i $destDir \
+    do
+    echo $chart
+
+    ./memoize.py -i $destDir \
     ./tilers_tools/gdal_tiler.py \
         --profile=tms \
         --release \
@@ -48,33 +63,29 @@ for chart in "${chart_list[@]}"
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
-    
-    #Package them into an .mbtiles file
-    ./memoize.py -i $destDir \
-        python ./mbutil/mb-util \
-            --scheme=tms \
-            $destDir/$chart.tms \
-            $destinationRoot/mbtiles/$chart.mbtiles
+    if [ -n "$optimize_tiles_flag" ]
+        then
+            echo "Optimizing tiles for $chart"
+            #Optimize the tiled png files
+            ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+        fi
+
+    if [ -n "$create_mbtiles_flag" ]
+        then
+        echo "Creating mbtiles for $chart"
+        #Delete any existing mbtiles file
+        rm -f $destinationRoot/mbtiles/$chart.mbtiles
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                $destDir/$chart.tms \
+                $destinationRoot/mbtiles/$chart.mbtiles
+        fi
             
-  done
+    done
 
-# #Create a list of directories of this script's type  
-# directories=$(find "$destDir" -type d -name "*_SEC*" | sort)
-# 
-# echo $directories
-# 
-# #Optimize the tiled png files
-# for directory in $directories
-# do
-#     ./pngquant_all_files_in_directory.sh $directory
-# done
-
-# ./memoize.py -i $destDir \
-#     ./tilers_tools/tiles_merge.py \
-#         $directories \
-#         ./merged_tiles/$chartType
 
 
 

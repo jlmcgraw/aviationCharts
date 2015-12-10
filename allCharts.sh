@@ -92,6 +92,8 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processWac.sh         $originalWacDirectory         $destinationRoot
 
 #Create tiles, mbtiles and merged charts
+#add -o to optimize tile size with pngquant
+#add -m to create mbtiles
 ./tileEnrouteHigh.sh    $destinationRoot
 ./tileEnrouteLow.sh     $destinationRoot
 ./tileGrandCanyon.sh    $destinationRoot

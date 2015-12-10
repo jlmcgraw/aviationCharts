@@ -7,9 +7,26 @@ chartType=wac
 
 #Validate number of command line parameters
 if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 DESTINATION_DIRECTORY" >&2
+  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+  echo "    -o  Optimize tiles"
+  echo "    -m  Create mbtiles file"
   exit 1
 fi
+
+verbose='false'
+optimize_tiles_flag=''
+create_mbtiles_flag=''
+list=''
+
+while getopts 'oml:v' flag; do
+  case "${flag}" in
+    o) optimize_tiles_flag='true' ;;
+    m) create_mbtiles_flag='true' ;;
+    l) list="${OPTARG}" ;;
+    v) verbose='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
 
 #Get command line parameters
 destinationRoot="$1"
@@ -24,15 +41,11 @@ if [ ! -d $destDir ]; then
 fi
 
 chart_list=(
-CC-8_WAC CC-9_WAC CD-10_WAC CD-11_WAC CD-12_WAC CE-12_WAC CE-13_WAC CE-15_WAC
-CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC
-CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC CJ-26_WAC CJ-27_WAC
-)
+    CC-8_WAC CC-9_WAC CD-10_WAC CD-11_WAC CD-12_WAC CE-12_WAC CE-13_WAC CE-15_WAC
+    CF-16_WAC CF-17_WAC CF-18_WAC CF-19_WAC CG-18_WAC CG-19_WAC CG-20_WAC CG-21_WAC
+    CH-22_WAC CH-23_WAC CH-24_WAC CH-25_WAC CJ-26_WAC CJ-27_WAC
+    )
 
-# I'd experimented with doing the cutting here but there seems to be a bug in this process
-#       --cut \
-#       --cutline=/home/jlmcgraw/Documents/myPrograms/mergedCharts/clippingShapes/$chartType/$chart.shp \
-#       
 for chart in "${chart_list[@]}"
   do
   echo $chart
@@ -46,30 +59,25 @@ for chart in "${chart_list[@]}"
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
-    
-    #Package them into an .mbtiles file
-    ./memoize.py -i $destDir \
-        python ./mbutil/mb-util \
-            --scheme=tms \
-            $destDir/$chart.tms \
-            $destinationRoot/mbtiles/$chart.mbtiles
+    if [ -n "$optimize_tiles_flag" ]
+        then
+            echo "Optimizing tiles for $chart"
+            #Optimize the tiled png files
+            ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+        fi
+
+    if [ -n "$create_mbtiles_flag" ]
+        then
+        echo "Creating mbtiles for $chart"
+        #Delete any existing mbtiles file
+        rm -f $destinationRoot/mbtiles/$chart.mbtiles
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                $destDir/$chart.tms \
+                $destinationRoot/mbtiles/$chart.mbtiles
+        fi
             
   done
-
-# #Create a list of directories of this script's type
-# directories=$(find "$destDir" -type d -name "*_WAC*" | sort)
-# 
-# echo $directories
-# 
-# #Optimize the tiled png files
-# for directory in $directories
-# do
-#     ./pngquant_all_files_in_directory.sh $directory
-# done
-
-# ./memoize.py -i $destDir \
-#     ./tilers_tools/tiles_merge.py \
-#         $directories \
-#         ./merged_tiles/$chartType
