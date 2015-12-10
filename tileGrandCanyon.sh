@@ -41,10 +41,10 @@ if [ ! -d $destDir ]; then
 fi
 
 chart_list=(
-Grand_Canyon_General_Aviation
-Grand_Canyon_Air_Tour_Operators
-U.S._VFR_Wall_Planning_Chart
-)
+    Grand_Canyon_General_Aviation
+    Grand_Canyon_Air_Tour_Operators
+    U.S._VFR_Wall_Planning_Chart
+    )
 
 for chart in "${chart_list[@]}"
     do
