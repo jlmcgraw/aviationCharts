@@ -259,30 +259,44 @@ ifr_high_chart_list=(
     ENR_H12.tif
     )
 
+#-------------------------------------------------------------------------------
+#VFR
 for chart in "${vfr_chart_list[@]}"
   do
-  echo $chart
+  echo "VFR: $chart"
 
   ./merge_tile_sets.pl \
     $srcDir/$chart.tms/ \
     $destDir/VFR
   done
 
+#Optimize the tiled png files
+./pngquant_all_files_in_directory.sh $destDir/VFR
+
+#-------------------------------------------------------------------------------
+#IFR LOW
 for chart in "${ifr_low_chart_list[@]}"
   do
-  echo $chart
+  echo "IFR LOW: $chart"
 
   ./merge_tile_sets.pl \
     $srcDir/$chart.tms/ \
     $destDir/IFR-LOW
   done
 
+#Optimize the tiled png files
+./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+
+#-------------------------------------------------------------------------------
+#IFR HIGH
 for chart in "${ifr_high_chart_list[@]}"
   do
-  echo $chart
+  echo "IFR HIGH: $chart"
 
   ./merge_tile_sets.pl \
     /$srcDir/$chart.tms/ \
     $destDir/IFR-HIGH
   done
-  
+
+#Optimize the tiled png files
+./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
