@@ -6,18 +6,26 @@ IFS=$(printf '\n\t')   # IFS is newline or tab
 chartType=wac
 
 #Validate number of command line parameters
-if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+if [ "$#" -ne 2 ] ; then
+  echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
   exit 1
 fi
 
 #Get command line parameters
-destinationRoot="$1"
+sourceRoot="$1"
+destinationRoot="$2"
 
 #Where to put tiled charts (each in its own directory)
-destDir="$destinationRoot/individual_tiled_charts"
+srcDir="$sourceRoot/individual_tiled_charts"
+destDir="$destinationRoot/merged_tiles"
 
-#Check that the destination directory exists
+#Check that the source base directory exists
+if [ ! -d $srcDir ]; then
+    echo "$srcDir doesn't exist"
+    exit 1
+fi
+
+#Check that the destination base directory exists
 if [ ! -d $destDir ]; then
     echo "$destDir doesn't exist"
     exit 1
@@ -256,8 +264,8 @@ for chart in "${vfr_chart_list[@]}"
   echo $chart
 
   ./merge_tile_sets.pl \
-    /media/sf_Shared_Folder/individual_tiled_charts/$chart.tms/ \
-    ./tile_merging_test/VFR
+    $srcDir/$chart.tms/ \
+    $destDir/VFR
   done
 
 for chart in "${ifr_low_chart_list[@]}"
@@ -265,8 +273,8 @@ for chart in "${ifr_low_chart_list[@]}"
   echo $chart
 
   ./merge_tile_sets.pl \
-    /media/sf_Shared_Folder/individual_tiled_charts/$chart.tms/ \
-    ./tile_merging_test/IFR-LOW
+    $srcDir/$chart.tms/ \
+    $destDir/IFR-LOW
   done
 
 for chart in "${ifr_high_chart_list[@]}"
@@ -274,7 +282,7 @@ for chart in "${ifr_high_chart_list[@]}"
   echo $chart
 
   ./merge_tile_sets.pl \
-    /media/sf_Shared_Folder/individual_tiled_charts/$chart.tms/ \
-    ./tile_merging_test/IFR-HIGH
+    /$srcDir/$chart.tms/ \
+    $destDir/IFR-HIGH
   done
   
