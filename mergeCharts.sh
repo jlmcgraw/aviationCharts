@@ -273,30 +273,30 @@ for chart in "${vfr_chart_list[@]}"
 #Optimize the tiled png files
 ./pngquant_all_files_in_directory.sh $destDir/VFR
 
-#-------------------------------------------------------------------------------
-#IFR LOW
-for chart in "${ifr_low_chart_list[@]}"
-  do
-  echo "IFR LOW: $chart"
-
-  ./merge_tile_sets.pl \
-    $srcDir/$chart.tms/ \
-    $destDir/IFR-LOW
-  done
-
-#Optimize the tiled png files
-./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
-
-#-------------------------------------------------------------------------------
-#IFR HIGH
-for chart in "${ifr_high_chart_list[@]}"
-  do
-  echo "IFR HIGH: $chart"
-
-  ./merge_tile_sets.pl \
-    /$srcDir/$chart.tms/ \
-    $destDir/IFR-HIGH
-  done
-
-#Optimize the tiled png files
-./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+# #-------------------------------------------------------------------------------
+# #IFR LOW
+# for chart in "${ifr_low_chart_list[@]}"
+#   do
+#   echo "IFR LOW: $chart"
+# 
+#   ./merge_tile_sets.pl \
+#     $srcDir/$chart.tms/ \
+#     $destDir/IFR-LOW
+#   done
+# 
+# #Optimize the tiled png files
+# ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+# 
+# #-------------------------------------------------------------------------------
+# #IFR HIGH
+# for chart in "${ifr_high_chart_list[@]}"
+#   do
+#   echo "IFR HIGH: $chart"
+# 
+#   ./merge_tile_sets.pl \
+#     /$srcDir/$chart.tms/ \
+#     $destDir/IFR-HIGH
+#   done
+# 
+# #Optimize the tiled png files
+# ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH

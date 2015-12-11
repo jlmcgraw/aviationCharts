@@ -7,9 +7,27 @@ chartType=enroute
 
 #Validate number of command line parameters
 if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 DESTINATION_DIRECTORY" >&2
+  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+  echo "    -o  Optimize tiles"
+  echo "    -m  Create mbtiles file"
   exit 1
 fi
+
+verbose='false'
+optimize_tiles_flag=''
+create_mbtiles_flag=''
+list=''
+
+while getopts 'oml:v' flag; do
+  case "${flag}" in
+    o) optimize_tiles_flag='true' ;;
+    m) create_mbtiles_flag='true' ;;
+    l) list="${OPTARG}" ;;
+    v) verbose='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
+
 
 #Get command line parameters
 destinationRoot="$1"
