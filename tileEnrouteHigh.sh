@@ -5,14 +5,6 @@ IFS=$(printf '\n\t')   # IFS is newline or tab
 #The base type of chart we're processing in this script
 chartType=enroute
 
-#Validate number of command line parameters
-if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
-  echo "    -o  Optimize tiles"
-  echo "    -m  Create mbtiles file"
-  exit 1
-fi
-
 verbose='false'
 optimize_tiles_flag=''
 create_mbtiles_flag=''
@@ -28,6 +20,16 @@ while getopts 'oml:v' flag; do
   esac
 done
 
+#Remove the flag operands
+shift $((OPTIND-1))
+
+#Validate number of command line parameters
+if [ "$#" -ne 1 ] ; then
+  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+  echo "    -o  Optimize tiles"
+  echo "    -m  Create mbtiles file"
+  exit 1
+fi
 
 #Get command line parameters
 destinationRoot="$1"
@@ -44,15 +46,18 @@ fi
 
 alaska_chart_list=()
 
-chart_list=(
-    ENR_AKH01_SEA ENR_AKH01 ENR_AKH02 
-    ENR_H01 ENR_H02 ENR_H03 ENR_H04 ENR_H05 
+#Why do these charts look so terrible at 7+?
+chart_list_2000000=(
+    ENR_AKH01 ENR_AKH02 
+    )
+    
+chart_list_1000000=(
+    ENR_AKH01_SEA ENR_H01 ENR_H02 ENR_H03 ENR_H04 ENR_H05 
     ENR_H06 ENR_H07 ENR_H08 ENR_H09 ENR_H10 ENR_H11 ENR_H12 
     )
 
 
-
-for chart in "${chart_list[@]}"
+for chart in "${chart_list_2000000[@]}"
     do
     echo $chart
 
@@ -61,6 +66,7 @@ for chart in "${chart_list[@]}"
         --profile=tms \
         --release \
         --paletted \
+        --zoom=0,1,2,3,4,5,6 \
         --dest-dir="$destDir" \
         $destinationRoot/warpedRasters/$chartType/$chart.tif
         
@@ -88,6 +94,42 @@ for chart in "${chart_list[@]}"
             
     done
 
+for chart in "${chart_list_1000000[@]}"
+    do
+    echo $chart
+
+    ./memoize.py -i $destDir \
+    ./tilers_tools/gdal_tiler.py \
+        --profile=tms \
+        --release \
+        --paletted \
+        --zoom=0,1,2,3,4,5,6,7,8,9 \
+        --dest-dir="$destDir" \
+        $destinationRoot/warpedRasters/$chartType/$chart.tif
+        
+    if [ -n "$optimize_tiles_flag" ]
+        then
+            echo "Optimizing tiles for $chart"
+            #Optimize the tiled png files
+            ./pngquant_all_files_in_directory.sh $destDir/$chart.tms
+        fi
+
+    if [ -n "$create_mbtiles_flag" ]
+        then
+        echo "Creating mbtiles for $chart"
+        #Delete any existing mbtiles file
+        rm -f $destinationRoot/mbtiles/$chart.mbtiles
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                $destDir/$chart.tms \
+                $destinationRoot/mbtiles/$chart.mbtiles
+        fi
+            
+            
+    done
 # #Create a list of directories of this script's type
 # directories=$(find "$destDir" -type d \( -name "ENR_H*" -o -name "ENR_AKH*" \) | sort)
 # 

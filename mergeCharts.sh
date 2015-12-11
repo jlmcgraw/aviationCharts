@@ -2,13 +2,51 @@
 set -eu                # Die on errors and unbound variables
 IFS=$(printf '\n\t')   # IFS is newline or tab
 
-#The base type of chart we're processing in this script
-chartType=wac
+#Set Script Name variable
+SCRIPT=`basename ${BASH_SOURCE[0]}`
+
+#Set fonts for Help.
+NORM=`tput sgr0`
+BOLD=`tput bold`
+REV=`tput smso`
+
+#Help function
+function USAGE {
+    echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
+    echo "    -v  Create merged VFR"
+    echo "    -h  Create merged IFR-HIGH"
+    echo "    -l  Create merged IFR-LOW"
+    echo "    -c  Create merged HELICOPTER"
+    exit 1
+}
+
+
+verbose='false'
+should_create_vfr=''
+should_create_ifr_high=''
+should_create_ifr_low=''
+should_create_heli=''
+list=''
+
+while getopts 'vhlc' flag; do
+  case "${flag}" in
+    v) should_create_vfr='true' ;;
+    h) should_create_ifr_high='true' ;;
+    l) should_create_ifr_low='true' ;;
+    c) should_create_heli='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
+
+#Remove the flag operands
+shift $((OPTIND-1))  #This tells getopts to move on to the next argument.
+
+#Get the number of remaining command line arguments
+NUMARGS=$#
 
 #Validate number of command line parameters
-if [ "$#" -ne 2 ] ; then
-  echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
-  exit 1
+if [ $NUMARGS -ne 2 ] ; then
+    USAGE
 fi
 
 #Get command line parameters
@@ -160,143 +198,189 @@ vfr_chart_list=(
 
 #IFR-LOW Charts sorted by scale, highest to lowest
 ifr_low_chart_list=(
-    ENR_CL03.tif
-    ENR_CL02.tif
-    ENR_CL05.tif
-    ENR_CL01.tif
-    ENR_AKL01.tif
-    ENR_AKL02C.tif
-    ENR_AKL02E.tif
-    ENR_AKL02W.tif
-    ENR_AKL03.tif
-    ENR_AKL04.tif
-    ENR_CL06.tif
-    ENR_L21.tif
-    Mexico_City_Area.tif
-    Miami_Nassau.tif
-    Lima_Area.tif
-    Guatemala_City_Area.tif
-    Dominican_Republic_Puerto_Rico_Area.tif
-    ENR_L13.tif
-    Bogota_area.tif
-    ENR_AKL01_JNU.tif
-    ENR_L09.tif
-    ENR_L11.tif
-    ENR_L12.tif
-    ENR_L14.tif
-    ENR_L32.tif
-    ENR_P02.tif
-    Buenos_Aires_Area.tif
-    ENR_L10.tif
-    ENR_L31.tif
-    Santiago_Area.tif
-    ENR_AKL04_ANC.tif
-    ENR_AKL03_FAI.tif
-    ENR_AKL03_OME.tif
-    ENR_L05.tif
-    ENR_L06N.tif
-    ENR_L06S.tif
-    ENR_L08.tif
-    ENR_L15.tif
-    ENR_L16.tif
-    ENR_L17.tif
-    ENR_L18.tif
-    ENR_L19.tif
-    ENR_L20.tif
-    ENR_L22.tif
-    ENR_L23.tif
-    ENR_L24.tif
-    ENR_L27.tif
-    ENR_L28.tif
-    Rio_De_Janeiro_Area.tif
-    ENR_A02_PHX.tif
-    ENR_AKL01_VR.tif
-    ENR_L01.tif
-    ENR_L02.tif
-    ENR_L03.tif
-    Panama_Area.tif
-    ENR_A01_DCA.tif
-    ENR_A02_DEN.tif
-    ENR_L04.tif
-    ENR_L07.tif
-    ENR_L25.tif
-    ENR_L26.tif
-    ENR_L29.tif
-    ENR_L30.tif
-    ENR_L33.tif
-    ENR_L34.tif
-    ENR_L35.tif
-    ENR_L36.tif
-    ENR_A01_ATL.tif
-    ENR_A01_JAX.tif
-    ENR_A01_MIA.tif
-    ENR_A01_MSP.tif
-    ENR_A01_STL.tif
-    ENR_A02_DFW.tif
-    ENR_A02_ORD.tif
-    ENR_A02_SFO.tif
-    ENR_A01_DET.tif
-    ENR_A02_LAX.tif
-    ENR_A02_MKC.tif
+    ENR_CL03
+    ENR_CL02
+    ENR_CL05
+    ENR_CL01
+    ENR_AKL01
+    ENR_AKL02C
+    ENR_AKL02E
+    ENR_AKL02W
+    ENR_AKL03
+    ENR_AKL04
+    ENR_CL06
+    ENR_L21
+    Mexico_City_Area
+    Miami_Nassau
+    Lima_Area
+    Guatemala_City_Area
+    Dominican_Republic_Puerto_Rico_Area
+    ENR_L13
+    Bogota_area
+    ENR_AKL01_JNU
+    ENR_L09
+    ENR_L11
+    ENR_L12
+    ENR_L14
+    ENR_L32
+    ENR_P02
+    Buenos_Aires_Area
+    ENR_L10
+    ENR_L31
+    Santiago_Area
+    ENR_AKL04_ANC
+    ENR_AKL03_FAI
+    ENR_AKL03_OME
+    ENR_L05
+    ENR_L06N
+    ENR_L06S
+    ENR_L08
+    ENR_L15
+    ENR_L16
+    ENR_L17
+    ENR_L18
+    ENR_L19
+    ENR_L20
+    ENR_L22
+    ENR_L23
+    ENR_L24
+    ENR_L27
+    ENR_L28
+    Rio_De_Janeiro_Area
+    ENR_A02_PHX
+    ENR_AKL01_VR
+    ENR_L01
+    ENR_L02
+    ENR_L03
+    Panama_Area
+    ENR_A01_DCA
+    ENR_A02_DEN
+    ENR_L04
+    ENR_L07
+    ENR_L25
+    ENR_L26
+    ENR_L29
+    ENR_L30
+    ENR_L33
+    ENR_L34
+    ENR_L35
+    ENR_L36
+    ENR_A01_ATL
+    ENR_A01_JAX
+    ENR_A01_MIA
+    ENR_A01_MSP
+    ENR_A01_STL
+    ENR_A02_DFW
+    ENR_A02_ORD
+    ENR_A02_SFO
+    ENR_A01_DET
+    ENR_A02_LAX
+    ENR_A02_MKC
     )
 
 #IFR-HIGH Charts sorted by scale, highest to lowest
 ifr_high_chart_list=(
-    ENR_AKH01.tif
-    ENR_AKH02.tif
-    ENR_AKH01_SEA.tif
-    ENR_H01.tif
-    ENR_H02.tif
-    ENR_H03.tif
-    ENR_H04.tif
-    ENR_H05.tif
-    ENR_H06.tif
-    ENR_H07.tif
-    ENR_H08.tif
-    ENR_H09.tif
-    ENR_H10.tif
-    ENR_H11.tif
-    ENR_H12.tif
+    ENR_AKH01
+    ENR_AKH02
+    ENR_AKH01_SEA
+    ENR_H01
+    ENR_H02
+    ENR_H03
+    ENR_H04
+    ENR_H05
+    ENR_H06
+    ENR_H07
+    ENR_H08
+    ENR_H09
+    ENR_H10
+    ENR_H11
+    ENR_H12
+    )
+
+ifr_high_chart_list=(
+    U.S._Gulf_Coast_HEL
+    Eastern_Long_Island_HEL
+    Baltimore_HEL
+    Boston_HEL
+    Chicago_HEL
+    Dallas-Ft_Worth_HEL
+    Detroit_HEL
+    Houston_North_HEL
+    Houston_South_HEL
+    Los_Angeles_East_HEL
+    Los_Angeles_West_HEL
+    New_York_HEL
+    Washington_HEL
+    Chicago_O\'Hare_Inset_HEL
+    Dallas-Love_Inset_HEL
+    Washington_Inset_HEL
+    Boston_Downtown_HEL
+    Downtown_Manhattan_HEL
     )
 
 #-------------------------------------------------------------------------------
 #VFR
-for chart in "${vfr_chart_list[@]}"
-  do
-  echo "VFR: $chart"
+if [ -n "$should_create_vfr" ]
+    then
+    for chart in "${vfr_chart_list[@]}"
+        do
+        echo "VFR: $chart"
 
-  ./merge_tile_sets.pl \
-    $srcDir/$chart.tms/ \
-    $destDir/VFR
-  done
+        ./merge_tile_sets.pl \
+            $srcDir/$chart.tms/ \
+            $destDir/VFR
+        done
 
-#Optimize the tiled png files
-./pngquant_all_files_in_directory.sh $destDir/VFR
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/VFR
+    fi
 
-# #-------------------------------------------------------------------------------
-# #IFR LOW
-# for chart in "${ifr_low_chart_list[@]}"
-#   do
-#   echo "IFR LOW: $chart"
-# 
-#   ./merge_tile_sets.pl \
-#     $srcDir/$chart.tms/ \
-#     $destDir/IFR-LOW
-#   done
-# 
-# #Optimize the tiled png files
-# ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
-# 
-# #-------------------------------------------------------------------------------
-# #IFR HIGH
-# for chart in "${ifr_high_chart_list[@]}"
-#   do
-#   echo "IFR HIGH: $chart"
-# 
-#   ./merge_tile_sets.pl \
-#     /$srcDir/$chart.tms/ \
-#     $destDir/IFR-HIGH
-#   done
-# 
-# #Optimize the tiled png files
-# ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+#-------------------------------------------------------------------------------
+#IFR LOW
+if [ -n "$should_create_ifr_low" ]
+    then
+        for chart in "${ifr_low_chart_list[@]}"
+            do
+            echo "IFR LOW: $chart"
+
+            ./merge_tile_sets.pl \
+                $srcDir/$chart.tms/ \
+                $destDir/IFR-LOW
+            done
+
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+fi
+
+#-------------------------------------------------------------------------------
+#IFR HIGH
+if [ -n "$should_create_ifr_high" ]
+    then
+    for chart in "${ifr_high_chart_list[@]}"
+        do
+        echo "IFR HIGH: $chart"
+
+        ./merge_tile_sets.pl \
+            /$srcDir/$chart.tms/ \
+            $destDir/IFR-HIGH
+        done
+
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+fi
+#-------------------------------------------------------------------------------
+#Heli
+if [ -n "$should_create_heli" ]
+    then
+    for chart in "${heli_chart_list[@]}"
+        do
+        echo "HELI: $chart"
+
+        ./merge_tile_sets.pl \
+            /$srcDir/$chart.tms/ \
+            $destDir/HELI
+        done
+
+    #Optimize the tiled png files
+    ./pngquant_all_files_in_directory.sh $destDir/HELI
+fi

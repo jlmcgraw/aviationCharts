@@ -5,14 +5,6 @@ IFS=$(printf '\n\t')   # IFS is newline or tab
 #The base type of chart we're processing in this script
 chartType=insets
 
-#Validate number of command line parameters
-if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
-  echo "    -o  Optimize tiles"
-  echo "    -m  Create mbtiles file"
-  exit 1
-fi
-
 verbose='false'
 optimize_tiles_flag=''
 create_mbtiles_flag=''
@@ -27,6 +19,17 @@ while getopts 'oml:v' flag; do
     *) error "Unexpected option ${flag}" ;;
   esac
 done
+
+#Remove the flag operands
+shift $((OPTIND-1))
+
+#Validate number of command line parameters
+if [ "$#" -ne 1 ] ; then
+  echo "Usage: $0 <DESTINATION_BASE_DIRECTORY>" >&2
+  echo "    -o  Optimize tiles"
+  echo "    -m  Create mbtiles file"
+  exit 1
+fi
 
 #Get command line parameters
 destinationRoot="$1"
