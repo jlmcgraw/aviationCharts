@@ -74,7 +74,8 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
 ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
 
-#Clip and georeference the Caribbean enroute charts and their insets
+#Clip and georeference insets
+./cutAndGeoreferenceInsets.pl
 ./cut_and_georeference_Caribbean.pl $destinationRoot 
 
 # General Process:
@@ -101,3 +102,5 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./tileSectional.sh      $destinationRoot
 ./tileTac.sh            $destinationRoot
 ./tileWac.sh $          $destinationRoot
+
+exit 0

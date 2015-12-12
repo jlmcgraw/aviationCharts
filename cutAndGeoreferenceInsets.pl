@@ -145,7 +145,7 @@ sub main {
                 "1115 2330 76-15W 36-45N",
                 "2168 2325 76-00W 36-45N "
             ]
-        ]
+        ],
     );
 
     foreach my $key ( keys %HashOfInsets ) {

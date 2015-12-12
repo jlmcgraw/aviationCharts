@@ -2,15 +2,6 @@
 set -eu                # Die on errors and unbound variables
 IFS=$(printf '\n\t')   # IFS is newline or tab
 
-#Set Script Name variable
-SCRIPT=`basename ${BASH_SOURCE[0]}`
-
-#Set fonts for Help.
-NORM=`tput sgr0`
-BOLD=`tput bold`
-REV=`tput smso`
-
-#Help function
 function USAGE {
     echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
     echo "    -v  Create merged VFR"
@@ -19,7 +10,6 @@ function USAGE {
     echo "    -c  Create merged HELICOPTER"
     exit 1
 }
-
 
 verbose='false'
 should_create_vfr=''
@@ -39,7 +29,7 @@ while getopts 'vhlc' flag; do
 done
 
 #Remove the flag operands
-shift $((OPTIND-1))  #This tells getopts to move on to the next argument.
+shift $((OPTIND-1))
 
 #Get the number of remaining command line arguments
 NUMARGS=$#
@@ -384,3 +374,5 @@ if [ -n "$should_create_heli" ]
     #Optimize the tiled png files
     ./pngquant_all_files_in_directory.sh $destDir/HELI
 fi
+
+exit 0
