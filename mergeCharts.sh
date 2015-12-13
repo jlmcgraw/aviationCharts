@@ -315,6 +315,8 @@ if [ -n "$should_create_vfr" ]
     for chart in "${vfr_chart_list[@]}"
         do
         echo "VFR: $chart"
+        
+        rm --force --recursive --dir "$destDir/VFR"
 
         ./merge_tile_sets.pl \
             $srcDir/$chart.tms/ \
@@ -333,6 +335,8 @@ if [ -n "$should_create_ifr_low" ]
             do
             echo "IFR LOW: $chart"
 
+            rm --force --recursive --dir "$destDir/IFR-LOW"
+            
             ./merge_tile_sets.pl \
                 $srcDir/$chart.tms/ \
                 $destDir/IFR-LOW
@@ -350,6 +354,8 @@ if [ -n "$should_create_ifr_high" ]
         do
         echo "IFR HIGH: $chart"
 
+        rm --force --recursive --dir "$destDir/IFR-HIGH"
+        
         ./merge_tile_sets.pl \
             /$srcDir/$chart.tms/ \
             $destDir/IFR-HIGH
@@ -358,6 +364,7 @@ if [ -n "$should_create_ifr_high" ]
     #Optimize the tiled png files
     ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
 fi
+
 #-------------------------------------------------------------------------------
 #Heli
 if [ -n "$should_create_heli" ]
@@ -365,6 +372,8 @@ if [ -n "$should_create_heli" ]
     for chart in "${heli_chart_list[@]}"
         do
         echo "HELI: $chart"
+        
+        rm --force --recursive --dir "$destDir/HELI"
 
         ./merge_tile_sets.pl \
             /$srcDir/$chart.tms/ \

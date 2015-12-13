@@ -86,8 +86,12 @@ for chart in "${chart_list[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
+
 
 
 

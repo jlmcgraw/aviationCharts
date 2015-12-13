@@ -91,7 +91,9 @@ for chart in "${chart_list_2000000[@]}"
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
             
-            
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 for chart in "${chart_list_1000000[@]}"
@@ -127,22 +129,7 @@ for chart in "${chart_list_1000000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
     done
-# #Create a list of directories of this script's type
-# directories=$(find "$destDir" -type d \( -name "ENR_H*" -o -name "ENR_AKH*" \) | sort)
-# 
-# echo $directories
-# 
-# #Optimize the tiled png files
-# for directory in $directories
-# do
-#     ./pngquant_all_files_in_directory.sh $directory
-# done
-
-# #Merge all of those directory's tiles together and store in a separate directory
-# ./memoize.py -i $destDir \
-#     ./tilers_tools/tiles_merge.py \
-#     $directories \
-#     "./merged_tiles/$chartType-high"

@@ -167,6 +167,9 @@ for chart in "${chart_list_down_to_2000000[@]}"
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
 
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 for chart in "${chart_list_down_to_1000000[@]}"
@@ -202,7 +205,10 @@ for chart in "${chart_list_down_to_1000000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
     
 for chart in "${chart_list_down_to_500000[@]}"
@@ -238,7 +244,10 @@ for chart in "${chart_list_down_to_500000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
     
 for chart in "${chart_list_down_to_250000[@]}"
@@ -274,7 +283,10 @@ for chart in "${chart_list_down_to_250000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-
+        
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
     
 exit 0

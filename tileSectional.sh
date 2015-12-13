@@ -94,7 +94,10 @@ for chart in "${chart_list_500000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+        
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 #Charts that are at 1:250,000 scale
@@ -137,9 +140,11 @@ for chart in "${chart_list_250000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
+        
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
-
-
 
 
 

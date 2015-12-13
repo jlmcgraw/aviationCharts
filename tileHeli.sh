@@ -113,7 +113,10 @@ for chart in "${chart_list_1000[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-        
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
   done
 
 for chart in "${chart_list_250[@]}"
@@ -149,7 +152,10 @@ for chart in "${chart_list_250[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 for chart in "${chart_list_125[@]}"
@@ -185,7 +191,10 @@ for chart in "${chart_list_125[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 for chart in "${chart_list_90[@]}"
@@ -221,7 +230,10 @@ for chart in "${chart_list_90[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
 
 for chart in "${chart_list_62_5[@]}"
@@ -257,7 +269,10 @@ for chart in "${chart_list_62_5[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+        
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/            
+    
     done
   
 for chart in "${chart_list_50[@]}"
@@ -293,6 +308,9 @@ for chart in "${chart_list_50[@]}"
                 $destDir/$chart.tms \
                 $destinationRoot/mbtiles/$chart.mbtiles
         fi
-            
+    
+    #Copy the simple viewer to our tiled directory
+    cp leaflet.html $destDir/$chart.tms/
+    
     done
   
