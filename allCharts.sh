@@ -101,6 +101,6 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./tileHeli.sh           $destinationRoot
 ./tileSectional.sh      $destinationRoot
 ./tileTac.sh            $destinationRoot
-./tileWac.sh $          $destinationRoot
+./tileWac.sh            $destinationRoot
 
 exit 0
