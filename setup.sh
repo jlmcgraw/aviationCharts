@@ -13,4 +13,4 @@ git clone https://github.com/jlmcgraw/tilers_tools.git
 #Create directories
 ./createTree.sh
 mkdir individual_tiled_charts
-mkdir warpedRasters/insets
+mkdir merged_tiled_charts

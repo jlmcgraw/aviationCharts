@@ -5,7 +5,7 @@ IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
 #Create all the directories we need
 
 baseDirs=(sourceRasters expandedRasters clippingShapes warpedRasters clippedRasters tiles mbtiles)
-chartTypes=(enroute grand_canyon heli sectional tac wac)
+chartTypes=(enroute grand_canyon heli sectional tac wac insets)
 
 #Create the tree of output directories  
 for DIR in ${baseDirs[@]};  do

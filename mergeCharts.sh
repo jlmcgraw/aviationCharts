@@ -45,7 +45,7 @@ destinationRoot="$2"
 
 #Where to put tiled charts (each in its own directory)
 srcDir="$sourceRoot/individual_tiled_charts"
-destDir="$destinationRoot/merged_tiles"
+destDir="$destinationRoot/merged_tiled_charts"
 
 #Check that the source base directory exists
 if [ ! -d $srcDir ]; then
