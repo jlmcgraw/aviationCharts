@@ -72,7 +72,7 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./updateLinks.sh  $originalHeliDirectory        $destinationRoot heli
 ./updateLinks.sh  $originalSectionalDirectory   $destinationRoot sectional
 ./updateLinks.sh  $originalTacDirectory         $destinationRoot tac
-./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
+# ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
 
 #Clip and georeference insets
 ./cutAndGeoreferenceInsets.pl
@@ -90,7 +90,7 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processHeli.sh        $originalHeliDirectory        $destinationRoot
 ./processSectionals.sh  $originalSectionalDirectory   $destinationRoot
 ./processTac.sh         $originalTacDirectory         $destinationRoot
-./processWac.sh         $originalWacDirectory         $destinationRoot
+# ./processWac.sh         $originalWacDirectory         $destinationRoot
 
 #Create tiles, mbtiles and merged charts
 #add -o to optimize tile size with pngquant
@@ -101,6 +101,6 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./tileHeli.sh           $destinationRoot
 ./tileSectional.sh      $destinationRoot
 ./tileTac.sh            $destinationRoot
-./tileWac.sh            $destinationRoot
+# ./tileWac.sh            $destinationRoot
 
 exit 0
