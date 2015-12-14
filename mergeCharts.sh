@@ -312,76 +312,87 @@ heli_chart_list=(
 #VFR
 if [ -n "$should_create_vfr" ]
     then
-    for chart in "${vfr_chart_list[@]}"
-        do
-        echo "VFR: $chart"
-        
+        echo "Cleaning $destDir/VFR"
         rm --force --recursive --dir "$destDir/VFR"
+        
+        for chart in "${vfr_chart_list[@]}"
+            do
+            echo "VFR: $chart"
+            
+            
 
-        ./merge_tile_sets.pl \
-            $srcDir/$chart.tms/ \
-            $destDir/VFR
-        done
+            ./merge_tile_sets.pl \
+                $srcDir/$chart.tms/ \
+                $destDir/VFR
+            done
 
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/VFR
+        #Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh $destDir/VFR
     fi
 
 #-------------------------------------------------------------------------------
 #IFR LOW
 if [ -n "$should_create_ifr_low" ]
     then
+        echo "Cleaning $destDir/IFR-LOW"
+        rm --force --recursive --dir "$destDir/IFR-LOW"
+        
         for chart in "${ifr_low_chart_list[@]}"
             do
             echo "IFR LOW: $chart"
 
-            rm --force --recursive --dir "$destDir/IFR-LOW"
+            
             
             ./merge_tile_sets.pl \
                 $srcDir/$chart.tms/ \
                 $destDir/IFR-LOW
             done
 
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+        #Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
 fi
 
 #-------------------------------------------------------------------------------
 #IFR HIGH
 if [ -n "$should_create_ifr_high" ]
     then
-    for chart in "${ifr_high_chart_list[@]}"
-        do
-        echo "IFR HIGH: $chart"
-
+        echo "Cleaning $destDir/IFR-HIGH"
         rm --force --recursive --dir "$destDir/IFR-HIGH"
         
-        ./merge_tile_sets.pl \
-            /$srcDir/$chart.tms/ \
-            $destDir/IFR-HIGH
-        done
+        for chart in "${ifr_high_chart_list[@]}"
+            do
+            echo "IFR HIGH: $chart"
 
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+        
+            
+            ./merge_tile_sets.pl \
+                $srcDir/$chart.tms/ \
+                $destDir/IFR-HIGH
+            done
+
+        #Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
 fi
 
 #-------------------------------------------------------------------------------
 #Heli
 if [ -n "$should_create_heli" ]
     then
-    for chart in "${heli_chart_list[@]}"
-        do
-        echo "HELI: $chart"
-        
+        echo "Cleaning $destDir/IFR-HELI"
         rm --force --recursive --dir "$destDir/HELI"
+        for chart in "${heli_chart_list[@]}"
+            do
+            echo "HELI: $chart"
+            
+            
 
-        ./merge_tile_sets.pl \
-            /$srcDir/$chart.tms/ \
-            $destDir/HELI
-        done
+            ./merge_tile_sets.pl \
+                $srcDir/$chart.tms/ \
+                $destDir/HELI
+            done
 
-    #Optimize the tiled png files
-    ./pngquant_all_files_in_directory.sh $destDir/HELI
+        #Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh $destDir/HELI
 fi
 
 exit 0
