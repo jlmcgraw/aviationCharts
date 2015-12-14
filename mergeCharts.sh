@@ -287,7 +287,7 @@ ifr_high_chart_list=(
     ENR_H12
     )
 
-ifr_high_chart_list=(
+heli_chart_list=(
     U.S._Gulf_Coast_HEL
     Eastern_Long_Island_HEL
     Baltimore_HEL
