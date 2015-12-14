@@ -320,7 +320,7 @@ if [ -n "$should_create_vfr" ]
         
         for chart in "${vfr_chart_list[@]}"
             do
-            echo "VFR: $chart"
+            echo "VFR: $chart                                                   "
             
             
 
@@ -349,7 +349,7 @@ if [ -n "$should_create_ifr_low" ]
         
         for chart in "${ifr_low_chart_list[@]}"
             do
-            echo "IFR LOW: $chart"
+            echo "IFR LOW: $chart                                              "
 
             
             
@@ -378,7 +378,7 @@ if [ -n "$should_create_ifr_high" ]
         
         for chart in "${ifr_high_chart_list[@]}"
             do
-            echo "IFR HIGH: $chart"
+            echo "IFR HIGH: $chart                                             "
 
         
             
@@ -406,7 +406,7 @@ if [ -n "$should_create_heli" ]
         rm --force --recursive --dir "$destDir/HELI"
         for chart in "${heli_chart_list[@]}"
             do
-            echo "HELI: $chart"          
+            echo "HELI: $chart                                                 "
 
             ./merge_tile_sets.pl \
                 $srcDir/$chart.tms/ \
