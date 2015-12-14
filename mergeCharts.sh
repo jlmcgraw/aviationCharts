@@ -8,6 +8,7 @@ function USAGE {
     echo "    -h  Create merged IFR-HIGH"
     echo "    -l  Create merged IFR-LOW"
     echo "    -c  Create merged HELICOPTER"
+    echo "    -m  Create mbtiles for each chart"
     exit 1
 }
 
