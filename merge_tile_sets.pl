@@ -25,6 +25,7 @@ use strict;
 use warnings;
 use autodie;
 use Carp;
+use File::Slurp;
 use File::Copy;
 
 #Using this so users don't need to globally install modules
