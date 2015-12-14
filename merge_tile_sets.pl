@@ -25,8 +25,6 @@ use strict;
 use warnings;
 use autodie;
 use Carp;
-use File::Slurp;
-use File::Copy;
 
 #Using this so users don't need to globally install modules
 #allows using "carton install" instead
@@ -36,6 +34,8 @@ use lib "$FindBin::Bin/local/lib/perl5";
 #Non-Standard modules that should be installed locally
 use Modern::Perl '2014';
 use Params::Validate qw(:all);
+use File::Slurp;
+use File::Copy;
 
 #Call the main routine and exit with its return code
 exit main(@ARGV);
