@@ -39,7 +39,14 @@ originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/$2"
 #-------------------------------------------------------------------------------
 #Shouldn't need to edit below here
 if [ ! -d "$chartsRoot" ]; then
-    echo "chart root folder $chartsRoot doesn't exist.  Please edit $0 to update it"
+    echo "The supplied chart root directory $chartsRoot doesn't exist"
+    exit 1
+fi
+
+#-------------------------------------------------------------------------------
+#Shouldn't need to edit below here
+if [ ! -d "$originalEnrouteDirectory" ]; then
+    echo "The supplied latest enroute charts directory $originalEnrouteDirectory doesn't exist"
     exit 1
 fi
 
