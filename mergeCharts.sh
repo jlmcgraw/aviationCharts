@@ -337,7 +337,7 @@ if [ -n "$should_create_vfr" ]
             python ./mbutil/mb-util \
                 --scheme=tms \
                 "$destDir/VFR" \
-                "$destDir/VFR/VFR.mbtiles"
+                "$destDir/VFR.mbtiles"
     fi
 
 #-------------------------------------------------------------------------------
