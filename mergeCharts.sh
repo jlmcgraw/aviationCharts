@@ -16,14 +16,16 @@ should_create_vfr=''
 should_create_ifr_high=''
 should_create_ifr_low=''
 should_create_heli=''
+should_create_mbtiles=''
 list=''
 
-while getopts 'vhlc' flag; do
+while getopts 'vhlcm' flag; do
   case "${flag}" in
     v) should_create_vfr='true' ;;
     h) should_create_ifr_high='true' ;;
     l) should_create_ifr_low='true' ;;
     c) should_create_heli='true' ;;
+    m) should_create_mbtiles='true' ;;
     *) error "Unexpected option ${flag}" ;;
   esac
 done
@@ -328,6 +330,13 @@ if [ -n "$should_create_vfr" ]
 
         #Optimize the tiled png files
         ./pngquant_all_files_in_directory.sh $destDir/VFR
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                "$destDir/VFR" \
+                "$destDir/VFR/VFR.mbtiles"
     fi
 
 #-------------------------------------------------------------------------------
@@ -350,6 +359,13 @@ if [ -n "$should_create_ifr_low" ]
 
         #Optimize the tiled png files
         ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                "$destDir/IFR-LOW" \
+                "$destDir/IFR-LOW.mbtiles"
 fi
 
 #-------------------------------------------------------------------------------
@@ -372,6 +388,13 @@ if [ -n "$should_create_ifr_high" ]
 
         #Optimize the tiled png files
         ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+#         
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                "$destDir/IFR-HIGH" \
+                "$destDir/IFR-HIGH.mbtiles"
 fi
 
 #-------------------------------------------------------------------------------
@@ -382,9 +405,7 @@ if [ -n "$should_create_heli" ]
         rm --force --recursive --dir "$destDir/HELI"
         for chart in "${heli_chart_list[@]}"
             do
-            echo "HELI: $chart"
-            
-            
+            echo "HELI: $chart"          
 
             ./merge_tile_sets.pl \
                 $srcDir/$chart.tms/ \
@@ -393,6 +414,13 @@ if [ -n "$should_create_heli" ]
 
         #Optimize the tiled png files
         ./pngquant_all_files_in_directory.sh $destDir/HELI
+        
+        #Package them into an .mbtiles file
+        ./memoize.py -i $destDir \
+            python ./mbutil/mb-util \
+                --scheme=tms \
+                "$destDir/HELI" \
+                "$destDir/HELI.mbtiles"
 fi
 
 exit 0

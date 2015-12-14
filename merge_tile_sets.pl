@@ -108,5 +108,4 @@ sub main {
         }
 
     }
-    print "\n";
 }
