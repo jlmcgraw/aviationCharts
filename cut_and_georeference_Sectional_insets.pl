@@ -151,26 +151,26 @@ sub main {
     foreach my $key ( keys %HashOfInsets ) {
 	#$key is the inset's name
         #Pull out the relevant data for each inset
-        my $sourceRaster = $HashOfInsets{$key}[0];
+        my $sourceChart  = $HashOfInsets{$key}[0];
         my $ulX          = $HashOfInsets{$key}[1];
         my $ulY          = $HashOfInsets{$key}[2];
         my $lrX          = $HashOfInsets{$key}[3];
         my $lrY          = $HashOfInsets{$key}[4];
         my $gcpArrayRef  = $HashOfInsets{$key}[5];
 
-        my $tempRaster  = $key . "_Inset_temp.vrt";
-        my $finalRaster = $key . "_Inset.tif";
+        my $clippedRaster  = $key . "_Inset.vrt";
+        my $finalRaster    = $key . "_Inset.tif";
         say $key;
         
         #create the string of ground control points
         my $gcpString = createGcpString($gcpArrayRef);
 
         #cut out the inset from source raster and add GCPs
-        cutOutInsetFromSourceRaster( $sourceRaster, $ulX, $ulY, $lrX, $lrY,
-            $gcpString, $tempRaster );
+        cutOutInsetFromSourceRaster( $sourceChart, $ulX, $ulY, $lrX, $lrY,
+            $gcpString, $clippedRaster );
 
         #warp and georeference the clipped file
-        warpRaster( $tempRaster, $finalRaster );
+        warpRaster( $clippedRaster, $finalRaster );
     }
     return 0;
 }
@@ -221,7 +221,7 @@ sub coordinateToDecimal {
 }
 
 sub cutOutInsetFromSourceRaster {
-    my ( $sourceRaster, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster )
+    my ( $sourceChart, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster )
       = validate_pos(
         @_,
         { type => SCALAR },
@@ -233,6 +233,11 @@ sub cutOutInsetFromSourceRaster {
         { type => SCALAR },
       );
 
+    my $sourceRaster  = './expandedRasters/sectional/' . $sourceChart . ".vrt";
+    
+    #Add the destination path to the raster name
+    $destinationRaster  = './clippedRasters/insets/' . $destinationRaster;
+    
     say "Clip: $sourceRaster -> $destinationRaster, $ulX, $ulY, $lrX, $lrY";
 
     #Create the source window string for gdal
@@ -247,7 +252,7 @@ sub cutOutInsetFromSourceRaster {
       -srcwin $srcWin \\
       -a_srs WGS84 \\
       $gcpString \\\
-      './expandedRasters/sectional/$sourceRaster.vrt' \\
+      '$sourceRaster' \\
       '$destinationRaster'";
 
     if ($main::debug) {
@@ -275,6 +280,12 @@ sub warpRaster {
     my ( $sourceRaster, $destinationRaster ) =
       validate_pos( @_, { type => SCALAR }, { type => SCALAR }, );
 
+    $sourceRaster  = './clippedRasters/insets/' . $sourceRaster;
+    
+    #Add the destination path to the raster name
+    $destinationRaster  = './warpedRasters/insets/' . $destinationRaster;
+
+    
     say "warp: $sourceRaster -> $destinationRaster";
 
     #Assemble the command
@@ -283,7 +294,7 @@ sub warpRaster {
          -tps \\
          -dstalpha \\
          $sourceRaster \\
-         ./warpedRasters/insets/$destinationRaster";
+         $destinationRaster";
 
     if ($main::debug) {
         say $gdalWarpCommand;

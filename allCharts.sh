@@ -78,8 +78,8 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
 
 #Clip and georeference insets
-./cutAndGeoreferenceInsets.pl
-./cut_and_georeference_Caribbean.pl $destinationRoot 
+./cut_and_georeference_Sectional_insets.pl
+./cut_and_georeference_Caribbean_insets.pl $destinationRoot 
 
 # The process*.sh scripts each do these functions for a given chart type
 # 	Expand charts to RGB bands as necessary (currently not needed for enroute) via a .vrt file
