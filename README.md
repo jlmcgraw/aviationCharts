@@ -24,7 +24,7 @@ It has only been tested under Ubuntu 14.10+
     - pngquant 
     - graphicsmagick 
     - mbutil 
-    ~200 Gigabytes of free storage
+    - ~200 Gigabytes of free storage
     
 # Getting Started
 ##### Install various utilities and libraries and create directories
@@ -32,8 +32,9 @@ It has only been tested under Ubuntu 14.10+
 ./setup.sh
 ```
 ##### Determine the date of the latest set of enroute charts.  It will be a directory under "enroute"
+##### This will need to be updated for every new cycle
 ```
-#This will need to be updated for every cycle
+
     eg 12-10-2015
 ```
 ##### Edit paths to these utilities as necessary in the tile*.sh scripts
@@ -44,9 +45,10 @@ It has only been tested under Ubuntu 14.10+
 ./tilers_tools/
 ```
 ##### Edit allCharts.sh to add/remove various options for tile creation and merging
-##### Using -o will optimize individual tile size
-##### Using -m will create mbtiles for individual and merged charts
-##### Note that both of these will add some significant time to the overall process
+    - Using -o will optimize individual tile size
+    - Using -m will create mbtiles for individual and merged charts
+    
+    Note that both of these will add some significant time to the overall process
 
 ##### Execute allCharts.sh with correct parameters
 ```
