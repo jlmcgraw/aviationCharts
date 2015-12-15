@@ -36,15 +36,11 @@ fi
 chartsRoot="$1"
 originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/$2"
 
-#-------------------------------------------------------------------------------
-#Shouldn't need to edit below here
 if [ ! -d "$chartsRoot" ]; then
     echo "The supplied chart root directory $chartsRoot doesn't exist"
     exit 1
 fi
 
-#-------------------------------------------------------------------------------
-#Shouldn't need to edit below here
 if [ ! -d "$originalEnrouteDirectory" ]; then
     echo "The supplied latest enroute charts directory $originalEnrouteDirectory doesn't exist"
     exit 1
@@ -85,13 +81,10 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./cutAndGeoreferenceInsets.pl
 ./cut_and_georeference_Caribbean.pl $destinationRoot 
 
-# General Process:
+# The process*.sh scripts each do these functions for a given chart type
 # 	Expand charts to RGB bands as necessary (currently not needed for enroute) via a .vrt file
 # 	Clip to their associated polygon
 #	Reproject to EPSG:3857
-# 	Convert clipped and warped image to TMS layout folders of tiles
-# 	Package those tiles into a .mbtile
-
 ./processEnroute.sh     $originalEnrouteDirectory     $destinationRoot
 ./processGrandCanyon.sh $originalGrandCanyonDirectory $destinationRoot
 ./processHeli.sh        $originalHeliDirectory        $destinationRoot
@@ -99,16 +92,28 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 ./processTac.sh         $originalTacDirectory         $destinationRoot
 # ./processWac.sh         $originalWacDirectory         $destinationRoot
 
-#Create tiles, mbtiles and merged charts
-#add -o to optimize tile size with pngquant
-#add -m to create mbtiles
-./tileEnrouteHigh.sh    $destinationRoot
-./tileEnrouteLow.sh     $destinationRoot
-./tileGrandCanyon.sh    $destinationRoot
-./tileHeli.sh           $destinationRoot
-./tileSectional.sh      $destinationRoot
-./tileTac.sh            $destinationRoot
-# ./tileWac.sh            $destinationRoot
-./tileInsets.sh            $destinationRoot
+# The tile*.sh scripts each do these functions for a given chart type
+# 	create TMS tile tree from the reprojected raster
+#       optionally (with -o) use pngquant to optimize each individual tile
+#       optionally (with -m) create an mbtile for each individual chart
+#add/remove -o to optimize tile size with pngquant
+#add/remove -m to create mbtiles
+./tileEnrouteHigh.sh    -o -m $destinationRoot
+./tileEnrouteLow.sh     -o -m $destinationRoot
+./tileGrandCanyon.sh    -o -m $destinationRoot
+./tileHeli.sh           -o -m $destinationRoot
+./tileSectional.sh      -o -m $destinationRoot
+./tileTac.sh            -o -m $destinationRoot
+# ./tileWac.sh            -o -m $destinationRoot
+./tileInsets.sh         -o -m $destinationRoot
+
+#Stack the various resolutions and types of charts into combined tilesets and mbtiles
+#Use these command line options to do/not do specific types of charts and/or create mbtiles 
+# -v  Create merged VFR
+# -h  Create merged IFR-HIGH
+# -l  Create merged IFR-LOW
+# -c  Create merged HELICOPTER"
+# -m  Create mbtiles for each chart
+./mergeCharts -v -h -l -c -m           $destinationRoot   $destinationRoot
 
 exit 0

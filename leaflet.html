@@ -3,11 +3,11 @@
           <head>
             <meta charset="utf-8">
             <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-            <title>ENR_A01_ATL.tif</title>
+            <title>Tiled Chart</title>
 
             <!-- Leaflet -->
-            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-            <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+            <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
             <style>
                 body { margin:0; padding:0; }
@@ -31,55 +31,75 @@
 
             </style>
 
-        </head>
-        <body>
+            </head>
+            <body>
+            <div id="map"></div>
 
-        <div id="map"></div>
+                <script>
+                /* **** Leaflet **** */
 
-        <script>
-        /* **** Leaflet **** */
+                // Base layers
+                //  .. OpenStreetMap
+                var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+                
+                //  .. Stamen Terrain
+                var terrain = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://stamen.com">Stamen</a> contributors'});
+                
+                //  .. Open CycleMap
+                var cycle = L.tileLayer('https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://thunderforest.com/terms/">Thunder Forest</a>'});
+                
+                //  .. Landscape
+                var landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://thunderforest.com/terms/">Thunder Forest</a>'});
+                
+                //  .. White background
+                var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==");
 
-        // Base layers
-        //  .. OpenStreetMap
-        var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'});
+                // Local TMS tile layer
+                var localTiles = L.tileLayer('./{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: ""});
 
-        //  .. White background
-        var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==");
+                // NEXRAD weather radar
+                var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+                    layers: 'nexrad-n0r-900913',
+                    format: 'image/png',
+                    transparent: true,
+                    attribution: "Weather data © 2012 IEM Nexrad"
+                });
+                
+                // Map
+                var map = L.map('map', {
+                    center: [44.966667,-103.766667],
+                    zoom: 4,
+                    minZoom: 3,
+                    maxZoom: 14,
+                    noWrap: true,
+                    detectRetina: true,
+                    reuseTiles: true,
+                    layers: [osm, localTiles]
+                });
+                //   
+                var basemaps = {"OpenStreetMap": osm, "Open Cycle Map": cycle, "Landscape": landscape, "Stamen Terrain": terrain, "Without background": white}
+                
+                var overlaymaps = {"Chart": localTiles, "Nexrad": nexrad}
 
-        // Overlay layers (TMS)
-        var lyr = L.tileLayer('./{z}/{x}/{y}.png', {tms: true, opacity: 0.7, attribution: ""});
+                // Title
+                var title = L.control();
+                title.onAdd = function(map) {
+                        this._div = L.DomUtil.create('div', 'ctl title');
+                        this.update();
+                        return this._div;
+                };
+                title.update = function(props) {
+                        this._div.innerHTML = "Merged Chart";
+                };
+                title.addTo(map);
 
-        // Map
-        var map = L.map('map', {
-            center: [44.966667,-103.766667],
-            zoom: 4,
-            minZoom: 3,
-            maxZoom: 14,
-            layers: [osm, lyr]
-        });
+                // Add base layers
+                L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
 
-        var basemaps = {"OpenStreetMap": osm, "Without background": white}
-        var overlaymaps = {"Layer": lyr}
+                L.control.scale().addTo(map);
+                </script>
 
-        // Title
-        var title = L.control();
-        title.onAdd = function(map) {
-	        this._div = L.DomUtil.create('div', 'ctl title');
-	        this.update();
-	        return this._div;
-        };
-        title.update = function(props) {
-	        this._div.innerHTML = "Merged Chart";
-        };
-        title.addTo(map);
-
-        // Add base layers
-        L.control.layers(basemaps, overlaymaps, {collapsed: false}).addTo(map);
-
-
-        </script>
-
-        </body>
+            </body>
         </html>
 
         

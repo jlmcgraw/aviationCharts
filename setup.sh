@@ -3,7 +3,10 @@ set -eu                # Always put this in Bourne shell scripts
 IFS=$(`printf '\n\t')  # Always put this in Bourne shell scripts
 
 #Install various utilities
-sudo apt-get install gdal-bin libmodern-perl-perl pngquant graphicsmagick python-gdal unzip imagemagick
+sudo apt-get install gdal-bin libmodern-perl-perl pngquant graphicsmagick python-gdal unzip imagemagick cpanminus python-imaging
+
+cpanm Carton
+carton install
 
 #Get some utilities
 git clone https://github.com/jlmcgraw/parallelGdal2tiles.git

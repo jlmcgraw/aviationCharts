@@ -19,39 +19,34 @@ It has only been tested under Ubuntu 14.10+
     - Use make to update only as necessary  (done via memoize.py)
         
 # Requirements
-    - gdal 
+    - gdal 1.10+
     - wget
     - pngquant 
     - graphicsmagick 
     - mbutil 
-    - gdal2tiles multithreaded version 
-
+    ~200 Gigabytes of free storage
+    
 # Getting Started
 ##### Install various utilities and libraries and create directories
 ```
 ./setup.sh
 ```
-##### Edit allCharts.sh and update variables 
-##### Create the corresponding directories as needed
-```
-#Full path to root of downloaded chart info
-chartsRoot="/media/sf_Shared_Folder/charts/"
-```
-##### Update this information as appropriate for directory name of current enroute chart cycle under "chartsRoot" directory
+##### Determine the date of the latest set of enroute charts.  It will be a directory under "enroute"
 ```
 #This will need to be updated for every cycle
-originalEnrouteDirectory="$chartsRoot/aeronav.faa.gov/enroute/01-08-2015/"
+    eg 12-10-2015
 ```
-##### Edit makeMbtiles.sh as necessary to update the location of these commands on your system
+##### Edit paths to these utilities as necessary in the tile*.sh scripts
 ##### If you use setup.sh they will be cloned from github into this directory so no editing will be necessary
 ```
 ./parallelGdal2Tiles/gdal2tiles.py
 ./mbutil/mb-util
 ./tilers_tools/
 ```
-##### Execute allCharts.sh
+##### Execute allCharts.sh with correct parameters
 ```
-./allCharts.sh
+./allCharts.sh /path/to/aeronav_charts date_of_enroute_set
+    eg. ./allCharts.sh /home/test/Downloads/aeronav 12-10-2015
 ```
 ##### Wait a very long time (assuming all went correctly)
 ##### Mbtiles should be in ./mbtiles directory

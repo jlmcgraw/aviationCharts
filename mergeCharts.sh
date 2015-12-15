@@ -2,6 +2,11 @@
 set -eu                # Die on errors and unbound variables
 IFS=$(printf '\n\t')   # IFS is newline or tab
 
+#Some other possible software options for tiling pipeline
+#https://github.com/makinacorpus/landez.git
+#https://github.com/ecometrica/gdal2mbtiles
+#https://github.com/mj10777/gdal2mbtiles.git
+
 function USAGE {
     echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
     echo "    -v  Create merged VFR"
@@ -425,3 +430,4 @@ if [ -n "$should_create_heli" ]
 fi
 
 exit 0
+
