@@ -43,11 +43,16 @@ It has only been tested under Ubuntu 14.10+
 ./mbutil/mb-util
 ./tilers_tools/
 ```
+##### Edit allCharts.sh to add/remove various options for tile creation and merging
+##### Using -o will optimize individual tile size
+##### Using -m will create mbtiles for individual and merged charts
+##### Note that both of these will add some significant time to the overall process
+
 ##### Execute allCharts.sh with correct parameters
 ```
 ./allCharts.sh /path/to/aeronav_charts date_of_enroute_set
     eg. ./allCharts.sh /home/test/Downloads/aeronav 12-10-2015
 ```
 ##### Wait a very long time (assuming all went correctly)
-##### Mbtiles should be in ./mbtiles directory
-##### tilers_tools output will be in ./tiles2 and various merged charts with a web viewing application will be in subdirectories under project root
+##### Individual charts should be in ./individual_tiled_charts/
+##### merged charts should be in ./merged_tiled_charts/
