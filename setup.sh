@@ -35,3 +35,5 @@ cat > .git/hooks/pre-commit << 'EOF'
 find . -maxdepth 1 -type f -name '*.pl' -or -name '*.pm' | \
     xargs -I{} -P0 sh -c 'perltidy -b -noll {}'
 EOF
+
+chmod +x .git/hooks/pre-commit

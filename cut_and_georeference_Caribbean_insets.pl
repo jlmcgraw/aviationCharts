@@ -33,7 +33,6 @@ use lib "$FindBin::Bin/local/lib/perl5";
 use Modern::Perl '2014';
 use Params::Validate qw(:all);
 
-
 #Call the main routine and exit with its return code
 exit main(@ARGV);
 
@@ -44,7 +43,8 @@ sub main {
     #I'm using locally compiled gdal
     #If your version is > 2 then set this to empty string ''
     our $compiled_gdal_dir = '';
-#     our $compiled_gdal_dir = '~/Documents/github/gdal/gdal/apps/';
+
+    #     our $compiled_gdal_dir = '~/Documents/github/gdal/gdal/apps/';
 
     #Number of arguments supplied on command line
     my $num_args = $#ARGV + 1;
@@ -438,7 +438,10 @@ sub cutOutInsetFromSourceRaster {
 
     #Assemble the command
     #Note the "pdf" added in to the file name since I'm to lazy to cut it out earlier
-    my $gdal_translateCommand = './memoize.py ' . $main::compiled_gdal_dir . "gdal_translate \\
+    my $gdal_translateCommand =
+        './memoize.py '
+      . $main::compiled_gdal_dir
+      . "gdal_translate \\
       -strict \\
       -of VRT \\
       -srcwin $srcWin \\
@@ -475,7 +478,10 @@ sub warpRaster {
     say "warp: $sourceRaster -> $destinationRaster";
 
     #Assemble the command
-    my $gdalWarpCommand = './memoize.py ' . $main::compiled_gdal_dir . "gdalwarp \\
+    my $gdalWarpCommand =
+        './memoize.py '
+      . $main::compiled_gdal_dir
+      . "gdalwarp \\
          -t_srs WGS84 \\
          -r lanczos \\
          -dstalpha \\
@@ -501,7 +507,10 @@ sub warpRaster {
 
     say "Overviews: $sourceRaster -> $destinationRaster";
 
-    my $gdaladdoCommand = './memoize.py ' . $main::compiled_gdal_dir . "gdaladdo \\
+    my $gdaladdoCommand =
+        './memoize.py '
+      . $main::compiled_gdal_dir
+      . "gdaladdo \\
         -ro \\
         -r gauss \\
         --config INTERLEAVE_OVERVIEW PIXEL \\

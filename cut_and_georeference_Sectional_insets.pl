@@ -149,19 +149,20 @@ sub main {
     );
 
     foreach my $key ( keys %HashOfInsets ) {
-	#$key is the inset's name
-        #Pull out the relevant data for each inset
-        my $sourceChart  = $HashOfInsets{$key}[0];
-        my $ulX          = $HashOfInsets{$key}[1];
-        my $ulY          = $HashOfInsets{$key}[2];
-        my $lrX          = $HashOfInsets{$key}[3];
-        my $lrY          = $HashOfInsets{$key}[4];
-        my $gcpArrayRef  = $HashOfInsets{$key}[5];
 
-        my $clippedRaster  = $key . "_Inset.vrt";
-        my $finalRaster    = $key . "_Inset.tif";
+        #$key is the inset's name
+        #Pull out the relevant data for each inset
+        my $sourceChart = $HashOfInsets{$key}[0];
+        my $ulX         = $HashOfInsets{$key}[1];
+        my $ulY         = $HashOfInsets{$key}[2];
+        my $lrX         = $HashOfInsets{$key}[3];
+        my $lrY         = $HashOfInsets{$key}[4];
+        my $gcpArrayRef = $HashOfInsets{$key}[5];
+
+        my $clippedRaster = $key . "_Inset.vrt";
+        my $finalRaster   = $key . "_Inset.tif";
         say $key;
-        
+
         #create the string of ground control points
         my $gcpString = createGcpString($gcpArrayRef);
 
@@ -215,8 +216,8 @@ sub coordinateToDecimal {
 
     }
 
-    
-    say "Deg: $deg, Min:$min, Sec:$sec, Decl:$declination -> $signeddegrees" if $main::debug;
+    say "Deg: $deg, Min:$min, Sec:$sec, Decl:$declination -> $signeddegrees"
+      if $main::debug;
     return ($signeddegrees);
 }
 
@@ -233,11 +234,11 @@ sub cutOutInsetFromSourceRaster {
         { type => SCALAR },
       );
 
-    my $sourceRaster  = './expandedRasters/sectional/' . $sourceChart . ".vrt";
-    
+    my $sourceRaster = './expandedRasters/sectional/' . $sourceChart . ".vrt";
+
     #Add the destination path to the raster name
-    $destinationRaster  = './clippedRasters/insets/' . $destinationRaster;
-    
+    $destinationRaster = './clippedRasters/insets/' . $destinationRaster;
+
     say "Clip: $sourceRaster -> $destinationRaster, $ulX, $ulY, $lrX, $lrY";
 
     #Create the source window string for gdal
@@ -280,12 +281,11 @@ sub warpRaster {
     my ( $sourceRaster, $destinationRaster ) =
       validate_pos( @_, { type => SCALAR }, { type => SCALAR }, );
 
-    $sourceRaster  = './clippedRasters/insets/' . $sourceRaster;
-    
-    #Add the destination path to the raster name
-    $destinationRaster  = './warpedRasters/insets/' . $destinationRaster;
+    $sourceRaster = './clippedRasters/insets/' . $sourceRaster;
 
-    
+    #Add the destination path to the raster name
+    $destinationRaster = './warpedRasters/insets/' . $destinationRaster;
+
     say "warp: $sourceRaster -> $destinationRaster";
 
     #Assemble the command
@@ -347,7 +347,7 @@ sub createGcpString {
         say
           "$lonDegrees-$lonMinutes-$lonSeconds-$lonDeclination,$latDegrees-$latMinutes-$latSeconds-$latDeclination"
           if $main::debug;
-        
+
         #If all seems ok, convert to decimal
         if (   $lonDegrees
             && $lonMinutes
@@ -364,6 +364,7 @@ sub createGcpString {
                 $latDeclination );
         }
         say "$lonDecimal, $latDecimal" if $main::debug;
+
         #Add it to the overall GCP string
         $gcpString =
           $gcpString . "-gcp $rasterX $rasterY $lonDecimal $latDecimal ";
