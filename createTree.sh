@@ -14,3 +14,5 @@ for DIR in ${baseDirs[@]};  do
         mkdir -p ./$DIR/$CHARTTYPE
       done
   done
+
+
