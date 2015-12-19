@@ -114,6 +114,6 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # -l  Create merged IFR-LOW
 # -c  Create merged HELICOPTER"
 # -m  Create mbtiles for each chart
-./mergeCharts -v -h -l -c -m           $destinationRoot   $destinationRoot
+./mergeCharts.sh -v -h -l -c -m           $destinationRoot   $destinationRoot
 
 exit 0
