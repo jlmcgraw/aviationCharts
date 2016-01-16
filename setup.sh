@@ -1,10 +1,12 @@
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
-IFS=$(`printf '\n\t')  # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
 
 #Install various utilities
 sudo \
     apt-get install \
+        make \
+        git \
         gdal-bin \
         libmodern-perl-perl \
         pngquant \
