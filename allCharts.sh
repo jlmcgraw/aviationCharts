@@ -96,16 +96,18 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 # 	create TMS tile tree from the reprojected raster
 #       optionally (with -o) use pngquant to optimize each individual tile
 #       optionally (with -m) create an mbtile for each individual chart
+#
 #add/remove -o to optimize tile size with pngquant
 #add/remove -m to create mbtiles
-./tileEnrouteHigh.sh    -o -m $destinationRoot
-./tileEnrouteLow.sh     -o -m $destinationRoot
-./tileGrandCanyon.sh    -o -m $destinationRoot
-./tileHeli.sh           -o -m $destinationRoot
-./tileSectional.sh      -o -m $destinationRoot
-./tileTac.sh            -o -m $destinationRoot
-# ./tileWac.sh            -o -m $destinationRoot
-./tileInsets.sh         -o -m $destinationRoot
+# eg ./tileEnrouteHigh.sh    -o -m $destinationRoot
+./tileEnrouteHigh.sh    -m $destinationRoot
+./tileEnrouteLow.sh     -m $destinationRoot
+./tileGrandCanyon.sh    -m $destinationRoot
+./tileHeli.sh           -m $destinationRoot
+./tileSectional.sh      -m $destinationRoot
+./tileTac.sh            -m $destinationRoot
+# ./tileWac.sh           -m $destinationRoot
+./tileInsets.sh         -m $destinationRoot
 
 #Stack the various resolutions and types of charts into combined tilesets and mbtiles
 #Use these command line options to do/not do specific types of charts and/or create mbtiles 
