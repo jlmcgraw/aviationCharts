@@ -1,4 +1,3 @@
-
 #!/bin/bash
 set -eu                # Always put this in Bourne shell scripts
 IFS=$(printf '\n\t')  # Always put this in Bourne shell scripts
@@ -41,11 +40,6 @@ if [ ! -d "$chartsRoot" ]; then
     exit 1
 fi
 
-if [ ! -d "$originalEnrouteDirectory" ]; then
-    echo "The supplied latest enroute charts directory $originalEnrouteDirectory doesn't exist"
-    exit 1
-fi
-
 #Determine the full path to where this script is
 #Use this as the root of directories where our processed images etc will be saved
 pushd $(dirname "$0") > /dev/null
@@ -64,6 +58,12 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 
 #Update local chart copies from Aeronav website
 ./freshenLocalCharts.sh $chartsRoot
+
+#Test after freshening local data
+if [ ! -d "$originalEnrouteDirectory" ]; then
+    echo "The supplied latest enroute charts directory $originalEnrouteDirectory doesn't exist"
+    exit 1
+fi
 
 #Extract Caribbean PDFs and convert to TIFF
 ./rasterize_Caribbean_charts.sh $originalEnrouteDirectory $destinationRoot enroute
@@ -100,14 +100,14 @@ originalGrandCanyonDirectory="$chartsRoot/aeronav.faa.gov/content/aeronav/grand_
 #add/remove -o to optimize tile size with pngquant
 #add/remove -m to create mbtiles
 # eg ./tileEnrouteHigh.sh    -o -m $destinationRoot
-./tileEnrouteHigh.sh    -m $destinationRoot
-./tileEnrouteLow.sh     -m $destinationRoot
-./tileGrandCanyon.sh    -m $destinationRoot
-./tileHeli.sh           -m $destinationRoot
-./tileSectional.sh      -m $destinationRoot
-./tileTac.sh            -m $destinationRoot
-# ./tileWac.sh           -m $destinationRoot
-./tileInsets.sh         -m $destinationRoot
+./tileEnrouteHigh.sh    -m -o $destinationRoot
+./tileEnrouteLow.sh     -m -o $destinationRoot
+./tileGrandCanyon.sh    -m -o $destinationRoot
+./tileHeli.sh           -m -o $destinationRoot
+./tileSectional.sh      -m -o $destinationRoot
+./tileTac.sh            -m -o $destinationRoot
+# ./tileWac.sh           -m -o $destinationRoot
+./tileInsets.sh         -m -o $destinationRoot
 
 #Stack the various resolutions and types of charts into combined tilesets and mbtiles
 #Use these command line options to do/not do specific types of charts and/or create mbtiles 
