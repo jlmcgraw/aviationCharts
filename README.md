@@ -1,19 +1,18 @@
 The purpose of this utility is to process the freely provided FAA/Aeronav
-digital aviation charts from GeoTiffs into seamless rasters/mbtiles suitable for
+digital aviation charts from GeoTiffs into seamless rasters, tiles, and mbtiles suitable for
 direct use in mapping applications
 
 It has only been tested under Ubuntu 14.10+
 
-![Sectionals](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/sectional.png)
-![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/enroute-low.png)
-![Enroute Low with oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/enroute-low with oceanic.png)
-![WAC](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/wac.png)
+![VFR](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/VFR-Western_Hemisphere.png)
+![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_LOW-Western_Hemisphere.png)
+![Enroute High](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_HIGH-Western_Hemisphere.png)
+![Oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/Oceanic.png)
 
 # TODO
     Only optimize tiles if the source raster has changed
     Only create mbtiles if the source raster has changed
-
-
+    
 # DONE
     - Handle charts which cross the anti-meridian (tilers_tools handles this)
     - Pull out insets and georeference them as necessary
