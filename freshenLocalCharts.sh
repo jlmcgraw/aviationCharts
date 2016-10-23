@@ -29,10 +29,11 @@ touch ./lastChartRefresh
 cd $AERONAV_ROOT_DIR
 
 #Get all of the latest charts
+#Skip the compilations
 set +e
-wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
-echo ######################################
-wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
+wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -R"DD?C*" -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
+#echo ######################################
+wget --recursive -l1 --span-hosts --domains=aeronav.faa.gov,www.faa.gov --timestamping --no-parent -A.zip -R"DD?C*" -erobots=off http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e
 
 
