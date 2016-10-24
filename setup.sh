@@ -5,7 +5,6 @@ IFS=$(printf '\n\t')   # Always put this in Bourne shell scripts
 #Install various utilities
 sudo \
     apt-get install \
-a
         pngquant \
         graphicsmagick \
         python-gdal \
