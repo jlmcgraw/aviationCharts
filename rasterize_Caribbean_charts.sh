@@ -72,8 +72,8 @@ for f in ENR_C[AL]0[0-9].pdf
 do
     if [ -f "$f.tif" ]
 	then
-		echo "Rasterized $f already exists"
-		continue  
+            echo "Rasterized $f already exists"
+            continue  
 	fi
     echo "--------------------------------------------"
     echo "Converting $f to raster"
@@ -88,88 +88,39 @@ do
             -dTextAlphaBits=4 \
             -dGraphicsAlphaBits=4 \
             "$f"
-#     
-# #     #The -dMaxBitmap=2147483647 is to work around transparency bug
-# #     #See http://stackoverflow.com/questions/977540/convert-a-pdf-to-a-transparent-png-with-ghostscript
-# #     gs \
-# #         -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
-# #         -sDEVICE=pngalpha                               \
-# #         -sOutputFile="$f.png"                           \
-# #         -r300 \
-# #         -dTextAlphaBits=4 \
-# #         -dGraphicsAlphaBits=4 \
-# #         -dMaxBitmap=2147483647 \
-# #         "$f"
-#     
+
     echo "--------------------------------------------"
     echo "Tile $f"
     echo "--------------------------------------------"
     #Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
-    gdal_translate \
-                -strict \
-                -co TILED=YES \
-                -co COMPRESS=LZW \
-                "$f-untiled.tif" \
-                "$f.tif"
+        gdal_translate \
+                    -strict \
+                    -co TILED=YES \
+                    -co COMPRESS=LZW \
+                    "$f-untiled.tif" \
+                    "$f.tif"
+                
     echo "--------------------------------------------"
     echo "Overviews $f"
     echo "--------------------------------------------"
     #Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
-    gdaladdo \
-            -ro \
-            -r gauss \
-            --config INTERLEAVE_OVERVIEW PIXEL \
-            --config COMPRESS_OVERVIEW JPEG \
-            --config BIGTIFF_OVERVIEW IF_NEEDED \
-            "$f.tif" \
-            2 4 8 16 32 64
+        gdaladdo \
+                -ro \
+                -r gauss \
+                --config INTERLEAVE_OVERVIEW PIXEL \
+                --config COMPRESS_OVERVIEW JPEG \
+                --config BIGTIFF_OVERVIEW IF_NEEDED \
+                "$f.tif" \
+                2 4 8 16 32 64
     
     rm "$f-untiled.tif"
     
 done
 
-exit
-# 
-# #Remove current links if any exist
-# #FILTER will be empty if no .tifs
-# FILTER=$(find $linkedRastersDirectory/ -type l \( -name "*.tif" \) )
-# 
-# if [[ ! -z ${FILTER} ]]; then
-#     echo "Deleting $chartType  links"
-# #     echo $FILTER
-#     rm $FILTER
-# fi
-# 
-# #Link latest revision of chart as a base name
-# echo Linking $chartType files
-# shopt -s nullglob	
-# for f in *.tif
-# do
-# 	#Santize $f into $newName
-# 	
-# 	newName=$f
-# 	# 	#Replace non-word in name with _
-# 	# 	newName=($(printf $newName | sed --regexp-extended 's/\W+/_/g'))
-# 	# 	
-# 	# 	#Fix the extension munged by above
-# 	# 	newName=($(printf $newName | sed --regexp-extended 's/_tif/\.tif/ig'))
-# 	
-#  	#Replace spaces in name with _
-# 	newName=($(printf $newName | sed --regexp-extended 's/\s+/_/g'))
-# 
-# 	#Strip off the series number
-# 	newName=($(printf $newName | sed --regexp-extended 's/_[0-9]+\./\./ig'))
-# 
-# 	#Link $newName to $f only if $f is newer
-# 	if [ "$f" -nt "$linkedRastersDirectory/$newName" ]; then
-# 	   echo "$f is newer than $linkedRastersDirectory/$newName"
-# 	   ln -s -f -r "$f" "$linkedRastersDirectory/$newName"
-# 	   touch -h -r "$f" "$linkedRastersDirectory$newName"
-# 	fi
-# 	
-# done
+exit 0
+
 
 
 
