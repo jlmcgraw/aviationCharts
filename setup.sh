@@ -12,9 +12,9 @@ sudo \
         imagemagick \
         cpanminus \
         python-imaging \
-        perltidy
+        perltidy \
+        carton
 
-cpanm Carton
 carton install
 
 #Get some utilities
