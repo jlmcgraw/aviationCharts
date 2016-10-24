@@ -71,10 +71,6 @@ fi
 ./updateLinks.sh  $originalCaribbeanDirectory   $destinationRoot caribbean
 # ./updateLinks.sh  $originalWacDirectory         $destinationRoot wac
 
-# Clip and georeference insets
-./cut_and_georeference_Sectional_insets.pl
-./cut_and_georeference_Caribbean_insets.pl $destinationRoot 
-
 # The process*.sh scripts each do these functions for a given chart type:
 # 	Expand charts to RGB bands as necessary (currently not needed for enroute) via a .vrt file
 # 	Clip to their associated polygon
@@ -86,6 +82,10 @@ fi
 ./processTac.sh         $originalTacDirectory         $destinationRoot
 ./processCaribbean.sh   $originalCaribbeanDirectory   $destinationRoot
 # ./processWac.sh         $originalWacDirectory         $destinationRoot
+
+# Clip and georeference insets
+./cut_and_georeference_Sectional_insets.pl
+./cut_and_georeference_Caribbean_insets.pl $destinationRoot 
 
 # The tile*.sh scripts each do these functions for a given chart type:
 # 	create TMS tile tree from the reprojected raster

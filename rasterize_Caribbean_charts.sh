@@ -57,6 +57,7 @@ pushd $(dirname "$0") > /dev/null
 installedDirectory=$(pwd)
 popd > /dev/null
 
+echo "Change directory to $originalRastersDirectory"
 cd "$originalRastersDirectory"
 #Ignore unzipping errors
 set +e
@@ -74,18 +75,19 @@ do
 		echo "Rasterized $f already exists"
 		continue  
 	fi
-	
+    echo "--------------------------------------------"
     echo "Converting $f to raster"
+    echo "--------------------------------------------"
     #Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
-    gs \
-        -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
-        -sDEVICE=tiff24nc                               \
-        -sOutputFile="$f-untiled.tif"                             \
-        -r300 \
-        -dTextAlphaBits=4 \
-        -dGraphicsAlphaBits=4 \
-         "$f"
+        gs \
+            -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
+            -sDEVICE=tiff24nc                               \
+            -sOutputFile="$f-untiled.tif"                             \
+            -r300 \
+            -dTextAlphaBits=4 \
+            -dGraphicsAlphaBits=4 \
+            "$f"
 #     
 # #     #The -dMaxBitmap=2147483647 is to work around transparency bug
 # #     #See http://stackoverflow.com/questions/977540/convert-a-pdf-to-a-transparent-png-with-ghostscript
@@ -99,7 +101,9 @@ do
 # #         -dMaxBitmap=2147483647 \
 # #         "$f"
 #     
+    echo "--------------------------------------------"
     echo "Tile $f"
+    echo "--------------------------------------------"
     #Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
     gdal_translate \
@@ -108,8 +112,9 @@ do
                 -co COMPRESS=LZW \
                 "$f-untiled.tif" \
                 "$f.tif"
-
+    echo "--------------------------------------------"
     echo "Overviews $f"
+    echo "--------------------------------------------"
     #Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
     gdaladdo \
