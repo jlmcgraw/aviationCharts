@@ -13,7 +13,8 @@ sudo \
         cpanminus \
         python-imaging \
         perltidy \
-        carton
+        carton \
+        gdal-bin
 
 carton install
 
