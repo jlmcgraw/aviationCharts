@@ -37,7 +37,8 @@ exit main(@ARGV);
 
 sub main {
     our $debug = 0;
-
+    my $chartType = 'sectional';
+    
     #The inset's name
     #Their source raster, upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
     #The Ground Control Points for each inset relative to clipped file: Pixel X, Pixel Y, Longitude, Latitude
@@ -148,6 +149,46 @@ sub main {
         ],
     );
 
+    #Number of arguments supplied on command line
+    my $num_args = $#ARGV + 1;
+
+    if ( $num_args != 1 ) {
+        say "Usage: $0 <destination_root_dir>";
+        exit;
+    }
+
+    #Get the base directory from command line
+    my $destinationRoot = $ARGV[0];
+    
+    #For files that have a version in their name, this is where the links to the lastest version
+    #will be stored
+    my $linkedRastersDirectory = "$destinationRoot/expandedRasters/$chartType/";
+
+    #Where clipped rasters are stored
+    my $clippedRastersDirectory = "$destinationRoot/clippedRasters/insets/";
+
+    #Where warped rasters are stored
+    my $warpedRastersDirectory = "$destinationRoot/warpedRasters/insets/";
+
+    #check that the directories exist
+    unless ( -d $linkedRastersDirectory ) {
+        die
+          "Directory for source rasters doesn't exist: $linkedRastersDirectory";
+    }
+
+    unless ( -d $clippedRastersDirectory ) {
+        die
+          "Directory for clipped rasters doesn't exist: $clippedRastersDirectory";
+    }
+    unless ( -d $warpedRastersDirectory ) {
+        die
+          "Directory for warped_raster_directory rasters doesn't exist: $warpedRastersDirectory";
+    }
+
+    say "linkedRastersDirectory: $linkedRastersDirectory";
+    say "clippedRastersDirectory: $clippedRastersDirectory ";
+    say "warpedRastersDirectory: $warpedRastersDirectory";
+    
     foreach my $key ( keys %HashOfInsets ) {
 
         #$key is the inset's name
@@ -168,10 +209,10 @@ sub main {
 
         #cut out the inset from source raster and add GCPs
         cutOutInsetFromSourceRaster( $sourceChart, $ulX, $ulY, $lrX, $lrY,
-            $gcpString, $clippedRaster );
+            $gcpString, $clippedRaster, $linkedRastersDirectory, $clippedRastersDirectory );
 
         #warp and georeference the clipped file
-        warpRaster( $clippedRaster, $finalRaster );
+        warpRaster( $clippedRaster, $finalRaster, $clippedRastersDirectory, $warpedRastersDirectory );
     }
     return 0;
 }
@@ -222,7 +263,7 @@ sub coordinateToDecimal {
 }
 
 sub cutOutInsetFromSourceRaster {
-    my ( $sourceChart, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster )
+    my ( $sourceChart, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster, $linkedRastersDirectory, $clippedRastersDirectory )
       = validate_pos(
         @_,
         { type => SCALAR },
@@ -232,12 +273,14 @@ sub cutOutInsetFromSourceRaster {
         { type => SCALAR },
         { type => SCALAR },
         { type => SCALAR },
+        { type => SCALAR },
+        { type => SCALAR },
       );
 
-    my $sourceRaster = './expandedRasters/sectional/' . $sourceChart . ".vrt";
+    my $sourceRaster = $linkedRastersDirectory . $sourceChart . ".vrt";
 
     #Add the destination path to the raster name
-    $destinationRaster = './clippedRasters/insets/' . $destinationRaster;
+    $destinationRaster = $clippedRastersDirectory . $destinationRaster;
 
     say "Clip: $sourceRaster -> $destinationRaster, $ulX, $ulY, $lrX, $lrY";
 
@@ -252,7 +295,8 @@ sub cutOutInsetFromSourceRaster {
       -of VRT \\
       -srcwin $srcWin \\
       -a_srs WGS84 \\
-      $gcpString \\\
+      -r lanczos  \\
+      $gcpString \\
       '$sourceRaster' \\
       '$destinationRaster'";
 
@@ -269,7 +313,7 @@ sub cutOutInsetFromSourceRaster {
     if ( $retval != 0 ) {
         carp
           "Error executing gdal_translate.  Is it installed? Return code was $retval";
-        croak "return code: $retval";
+        die "return code: $retval";
     }
     say $gdal_translateoutput if $main::debug;
 
@@ -278,21 +322,32 @@ sub cutOutInsetFromSourceRaster {
 }
 
 sub warpRaster {
-    my ( $sourceRaster, $destinationRaster ) =
-      validate_pos( @_, { type => SCALAR }, { type => SCALAR }, );
+    my ( $sourceRaster, $destinationRaster, $clippedRastersDirectory, $warpedRastersDirectory  ) =
+      validate_pos( @_, 
+        { type => SCALAR }, 
+        { type => SCALAR },
+        { type => SCALAR }, 
+        { type => SCALAR }, 
+        );
 
-    $sourceRaster = './clippedRasters/insets/' . $sourceRaster;
+    $sourceRaster = $clippedRastersDirectory . $sourceRaster;
 
     #Add the destination path to the raster name
-    $destinationRaster = './warpedRasters/insets/' . $destinationRaster;
+    $destinationRaster = $warpedRastersDirectory . $destinationRaster;
 
     say "warp: $sourceRaster -> $destinationRaster";
 
     #Assemble the command
     my $gdalWarpCommand = "gdalwarp \\
-         -t_srs WGS84 \\
-         -tps \\
-         -dstalpha \\
+        -t_srs WGS84 \\
+        -tps \\
+        -dstalpha \\
+        -r lanczos  \\
+        -multi \\
+        -wo NUM_THREADS=ALL_CPUS  \\
+        -wm 1024 \\
+        --config GDAL_CACHEMAX 1024 \\
+        -co TILED=YES \\
          $sourceRaster \\
          $destinationRaster";
 
@@ -308,7 +363,7 @@ sub warpRaster {
 
     if ( $retval != 0 ) {
         carp "Error executing gdalwarp.  Return code was $retval";
-        return $retval;
+        die "return code: $retval";
     }
     say $gdalWarpOutput if $main::debug;
 

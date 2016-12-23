@@ -49,17 +49,18 @@ sub main {
     #Number of arguments supplied on command line
     my $num_args = $#ARGV + 1;
 
-    if ( $num_args != 1 ) {
-        say "Usage: $0 destination_root_dir";
+    if ( $num_args != 2 ) {
+        say "Usage: $0 <destination_root_dir> <enroute_directory>";
         exit;
     }
 
     #Get the base directory from command line
     my $destinationRoot = $ARGV[0];
+    my $enroute_directory = $ARGV[1];
 
     #For files that have a version in their name, this is where the links to the lastest version
     #will be stored
-    my $linkedRastersDirectory = "$destinationRoot/sourceRasters/$chartType/";
+    my $linkedRastersDirectory = "$enroute_directory/";
 
     #Where clipped rasters are stored
     my $clippedRastersDirectory = "$destinationRoot/clippedRasters/$chartType/";
@@ -82,8 +83,9 @@ sub main {
           "Directory for warped_raster_directory rasters doesn't exist: $warpedRastersDirectory";
     }
 
-    say
-      "$linkedRastersDirectory $clippedRastersDirectory $warpedRastersDirectory";
+    say "linkedRastersDirectory: $linkedRastersDirectory";
+    say "clippedRastersDirectory: $clippedRastersDirectory ";
+    say "warpedRastersDirectory: $warpedRastersDirectory";
 
     #The inset's name
     #Their source raster, upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
@@ -428,7 +430,7 @@ sub cutOutInsetFromSourceRaster {
         { type => SCALAR },
       );
 
-    say "Clip: $sourceRaster -> $destinationRaster, $ulX, $ulY, $lrX, $lrY";
+    say "\tClip: $sourceRaster -> $destinationRaster, $ulX, $ulY, $lrX, $lrY";
 
     #Create the source window string for gdal
     my $srcWin =
@@ -475,7 +477,7 @@ sub warpRaster {
     my ( $sourceRaster, $destinationRaster ) =
       validate_pos( @_, { type => SCALAR }, { type => SCALAR }, );
 
-    say "warp: $sourceRaster -> $destinationRaster";
+    say "\twarp: $sourceRaster -> $destinationRaster";
 
     #Assemble the command
     my $gdalWarpCommand =
@@ -505,7 +507,7 @@ sub warpRaster {
     }
     say $gdalWarpOutput if $main::debug;
 
-    say "Overviews: $sourceRaster -> $destinationRaster";
+    say "\tOverviews: $sourceRaster -> $destinationRaster";
 
     my $gdaladdoCommand =
         './memoize.py '

@@ -23,10 +23,7 @@ git clone https://github.com/jlmcgraw/parallelGdal2tiles.git
 git clone https://github.com/mapbox/mbutil.git
 git clone https://github.com/jlmcgraw/tilers_tools.git
 
-#Create directories
-./createTree.sh
-mkdir individual_tiled_charts
-mkdir merged_tiled_charts
+
 
 #Setup hooks to run perltidy on git commit
 cat > .git/hooks/pre-commit << 'EOF'
