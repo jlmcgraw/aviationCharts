@@ -55,7 +55,7 @@ sub main {
     }
 
     #Get the base directory from command line
-    my $destinationRoot = $ARGV[0];
+    my $destinationRoot   = $ARGV[0];
     my $enroute_directory = $ARGV[1];
 
     #For files that have a version in their name, this is where the links to the lastest version

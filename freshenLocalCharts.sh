@@ -1,59 +1,72 @@
 #!/bin/bash
-set -eu                # Always put this in Bourne shell scripts
-IFS="`printf '\n\t'`"  # Always put this in Bourne shell scripts
+set -eu                 # Always put this in Bourne shell scripts
+IFS=$(printf '\n\t')    # Always put this in Bourne shell scripts
 
-#Download latest charts from faa/aeronav
+# Download latest charts from faa/aeronav
 
-#Get command line parameters
-AERONAV_ROOT_DIR="$1"
+# The script begins here
+# Set some basic variables
+declare -r PROGNAME=$(basename $0)
+declare -r PROGDIR=$(readlink -m $(dirname $0))
+declare -r ARGS="$@"
 
-if [ "$#" -ne 1 ] ; then
-  echo "Usage: $0 <where_to_save_charts>" >&2
-  exit 1
+# Set fonts for Help.
+declare -r NORM=$(tput sgr0)
+declare -r BOLD=$(tput bold)
+declare -r REV=$(tput smso)
+
+#Get the number of remaining command line arguments
+NUMARGS=$#
+
+#Validate number of command line parameters
+if [ $NUMARGS -ne 1 ] ; then
+    echo "Usage: $PROGNAME <where_to_save_charts>" >&2
+    exit 1
 fi
+
+# Get command line parameter
+AERONAV_ROOT_DIR=$(readlink -f "$1")
 
 if [ ! -d $AERONAV_ROOT_DIR ]; then
     echo "$AERONAV_ROOT_DIR doesn't exist"
     exit 1
 fi
 
-#Exit if we ran this command within the last 24 hours (adjust as you see fit)
-if [ -e ./lastChartRefresh ] && [ $(date +%s -r ./lastChartRefresh) -gt $(date +%s --date="24 hours ago") ]; then
+# Exit if we ran this command within the last 24 hours (adjust as you see fit)
+if [ -e "${PROGDIR}/lastChartRefresh" ] && [ $(date +%s -r "${PROGDIR}/lastChartRefresh") -gt $(date +%s --date="24 hours ago") ]; then
  echo "Charts updated within last 24 hours, exiting"
  exit 0
 fi 
 
-#Update the time of this file so we can check when we ran this last
-touch ./lastChartRefresh
-
-cd $AERONAV_ROOT_DIR
+# Update the time of this file so we can check when we ran this last
+touch "${PROGDIR}/lastChartRefresh"
 
 # Get all of the latest charts
 # Skip the compilations
 set +e
 wget \
-    --recursive \
-    -l1 \
-    --span-hosts \
-    --domains=aeronav.faa.gov,www.faa.gov \
-    --timestamping \
-    --no-parent \
-    -A.zip \
-    -R"DD?C*" \
-    -erobots=off \
+    --directory-prefix=$AERONAV_ROOT_DIR    \
+    --recursive     \
+    -l1             \
+    --span-hosts    \
+    --domains=aeronav.faa.gov,www.faa.gov   \
+    --timestamping  \
+    --no-parent     \
+    -A.zip          \
+    -R"DD?C*"       \
+    -erobots=off    \
     http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
 
 wget \
-    --recursive \
-    -l1 \
-    --span-hosts \
-    --domains=aeronav.faa.gov,www.faa.gov \
-    --timestamping \
-    --no-parent \
-    -A.zip \
-    -R"DD?C*" \
-    -erobots=off \
+    --directory-prefix=$AERONAV_ROOT_DIR    \
+    --recursive     \
+    -l1             \
+    --span-hosts    \
+    --domains=aeronav.faa.gov,www.faa.gov   \
+    --timestamping  \
+    --no-parent     \
+    -A.zip          \
+    -R"DD?C*"       \
+    -erobots=off    \
     http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e
-
-

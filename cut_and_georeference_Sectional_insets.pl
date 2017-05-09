@@ -38,7 +38,7 @@ exit main(@ARGV);
 sub main {
     our $debug = 0;
     my $chartType = 'sectional';
-    
+
     #The inset's name
     #Their source raster, upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
     #The Ground Control Points for each inset relative to clipped file: Pixel X, Pixel Y, Longitude, Latitude
@@ -159,7 +159,7 @@ sub main {
 
     #Get the base directory from command line
     my $destinationRoot = $ARGV[0];
-    
+
     #For files that have a version in their name, this is where the links to the lastest version
     #will be stored
     my $linkedRastersDirectory = "$destinationRoot/expandedRasters/$chartType/";
@@ -188,7 +188,7 @@ sub main {
     say "linkedRastersDirectory: $linkedRastersDirectory";
     say "clippedRastersDirectory: $clippedRastersDirectory ";
     say "warpedRastersDirectory: $warpedRastersDirectory";
-    
+
     foreach my $key ( keys %HashOfInsets ) {
 
         #$key is the inset's name
@@ -209,10 +209,12 @@ sub main {
 
         #cut out the inset from source raster and add GCPs
         cutOutInsetFromSourceRaster( $sourceChart, $ulX, $ulY, $lrX, $lrY,
-            $gcpString, $clippedRaster, $linkedRastersDirectory, $clippedRastersDirectory );
+            $gcpString, $clippedRaster, $linkedRastersDirectory,
+            $clippedRastersDirectory );
 
         #warp and georeference the clipped file
-        warpRaster( $clippedRaster, $finalRaster, $clippedRastersDirectory, $warpedRastersDirectory );
+        warpRaster( $clippedRaster, $finalRaster, $clippedRastersDirectory,
+            $warpedRastersDirectory );
     }
     return 0;
 }
@@ -263,7 +265,8 @@ sub coordinateToDecimal {
 }
 
 sub cutOutInsetFromSourceRaster {
-    my ( $sourceChart, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster, $linkedRastersDirectory, $clippedRastersDirectory )
+    my ( $sourceChart, $ulX, $ulY, $lrX, $lrY, $gcpString, $destinationRaster,
+        $linkedRastersDirectory, $clippedRastersDirectory )
       = validate_pos(
         @_,
         { type => SCALAR },
@@ -322,13 +325,17 @@ sub cutOutInsetFromSourceRaster {
 }
 
 sub warpRaster {
-    my ( $sourceRaster, $destinationRaster, $clippedRastersDirectory, $warpedRastersDirectory  ) =
-      validate_pos( @_, 
-        { type => SCALAR }, 
+    my (
+        $sourceRaster,            $destinationRaster,
+        $clippedRastersDirectory, $warpedRastersDirectory
+      )
+      = validate_pos(
+        @_,
         { type => SCALAR },
-        { type => SCALAR }, 
-        { type => SCALAR }, 
-        );
+        { type => SCALAR },
+        { type => SCALAR },
+        { type => SCALAR },
+      );
 
     $sourceRaster = $clippedRastersDirectory . $sourceRaster;
 
