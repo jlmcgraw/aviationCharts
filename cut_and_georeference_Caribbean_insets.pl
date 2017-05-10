@@ -54,21 +54,21 @@ sub main {
         exit;
     }
 
-    #Get the base directory from command line
+    # Get the base directory from command line
     my $destinationRoot   = $ARGV[0];
-    my $enroute_directory = $ARGV[1];
+    my $linkedRastersDirectory = $ARGV[1];
 
-    #For files that have a version in their name, this is where the links to the lastest version
-    #will be stored
-    my $linkedRastersDirectory = "$enroute_directory/";
+#     # For files that have a version in their name, this is where the links to the
+#     # lastest version will be stored
+#     my $linkedRastersDirectory = "$enroute_directory/";
 
-    #Where clipped rasters are stored
-    my $clippedRastersDirectory = "$destinationRoot/clippedRasters/$chartType/";
+    # Where clipped rasters are stored
+    my $clippedRastersDirectory = "$destinationRoot/4_clippedRasters/$chartType/";
 
-    #Where warped rasters are stored
-    my $warpedRastersDirectory = "$destinationRoot/warpedRasters/$chartType/";
+    # Where warped rasters are stored
+    my $warpedRastersDirectory = "$destinationRoot/5_warpedRasters/$chartType/";
 
-    #check that the directories exist
+    # check that the directories exist
     unless ( -d $linkedRastersDirectory ) {
         die
           "Directory for source rasters doesn't exist: $linkedRastersDirectory";
@@ -87,10 +87,11 @@ sub main {
     say "clippedRastersDirectory: $clippedRastersDirectory ";
     say "warpedRastersDirectory: $warpedRastersDirectory";
 
-    #The inset's name
-    #Their source raster, upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
-    #The Ground Control Points for each inset
-    #  Relative to the original, unclipped file: Pixel X, Pixel Y, Longitude, Latitude
+    # The inset's name
+    # Their source raster, 
+    # upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
+    # The Ground Control Points for each inset
+    #   Relative to the original, unclipped file: Pixel X, Pixel Y, Longitude, Latitude
     my %charts = (
 
         #Very slightly off in upper right

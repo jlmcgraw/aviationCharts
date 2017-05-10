@@ -41,6 +41,17 @@ fi
 # Update the time of this file so we can check when we ran this last
 touch "${PROGDIR}/lastChartRefresh"
 
+# Test local .zips in the $CHARTS_BASE_DIRECTORY tree and delete any bad ones so
+# we can get fresh ones from FAA
+find    \
+    "$AERONAV_ROOT_DIR"         \
+    -iname '*.zip'              \
+    -type f                     \
+    -readable !                 \
+    -exec unzip -q -t {} \;     \
+    -exec rm -i {} \;
+    
+    
 # Get all of the latest charts
 # Skip the compilations
 set +e

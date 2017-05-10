@@ -162,13 +162,13 @@ sub main {
 
     #For files that have a version in their name, this is where the links to the lastest version
     #will be stored
-    my $linkedRastersDirectory = "$destinationRoot/expandedRasters/$chartType/";
+    my $linkedRastersDirectory = "$destinationRoot/3_expandedRasters/$chartType/";
 
     #Where clipped rasters are stored
-    my $clippedRastersDirectory = "$destinationRoot/clippedRasters/insets/";
+    my $clippedRastersDirectory = "$destinationRoot/4_clippedRasters/insets/";
 
     #Where warped rasters are stored
-    my $warpedRastersDirectory = "$destinationRoot/warpedRasters/insets/";
+    my $warpedRastersDirectory = "$destinationRoot/5_warpedRasters/insets/";
 
     #check that the directories exist
     unless ( -d $linkedRastersDirectory ) {

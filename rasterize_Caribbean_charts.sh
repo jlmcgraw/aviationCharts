@@ -17,8 +17,15 @@ originalRastersDirectory="$1"
 destinationRoot="$2"
 chartType="$3"
 
+output_raster_path="${destinationRoot}/2_normalized/"
+
 if [ ! -d "$originalRastersDirectory" ]; then
     echo "$originalRastersDirectory doesn't exist"
+    exit 1
+fi
+
+if [ ! -d "$output_raster_path" ]; then
+    echo "$output_raster_path doesn't exist"
     exit 1
 fi
 
@@ -31,15 +38,15 @@ echo "Change directory to $originalRastersDirectory"
 
 cd "$originalRastersDirectory"
 
-#Ignore unzipping errors
+# Ignore unzipping errors
 set +e
-    #Unzip the Caribbean PDFs
+    # Unzip the Caribbean PDFs
     echo "Unzipping $chartType files for Caribbean"
     unzip -qq -u -j "delcb*.zip" "*.pdf"
-    #Restore quit on error
+    # Restore quit on error
 set -e
 
-#Convert them to .tiff
+# Convert them to .tiff
 for f in ENR_C[AL]0[0-9].pdf
 do
     if [ -f "$f.tif" ]
@@ -50,12 +57,13 @@ do
     echo "--------------------------------------------"
     echo "Converting $f to raster"
     echo "--------------------------------------------"
-    #Needs to point to where memoize is
+    
+    # Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
         gs \
             -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
             -sDEVICE=tiff24nc                               \
-            -sOutputFile="$f-untiled.tif"                   \
+            -sOutputFile="$output_raster_path/$f-untiled.tif"                   \
             -r300                                           \
             -dTextAlphaBits=4                               \
             -dGraphicsAlphaBits=4                           \
@@ -64,19 +72,21 @@ do
     echo "--------------------------------------------"
     echo "Tile $f"
     echo "--------------------------------------------"
-    #Needs to point to where memoize is
+    
+    # Needs to point to where memoize is
     $installedDirectory/memoize.py -t   \
         gdal_translate                  \
                     -strict             \
                     -co TILED=YES       \
                     -co COMPRESS=LZW    \
-                    "$f-untiled.tif"    \
-                    "$f.tif"
+                    "$output_raster_path/$f-untiled.tif"    \
+                    "$output_raster_path/$f.tif"
                 
     echo "--------------------------------------------"
     echo "Overviews $f"
     echo "--------------------------------------------"
-    #Needs to point to where memoize is
+    
+    # Needs to point to where memoize is
     $installedDirectory/memoize.py -t \
         gdaladdo \
                 -ro                                 \
@@ -84,10 +94,10 @@ do
                 --config INTERLEAVE_OVERVIEW PIXEL  \
                 --config COMPRESS_OVERVIEW JPEG     \
                 --config BIGTIFF_OVERVIEW IF_NEEDED \
-                "$f.tif"                            \
+                "$output_raster_path/$f.tif"                            \
                 2 4 8 16 32 64
     
-    rm "$f-untiled.tif"
+    rm "$output_raster_path/$f-untiled.tif"
     
 done
 
