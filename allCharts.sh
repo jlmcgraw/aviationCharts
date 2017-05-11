@@ -275,8 +275,8 @@ expand_to_rgb(){
         if gdalinfo "${sourceChartName}" -noct | grep -q 'Color Table'
         then
             echo "***  ${sourceChartName} has color table, need to expand to RGB: "
-            ./memoize.py -t \
-                gdal_translate \
+            "${PROGDIR}/memoize.py" -t  \
+                gdal_translate          \
                     -expand rgb         \
                     -strict             \
                     -of VRT             \
@@ -286,8 +286,8 @@ expand_to_rgb(){
                     "${vrt_name}"
         else
             echo "***  ${sourceChartName} does not have color table, do not need to expand to RGB"
-            ./memoize.py -t \
-                gdal_translate      \
+            "${PROGDIR}/memoize.py" -t  \
+                gdal_translate          \
                     -strict             \
                     -of VRT             \
                     -co TILED=YES       \
@@ -332,14 +332,14 @@ warp_and_clip(){
     fi
     
     
-    local -r EXPANDED_FILE_SOURCE="$1"
+    local -r EXPANDED_FILE_DIRECTORY="$1"
     local -r CLIPPED_FILE_DIRECTORY="$2"
     local -r WARPED_RASTERS_DIRECTORY="$3"
     local -r CLIPPING_SHAPES_DIRECTORY="$4"
     
     # All of the .vrt files in the source directory
-#     local -r EXPANDED_CHART_ARRAY=$(ls -1 "${EXPANDED_FILE_SOURCE}"/*.vrt)
-    local -r EXPANDED_CHART_ARRAY=("${EXPANDED_FILE_SOURCE}/*.vrt")
+#     local -r EXPANDED_CHART_ARRAY=$(ls -1 "${EXPANDED_FILE_DIRECTORY}"/*.vrt)
+    local -r EXPANDED_CHART_ARRAY=("${EXPANDED_FILE_DIRECTORY}/*.vrt")
     
     #1) Clip the source file first then 
     #2) warp to EPSG:3857 so that final output pixels are square
@@ -349,7 +349,7 @@ warp_and_clip(){
         # Get the file name without extension
         local fbname=$(basename "$sourceChartName" | cut -d. -f1)
             
-        #Clip the file it to its clipping shape
+        # Clip the file it to its clipping shape
         echo "*** Clip to vrt --- gdalwarp $sourceChartName"
         
         # Make sure we have a clipping shape for this file
@@ -357,7 +357,8 @@ warp_and_clip(){
             echo "No clipping shape for ${fbname}.shp"
             exit 1
         fi
-        
+        echo "expanded source: $EXPANDED_FILE_DIRECTORY/${fbname}.vrt"
+        echo "clipped destination: $CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
         # BUG TODO crop_to_cutline results in a resampled image with non-square pixels
         # How to best handle this?  One fix is an additional warp to EPSG:3857
         # Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
@@ -378,12 +379,14 @@ warp_and_clip(){
                         -wo NUM_THREADS=ALL_CPUS  \
                         -wm 1024 \
                         --config GDAL_CACHEMAX 1024 \
-                        "$EXPANDED_FILE_SOURCE/${fbname}.vrt" \
+                        "$EXPANDED_FILE_DIRECTORY/${fbname}.vrt" \
                         "$CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
 
         #Warp the expanded file
         echo "*** Warp to vrt --- gdalwarp $sourceChartName"
-
+        echo "clipped source: $CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
+        echo "warped destination: $WARPED_RASTERS_DIRECTORY/${fbname}.vrt"
+        
         time \
             nice -10 \
                 "${PROGDIR}/memoize.py" -t \
@@ -456,9 +459,9 @@ process_charts(){
     echo "process_charts: $INPUT_CHART_TYPE : $ORIGINAL_DIRECTORY"
     
     local -r NORMALIZED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/2_normalized/"
-    local -r EXPANDED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/3_expandedRasters/$INPUT_CHART_TYPE/"
-    local -r CLIPPED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/4_clippedRasters/$INPUT_CHART_TYPE/"
-    local -r WARPED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/5_warpedRasters/$INPUT_CHART_TYPE/"
+    local -r   EXPANDED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/3_expandedRasters/$INPUT_CHART_TYPE/"
+    local -r    CLIPPED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/4_clippedRasters/$INPUT_CHART_TYPE/"
+    local -r     WARPED_RASTERS_DIRECTORY="$CHARTS_BASE_DIRECTORY/5_warpedRasters/$INPUT_CHART_TYPE/"
     
     local -r CLIPPING_SHAPES_DIRECTORY="${PROGDIR}/clippingShapes/$INPUT_CHART_TYPE/"
         

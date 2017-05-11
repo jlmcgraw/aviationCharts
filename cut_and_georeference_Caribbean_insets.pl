@@ -55,15 +55,16 @@ sub main {
     }
 
     # Get the base directory from command line
-    my $destinationRoot   = $ARGV[0];
+    my $destinationRoot        = $ARGV[0];
     my $linkedRastersDirectory = $ARGV[1];
 
-#     # For files that have a version in their name, this is where the links to the
-#     # lastest version will be stored
-#     my $linkedRastersDirectory = "$enroute_directory/";
+    #     # For files that have a version in their name, this is where the links to the
+    #     # lastest version will be stored
+    #     my $linkedRastersDirectory = "$enroute_directory/";
 
     # Where clipped rasters are stored
-    my $clippedRastersDirectory = "$destinationRoot/4_clippedRasters/$chartType/";
+    my $clippedRastersDirectory =
+      "$destinationRoot/4_clippedRasters/$chartType/";
 
     # Where warped rasters are stored
     my $warpedRastersDirectory = "$destinationRoot/5_warpedRasters/$chartType/";
@@ -88,7 +89,7 @@ sub main {
     say "warpedRastersDirectory: $warpedRastersDirectory";
 
     # The inset's name
-    # Their source raster, 
+    # Their source raster,
     # upper left X, upper left Y, lower right X, lower right Y pixel coordinates of the inset
     # The Ground Control Points for each inset
     #   Relative to the original, unclipped file: Pixel X, Pixel Y, Longitude, Latitude
