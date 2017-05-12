@@ -59,7 +59,7 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    $installedDirectory/memoize.py -t \
+    "${installedDirectory}/memoize.py" -t \
         gs \
             -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
             -sDEVICE=tiff24nc                               \
@@ -74,7 +74,7 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    $installedDirectory/memoize.py -t   \
+    "$installedDirectory/memoize.py" -t   \
         gdal_translate                  \
                     -strict             \
                     -co TILED=YES       \
