@@ -56,7 +56,8 @@ sub main {
 
     # Make the base directory if it doesn't already exist
     unless ( -e "$overlay_tiles_directory" ) {
-        say STDERR "overlay tile source: $overlay_tiles_directory does not exist";
+        say STDERR
+          "overlay tile source: $overlay_tiles_directory does not exist";
         exit(1);
     }
 
