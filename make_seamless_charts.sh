@@ -60,7 +60,8 @@ main() {
             "${CHARTS_BASE_DIRECTORY}/2_normalized/"
         
         if [ -n "$should_create_mbtiles" ]; then
-             ./tileCaribbean.sh      -m -o "$CHARTS_BASE_DIRECTORY"
+#              ./tileCaribbean.sh      -m -o "$CHARTS_BASE_DIRECTORY"
+             ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" caribbean
         fi
     fi
 
@@ -73,8 +74,9 @@ main() {
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
         
         if [ -n "$should_create_mbtiles" ]; then
-            ./tileEnrouteHigh.sh    -m -o "$CHARTS_BASE_DIRECTORY"
-            ./tileEnrouteLow.sh     -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileEnrouteHigh.sh    -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileEnrouteLow.sh     -m -o "$CHARTS_BASE_DIRECTORY"
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" enroute
         fi
 
     fi
@@ -87,7 +89,8 @@ main() {
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
         
         if [ -n "$should_create_mbtiles" ]; then
-            ./tileGrandCanyon.sh    -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileGrandCanyon.sh    -m -o "$CHARTS_BASE_DIRECTORY"
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" grand_canyon
         fi
 
     fi
@@ -100,7 +103,8 @@ main() {
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
         
         if [ -n "$should_create_mbtiles" ]; then
-            ./tileHeli.sh           -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileHeli.sh           -m -o "$CHARTS_BASE_DIRECTORY"
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" heli
         fi
 
     fi
@@ -122,6 +126,7 @@ main() {
     fi
     
     if [ -n "$should_process_sectional" ]; then
+    
         local -r INPUT_CHART_TYPE="sectional"
         local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/sectional_files/"
 
@@ -135,8 +140,11 @@ main() {
         
         
         if [ -n "$should_create_mbtiles" ]; then
-            ./tileSectional.sh   -m -o "$CHARTS_BASE_DIRECTORY"
-            ./tileInsets.sh      -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileSectional.sh   -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileInsets.sh      -m -o "$CHARTS_BASE_DIRECTORY"
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" sectional
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" inset
+
         fi
 
     fi
@@ -150,7 +158,8 @@ main() {
 
         # Create mbtiles if requested
         if [ -n "$should_create_mbtiles" ]; then
-            ./tileTac.sh    -m -o "$CHARTS_BASE_DIRECTORY"
+#             ./tileTac.sh    -m -o "$CHARTS_BASE_DIRECTORY"
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" tac
         fi
 
     fi
@@ -184,13 +193,14 @@ USAGE() {
     }
 
 create_directories() {
-    #Create all the directories we need
-    local -r BASE_DIRECTORY=$1
+    # Create all the directories we need
+    local -r BASE_DIRECTORY="$1"
     
     local -r baseDirs=(3_expandedRasters 4_clippedRasters 5_warpedRasters 6_tiles 7_mbtiles)
+    
     local -r chartTypes=(caribbean enroute gom grand_canyon heli planning sectional tac insets )
 
-    #Create the tree of output directories  
+    # Create the tree of output directories  
     for DIR in "${baseDirs[@]}";  do
         for CHART_TYPE in "${chartTypes[@]}"; do
             # echo "${BASE_DIRECTORY}/${DIR}/${CHART_TYPE}"
@@ -203,7 +213,6 @@ create_directories() {
     # Other directories
     mkdir \
         --parents \
-        "${BASE_DIRECTORY}/individual_tiled_charts"     \
         "${BASE_DIRECTORY}/merged_tiled_charts"
     }
     
@@ -487,6 +496,55 @@ process_charts(){
         "${WARPED_RASTERS_DIRECTORY}"   \
         "${CLIPPING_SHAPES_DIRECTORY}"
     }
+
+    
+# tile_chart(){
+#     local $chart="$1"
+#     
+#     echo "Tiling $chart"
+# 
+#     # Where to put tiles we create
+#     local output_tiles_directory="$destDir/${chart}.tms"
+#     
+#     # The mbtiles file for this chart
+#     local mbtiles_file="$destinationRoot/7_mbtiles/${chart}.mbtiles"
+#     
+#     ./memoize.py -i $destDir    \
+#         ./tilers_tools/gdal_tiler.py    \
+#             --profile=tms               \
+#             --release                   \
+#             --paletted                  \
+#             --zoom="${zoom_levels}"     \
+#             --dest-dir="$destDir"       \
+#             $destinationRoot/5_warpedRasters/$chartType/$chart.tif
+#         
+#     # Did the user want to optimize the individual tiles?
+#     if [ -n "$optimize_tiles_flag" ]
+#         then
+#             echo "Optimizing tiles for $chart"
+#             # Optimize the tiled png files
+#             ./pngquant_all_files_in_directory.sh "$output_tiles_directory"
+#         fi
+# 
+#     # Did the user want to package the individual tiles into an mbtiles file
+#     if [ -n "$create_mbtiles_flag" ]
+#         then
+#             echo "Creating mbtiles for $chart"
+#             
+#             # Delete any existing mbtiles file
+#             rm -f "$mbtiles_file"
+#             
+#             # Package them into an .mbtiles file
+#             ./memoize.py -i $destDir    \
+#                 python ./mbutil/mb-util \
+#                     --scheme=tms        \
+#                     "$output_tiles_directory"   \
+#                     "$mbtiles_file"
+#         fi
+#         
+#     #Copy the simple viewer to our tiled directory
+#     cp leaflet.html "$output_tiles_directory"
+# }
 
 # The script begins here
 # Set some basic variables

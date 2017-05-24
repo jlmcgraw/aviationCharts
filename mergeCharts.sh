@@ -52,7 +52,7 @@ sourceRoot="$1"
 destinationRoot="$2"
 
 #Where to put tiled charts (each in its own directory)
-srcDir="$sourceRoot/individual_tiled_charts"
+srcDir="$sourceRoot/6_tiles"
 destDir="$destinationRoot/merged_tiled_charts"
 
 #Check that the source base directory exists
