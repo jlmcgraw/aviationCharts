@@ -23,7 +23,6 @@ should_create_ifr_high=''
 should_create_ifr_low=''
 should_create_heli=''
 should_create_mbtiles=''
-list=''
 
 while getopts 'vhlcm' flag; do
   case "${flag}" in
@@ -43,7 +42,7 @@ shift $((OPTIND-1))
 NUMARGS=$#
 
 #Validate number of command line parameters
-if [ $NUMARGS -ne 2 ] ; then
+if [ "$NUMARGS" -ne 2 ] ; then
     USAGE
 fi
 
@@ -52,17 +51,17 @@ sourceRoot="$1"
 destinationRoot="$2"
 
 #Where to put tiled charts (each in its own directory)
-srcDir="$sourceRoot/6_tiles"
-destDir="$destinationRoot/merged_tiled_charts"
+srcDir="${sourceRoot}/6_tiles"
+destDir="${destinationRoot}/merged_tiled_charts"
 
 #Check that the source base directory exists
-if [ ! -d $srcDir ]; then
+if [ ! -d "$srcDir" ]; then
     echo "$srcDir doesn't exist"
     exit 1
 fi
 
 #Check that the destination base directory exists
-if [ ! -d $destDir ]; then
+if [ ! -d "$destDir" ]; then
     echo "$destDir doesn't exist"
     exit 1
 fi
@@ -104,7 +103,7 @@ vfr_chart_list=(
     Chicago_SEC
     Cincinnati_SEC
     Cold_Bay_SEC
-    Dallas-Ft_Worth_SEC
+    Dallas_Ft_Worth_SEC
     Dawson_SEC
     Denver_SEC
     Detroit_SEC
@@ -158,7 +157,7 @@ vfr_chart_list=(
     Cincinnati_TAC
     Cleveland_TAC
     Colorado_Springs_TAC
-    Dallas-Ft_Worth_TAC
+    Dallas_Ft_Worth_TAC
     Denver_TAC
     Detroit_TAC
     Dutch_Harbor_Inset
@@ -176,7 +175,7 @@ vfr_chart_list=(
     Los_Angeles_TAC
     Memphis_TAC
     Miami_TAC
-    Minneapolis-St_Paul_TAC
+    Minneapolis_St_Paul_TAC
     New_Orleans_TAC
     New_York_TAC
     Norfolk_Inset
@@ -185,7 +184,7 @@ vfr_chart_list=(
     Phoenix_TAC
     Pittsburgh_TAC
     Pribilof_Islands_Inset
-    Puerto_Rico-VI_TAC
+    Puerto_Rico_VI_TAC
     Salt_Lake_City_TAC
     San_Diego_TAC
     San_Francisco_TAC
@@ -301,7 +300,7 @@ heli_chart_list=(
     Baltimore_HEL
     Boston_HEL
     Chicago_HEL
-    Dallas-Ft_Worth_HEL
+    Dallas_Ft_Worth_HEL
     Detroit_HEL
     Houston_North_HEL
     Houston_South_HEL
@@ -309,8 +308,8 @@ heli_chart_list=(
     Los_Angeles_West_HEL
     New_York_HEL
     Washington_HEL
-    Chicago_O\'Hare_Inset_HEL
-    Dallas-Love_Inset_HEL
+    Chicago_O_Hare_Inset_HEL
+    Dallas_Love_Inset_HEL
     Washington_Inset_HEL
     Boston_Downtown_HEL
     Downtown_Manhattan_HEL
@@ -327,27 +326,27 @@ if [ -n "$should_create_vfr" ]
             do
             echo "VFR: $chart                                                   "
 
-             #Merge the individual charts into an overall chart
+             # Merge the individual charts into an overall chart
             ./merge_tile_sets.pl \
-                $srcDir/$chart.tms/ \
-                $destDir/VFR
+                "${srcDir}/${chart}.tms/" \
+                "${destDir}/VFR"
             done
 
-        #Optimize the tiled png files
-        ./pngquant_all_files_in_directory.sh $destDir/VFR
+        # Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh "${destDir}/VFR"
         
         if [ -n "$should_create_mbtiles" ]
             then
             
-            #Remove the existing mbtiles
+            # Remove the existing mbtiles
             rm --force "$destDir/VFR.mbtiles"
             
-            #Package tiles into an .mbtiles file
-            ./memoize.py -i $destDir \
+            # Package tiles into an .mbtiles file
+            ./memoize.py -i "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
-                    "$destDir/VFR" \
-                    "$destDir/VFR.mbtiles"
+                    "${destDir}/VFR" \
+                    "${destDir}/VFR.mbtiles"
             fi
     fi
 
@@ -362,27 +361,27 @@ if [ -n "$should_create_ifr_low" ]
             do
             echo "IFR LOW: $chart                                              "
 
-             #Merge the individual charts into an overall chart
-            ./merge_tile_sets.pl \
-                $srcDir/$chart.tms/ \
-                $destDir/IFR-LOW
+             # Merge the individual charts into an overall chart
+            ./merge_tile_sets.pl        \
+                "${srcDir}/${chart}.tms/"   \
+                "${destDir}/IFR-LOW"
             done
 
-        #Optimize the tiled png files
-        ./pngquant_all_files_in_directory.sh $destDir/IFR-LOW
+        # Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh "${destDir}/IFR-LOW"
         
         if [ -n "$should_create_mbtiles" ]
             then
             
-            #Remove the existing mbtiles
-            rm --force "$destDir/IFR-LOW.mbtiles"
+            # Remove the existing mbtiles
+            rm --force "${destDir}/IFR-LOW.mbtiles"
             
-            #Package tiles into an .mbtiles file
-            ./memoize.py -i $destDir \
+            # Package tiles into an .mbtiles file
+            ./memoize.py -i "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
-                    "$destDir/IFR-LOW" \
-                    "$destDir/IFR-LOW.mbtiles"
+                    "${destDir}/IFR-LOW" \
+                    "${destDir}/IFR-LOW.mbtiles"
             fi
     fi
 
@@ -397,27 +396,27 @@ if [ -n "$should_create_ifr_high" ]
             do
             echo "IFR HIGH: $chart                                             "
 
-             #Merge the individual charts into an overall chart
+             # Merge the individual charts into an overall chart
             ./merge_tile_sets.pl \
-                $srcDir/$chart.tms/ \
-                $destDir/IFR-HIGH
+                "${srcDir}/${chart.tms}/"   \
+                "${destDir}/IFR-HIGH"
             done
 
-        #Optimize the tiled png files
-        ./pngquant_all_files_in_directory.sh $destDir/IFR-HIGH
+        # Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh "${destDir}/IFR-HIGH"
 
         if [ -n "$should_create_mbtiles" ]
             then
             
-            #Remove the existing mbtiles
-            rm --force "$destDir/IFR-HIGH.mbtiles"
+            # Remove the existing mbtiles
+            rm --force "${destDir}/IFR-HIGH.mbtiles"
             
-            #Package tiles into an .mbtiles file
-            ./memoize.py -i $destDir \
+            # Package tiles into an .mbtiles file
+            ./memoize.py -i "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
-                    "$destDir/IFR-HIGH" \
-                    "$destDir/IFR-HIGH.mbtiles"
+                    "${destDir}/IFR-HIGH" \
+                    "${destDir}/IFR-HIGH.mbtiles"
             fi
     fi
 
@@ -427,30 +426,31 @@ if [ -n "$should_create_heli" ]
     then
         echo "Cleaning $destDir/IFR-HELI"
         rm --force --recursive --dir "$destDir/HELI"
+        
         for chart in "${heli_chart_list[@]}"
             do
             echo "HELI: $chart                                                 "
 
             #Merge the individual charts into an overall chart
             ./merge_tile_sets.pl \
-                $srcDir/$chart.tms/ \
-                $destDir/HELI
+                "${srcDir}/${chart}.tms/"   \
+                "${destDir}/HELI"
             done
 
-        #Optimize the tiled png files
-        ./pngquant_all_files_in_directory.sh $destDir/HELI
+        # Optimize the tiled png files
+        ./pngquant_all_files_in_directory.sh "${destDir}/HELI"
 
         if [ -n "$should_create_mbtiles" ]
             then
-            #Remove the existing mbtiles
-            rm --force "$destDir/HELI.mbtiles"
+            # Remove the existing mbtiles
+            rm --force "${destDir}/HELI.mbtiles"
 
-            #Package tiles into an .mbtiles file
-            ./memoize.py -i $destDir \
+            # Package tiles into an .mbtiles file
+            ./memoize.py -i "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
-                    "$destDir/HELI" \
-                    "$destDir/HELI.mbtiles"
+                    "${destDir}/HELI" \
+                    "${destDir}/HELI.mbtiles"
             fi
     fi
 

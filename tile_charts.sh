@@ -97,8 +97,8 @@ main() {
         )
 
     local -r heli_chart_array_90000=(
-        Chicago_O\'Hare_Inset_HEL
-        Dallas-Love_Inset_HEL    
+        ChChicago_O_Hare_Inset_HEL
+        Dallas-Love_Inset_HEL
         )
 
     local -r heli_chart_array_62500=(
@@ -235,9 +235,9 @@ main() {
         # Compare the name of requested chart type to array name
         if [[ "$chart_array" == "$chart_type"*  ]]; then
             
-            echo "------------------"
-            echo "Chart array: $chart_array"
-            echo "Zoom levels: $zoom_levels"
+#             echo "------------------"
+#             echo "Chart array: $chart_array"
+#             echo "Zoom levels: $zoom_levels"
             
             # List of all elements
             charts="${chart_array}[@]"
@@ -252,7 +252,8 @@ main() {
 }
 
 tile_chart() {
-    echo "Tiling $chart"
+
+    echo "--------Tiling ${chart}------------"
     
     # Validate number of parameters
     if [ "$#" -ne 4 ] ; then
@@ -323,6 +324,8 @@ tile_chart() {
                     --scheme=tms        \
                     "$output_tiles_directory"   \
                     "$mbtiles_file"
+            printf "\n"
+            
         fi
         
     # Copy leaflet and the simple viewer to our tiled directory

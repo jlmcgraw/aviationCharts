@@ -166,15 +166,20 @@ main() {
     
 
 
-    # Stack the various resolutions and types of charts into combined tilesets and mbtiles
-    # Use these command line options to do/not do specific types of charts and/or create mbtiles 
+    # Stack the various resolutions and types of charts into combined tilesets 
+    # and mbtiles
+    # Use these command line options to do/not do specific types of charts 
+    # and/or create mbtiles 
     #  -v  Create merged VFR
     #  -h  Create merged IFR-HIGH
     #  -l  Create merged IFR-LOW
     #  -c  Create merged HELICOPTER"
-    #  -m  Create mbtiles for each chart
+    #  -m  Create mbtiles for each merged chart
     #
-    # ./mergeCharts.sh -v -h -l -c -m           $CHARTS_BASE_DIRECTORY   $CHARTS_BASE_DIRECTORY
+    ./mergeCharts.sh    \
+        -v -h -l -c -m          \
+        $CHARTS_BASE_DIRECTORY  \
+        $CHARTS_BASE_DIRECTORY
 
     exit 0
     }
