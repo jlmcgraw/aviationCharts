@@ -342,7 +342,7 @@ if [ -n "$should_create_vfr" ]
             rm --force "$destDir/VFR.mbtiles"
             
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$destDir" \
+            ./memoize.py -i "$destDir"   -d "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
                     "${destDir}/VFR" \
@@ -377,7 +377,7 @@ if [ -n "$should_create_ifr_low" ]
             rm --force "${destDir}/IFR-LOW.mbtiles"
             
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$destDir" \
+            ./memoize.py -i "$destDir" -d "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
                     "${destDir}/IFR-LOW" \
@@ -412,7 +412,7 @@ if [ -n "$should_create_ifr_high" ]
             rm --force "${destDir}/IFR-HIGH.mbtiles"
             
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$destDir" \
+            ./memoize.py -i "$destDir" -d "$destDir" \
                 python ./mbutil/mb-util \
                     --scheme=tms \
                     "${destDir}/IFR-HIGH" \
@@ -446,7 +446,7 @@ if [ -n "$should_create_heli" ]
             rm --force "${destDir}/HELI.mbtiles"
 
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$destDir" \
+            ./memoize.py -i "$destDir" -d "$destDir"  \
                 python ./mbutil/mb-util \
                     --scheme=tms \
                     "${destDir}/HELI" \
