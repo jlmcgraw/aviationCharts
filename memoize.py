@@ -45,9 +45,9 @@ def hash_file(fname):
     """ Return the hash of a file """
     BLOCKSIZE = 65536
 
-    #Which type of hash to use
-
+    # Which type of hash to use
     hasher = hashlib.sha256()
+    
     try:
         with open(fname, 'rb') as file_to_hash:
             buf = file_to_hash.read(BLOCKSIZE)
@@ -57,9 +57,6 @@ def hash_file(fname):
         return hasher.hexdigest()
     except Exception:
         return None
-
-
-
 
 def modtime(fname):
     """ Return modtime of a given file"""
@@ -74,19 +71,22 @@ def files_up_to_date(files):
     """ Check the up_to_date status of all files used by this command """
     
     if files == None:
-        #print('No files yet')
+        if args.verbose:
+            print('No files yet')
         return False
+    
     for (fname, hash_digest, mtime) in files:
         if opt_use_modtime:
             if modtime(fname) != mtime:
-                #print ('MEMOIZE File modtime changed: ', fname)
+                if args.verbose:
+                    print ('MEMOIZE File modtime changed: ', fname)
                 return False
         else:
             if hash_file(fname) != hash_digest:
-                #print ('MEMOIZE File hash changed: ', fname)
+                if args.verbose:
+                    print ('MEMOIZE File hash changed: ', fname)
                 return False
     return True
-
 
 
 
@@ -95,28 +95,23 @@ def is_relevant(fname):
     path1 = os.path.abspath(fname)
 
     # Do we want to ignore this directory and its subdirectories?
-
     if ignore_dirs:
         for ignorable_directory in ignore_dirs:
             path2 = os.path.abspath(ignorable_directory)
             if path1.startswith(path2):
-
-                # print 'Ignoring: ', path1
-
+                if args.verbose:
+                    print ('Memoize: ignoring: ', path1)
                 return False
 
     # Do we want to specifically include this directory and its subdirectories?
-
     for additional_directory in opt_dirs:
         path2 = os.path.abspath(additional_directory)
         if path1.startswith(path2):
-
-            # print 'Including: ', path1
-
+            #if args.verbose:
+                #print ('Memoize including: ', path1)
             return True
 
     # Default is to ignore the file
-
     return False
 
 
@@ -126,13 +121,15 @@ def generate_deps(cmd):
 
     strace_output_filename = tempfile.mktemp()
 
-    # print("strace output saved in ",strace_output_filename)
+    if args.verbose:
+        print("strace output saved in ",strace_output_filename)
 
     wholecmd = \
         'strace -f -o %s -e trace=open,rename,stat64,exit_group %s' \
         % (strace_output_filename, cmd)
 
-    # print(wholecmd)
+    if args.verbose:
+        print(wholecmd)
     subprocess.call(wholecmd, shell=True)
 
 
@@ -144,6 +141,8 @@ def generate_deps(cmd):
     status = 0
     files = []
     files_dict = {}
+    
+    # BUG TODO: Make an effort to only log files that open successfully?
     for line in output:
         match1 = re.match(r'.*open\("(.*)", .*', line)
         match2 = re.match(r'.*stat64\("(.*)", .*', line)
@@ -164,11 +163,14 @@ def generate_deps(cmd):
 
             fname = os.path.normpath(match.group(1))
 
-            # print("Matched ",fname)
+            #if args.verbose:
+                #print("Matched ",fname)
 
             if is_relevant(fname) and os.path.isfile(fname) and fname \
                 not in files_dict:
-                #print ('Is relevant: ', fname)
+                
+                if args.verbose:
+                    print ('Memoize: Is relevant: ', fname)
 
                 # Add this file's MD5 and datestamp to our dictionary
                 # and mark that we've seen it already
@@ -215,14 +217,12 @@ def memoize_with_deps(depsname, deps, cmd):
     """
     
     # Get the files used by this command from our stored dictionary
-
     files = deps.get(cmd)
 
     if args.verbose:
         print ('Files used:', files)
 
     # Check the status of all of this command's files
-
     if files and files_up_to_date(files):
         if args.verbose:
             print ('Up to date:', cmd)
@@ -230,32 +230,32 @@ def memoize_with_deps(depsname, deps, cmd):
     else:
 
          # Run the command and collect list of files that it opens
-
+        if args.verbose:
+            print ('Not up to date:', cmd)
         (status, files) = generate_deps(cmd)
 
         # If the command was successful..
-
         if status == 0:
-
+            if args.verbose:
+                print ('Success!', files)
+                
             # Add the files list to the dictionary
-
             deps[cmd] = files
             
         elif cmd in deps:
-
+            if args.verbose:
+                print ('Failure!', files)
             # Delete the key if the command was unsuccessful
-
             del deps[cmd]
 
         # Write out the dictionary of opened files for this command
-
         write_deps(depsname, deps)
         return status
 
 
 if __name__ == '__main__':
     
-    #Parse the command line options
+    # Parse the command line options
     
     parser = argparse.ArgumentParser(description='memoize any program or command')
     parser.add_argument('-t'
