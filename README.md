@@ -10,8 +10,8 @@ It has only been tested under Ubuntu 14.10+
 ![Oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/Oceanic.png)
 
 # TODO
-    Only optimize tiles if the source raster has changed
-    Only create mbtiles if the source raster has changed
+    - Only optimize tiles if the source raster has changed
+    - Only create mbtiles if the source raster has changed
     
 # DONE
     - Handle charts which cross the anti-meridian (tilers_tools handles this)
@@ -44,7 +44,7 @@ It has only been tested under Ubuntu 14.10+
     next will be 02-04-2016
     then 03-31-2016 etc etc.
 ```
-##### Edit paths to these utilities as necessary in the tile*.sh scripts
+##### Edit paths to these utilities as necessary in the *.sh scripts
 ##### If you use setup.sh they will be cloned from github into this directory so no editing will be necessary
 ```
 ./parallelGdal2Tiles/gdal2tiles.py
@@ -64,6 +64,6 @@ It has only been tested under Ubuntu 14.10+
     eg. ./make_seamless_charts.sh /home/test/Downloads/aeronav 12-10-2015
 ```
 ##### Wait a very long time (assuming all went correctly)
-##### Individual charts should be in ./individual_tiled_charts/
-##### merged charts should be in ./merged_tiled_charts/
-##### mbtile archives should be in ./mbtiles/
+##### Individual charts should be in "6_tiles"
+##### merged charts should be in "merged_tiled_charts"
+##### mbtile archives should be in "7_mbtiles"
