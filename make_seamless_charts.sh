@@ -118,8 +118,7 @@ main() {
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
         
         if [ -n "$should_create_mbtiles" ]; then
-            echo "No tiling for planning charts yet"
-            exit 1
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" planning
         fi
 
     

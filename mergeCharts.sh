@@ -68,7 +68,7 @@ fi
 
 #VFR Charts sorted by scale, highest to lowest
 vfr_chart_list=(
-    U.S._VFR_Wall_Planning_Chart
+    U_S_VFR_Wall_Planning_Chart
     Alaska_Wall_Planning_Chart
 #     CC-8_WAC
 #     CC-9_WAC
@@ -196,6 +196,8 @@ vfr_chart_list=(
 
 #IFR-LOW Charts sorted by scale, highest to lowest
 ifr_low_chart_list=(
+    US_IFR_PLAN_EAST
+    US_IFR_PLAN_WEST
     ENR_CL03
     ENR_CL02
     ENR_CL05

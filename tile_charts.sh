@@ -28,6 +28,7 @@ main() {
         [enroute_chart_array_500000]="0,1,2,3,4,5,6,7,8,9,10,11"
         [enroute_chart_array_250000]="0,1,2,3,4,5,6,7,8,9,10,11,12"
         [caribbean_chart_array]="0,1,2,3,4,5,6,7,8,9,10"
+        [planning_chart_array]="0,1,2,3,4,5,6,7"
         )
         
     # Charts that are at 1:500,000 scale
@@ -213,7 +214,13 @@ main() {
         Caribbean_1_VFR_Chart
         Caribbean_2_VFR_Chart
         )
-        
+    
+    local -r planning_chart_array=(
+        Alaska_Wall_Planning_Chart
+        US_IFR_PLAN_EAST
+        US_IFR_PLAN_WEST
+        U_S_VFR_Wall_Planning_Chart
+        )
 
     # Get command line parameters
     local -r destinationRoot="$1"
