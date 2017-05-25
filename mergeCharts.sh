@@ -69,6 +69,7 @@ fi
 #VFR Charts sorted by scale, highest to lowest
 vfr_chart_list=(
     U.S._VFR_Wall_Planning_Chart
+    Alaska_Wall_Planning_Chart
 #     CC-8_WAC
 #     CC-9_WAC
 #     CD-10_WAC
@@ -344,8 +345,8 @@ if [ -n "$should_create_vfr" ]
             # Package tiles into an .mbtiles file
             ./memoize.py -i "$destDir"   -d "$destDir" \
                 python ./mbutil/mb-util \
-                    --scheme=tms \
-                    "${destDir}/VFR" \
+                    --scheme=tms        \
+                    "${destDir}/VFR"    \
                     "${destDir}/VFR.mbtiles"
             fi
     fi

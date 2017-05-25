@@ -295,13 +295,13 @@ sub cutOutInsetFromSourceRaster {
 
     #Assemble the command
     my $gdal_translateCommand = "gdal_translate \\
-      -strict \\
-      -of VRT \\
-      -srcwin $srcWin \\
-      -a_srs WGS84 \\
-      -r lanczos  \\
-      $gcpString \\
-      '$sourceRaster' \\
+      -strict           \\
+      -of VRT           \\
+      -srcwin $srcWin   \\
+      -a_srs WGS84      \\
+      -r lanczos        \\
+      $gcpString        \\
+      '$sourceRaster'   \\
       '$destinationRaster'";
 
     if ($main::debug) {
@@ -347,16 +347,17 @@ sub warpRaster {
 
     #Assemble the command
     my $gdalWarpCommand = "gdalwarp \\
-        -t_srs WGS84 \\
-        -tps \\
-        -dstalpha \\
-        -r lanczos  \\
-        -multi \\
-        -wo NUM_THREADS=ALL_CPUS  \\
-        -wm 1024 \\
+        -t_srs WGS84                \\
+        -tps                        \\
+        -dstalpha                   \\
+        -r lanczos                  \\
+        -multi                      \\
+        -wo NUM_THREADS=ALL_CPUS    \\
+        -wm 1024                    \\
         --config GDAL_CACHEMAX 1024 \\
-        -co TILED=YES \\
-         $sourceRaster \\
+        -co TILED=YES               \\
+        -overwrite                  \\
+         $sourceRaster              \\
          $destinationRaster";
 
     if ($main::debug) {
