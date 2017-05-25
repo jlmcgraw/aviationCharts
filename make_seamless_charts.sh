@@ -289,7 +289,9 @@ expand_to_rgb(){
         if gdalinfo "${sourceChartName}" -noct | grep -q 'Color Table'
         then
             echo "***  ${sourceChartName} has color table, need to expand to RGB: "
+            
             "${PROGDIR}/memoize.py" -t  \
+                -d "$CHARTS_BASE_DIRECTORY"     \
                 gdal_translate          \
                     -expand rgb         \
                     -strict             \
@@ -300,7 +302,9 @@ expand_to_rgb(){
                     "${vrt_name}"
         else
             echo "***  ${sourceChartName} does not have color table, do not need to expand to RGB"
+            
             "${PROGDIR}/memoize.py" -t  \
+                -d "$CHARTS_BASE_DIRECTORY"     \
                 gdal_translate          \
                     -strict             \
                     -of VRT             \
@@ -378,7 +382,8 @@ warp_and_clip(){
         # Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t \
+                "${PROGDIR}/memoize.py" -t   \
+                    -d "$CHARTS_BASE_DIRECTORY"     \
                     gdalwarp \
                         -of vrt     \
                         -overwrite  \
@@ -403,7 +408,8 @@ warp_and_clip(){
         
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t \
+                "${PROGDIR}/memoize.py" -t  \
+                    -d "$CHARTS_BASE_DIRECTORY"     \
                     gdalwarp \
                         -of vrt \
                         -t_srs EPSG:3857 \
@@ -426,7 +432,8 @@ warp_and_clip(){
         #       -co COMPRESS=LZW \
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t \
+                "${PROGDIR}/memoize.py" -t  \
+                    -d "$CHARTS_BASE_DIRECTORY"     \
                     gdal_translate      \
                         -strict         \
                         -co TILED=YES   \
@@ -442,7 +449,8 @@ warp_and_clip(){
         echo "***  Overviews --- gdaladdo $sourceChartName"
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t \
+                "${PROGDIR}/memoize.py" -t  \
+                    -d "$CHARTS_BASE_DIRECTORY"     \
                     gdaladdo \
                         -ro \
                         -r average \
