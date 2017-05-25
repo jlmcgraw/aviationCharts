@@ -293,7 +293,7 @@ tile_chart() {
     fi
     
     # Create tiles from the source raster
-    ./memoize.py -i "$tiled_charts_directory"   \
+    ./memoize.py -i "$tiled_charts_directory"  -d "$destinationRoot" \
         ./tilers_tools/gdal_tiler.py            \
             --profile=tms                       \
             --release                           \
@@ -319,7 +319,7 @@ tile_chart() {
             rm -f "$mbtiles_file"
             
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$tiled_charts_directory"    \
+            ./memoize.py -i "$tiled_charts_directory"  -d "$destinationRoot"    \
                 python ./mbutil/mb-util \
                     --scheme=tms        \
                     "$output_tiles_directory"   \
