@@ -23,19 +23,19 @@ sizeBeforeOptimization=$(du -s -h "$destDir" | awk '{print $1;}' )
 # Optimize all of the .png tiles
 echo "Optimize PNGs in $destDir with pngquant, using $cpus CPUS"
 
-find \
-    "$destDir"      \
-    -type f         \
-    -iname "*.png"  \
-    -print0         \
-    | xargs         \
-        --null      \
+find                        \
+    "$destDir"              \
+    -type f                 \
+    -iname "*.png"          \
+    -print0                 \
+    | xargs                 \
+        --null              \
         --max-args=10       \
         --max-procs="$cpus" \
-        pngquant    \
-            -s2     \
-            -q 100  \
-            --ext=.png \
+        pngquant            \
+            -s2             \
+            -q 100          \
+            --ext=.png      \
             --force
 
 # Get the size of the dir after

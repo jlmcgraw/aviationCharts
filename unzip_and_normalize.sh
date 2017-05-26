@@ -29,7 +29,7 @@ unzip_freshen() {
     local -r NUMARGS=$#
 
     # Validate number of function parameters
-    if [ $NUMARGS -ne 2 ] ; then
+    if [ "$NUMARGS" -ne 2 ] ; then
         echo "Bad unzip parameters"
     fi
     local -r chartsRoot="$1"
@@ -40,7 +40,7 @@ unzip_freshen() {
     # Unzip any .tif file in any .zip file in the supplied directory
     echo "Unzipping all .zip files under ${chartsRoot} to ${UNZIP_DESTINATION_ABSOLUTE_PATH}"
     
-    find ${chartsRoot}      \
+    find "${chartsRoot}"    \
         -type f             \
         -iname "*.zip"      \
         -exec unzip -uo -j -d "${UNZIP_DESTINATION_ABSOLUTE_PATH}" "{}" "*.tif" \;
@@ -51,8 +51,8 @@ normalize() {
     local -r NUMARGS=$#
     
     # Validate number of function parameters
-    if [ $NUMARGS -ne 2 ] ; then
-        echo "Bad normalize parameters"
+    if [ "$NUMARGS" -ne 2 ] ; then
+        echo "Bad number of normalize parameters"
     fi
     
     local -r UNZIP_DESTINATION_ABSOLUTE_PATH="$1"
@@ -98,8 +98,8 @@ USAGE() {
 
 # The script begins here
 # Set some basic variables
-declare -r PROGNAME=$(basename $0)
-declare -r PROGDIR=$(readlink -m $(dirname $0))
+declare -r PROGNAME=$(basename "$0")
+declare -r PROGDIR=$(readlink -m $(dirname "$0"))
 declare -r ARGS="$@"
 
 # Set fonts for Help.
@@ -111,7 +111,7 @@ declare -r REV=$(tput smso)
 NUMARGS=$#
 
 #Validate number of command line parameters
-if [ $NUMARGS -ne 1 ] ; then
+if [ "$NUMARGS" -ne 1 ] ; then
     USAGE
 fi
 

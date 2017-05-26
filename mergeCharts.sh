@@ -17,7 +17,6 @@ function USAGE {
     exit 1
 }
 
-verbose='false'
 should_create_vfr=''
 should_create_ifr_high=''
 should_create_ifr_low=''

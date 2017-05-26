@@ -253,7 +253,7 @@ main() {
             # For all of the charts in the array 
             for chart in "${!charts}"; do
 #                 echo "chart: $chart"
-                tile_chart $chart $chart_type $destinationRoot $zoom_levels
+                tile_chart "$chart" "$chart_type" "$destinationRoot" "$zoom_levels"
                 done
         fi
     done

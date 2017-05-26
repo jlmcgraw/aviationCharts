@@ -6,8 +6,8 @@ IFS=$(printf '\n\t')    # Always put this in Bourne shell scripts
 
 # The script begins here
 # Set some basic variables
-declare -r PROGNAME=$(basename $0)
-declare -r PROGDIR=$(readlink -m $(dirname $0))
+declare -r PROGNAME=$(basename "$0")
+declare -r PROGDIR=$(readlink -m $(dirname "$0"))
 declare -r ARGS="$@"
 
 # Set fonts for Help.
@@ -19,7 +19,7 @@ declare -r REV=$(tput smso)
 NUMARGS=$#
 
 #Validate number of command line parameters
-if [ $NUMARGS -ne 1 ] ; then
+if [ "$NUMARGS" -ne 1 ] ; then
     echo "Usage: $PROGNAME <where_to_save_charts>" >&2
     exit 1
 fi
@@ -27,7 +27,7 @@ fi
 # Get command line parameter
 AERONAV_ROOT_DIR=$(readlink -f "$1")
 
-if [ ! -d $AERONAV_ROOT_DIR ]; then
+if [ ! -d "$AERONAV_ROOT_DIR" ]; then
     echo "$AERONAV_ROOT_DIR doesn't exist"
     exit 1
 fi
@@ -56,28 +56,28 @@ find    \
 # Skip the compilations
 set +e
 wget \
-    --directory-prefix=$AERONAV_ROOT_DIR    \
-    --recursive     \
-    -l1             \
-    --span-hosts    \
+    --directory-prefix="$AERONAV_ROOT_DIR"  \
+    --recursive                             \
+    -l1                                     \
+    --span-hosts                            \
     --domains=aeronav.faa.gov,www.faa.gov   \
-    --timestamping  \
-    --no-parent     \
-    -A.zip          \
-    -R"DD?C*"       \
-    -erobots=off    \
+    --timestamping                          \
+    --no-parent                             \
+    -A.zip                                  \
+    -R"DD?C*"                               \
+    -erobots=off                            \
     http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/vfr
 
 wget \
-    --directory-prefix=$AERONAV_ROOT_DIR    \
-    --recursive     \
-    -l1             \
-    --span-hosts    \
+    --directory-prefix="$AERONAV_ROOT_DIR"  \
+    --recursive                             \
+    -l1                                     \
+    --span-hosts                            \
     --domains=aeronav.faa.gov,www.faa.gov   \
-    --timestamping  \
-    --no-parent     \
-    -A.zip          \
-    -R"DD?C*"       \
-    -erobots=off    \
+    --timestamping                          \
+    --no-parent                             \
+    -A.zip                                  \
+    -R"DD?C*"                               \
+    -erobots=off                            \
     http://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/ifr
 set -e

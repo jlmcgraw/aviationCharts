@@ -32,7 +32,7 @@ main() {
     # 	Clip each chart to its associated polygon
     #	Reproject to EPSG:3857
     
-    # The tile*.sh scripts each do these functions for a given chart type:
+    # The tile_charts.sh script does these functions for a given chart type:
     # 	create TMS tile tree from the reprojected raster
     #       optionally (with -o) use pngquant to optimize each individual tile
     #       optionally (with -m) create an mbtile for each individual chart
@@ -177,8 +177,8 @@ main() {
     #
     ./mergeCharts.sh    \
         -v -h -l -c -m          \
-        $CHARTS_BASE_DIRECTORY  \
-        $CHARTS_BASE_DIRECTORY
+        "$CHARTS_BASE_DIRECTORY"  \
+        "$CHARTS_BASE_DIRECTORY"
 
     exit 0
     }
@@ -510,55 +510,6 @@ process_charts(){
         "${CLIPPING_SHAPES_DIRECTORY}"
     }
 
-    
-# tile_chart(){
-#     local $chart="$1"
-#     
-#     echo "Tiling $chart"
-# 
-#     # Where to put tiles we create
-#     local output_tiles_directory="$destDir/${chart}.tms"
-#     
-#     # The mbtiles file for this chart
-#     local mbtiles_file="$destinationRoot/7_mbtiles/${chart}.mbtiles"
-#     
-#     ./memoize.py -i $destDir    \
-#         ./tilers_tools/gdal_tiler.py    \
-#             --profile=tms               \
-#             --release                   \
-#             --paletted                  \
-#             --zoom="${zoom_levels}"     \
-#             --dest-dir="$destDir"       \
-#             $destinationRoot/5_warpedRasters/$chartType/$chart.tif
-#         
-#     # Did the user want to optimize the individual tiles?
-#     if [ -n "$optimize_tiles_flag" ]
-#         then
-#             echo "Optimizing tiles for $chart"
-#             # Optimize the tiled png files
-#             ./pngquant_all_files_in_directory.sh "$output_tiles_directory"
-#         fi
-# 
-#     # Did the user want to package the individual tiles into an mbtiles file
-#     if [ -n "$create_mbtiles_flag" ]
-#         then
-#             echo "Creating mbtiles for $chart"
-#             
-#             # Delete any existing mbtiles file
-#             rm -f "$mbtiles_file"
-#             
-#             # Package them into an .mbtiles file
-#             ./memoize.py -i $destDir    \
-#                 python ./mbutil/mb-util \
-#                     --scheme=tms        \
-#                     "$output_tiles_directory"   \
-#                     "$mbtiles_file"
-#         fi
-#         
-#     #Copy the simple viewer to our tiled directory
-#     cp leaflet.html "$output_tiles_directory"
-# }
-
 # The script begins here
 # Set some basic variables
 declare -r PROGNAME=$(basename "$0")
@@ -595,13 +546,13 @@ while getopts 'ceghpstm' flag; do
   esac
 done
 
-#Remove the flag operands
+# Remove the flag operands
 shift $((OPTIND-1))
 
-#Get the number of remaining command line arguments
+# Get the number of remaining command line arguments
 NUMARGS=$#
 
-#Validate number of command line parameters
+# Validate number of command line parameters
 if [ "$NUMARGS" -ne 2 ] ; then
     USAGE
 fi

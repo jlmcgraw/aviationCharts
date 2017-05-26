@@ -30,7 +30,7 @@ if [ ! -d "$output_raster_path" ]; then
 fi
 
 #Get our initial directory as it is where memoize.py is located
-pushd $(dirname "$0") > /dev/null
+pushd "$(dirname "$0")" > /dev/null
 installedDirectory=$(pwd)
 popd > /dev/null
 
@@ -59,14 +59,14 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    "${installedDirectory}/memoize.py" -t \
-        gs \
-            -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT \
-            -sDEVICE=tiff24nc                               \
-            -sOutputFile="$output_raster_path/$f-untiled.tif"                   \
-            -r300                                           \
-            -dTextAlphaBits=4                               \
-            -dGraphicsAlphaBits=4                           \
+    "${installedDirectory}/memoize.py" -t                       \
+        gs                                                      \
+            -q -dQUIET -dSAFER -dBATCH -dNOPAUSE -dNOPROMPT     \
+            -sDEVICE=tiff24nc                                   \
+            -sOutputFile="$output_raster_path/$f-untiled.tif"   \
+            -r300                                               \
+            -dTextAlphaBits=4                                   \
+            -dGraphicsAlphaBits=4                               \
             "$f"
 
     echo "--------------------------------------------"
@@ -74,11 +74,11 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    "$installedDirectory/memoize.py" -t   \
-        gdal_translate                  \
-                    -strict             \
-                    -co TILED=YES       \
-                    -co COMPRESS=LZW    \
+    "$installedDirectory/memoize.py" -t                     \
+        gdal_translate                                      \
+                    -strict                                 \
+                    -co TILED=YES                           \
+                    -co COMPRESS=LZW                        \
                     "$output_raster_path/$f-untiled.tif"    \
                     "$output_raster_path/$f.tif"
                 
@@ -87,14 +87,14 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    $installedDirectory/memoize.py -t \
-        gdaladdo \
+    "$installedDirectory/memoize.py" -t             \
+        gdaladdo                                    \
                 -ro                                 \
                 -r gauss                            \
                 --config INTERLEAVE_OVERVIEW PIXEL  \
                 --config COMPRESS_OVERVIEW JPEG     \
                 --config BIGTIFF_OVERVIEW IF_NEEDED \
-                "$output_raster_path/$f.tif"                            \
+                "$output_raster_path/$f.tif"        \
                 2 4 8 16 32 64
     
     rm "$output_raster_path/$f-untiled.tif"
