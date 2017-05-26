@@ -151,7 +151,7 @@ vfr_chart_list=(
     Wichita_SEC
     Anchorage_TAC
     Atlanta_TAC
-    Baltimore-Washington_TAC
+    Baltimore_Washington_TAC
     Boston_TAC
     Charlotte_TAC
     Chicago_TAC
@@ -351,6 +351,9 @@ if [ -n "$should_create_vfr" ]
                     "${destDir}/VFR"    \
                     "${destDir}/VFR.mbtiles"
             fi
+        
+        # Copy leaflet and the simple viewer to our tiled directory
+        cp -r ./leaflet/* "$destDir/VFR"
     fi
 
 #-------------------------------------------------------------------------------
@@ -386,6 +389,9 @@ if [ -n "$should_create_ifr_low" ]
                     "${destDir}/IFR-LOW" \
                     "${destDir}/IFR-LOW.mbtiles"
             fi
+            
+        # Copy leaflet and the simple viewer to our tiled directory
+        cp -r ./leaflet/* "$destDir/IFR-LOW"
     fi
 
 #-------------------------------------------------------------------------------
@@ -421,6 +427,9 @@ if [ -n "$should_create_ifr_high" ]
                     "${destDir}/IFR-HIGH" \
                     "${destDir}/IFR-HIGH.mbtiles"
             fi
+            
+        # Copy leaflet and the simple viewer to our tiled directory
+        cp -r ./leaflet/* "$destDir/IFR-HIGH"
     fi
 
 #-------------------------------------------------------------------------------
@@ -455,6 +464,9 @@ if [ -n "$should_create_heli" ]
                     "${destDir}/HELI" \
                     "${destDir}/HELI.mbtiles"
             fi
+        
+        # Copy leaflet and the simple viewer to our tiled directory
+        cp -r ./leaflet/* "$destDir/HELI"
     fi
 
 exit 0

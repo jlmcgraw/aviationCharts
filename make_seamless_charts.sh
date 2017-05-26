@@ -41,8 +41,8 @@ main() {
     if [ -n "$should_process_caribbean" ]; then
         local -r originalEnrouteDirectory="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/enroute/$ENROUTE_CYCLE"
         
-        local -r INPUT_CHART_TYPE="caribbean"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Caribbean/"
+        INPUT_CHART_TYPE="caribbean"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Caribbean/"
 
         # Extract Caribbean PDFs and convert to TIFF, placing output in "2_normalized"
         # directory
@@ -67,8 +67,8 @@ main() {
 
     if [ -n "$should_process_enroute" ]; then
         
-        local -r INPUT_CHART_TYPE="enroute"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/enroute/${ENROUTE_CYCLE}/"
+        INPUT_CHART_TYPE="enroute"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/enroute/${ENROUTE_CYCLE}/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -82,8 +82,8 @@ main() {
     fi
     
     if [ -n "$should_process_grand_canyon" ];then
-        local -r INPUT_CHART_TYPE="grand_canyon"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Grand_Canyon_files/"
+        INPUT_CHART_TYPE="grand_canyon"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Grand_Canyon_files/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -96,8 +96,8 @@ main() {
     fi
 
     if [ -n "$should_process_helicopter" ]; then
-        local -r INPUT_CHART_TYPE="heli"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/heli_files/"
+        INPUT_CHART_TYPE="heli"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/heli_files/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -111,8 +111,8 @@ main() {
         
     if [ -n "$should_process_planning" ]; then
 
-        local -r INPUT_CHART_TYPE="planning"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Planning/"
+        INPUT_CHART_TYPE="planning"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/Planning/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -126,8 +126,8 @@ main() {
     
     if [ -n "$should_process_sectional" ]; then
     
-        local -r INPUT_CHART_TYPE="sectional"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/sectional_files/"
+        INPUT_CHART_TYPE="sectional"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/sectional_files/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -142,15 +142,15 @@ main() {
 #             ./tileSectional.sh   -m -o "$CHARTS_BASE_DIRECTORY"
 #             ./tileInsets.sh      -m -o "$CHARTS_BASE_DIRECTORY"
             ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" sectional
-            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" inset
+            ./tile_charts.sh   -m -o "$CHARTS_BASE_DIRECTORY" insets
 
         fi
 
     fi
     
     if [ -n "$should_process_tac" ]; then
-        local -r INPUT_CHART_TYPE="tac"
-        local -r INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/tac_files/"
+        INPUT_CHART_TYPE="tac"
+        INPUT_ORIGINAL_DIRECTORY="$CHARTS_BASE_DIRECTORY/aeronav.faa.gov/content/aeronav/tac_files/"
 
         # Do all processing on this type of chart
         process_charts "${INPUT_CHART_TYPE}" "${INPUT_ORIGINAL_DIRECTORY}"
@@ -374,6 +374,7 @@ warp_and_clip(){
             echo "No clipping shape for ${fbname}.shp"
             exit 1
         fi
+        
         echo "expanded source: $EXPANDED_FILE_DIRECTORY/${fbname}.vrt"
         echo "clipped destination: $CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
         # BUG TODO crop_to_cutline results in a resampled image with non-square pixels
@@ -381,12 +382,12 @@ warp_and_clip(){
         # Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t   \
+                "${PROGDIR}/memoize.py" -t          \
                     -d "$CHARTS_BASE_DIRECTORY"     \
                     gdalwarp \
                         -of vrt     \
                         -overwrite  \
-                        -cutline "$CLIPPING_SHAPES_DIRECTORY/${fbname}.shp" \
+                        -cutline "${CLIPPING_SHAPES_DIRECTORY}/${fbname}.shp" \
                         -crop_to_cutline \
                         -cblend 10  \
                         -r lanczos  \
@@ -397,17 +398,17 @@ warp_and_clip(){
                         -wo NUM_THREADS=ALL_CPUS  \
                         -wm 1024 \
                         --config GDAL_CACHEMAX 1024 \
-                        "$EXPANDED_FILE_DIRECTORY/${fbname}.vrt" \
-                        "$CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
+                        "${EXPANDED_FILE_DIRECTORY}/${fbname}.vrt" \
+                        "${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt"
 
         #Warp the expanded file
         echo "*** Warp to vrt --- gdalwarp $sourceChartName"
-        echo "clipped source: $CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
-        echo "warped destination: $WARPED_RASTERS_DIRECTORY/${fbname}.vrt"
+        echo "clipped source: ${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt"
+        echo "warped destination: ${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt"
         
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t  \
+                "${PROGDIR}/memoize.py" -t          \
                     -d "$CHARTS_BASE_DIRECTORY"     \
                     gdalwarp \
                         -of vrt \
@@ -419,8 +420,8 @@ warp_and_clip(){
                         -wm 1024 \
                         --config GDAL_CACHEMAX 1024 \
                         -co TILED=YES \
-                        "$CLIPPED_FILE_DIRECTORY/${fbname}.vrt" \
-                        "$WARPED_RASTERS_DIRECTORY/${fbname}.vrt"
+                        "${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt" \
+                        "${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt"
 
         echo "***  Create tif --- gdal_translate $sourceChartName"
         #If you want to make the files smaller, at the expense of CPU, you can enable these options
@@ -440,8 +441,8 @@ warp_and_clip(){
                         -co PREDICTOR=1         \
                         -co ZLEVEL=9            \
                         --config GDAL_CACHEMAX 1024 \
-                        "$WARPED_RASTERS_DIRECTORY/${fbname}.vrt" \
-                        "$WARPED_RASTERS_DIRECTORY/${fbname}.tif"
+                        "${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt" \
+                        "${WARPED_RASTERS_DIRECTORY}/${fbname}.tif"
 
 
         #Create external overviews to make display faster in QGIS

@@ -4,6 +4,7 @@ set -o pipefail
 set -o nounset
 # set -o xtrace
 IFS=$(printf '\n\t')   # IFS is newline or tab
+# BUG TODO: Fix zoom levels for insets and grand grand_canyon
 
 main() {
     # Types of charts
@@ -15,14 +16,14 @@ main() {
         [sectional_chart_array_500000]="0,1,2,3,4,5,6,7,8,9,10,11"
         [sectional_chart_array_250000]="0,1,2,3,4,5,6,7,8,9,10,11,12" 
         [tac_chart_array]="7,8,9,10,11,12"
-        [inset_chart_array]=""
+        [insets_chart_array]="8,9,10,11,12"
         [heli_chart_array_1000000]="0,1,2,3,4,5,6,7,8,9,10"
         [heli_chart_array_250000]="0,1,2,3,4,5,6,7,8,9,10,11,12"
         [heli_chart_array_125000]="0,1,2,3,4,5,6,7,8,9,10,11,12,13"
         [heli_chart_array_90000]="0,1,2,3,4,5,6,7,8,9,10,11,12,13"
         [heli_chart_array_62500]="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14"
         [heli_chart_array_50000]="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14"
-        [grand_canyon_chart_array]=""
+        [grand_canyon_chart_array]="8"
         [enroute_chart_array_2000000]="0,1,2,3,4,5,6,7,8,9"
         [enroute_chart_array_1000000]="0,1,2,3,4,5,6,7,8,9,10"
         [enroute_chart_array_500000]="0,1,2,3,4,5,6,7,8,9,10,11"
@@ -65,7 +66,7 @@ main() {
         St_Louis_TAC Tampa_TAC
         )
 
-    local -r inset_chart_array=(
+    local -r insets_chart_array=(
         Dutch_Harbor_Inset
         Jacksonville_Inset
         Juneau_Inset
@@ -228,7 +229,7 @@ main() {
 
     # Check that the destination directory exists
     if [ ! -d "$destinationRoot" ]; then
-        echo "$destinationRoot doesn't exist"
+        echo "Destination directory $destinationRoot doesn't exist"
         exit 1
     fi
     
@@ -289,13 +290,13 @@ tile_chart() {
 
     # Check that the destination directory exists
     if [ ! -d "$tiled_charts_directory" ]; then
-        echo "$tiled_charts_directory doesn't exist"
+        echo "Tiled charts directory $tiled_charts_directory doesn't exist"
         exit 1
     fi
     
     # Check that the source raster exists
     if [ ! -f "$warped_chart" ]; then
-        echo "$warped_chart doesn't exist" >&2
+        echo "Warped chart $warped_chart doesn't exist" >&2
         exit 1
     fi
     

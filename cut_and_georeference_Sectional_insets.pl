@@ -309,6 +309,7 @@ sub cutOutInsetFromSourceRaster {
         say "";
     }
 
+    # "python ./memoize.py -d $linkedRastersDirectory -d $clippedRastersDirectory 
     #Run gdal_translate
     my $gdal_translateoutput = qx($gdal_translateCommand);
 
@@ -364,7 +365,7 @@ sub warpRaster {
         say $gdalWarpCommand;
         say "";
     }
-
+#     "python ./memoize.py -d $warpedRastersDirectory -d $clippedRastersDirectory 
     #Run gdalwarp
     my $gdalWarpOutput = qx($gdalWarpCommand);
 
