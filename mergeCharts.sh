@@ -69,6 +69,8 @@ fi
 vfr_chart_list=(
     U_S_VFR_Wall_Planning_Chart
     Alaska_Wall_Planning_Chart
+    Caribbean_1_VFR_Chart
+    Caribbean_2_VFR_Chart
 #     CC-8_WAC
 #     CC-9_WAC
 #     CD-10_WAC
