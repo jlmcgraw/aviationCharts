@@ -377,31 +377,33 @@ warp_and_clip(){
         
         echo "expanded source: $EXPANDED_FILE_DIRECTORY/${fbname}.vrt"
         echo "clipped destination: $CLIPPED_FILE_DIRECTORY/${fbname}.vrt"
-        # BUG TODO crop_to_cutline results in a resampled image with non-square pixels
+        # BUG TODO crop_to_cutline results in a resampled image with non-square 
+        # pixels
         # How to best handle this?  One fix is an additional warp to EPSG:3857
-        # Do I need -dstalpha here?  That adds a band, I just want to re-use the existing one
+        # Do I need -dstalpha here?  That adds a band, I just want to re-use the
+        # existing one
         time \
             nice -10 \
                 "${PROGDIR}/memoize.py" -t          \
                     -d "$CHARTS_BASE_DIRECTORY"     \
-                    gdalwarp \
-                        -of vrt     \
-                        -overwrite  \
+                    gdalwarp                        \
+                        -of vrt                     \
+                        -overwrite                  \
                         -cutline "${CLIPPING_SHAPES_DIRECTORY}/${fbname}.shp" \
-                        -crop_to_cutline \
-                        -cblend 10  \
-                        -r lanczos  \
-                        -dstalpha   \
-                        -co ALPHA=YES \
-                        -co TILED=YES \
-                        -multi \
-                        -wo NUM_THREADS=ALL_CPUS  \
-                        -wm 1024 \
+                        -crop_to_cutline            \
+                        -cblend 10                  \
+                        -r lanczos                  \
+                        -dstalpha                   \
+                        -co ALPHA=YES               \
+                        -co TILED=YES               \
+                        -multi                      \
+                        -wo NUM_THREADS=ALL_CPUS    \
+                        -wm 1024                    \
                         --config GDAL_CACHEMAX 1024 \
                         "${EXPANDED_FILE_DIRECTORY}/${fbname}.vrt" \
                         "${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt"
 
-        #Warp the expanded file
+        # Warp the expanded file
         echo "*** Warp to vrt --- gdalwarp $sourceChartName"
         echo "clipped source: ${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt"
         echo "warped destination: ${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt"
@@ -410,16 +412,16 @@ warp_and_clip(){
             nice -10 \
                 "${PROGDIR}/memoize.py" -t          \
                     -d "$CHARTS_BASE_DIRECTORY"     \
-                    gdalwarp \
-                        -of vrt \
-                        -t_srs EPSG:3857 \
-                        -r lanczos \
-                        -overwrite \
-                        -multi \
-                        -wo NUM_THREADS=ALL_CPUS  \
-                        -wm 1024 \
+                    gdalwarp                        \
+                        -of vrt                     \
+                        -t_srs EPSG:3857            \
+                        -r lanczos                  \
+                        -overwrite                  \
+                        -multi                      \
+                        -wo NUM_THREADS=ALL_CPUS    \
+                        -wm 1024                    \
                         --config GDAL_CACHEMAX 1024 \
-                        -co TILED=YES \
+                        -co TILED=YES               \
                         "${CLIPPED_FILE_DIRECTORY}/${fbname}.vrt" \
                         "${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt"
 
@@ -432,14 +434,14 @@ warp_and_clip(){
         #       -co COMPRESS=LZW \
         time \
             nice -10 \
-                "${PROGDIR}/memoize.py" -t  \
+                "${PROGDIR}/memoize.py" -t          \
                     -d "$CHARTS_BASE_DIRECTORY"     \
-                    gdal_translate      \
-                        -strict         \
-                        -co TILED=YES   \
-                        -co COMPRESS=DEFLATE    \
-                        -co PREDICTOR=1         \
-                        -co ZLEVEL=9            \
+                    gdal_translate                  \
+                        -strict                     \
+                        -co TILED=YES               \
+                        -co COMPRESS=DEFLATE        \
+                        -co PREDICTOR=1             \
+                        -co ZLEVEL=9                \
                         --config GDAL_CACHEMAX 1024 \
                         "${WARPED_RASTERS_DIRECTORY}/${fbname}.vrt" \
                         "${WARPED_RASTERS_DIRECTORY}/${fbname}.tif"
@@ -447,17 +449,17 @@ warp_and_clip(){
 
         #Create external overviews to make display faster in QGIS
         echo "***  Overviews --- gdaladdo $sourceChartName"
-        time \
-            nice -10 \
-                "${PROGDIR}/memoize.py" -t  \
-                    -d "$CHARTS_BASE_DIRECTORY"     \
-                    gdaladdo \
-                        -ro \
-                        -r average \
-                        --config INTERLEAVE_OVERVIEW PIXEL \
-                        --config COMPRESS_OVERVIEW JPEG \
-                        --config BIGTIFF_OVERVIEW IF_NEEDED \
-                        "$WARPED_RASTERS_DIRECTORY/${fbname}.tif" \
+        time                                                        \
+            nice -10                                                \
+                "${PROGDIR}/memoize.py" -t                          \
+                    -d "$CHARTS_BASE_DIRECTORY"                     \
+                    gdaladdo                                        \
+                        -ro                                         \
+                        -r average                                  \
+                        --config INTERLEAVE_OVERVIEW PIXEL          \
+                        --config COMPRESS_OVERVIEW JPEG             \
+                        --config BIGTIFF_OVERVIEW IF_NEEDED         \
+                        "$WARPED_RASTERS_DIRECTORY/${fbname}.tif"   \
                         2 4 8 16 32 64
     done
     }

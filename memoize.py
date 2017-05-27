@@ -72,20 +72,26 @@ def files_up_to_date(files):
     
     if files == None:
         if args.verbose:
-            print('No files yet')
+            print('Memoize: No files yet')
         return False
     
     for (fname, hash_digest, mtime) in files:
+        if not os.path.isfile(fname):
+            if args.verbose:
+                print ('Memoize:  File does not exist: ', fname)
+            return False
         if opt_use_modtime:
             if modtime(fname) != mtime:
                 if args.verbose:
-                    print ('MEMOIZE File modtime changed: ', fname)
+                    print ('Memoize:  File modtime changed: ', fname)
                 return False
         else:
             if hash_file(fname) != hash_digest:
                 if args.verbose:
-                    print ('MEMOIZE File hash changed: ', fname)
+                    print ('Memoize:  File hash changed: ', fname)
                 return False
+    if args.verbose:
+        print ('Memoize:  File up to date: ', fname)
     return True
 
 
@@ -117,12 +123,14 @@ def is_relevant(fname):
 
 def generate_deps(cmd):
     """ Gather dependencies for a command and store their hash and modtime """
-    #print ('Memoize running: ', cmd)
+    
+    if args.verbose:
+        print ('Memoize: running: ', cmd)
 
     strace_output_filename = tempfile.mktemp()
 
     if args.verbose:
-        print("strace output saved in ",strace_output_filename)
+        print("Memoize: strace output saved in ",strace_output_filename)
 
     wholecmd = \
         'strace -f -o %s -e trace=open,rename,stat64,exit_group %s' \
@@ -172,7 +180,7 @@ def generate_deps(cmd):
                 if args.verbose:
                     print ('Memoize: Is relevant: ', fname)
 
-                # Add this file's MD5 and datestamp to our dictionary
+                # Add this file's hash and datestamp to our dictionary
                 # and mark that we've seen it already
                 files.append((fname, hash_file(fname), modtime(fname)))
                 files_dict[fname] = True
@@ -220,31 +228,34 @@ def memoize_with_deps(depsname, deps, cmd):
     files = deps.get(cmd)
 
     if args.verbose:
-        print ('Files used:', files)
+        print ('Memoize: Files used:', files)
 
+    if opt_unconditional:
+        print ('Memoize: Forcing command execution with unconditional flag')
+        
     # Check the status of all of this command's files
-    if files and files_up_to_date(files):
+    if files and files_up_to_date(files) and not opt_unconditional:
         if args.verbose:
-            print ('Up to date:', cmd)
+            print ('Memoize: Up to date:', cmd)
         return 0
     else:
 
          # Run the command and collect list of files that it opens
         if args.verbose:
-            print ('Not up to date:', cmd)
+            print ('Memoize: Not up to date:', cmd)
         (status, files) = generate_deps(cmd)
 
         # If the command was successful..
         if status == 0:
             if args.verbose:
-                print ('Success!', files)
+                print ('Memoize: Success!', files)
                 
             # Add the files list to the dictionary
             deps[cmd] = files
             
         elif cmd in deps:
             if args.verbose:
-                print ('Failure!', files)
+                print ('Memoize: Failure!', files)
             # Delete the key if the command was unsuccessful
             del deps[cmd]
 
@@ -254,9 +265,9 @@ def memoize_with_deps(depsname, deps, cmd):
 
 
 if __name__ == '__main__':
-    
+
     # Parse the command line options
-    
+
     parser = argparse.ArgumentParser(description='memoize any program or command')
     parser.add_argument('-t'
                         , '--timestamps'
@@ -283,6 +294,11 @@ if __name__ == '__main__':
                         , help='More output'
                         , action='store_true'
                         , required=False)
+    parser.add_argument('-u'
+                        ,'--unconditional'
+                        , help='Force command to execute, even if up to date'
+                        , action='store_true'
+                        , required=False)
     parser.add_argument('-f'
                         , '--filename'
                         , default='.deps3'
@@ -293,7 +309,11 @@ if __name__ == '__main__':
                         , help='The command to memoize')
     args = parser.parse_args()
 
-
+    # Print usage if no actual command was provided
+    if not args.command:
+            parser.print_help(file=None)
+            sys.exit(1)
+            
     # Sort the individual elements of the command.  
     # Good idea or not?: Consider using this as the key
     # so the command could be rearranged without being considered out of date
@@ -312,10 +332,12 @@ if __name__ == '__main__':
         print('Ignoring these directory trees: ', args.ignore)
         print('Monitoring these directory trees: ', args.directory)
         print('Using timestamps: ', args.timestamps)
+        print('Unconditional execution of command: ', args.unconditional)
         print('Dependencies file: ', args.filename)
         
 
     opt_use_modtime = args.timestamps
+    opt_unconditional = args.unconditional
     opt_dirs = args.directory
     ignore_dirs = args.ignore
     

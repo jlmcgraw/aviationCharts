@@ -74,7 +74,7 @@ do
     echo "--------------------------------------------"
     
     # Needs to point to where memoize is
-    "$installedDirectory/memoize.py" -t                     \
+    "$installedDirectory/memoize.py" -t                      \
         gdal_translate                                      \
                     -strict                                 \
                     -co TILED=YES                           \
@@ -97,7 +97,7 @@ do
                 "$output_raster_path/$f.tif"        \
                 2 4 8 16 32 64
     
-    rm "$output_raster_path/$f-untiled.tif"
+#     rm "$output_raster_path/$f-untiled.tif"
     
 done
 
