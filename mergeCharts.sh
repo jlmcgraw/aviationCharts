@@ -408,7 +408,7 @@ if [ -n "$should_create_ifr_high" ]
 
              # Merge the individual charts into an overall chart
             ./merge_tile_sets.pl \
-                "${srcDir}/${chart.tms}/"   \
+                "${srcDir}/${chart}.tms/"   \
                 "${destDir}/IFR-HIGH"
             done
 
