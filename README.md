@@ -4,9 +4,9 @@ direct use in mapping applications
 
 It has only been tested under Ubuntu 14.10+
 
-![VFR](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/VFR-Western_Hemisphere.png)
-![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_LOW-Western_Hemisphere.png)
-![Enroute High](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_HIGH-Western_Hemisphere.png)
+![VFR](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/VFR.png)
+![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR low.png)
+![Enroute High](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR High.png)
 ![Oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/Oceanic.png)
 
 # TODO
