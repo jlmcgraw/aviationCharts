@@ -176,8 +176,8 @@ main() {
     #  -m  Create mbtiles for each merged chart
     #
     ./mergeCharts.sh    \
-        -v -h -l -c -m          \
-        "$CHARTS_BASE_DIRECTORY"  \
+        -v -h -l -c -m              \
+        "$CHARTS_BASE_DIRECTORY"    \
         "$CHARTS_BASE_DIRECTORY"
 
     exit 0

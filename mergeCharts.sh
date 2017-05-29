@@ -7,92 +7,35 @@ IFS=$(printf '\n\t')   # IFS is newline or tab
 #https://github.com/ecometrica/gdal2mbtiles
 #https://github.com/mj10777/gdal2mbtiles.git
 
-function USAGE {
-    echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
-    echo "    -v  Create merged VFR"
-    echo "    -h  Create merged IFR-HIGH"
-    echo "    -l  Create merged IFR-LOW"
-    echo "    -c  Create merged HELICOPTER"
-    echo "    -m  Create mbtiles for each chart"
-    exit 1
-}
-
-should_create_vfr=''
-should_create_ifr_high=''
-should_create_ifr_low=''
-should_create_heli=''
-should_create_mbtiles=''
-
-while getopts 'vhlcm' flag; do
-  case "${flag}" in
-    v) should_create_vfr='true' ;;
-    h) should_create_ifr_high='true' ;;
-    l) should_create_ifr_low='true' ;;
-    c) should_create_heli='true' ;;
-    m) should_create_mbtiles='true' ;;
-    *) error "Unexpected option ${flag}" ;;
-  esac
-done
-
-#Remove the flag operands
-shift $((OPTIND-1))
-
-#Get the number of remaining command line arguments
-NUMARGS=$#
-
-#Validate number of command line parameters
-if [ "$NUMARGS" -ne 2 ] ; then
-    USAGE
-fi
-
-#Get command line parameters
+main() {
+# Get parameters
 sourceRoot="$1"
 destinationRoot="$2"
 
-#Where to put tiled charts (each in its own directory)
+# Where are the individual tiled charts stored
 srcDir="${sourceRoot}/6_tiles"
+
+# Where to put merged tiled charts (each in its own directory
 destDir="${destinationRoot}/merged_tiled_charts"
 
-#Check that the source base directory exists
+# Check that the source base directory exists
 if [ ! -d "$srcDir" ]; then
     echo "$srcDir doesn't exist"
     exit 1
 fi
 
-#Check that the destination base directory exists
+# Check that the destination base directory exists
 if [ ! -d "$destDir" ]; then
     echo "$destDir doesn't exist"
     exit 1
 fi
 
-#VFR Charts sorted by scale, highest to lowest
+# VFR Charts sorted by scale, highest to lowest
 vfr_chart_list=(
     U_S_VFR_Wall_Planning_Chart
     Alaska_Wall_Planning_Chart
     Caribbean_1_VFR_Chart
     Caribbean_2_VFR_Chart
-#     CC-8_WAC
-#     CC-9_WAC
-#     CD-10_WAC
-#     CD-11_WAC
-#     CD-12_WAC
-#     CE-12_WAC
-#     CE-13_WAC
-#     CE-15_WAC
-#     CF-16_WAC
-#     CF-17_WAC
-#     CF-18_WAC
-#     CF-19_WAC
-#     CG-18_WAC
-#     CG-19_WAC
-#     CG-20_WAC
-#     CG-21_WAC
-#     CH-22_WAC
-#     CH-23_WAC
-#     CH-24_WAC
-#     CH-25_WAC
-#     CJ-26_WAC
-#     CJ-27_WAC
     Albuquerque_SEC
     Anchorage_SEC
     Atlanta_SEC
@@ -195,7 +138,7 @@ vfr_chart_list=(
     Tampa_TAC
     )
 
-#IFR-LOW Charts sorted by scale, highest to lowest
+# IFR-LOW Charts sorted by scale, highest to lowest
 ifr_low_chart_list=(
     US_IFR_PLAN_EAST
     US_IFR_PLAN_WEST
@@ -279,7 +222,7 @@ ifr_low_chart_list=(
     ENR_A02_MKC
     )
 
-#IFR-HIGH Charts sorted by scale, highest to lowest
+# IFR-HIGH Charts sorted by scale, highest to lowest
 ifr_high_chart_list=(
     ENR_AKH01
     ENR_AKH02
@@ -298,8 +241,9 @@ ifr_high_chart_list=(
     ENR_H12
     )
 
+# Helicopter charts sorted by scale, highest to lowest
 heli_chart_list=(
-    U.S._Gulf_Coast_HEL
+    U_S_Gulf_Coast_HEL
     Eastern_Long_Island_HEL
     Baltimore_HEL
     Boston_HEL
@@ -320,45 +264,57 @@ heli_chart_list=(
     )
 
 #-------------------------------------------------------------------------------
-#VFR
+# VFR
 if [ -n "$should_create_vfr" ]
     then
-        echo "Cleaning $destDir/VFR"
-        rm --force --recursive --dir "$destDir/VFR"
+        # What type of merged chart are we making
+        chart_type="VFR"
+        
+        # Where will the merged tiles be stored
+        merged_tiles_directory="${destDir}/${chart_type}"
+        
+        # The name of the mbtiles file to create from the merged tiles
+        mbtiles_file_name="${merged_tiles_directory}.mbtiles"
+        
+        echo "Cleaning $merged_tiles_directory"
+        rm --force --recursive --dir "$merged_tiles_directory"
         
         for chart in "${vfr_chart_list[@]}"
             do
-            echo "VFR: $chart                                                   "
+            echo "${chart_type}: $chart"
+            individual_tiled_chart_directory="${srcDir}/${chart}.tms/"
 
              # Merge the individual charts into an overall chart
             ./merge_tile_sets.pl \
-                "${srcDir}/${chart}.tms/" \
-                "${destDir}/VFR"
+                "$individual_tiled_chart_directory" \
+                "$merged_tiles_directory"
             done
 
         # Optimize the tiled png files
-        ./pngquant_all_files_in_directory.sh "${destDir}/VFR"
+        ./pngquant_all_files_in_directory.sh "$merged_tiles_directory"
         
         if [ -n "$should_create_mbtiles" ]
             then
             
             # Remove the existing mbtiles
-            rm --force "$destDir/VFR.mbtiles"
+            rm --force "$mbtiles_file_name"
             
             # Package tiles into an .mbtiles file
-            ./memoize.py -i "$destDir"   -d "$destDir" \
-                python ./mbutil/mb-util \
-                    --scheme=tms        \
-                    "${destDir}/VFR"    \
-                    "${destDir}/VFR.mbtiles"
+            ./memoize.py    \
+                -i "$merged_tiles_directory"        \
+                -d "$destDir"                       \
+                    python ./mbutil/mb-util         \
+                        --scheme=tms                \
+                        "$merged_tiles_directory"   \
+                        "$mbtiles_file_name"
             fi
         
         # Copy leaflet and the simple viewer to our tiled directory
-        cp -r ./leaflet/* "$destDir/VFR"
+        cp -r ./leaflet/* "$merged_tiles_directory"
     fi
 
 #-------------------------------------------------------------------------------
-#IFR LOW
+# IFR LOW
 if [ -n "$should_create_ifr_low" ]
     then
         echo "Cleaning $destDir/IFR-LOW"
@@ -396,7 +352,7 @@ if [ -n "$should_create_ifr_low" ]
     fi
 
 #-------------------------------------------------------------------------------
-#IFR HIGH
+# IFR HIGH
 if [ -n "$should_create_ifr_high" ]
     then
         echo "Cleaning $destDir/IFR-HIGH"
@@ -434,7 +390,7 @@ if [ -n "$should_create_ifr_high" ]
     fi
 
 #-------------------------------------------------------------------------------
-#Heli
+# Heli
 if [ -n "$should_create_heli" ]
     then
         echo "Cleaning $destDir/IFR-HELI"
@@ -471,4 +427,59 @@ if [ -n "$should_create_heli" ]
     fi
 
 exit 0
+}
+
+function USAGE {
+    echo "Usage: $0 <SOURCE_BASE_DIRECTORY> <DESTINATION_BASE_DIRECTORY>" >&2
+    echo "    -v  Create merged VFR"
+    echo "    -h  Create merged IFR-HIGH"
+    echo "    -l  Create merged IFR-LOW"
+    echo "    -c  Create merged HELICOPTER"
+    echo "    -m  Create mbtiles for each chart"
+    exit 1
+}
+
+# The script begins here
+# Set some basic variables
+declare -r PROGNAME=$(basename "$0")
+declare -r PROGDIR=$(readlink -m "$(dirname "$0")")
+declare -r ARGS="$@"
+
+# Set fonts for Help.
+declare -r NORM=$(tput sgr0)
+declare -r BOLD=$(tput bold)
+declare -r REV=$(tput smso)
+
+should_create_vfr=''
+should_create_ifr_high=''
+should_create_ifr_low=''
+should_create_heli=''
+should_create_mbtiles=''
+
+while getopts 'vhlcm' flag; do
+  case "${flag}" in
+    v) should_create_vfr='true' ;;
+    h) should_create_ifr_high='true' ;;
+    l) should_create_ifr_low='true' ;;
+    c) should_create_heli='true' ;;
+    m) should_create_mbtiles='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
+
+# Remove the flag operands
+shift $((OPTIND-1))
+
+#Get the number of remaining command line arguments
+NUMARGS=$#
+
+# Validate number of command line parameters
+if [ "$NUMARGS" -ne 2 ] ; then
+    USAGE
+fi
+
+# Call the main routine
+main "$@"
+exit 0
+
 
