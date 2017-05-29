@@ -5,8 +5,8 @@ direct use in mapping applications
 It has only been tested under Ubuntu 14.10+
 
 ![VFR](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/VFR.png)
-![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR low.png)
-![Enroute High](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR High.png)
+![Enroute Low](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_Low.png)
+![Enroute High](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/IFR_High.png)
 ![Oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/Oceanic.png)
 
 # TODO
