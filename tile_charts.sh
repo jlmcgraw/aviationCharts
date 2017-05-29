@@ -99,7 +99,7 @@ main() {
         )
 
     local -r heli_chart_array_90000=(
-        ChChicago_O_Hare_Inset_HEL
+        Chicago_O_Hare_Inset_HEL
         Dallas_Love_Inset_HEL
         )
 
