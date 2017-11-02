@@ -10,6 +10,11 @@ It has only been tested under Ubuntu 14.10+
 ![Oceanic](https://raw.github.com/jlmcgraw/aviationCharts/master/Screenshots/Oceanic.png)
 
 # TODO
+	- Add support for FAA's new APIs for determining current chart versions
+		https://soa.smext.faa.gov/apra
+		curl -X GET "https://soa.smext.faa.gov/apra/vfr/sectional/chart?geoname=Albuquerque&edition=current&format=tiff" -H  "accept: application/xml"
+		https://app.swaggerhub.com/apis/FAA/APRA/1.1.0
+		https://www.faa.gov/got_data/
     - Only optimize tiles if the source raster has changed
     - Only create mbtiles if the source raster has changed
     
@@ -35,6 +40,9 @@ It has only been tested under Ubuntu 14.10+
 ##### Determine where you want to save the full set of charts downloaded from the FAA
 ##### This will be the first parameter to make_seamless_charts.sh
     eg /home/testuser/Downloads
+    
+##### Download all FAA data locally
+    ./freshenLocalCharts.sh /home/testuser/Downloads
     
 ##### Determine the date of the most current set of enroute charts.  
 ##### This will need to be updated for every new cycle and is the 2nd paramter to make_seamless_charts.sh
