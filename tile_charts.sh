@@ -301,7 +301,7 @@ tile_chart() {
     
     # Create tiles from the source raster
     ./memoize.py -i "$tiled_charts_directory"  -d "$destinationRoot" \
-        ./tilers-tools/tilers_tools/tiler.py    \
+        ./tilers_tools/gdal_tiler.py            \
             --profile=tms                       \
             --release                           \
             --paletted                          \
