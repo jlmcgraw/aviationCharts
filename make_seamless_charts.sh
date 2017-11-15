@@ -559,6 +559,12 @@ if [ "$NUMARGS" -ne 2 ] ; then
     USAGE
 fi
 
+# Make sure at least one chart type is specified
+if [[ -z $should_process_caribbean && -z $should_process_enroute && -z $should_process_grand_canyon && -z $should_process_helicopter && -z $should_process_planning && -z $should_process_sectional && -z $should_process_tac ]]; then
+    echo  "Please specify at least one chart type to process"
+    USAGE
+fi
+
 # Call the main routine
 main "$@"
 exit 0
