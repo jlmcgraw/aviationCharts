@@ -34,13 +34,13 @@ It has only been tested under Ubuntu 14.10+
     
 # Getting Started
 
-##### Dependencies
+### Dependencies
 Install various utilities and libraries and create directories using
 ```
 ./setup.sh
 ```
 
-##### Download the charts
+### Download the charts
 
 The `freshenLocalCharts.sh` downloads all the .zip files containing the charts to the specified folder. 
 
@@ -51,7 +51,7 @@ The `freshenLocalCharts.sh` downloads all the .zip files containing the charts t
 This same folder will be the first parameter to the `make_seamless_charts.sh` script (see below
 
     
-##### Determine the date of the most current set of enroute charts.  
+### Determine the date of the most current set of enroute charts.  
 
 This will need to be updated for every new cycle and is the 2nd paramter to `make_seamless_charts.sh` Lookup the most recent data in the [Product_Schedule.pdf](http://www.faa.gov/air_traffic/flight_info/aeronav/productcatalog/doles/media/Product_Schedule.pdf) for dates through 2029
 
@@ -61,7 +61,7 @@ next will be 02-04-2016
 then 03-31-2016 etc etc.
 ```
 
-##### Edit paths (optiomnal)
+### Edit paths (optional)
 To these utilities as necessary in the *.sh scripts. If you used `setup.sh` to insatall the dependencies, they will be cloned from github into this directory so no editing is  necessary. Otherwise, make sure those paths are set correctly:
 
 ```
@@ -69,7 +69,7 @@ To these utilities as necessary in the *.sh scripts. If you used `setup.sh` to i
 ./mbutil/mb-util
 ./tilers_tools/
 ```
-##### Tile creation options
+### Tile creation options
 
 You can supply the following flags to the `Edit the make_seamless_charts.sh` script:
 
@@ -90,7 +90,7 @@ You can supply the following flags to the `Edit the make_seamless_charts.sh` scr
     
 Note that both of these will add some significant time to the overall process, especially the tile optimization (though it does significantly reduce file sizes)
 
-##### Execute 
+### Execute 
 
 
 ```
@@ -106,7 +106,7 @@ e.g
 ./make_seamless_charts.sh -s -m /home/testuser/Downloads/aeronav 12-10-2017
 ```
 
-##### Wait 
+### Wait 
 
 - Wait a very long time (assuming all went correctly)
 - Individual charts should be in "6_tiles"
