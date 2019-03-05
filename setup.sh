@@ -11,7 +11,7 @@ sudo \
         unzip           \
         imagemagick     \
         cpanminus       \
-        python-imaging  \
+        python-pil      \
         perltidy        \
         carton          \
         gdal-bin
