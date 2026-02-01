@@ -112,3 +112,32 @@ e.g
 - Individual charts should be in "6_tiles"
 - merged charts should be in "merged_tiled_charts"
 - mbtile archives should be in "7_mbtiles"
+
+# Python Pipeline (In Progress)
+
+This repository is migrating to a synchronous Python pipeline. The new entrypoint
+is a CLI that accepts configuration via flags and executes stages sequentially.
+See `docs/architecture.md` for the planned stages.
+
+```
+python -m aviation_charts.cli \\
+  --charts-base-directory /path/to/charts \\
+  --enroute-cycle 12-10-2015 \\
+  --chart-types sectional enroute tac \\
+  --enable-mbtiles \\
+  all
+```
+
+## Docker
+
+Build and run the containerized CLI:
+
+```
+docker build -t aviation-charts .
+docker run --rm -v /path/to/charts:/data aviation-charts \\
+  --charts-base-directory /data \\
+  --enroute-cycle 12-10-2015 \\
+  --chart-types sectional enroute tac \\
+  --enable-mbtiles \\
+  all
+```

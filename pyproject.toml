@@ -1,0 +1,13 @@
+[project]
+name = "aviation-charts"
+version = "0.1.0"
+description = "Python pipeline for processing FAA/Aeronav chart data."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0-or-later" }
+
+[project.scripts]
+aviation-charts = "aviation_charts.cli:main"
+
+[tool.black]
+line-length = 88
